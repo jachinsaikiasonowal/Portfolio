@@ -1,443 +1,318 @@
-/* ═══════════════════════════════════════════════════════════════
-   script.js — Jachin Saikia Sonowal Portfolio
-   ───────────────────────────────────────────────────────────────
-   SECTIONS:
-   1.  JS-READY CLASS
-   2.  REVEAL ANIMATIONS (IntersectionObserver)
-   3.  LOADER
-   4.  CUSTOM CURSOR
-   5.  CURSOR TRAIL
-   6.  NAV SCROLL STATE
-   7.  MOBILE NAV
-   8.  ACTIVE NAV HIGHLIGHT
-   9.  TEXT SCRAMBLE (hero name)
-   10. COUNTER ROLL ANIMATION
-   11. EXPERIENCE ACCORDION
-   12. PARALLAX ORBS
-   13. PORTFOLIO CARD TILT (3D)
-   14. MAGNETIC BUTTONS
-   15. STAGGER REVEAL (grid children)
-   16. SCROLL PROGRESS BAR
-═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════
+   JACHIN SONOWAL — Portfolio Script
+   ═══════════════════════════════════════════════════════════ */
 
+(function () {
+  'use strict';
 
-/* ─────────────────────────────────────────────────────────────
-   1. JS-READY CLASS
-   Add immediately so CSS reveal transitions activate
-───────────────────────────────────────────────────────────────*/
-document.documentElement.classList.add('js-ready');
+  /* ══════════════════════════════════════════════
+     CUSTOM CURSOR
+  ══════════════════════════════════════════════ */
+  const curDot  = document.getElementById('cur-dot');
+  const curRing = document.getElementById('cur-ring');
 
+  if (curDot && curRing) {
+    let mx = 0, my = 0, rx = 0, ry = 0;
 
-/* ─────────────────────────────────────────────────────────────
-   2. REVEAL ANIMATIONS
-   - Uses opacity + translateY only (bulletproof, no clip-path)
-   - Fires the instant 1% of element enters viewport
-   - Nuclear fallback: reveals everything after 4s
-───────────────────────────────────────────────────────────────*/
-var revealObserver = null;
+    // Track mouse position
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX;
+      my = e.clientY;
+      // Dot snaps immediately
+      curDot.style.left = mx + 'px';
+      curDot.style.top  = my + 'px';
+    });
 
-function revealEl(el) {
-  el.classList.add('in');
-}
+    // Ring follows with smooth lag
+    (function animRing() {
+      rx += (mx - rx) * 0.14;
+      ry += (my - ry) * 0.14;
+      curRing.style.left = rx + 'px';
+      curRing.style.top  = ry + 'px';
+      requestAnimationFrame(animRing);
+    })();
 
-function initReveal() {
-  var els = document.querySelectorAll('.reveal, .reveal-side');
+    // Hover states: use body class for CSS-driven transitions
+    // Interactive elements
+    const interactiveSelectors = 'a, button, .btn, .contact-link, .nav-cta, label, input, textarea, select, [role="button"]';
+    document.addEventListener('mouseover', e => {
+      const target = e.target.closest(interactiveSelectors);
+      const card   = e.target.closest('.promptops-card');
+      const caseCard = e.target.closest('.case-card:not(.promptops-card)');
 
-  revealObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        revealEl(entry.target);
-        revealObserver.unobserve(entry.target);
+      document.body.classList.remove('cursor-hover', 'cursor-card', 'cursor-purple');
+
+      if (card) {
+        document.body.classList.add('cursor-purple');
+      } else if (caseCard) {
+        document.body.classList.add('cursor-card');
+      } else if (target) {
+        document.body.classList.add('cursor-hover');
       }
     });
-  }, { threshold: 0.01, rootMargin: '0px 0px 80px 0px' });
 
-  els.forEach(function(el) {
-    var rect = el.getBoundingClientRect();
-    // Already visible in viewport? reveal right away
-    if (rect.top < window.innerHeight + 80) {
-      setTimeout(function() { revealEl(el); }, 80);
-    } else {
-      revealObserver.observe(el);
-    }
-  });
-
-  // Nuclear fallback: reveal everything after 4s regardless
-  setTimeout(function() {
-    document.querySelectorAll('.reveal, .reveal-side').forEach(function(el) {
-      revealEl(el);
+    document.addEventListener('mouseleave', () => {
+      document.body.classList.remove('cursor-hover', 'cursor-card', 'cursor-purple');
     });
-  }, 4000);
-}
 
-
-/* ─────────────────────────────────────────────────────────────
-   3. LOADER
-   Multiple fallbacks to guarantee it always fires
-───────────────────────────────────────────────────────────────*/
-var loaderFired = false;
-
-function doLoader() {
-  if (loaderFired) return;
-  loaderFired = true;
-
-  var loader = document.getElementById('loader');
-  if (loader) loader.classList.add('done');
-
-  initReveal();
-  startScramble();
-  initCounters();
-  initTilt();
-}
-
-// Primary: window load
-window.addEventListener('load', function() { setTimeout(doLoader, 900); });
-// Fallback 1: DOMContentLoaded + 600ms
-document.addEventListener('DOMContentLoaded', function() { setTimeout(doLoader, 600); });
-// Fallback 2: Hard timeout at 2s
-setTimeout(doLoader, 2000);
-
-
-/* ─────────────────────────────────────────────────────────────
-   4. CUSTOM CURSOR
-   Dot follows mouse exactly. Ring follows with easing.
-───────────────────────────────────────────────────────────────*/
-var cur  = document.getElementById('cursor');
-var ring = document.getElementById('cursor-ring');
-var mx = 0, my = 0, rx = 0, ry = 0;
-
-document.addEventListener('mousemove', function(e) {
-  mx = e.clientX;
-  my = e.clientY;
-});
-
-function animateCursor() {
-  if (cur) {
-    cur.style.left = mx + 'px';
-    cur.style.top  = my + 'px';
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+      curDot.style.opacity  = '0';
+      curRing.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      curDot.style.opacity  = '1';
+      curRing.style.opacity = '1';
+    });
   }
-  if (ring) {
-    rx += (mx - rx) * 0.11;
-    ry += (my - ry) * 0.11;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-  }
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
 
-// Hide cursor when it leaves the window
-document.addEventListener('mouseleave', function() {
-  if (cur)  cur.style.opacity = '0';
-  if (ring) ring.style.opacity = '0';
-});
-document.addEventListener('mouseenter', function() {
-  if (cur)  cur.style.opacity = '1';
-  if (ring) ring.style.opacity = '1';
-});
+  /* ══════════════════════════════════════════════
+     CURSOR TRAIL
+  ══════════════════════════════════════════════ */
+  const TRAIL_COUNT = 5;
+  const trailEls = [];
+  const trailPos = Array.from({ length: TRAIL_COUNT }, () => ({ x: 0, y: 0 }));
+  let trailMx = 0, trailMy = 0;
 
-
-/* ─────────────────────────────────────────────────────────────
-   5. CURSOR TRAIL
-   Six diminishing ghost dots that follow the cursor
-───────────────────────────────────────────────────────────────*/
-(function() {
-  var TRAIL_COUNT = 7;
-  var trail = [];
-  var positions = [];
-
-  for (var i = 0; i < TRAIL_COUNT; i++) {
-    var size = (4.5 - i * 0.5);
-    var dot  = document.createElement('div');
-    dot.style.cssText = [
+  for (let i = 0; i < TRAIL_COUNT; i++) {
+    const d = document.createElement('div');
+    const size = 3.5 - i * 0.45;
+    d.style.cssText = [
       'position:fixed',
       'pointer-events:none',
       'border-radius:50%',
-      'z-index:2147483640',
-      'width:'  + size + 'px',
-      'height:' + size + 'px',
-      'background:rgba(201,168,76,' + (0.3 - i * 0.04) + ')',
+      'z-index:99990',
+      `width:${size}px`,
+      `height:${size}px`,
+      `background:rgba(59,130,246,${(0.18 - i * 0.03).toFixed(2)})`,
       'transform:translate(-50%,-50%)',
-      'top:0',
-      'left:0',
-      'will-change:left,top'
+      'top:0', 'left:0',
     ].join(';');
-    document.body.appendChild(dot);
-    trail.push(dot);
-    positions.push({ x: 0, y: 0 });
+    document.body.appendChild(d);
+    trailEls.push(d);
   }
 
-  var tmx = 0, tmy = 0;
-  document.addEventListener('mousemove', function(e) { tmx = e.clientX; tmy = e.clientY; });
+  document.addEventListener('mousemove', e => { trailMx = e.clientX; trailMy = e.clientY; });
 
-  function animTrail() {
-    positions[0].x += (tmx - positions[0].x) * 0.3;
-    positions[0].y += (tmy - positions[0].y) * 0.3;
-    for (var j = 1; j < TRAIL_COUNT; j++) {
-      positions[j].x += (positions[j-1].x - positions[j].x) * 0.42;
-      positions[j].y += (positions[j-1].y - positions[j].y) * 0.42;
+  (function animTrail() {
+    trailPos[0].x += (trailMx - trailPos[0].x) * 0.4;
+    trailPos[0].y += (trailMy - trailPos[0].y) * 0.4;
+    for (let i = 1; i < TRAIL_COUNT; i++) {
+      trailPos[i].x += (trailPos[i - 1].x - trailPos[i].x) * 0.5;
+      trailPos[i].y += (trailPos[i - 1].y - trailPos[i].y) * 0.5;
     }
-    for (var k = 0; k < TRAIL_COUNT; k++) {
-      trail[k].style.left = positions[k].x + 'px';
-      trail[k].style.top  = positions[k].y + 'px';
-    }
+    trailEls.forEach((el, i) => {
+      el.style.left = trailPos[i].x + 'px';
+      el.style.top  = trailPos[i].y + 'px';
+    });
     requestAnimationFrame(animTrail);
+  })();
+
+  /* ══════════════════════════════════════════════
+     SCROLL PROGRESS
+  ══════════════════════════════════════════════ */
+  const scrollBar = document.getElementById('scroll-progress');
+  function updateScrollProgress() {
+    if (!scrollBar) return;
+    const scrollTop  = window.scrollY;
+    const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+    const pct        = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollBar.style.width = pct + '%';
   }
-  animTrail();
-})();
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
+  /* ══════════════════════════════════════════════
+     NAV: SCROLL STATE + ACTIVE LINKS
+  ══════════════════════════════════════════════ */
+  const nav = document.querySelector('nav');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section[id], div[id]');
 
-/* ─────────────────────────────────────────────────────────────
-   6. NAV SCROLL STATE
-───────────────────────────────────────────────────────────────*/
-window.addEventListener('scroll', function() {
-  var nav = document.getElementById('nav');
-  if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
+  function updateNav() {
+    if (!nav) return;
+    if (window.scrollY > 60) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
 
+    // Active link based on section in view
+    let currentId = '';
+    sections.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+      if (top <= 140) currentId = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('nav-active', a.getAttribute('href') === '#' + currentId);
+    });
+  }
 
-/* ─────────────────────────────────────────────────────────────
-   7. MOBILE NAV TOGGLE
-───────────────────────────────────────────────────────────────*/
-var mobToggle = document.getElementById('mob-toggle');
-var mobNav    = document.getElementById('mob-nav');
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
 
-if (mobToggle && mobNav) {
-  mobToggle.addEventListener('click', function() {
-    var isOpen = mobNav.classList.toggle('open');
-    mobToggle.classList.toggle('open', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  /* ══════════════════════════════════════════════
+     MOBILE NAV
+  ══════════════════════════════════════════════ */
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav?.classList.toggle('open');
+    document.body.style.overflow = mobileNav?.classList.contains('open') ? 'hidden' : '';
   });
-}
 
-function closeMob() {
-  if (mobNav) mobNav.classList.remove('open');
-  if (mobToggle) mobToggle.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-
-/* ─────────────────────────────────────────────────────────────
-   8. ACTIVE NAV HIGHLIGHT
-   Highlights the nav link matching the current section
-───────────────────────────────────────────────────────────────*/
-(function() {
-  var sections = document.querySelectorAll('section[id], div[id]');
-  var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-
-  function onScroll() {
-    var scrollY = window.scrollY + 140;
-    var current = '';
-    sections.forEach(function(sec) {
-      if (sec.offsetTop <= scrollY) current = sec.id;
-    });
-    navLinks.forEach(function(a) {
-      a.classList.remove('active');
-      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-    });
+  function closeMobileNav() {
+    hamburger?.classList.remove('open');
+    mobileNav?.classList.remove('open');
+    document.body.style.overflow = '';
   }
+  window.closeMobileNav = closeMobileNav;
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
+  mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
 
+  /* ══════════════════════════════════════════════
+     COUNTER ANIMATION
+  ══════════════════════════════════════════════ */
+  function animateCount(el) {
+    const raw    = el.dataset.raw || el.textContent.trim();
+    el.dataset.raw = raw; // Cache original
 
-/* ─────────────────────────────────────────────────────────────
-   9. TEXT SCRAMBLE — hero name matrix effect on load
-───────────────────────────────────────────────────────────────*/
-var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&';
+    const match = raw.match(/^([₹$]?)(\d[\d,.]*)(\D*)$/);
+    if (!match) return;
 
-function scramble(el, target, duration) {
-  var start = null;
-  var len = target.length;
+    const prefix = match[1];
+    const numStr = match[2].replace(/,/g, '');
+    const suffix = match[3];
+    const target = parseFloat(numStr);
+    if (isNaN(target) || target === 0) return;
 
-  function step(ts) {
-    if (!start) start = ts;
-    var progress = Math.min((ts - start) / duration, 1);
-    var revealed = Math.floor(progress * len);
-    var result = '';
+    const duration  = 1700;
+    const startTime = performance.now();
 
-    for (var i = 0; i < len; i++) {
-      if (i < revealed) {
-        result += target[i];
+    function step(now) {
+      const elapsed  = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased    = 1 - Math.pow(1 - progress, 3);
+      const current  = Math.round(eased * target);
+      const formatted = raw.includes(',') ? current.toLocaleString() : current;
+      el.textContent = prefix + formatted + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(step);
       } else {
-        result += CHARS[Math.floor(Math.random() * CHARS.length)];
+        el.textContent = raw; // Restore exact original
       }
     }
-
-    el.textContent = result;
-
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    } else {
-      el.textContent = target;
-    }
+    requestAnimationFrame(step);
   }
 
-  requestAnimationFrame(step);
-}
-
-function startScramble() {
-  var nameEl = document.getElementById('scramble-name');
-  if (nameEl) {
-    setTimeout(function() { scramble(nameEl, 'JACHIN', 1400); }, 250);
-  }
-}
-
-
-/* ─────────────────────────────────────────────────────────────
-   10. COUNTER ROLL ANIMATION
-   Numbers count up with cubic easing when scrolled into view
-───────────────────────────────────────────────────────────────*/
-function animateCounter(el) {
-  var target   = parseInt(el.dataset.target, 10);
-  var prefix   = el.dataset.prefix  || '';
-  var suffix   = el.dataset.suffix  || '';
-  var duration = 1800;
-  var start    = null;
-
-  function step(ts) {
-    if (!start) start = ts;
-    var progress = Math.min((ts - start) / duration, 1);
-    // Cubic ease-out
-    var eased = 1 - Math.pow(1 - progress, 3);
-    var val   = Math.floor(eased * target);
-    // Separate '+' from the display suffix
-    var cleanSuf = suffix.replace('+', '');
-    var plus     = suffix.indexOf('+') !== -1 ? '+' : '';
-
-    el.innerHTML = prefix + val + '<em>' + cleanSuf + '</em>' + plus;
-
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    } else {
-      el.innerHTML = prefix + target + '<em>' + suffix + '</em>';
-    }
-  }
-
-  requestAnimationFrame(step);
-}
-
-function initCounters() {
-  var cIO = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting && e.target.dataset.target) {
-        animateCounter(e.target);
-        cIO.unobserve(e.target);
+  /* ══════════════════════════════════════════════
+     INTERSECTION OBSERVER — FADE IN
+  ══════════════════════════════════════════════ */
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const delay = parseInt(entry.target.dataset.delay || 0);
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        fadeObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.07, rootMargin: '0px 0px 50px 0px' });
 
-  document.querySelectorAll('[data-target]').forEach(function(el) {
-    cIO.observe(el);
+  document.querySelectorAll('.fade-in').forEach((el, i) => {
+    el.dataset.delay = (i % 6) * 65;
+    fadeObserver.observe(el);
   });
-}
 
+  document.querySelectorAll('.slide-in').forEach(el => fadeObserver.observe(el));
 
-/* ─────────────────────────────────────────────────────────────
-   11. EXPERIENCE ACCORDION
-   Only one item open at a time. Click again to close.
-───────────────────────────────────────────────────────────────*/
-function toggleExp(el) {
-  var isOpen = el.classList.contains('open');
-  // Close all open items
-  document.querySelectorAll('.exp-item.open').forEach(function(i) {
-    i.classList.remove('open');
-  });
-  // Open clicked item (unless it was already open)
-  if (!isOpen) el.classList.add('open');
-}
-
-
-/* ─────────────────────────────────────────────────────────────
-   12. PARALLAX ORBS — subtle depth movement on scroll
-───────────────────────────────────────────────────────────────*/
-window.addEventListener('scroll', function() {
-  var y = window.scrollY;
-  document.querySelectorAll('.orb').forEach(function(orb, i) {
-    var speed = i === 0 ? -0.07 : 0.05;
-    orb.style.transform = 'translateY(' + (y * speed) + 'px) scale(1)';
-  });
-}, { passive: true });
-
-
-/* ─────────────────────────────────────────────────────────────
-   13. PORTFOLIO CARD TILT — 3D perspective mouse-follow
-───────────────────────────────────────────────────────────────*/
-function initTilt() {
-  document.querySelectorAll('.pcard').forEach(function(card) {
-    card.addEventListener('mousemove', function(e) {
-      var r  = card.getBoundingClientRect();
-      var x  = ((e.clientX - r.left)  / r.width  - 0.5) * 12;
-      var y  = ((e.clientY - r.top)   / r.height - 0.5) * -12;
-      card.style.transform = 'perspective(700px) rotateY(' + x + 'deg) rotateX(' + y + 'deg) translateY(-6px)';
-      card.style.transition = 'transform 0.1s ease';
+  /* ── IMPACT STRIP COUNTER ── */
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('[data-counter]').forEach(el => animateCount(el));
+        counterObserver.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.3 });
 
-    card.addEventListener('mouseleave', function() {
-      card.style.transform = '';
-      card.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s';
+  const impactStrip = document.getElementById('impact-strip');
+  if (impactStrip) counterObserver.observe(impactStrip);
+
+  /* ── RESULT METRIC COUNTERS ── */
+  const resultObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.result-metric').forEach(el => {
+          setTimeout(() => animateCount(el), 180);
+        });
+        resultObserver.unobserve(entry.target);
+      }
     });
-  });
-}
+  }, { threshold: 0.2 });
 
+  document.querySelectorAll('.results-grid').forEach(el => resultObserver.observe(el));
 
-/* ─────────────────────────────────────────────────────────────
-   14. MAGNETIC BUTTONS — subtle cursor attraction on hover
-───────────────────────────────────────────────────────────────*/
-document.querySelectorAll('.btn-gold, .btn-ghost, .nav-hire').forEach(function(btn) {
-  btn.addEventListener('mousemove', function(e) {
-    var r  = btn.getBoundingClientRect();
-    var dx = (e.clientX - (r.left + r.width  / 2)) * 0.2;
-    var dy = (e.clientY - (r.top  + r.height / 2)) * 0.2;
-    btn.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
-  });
-  btn.addEventListener('mouseleave', function() {
-    btn.style.transform = '';
-  });
-});
+  /* ══════════════════════════════════════════════
+     TAB SWITCHING
+  ══════════════════════════════════════════════ */
+  function switchTab(btn, panelId) {
+    const card = btn.closest('.case-card');
+    if (!card) return;
 
+    card.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    card.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
 
-/* ─────────────────────────────────────────────────────────────
-   15. STAGGER REVEAL
-   Grid children animate in sequence, not all at once
-───────────────────────────────────────────────────────────────*/
-(function() {
-  var grids = document.querySelectorAll(
-    '.services-grid, .skills-grid, .certs-grid, .tgrid, .edu-grid, .case-grid'
-  );
-  grids.forEach(function(grid) {
-    var children = grid.children;
-    for (var i = 0; i < children.length; i++) {
-      children[i].style.transitionDelay = (i * 0.045) + 's';
+    btn.classList.add('active');
+
+    const panel = document.getElementById(panelId);
+    if (panel) {
+      panel.classList.add('active');
+      // Re-animate metrics if they haven't been animated
+      panel.querySelectorAll('.result-metric').forEach(el => {
+        setTimeout(() => animateCount(el), 130);
+      });
     }
+  }
+  window.switchTab = switchTab; // Expose for inline onclick handlers
+
+  /* ══════════════════════════════════════════════
+     MAGNETIC BUTTONS
+  ══════════════════════════════════════════════ */
+  function initMagneticBtns() {
+    document.querySelectorAll('.btn, .contact-link, .nav-cta').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r  = btn.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width  / 2)) * 0.12;
+        const dy = (e.clientY - (r.top  + r.height / 2)) * 0.12;
+        btn.style.setProperty('--mx', dx + 'px');
+        btn.style.setProperty('--my', dy + 'px');
+        btn.style.transform = `translate(${dx}px, ${dy}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  }
+  initMagneticBtns();
+
+  /* ══════════════════════════════════════════════
+     PARALLAX — HERO GLOW ON MOUSEMOVE
+  ══════════════════════════════════════════════ */
+  const hero = document.getElementById('hero');
+  hero?.addEventListener('mousemove', e => {
+    const rect = hero.getBoundingClientRect();
+    const cx   = (e.clientX - rect.left) / rect.width  - 0.5;
+    const cy   = (e.clientY - rect.top)  / rect.height - 0.5;
+    hero.style.setProperty('--gx', cx * 40 + 'px');
+    hero.style.setProperty('--gy', cy * 40 + 'px');
   });
-})();
 
+  /* ══════════════════════════════════════════════
+     KEYBOARD ACCESSIBILITY
+  ══════════════════════════════════════════════ */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMobileNav();
+  });
 
-/* ─────────────────────────────────────────────────────────────
-   16. SCROLL PROGRESS BAR
-   Thin gold line at the very top showing scroll progress
-───────────────────────────────────────────────────────────────*/
-(function() {
-  var bar = document.createElement('div');
-  bar.style.cssText = [
-    'position:fixed',
-    'top:0',
-    'left:0',
-    'height:2px',
-    'background:linear-gradient(to right,#C9A84C,#E8C96A)',
-    'z-index:10001',
-    'width:0%',
-    'transition:width 0.1s linear',
-    'pointer-events:none'
-  ].join(';');
-  document.body.appendChild(bar);
-
-  window.addEventListener('scroll', function() {
-    var scrollTop  = window.scrollY;
-    var docHeight  = document.documentElement.scrollHeight - window.innerHeight;
-    var pct        = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    bar.style.width = pct + '%';
-  }, { passive: true });
 })();
