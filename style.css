@@ -561,6 +561,18 @@ h2.s-title {
 ═══════════════════════════════════════════════ */
 #services { background: var(--black2); }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border2); }
+.svc:last-child {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  align-items: start;
+  column-gap: 20px;
+  border-top: 1px solid var(--border2);
+}
+.svc:last-child .svc-num { grid-column: 1; }
+.svc:last-child .svc-icon { grid-column: 1; }
+.svc:last-child .svc-title { grid-column: 2; grid-row: 1 / 2; align-self: center; }
+.svc:last-child .svc-desc { grid-column: 2; grid-row: 2; max-width: 560px; }
 .svc {
   background: var(--black2); padding: 40px 36px;
   transition: background 0.3s; position: relative; overflow: hidden; cursor: none;
