@@ -3,909 +3,1499 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jachin Saikia Sonowal — Growth Marketing & AI Portfolio</title>
-<meta name="description" content="Growth Marketer, AI Builder & Founder. 8+ years, 175+ clients, $150K+ revenue generated. Founder of PromptOps.">
+<title>Jachin Saikia Sonowal — Growth Marketer · AI Builder · Founder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ── SCROLL PROGRESS ── -->
-<div id="scroll-progress"></div>
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
 
-<!-- ── CUSTOM CURSOR ── -->
-<div id="cur-dot"></div>
-<div id="cur-ring"></div>
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-text">JACHIN</div>
+  <div class="loader-bar"></div>
+</div>
 
-<!-- ══════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════
      NAVIGATION
-══════════════════════════════════════════════════════════ -->
-<nav id="main-nav">
-  <a href="#hero" class="nav-logo">Jachin <span>Sonowal</span></a>
+══════════════════════════════════════════════════════ -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">JACHIN<span>.</span></a>
   <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#competencies">Skills</a></li>
-    <li><a href="#tools">Stack</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#testimonials">Reviews</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#experience">Journey</a></li>
+    <li><a href="#case-studies">Case Studies</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="https://promptops.jachinsonowal.com" target="_blank" style="color:var(--gold)">PromptOps ⚡</a></li>
+    <li><a href="#cta" class="nav-hire">Hire Me</a></li>
   </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-  <a href="mailto:jachin@ainewsindia.com" class="nav-cta">
-    <span>Hire Me</span>
-  </a>
 </nav>
 
-<!-- Mobile Nav -->
-<div class="mobile-nav" id="mobile-nav">
-  <a href="#work"         onclick="closeMobileNav()">Work</a>
-  <a href="#competencies" onclick="closeMobileNav()">Skills</a>
-  <a href="#tools"        onclick="closeMobileNav()">Stack</a>
-  <a href="#about"        onclick="closeMobileNav()">About</a>
-  <a href="#testimonials" onclick="closeMobileNav()">Reviews</a>
-  <a href="#contact"      onclick="closeMobileNav()">Contact</a>
-</div>
-
-<main>
-
-<!-- ══════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════
      HERO
-══════════════════════════════════════════════════════════ -->
+══════════════════════════════════════════════════════ -->
 <section id="hero">
-  <div class="hero-avail">
-    <span class="hero-avail-dot"></span>
-    Open to Remote Global Roles · 2026
+  <div class="hero-lines">
+    <div class="hero-line h hl1"></div>
+    <div class="hero-line h hl2"></div>
+    <div class="hero-line h hl3"></div>
+    <div class="hero-line v vl1"></div>
+    <div class="hero-line v vl2"></div>
   </div>
-  <div class="hero-eyebrow">Growth Marketing · AI Agent Engineering · Founder</div>
-  <h1 class="hero-name">Jachin<br><em>Saikia</em><br>Sonowal</h1>
-  <p class="hero-title">AI Builder & Growth Marketer · 8+ Years · 175+ Clients · $150K+ Revenue Generated · Founder of PromptOps</p>
-  <p class="hero-summary">
-    I build scalable revenue systems and AI infrastructure — not just campaigns. From D2C e-commerce engines generating ₹1.2 Cr annually, to 10+ production AI agents automating entire marketing workflows, to founding PromptOps — version control for LLM prompts. I build things that compound over time.
-  </p>
-  <div class="hero-cta">
-    <a href="#work" class="btn btn-primary"><span>View Case Studies</span></a>
-    <a href="mailto:jachin@ainewsindia.com" class="btn btn-ghost"><span>Get in Touch</span></a>
-  </div>
-  <div class="hero-scroll">
-    <div class="hero-scroll-line"></div>
-    <div class="hero-scroll-label">scroll</div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="avail reveal">
+        <span class="avail-dot"></span>
+        Available — Freelance &amp; Remote Roles
+      </div>
+
+      <h1 class="hero-name reveal" style="transition-delay:.1s">
+        <span id="scramble-name">JACHIN</span><br>
+        <span class="outline">SAIKIA</span><br>
+        <span class="gold">SONOWAL</span>
+      </h1>
+
+      <div class="hero-title reveal" style="transition-delay:.2s">
+        Growth Marketer · Marketing Ops · AI Agent Engineer · Founder
+      </div>
+
+      <p class="hero-bio reveal" style="transition-delay:.3s">
+        8+ years building revenue-generating marketing systems for real businesses.
+        Early adopter of AI agent development — built 10+ custom agents that run entire
+        marketing workflows autonomously. Founder of
+        <strong style="color:var(--gold)">PromptOps</strong> — version control &amp; CI/CD for LLM prompts.
+      </p>
+
+      <div class="hero-btns reveal" style="transition-delay:.4s">
+        <a href="mailto:jachinchsaikiasonowal@gmail.com" class="btn-gold"><span>Get in Touch</span></a>
+        <a href="https://linkedin.com/in/jachinsonowal" target="_blank" class="btn-ghost">LinkedIn →</a>
+      </div>
+
+      <div class="hero-stats reveal" style="transition-delay:.5s">
+        <div class="hstat">
+          <div class="hstat-num" data-target="150" data-prefix="$" data-suffix="K+">$0K+</div>
+          <div class="hstat-label">Revenue Generated</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" data-target="175" data-suffix="+">0+</div>
+          <div class="hstat-label">Clients Served</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" data-target="247" data-suffix="+">0+</div>
+          <div class="hstat-label">PromptOps Waitlist</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" data-target="10" data-suffix="+">0+</div>
+          <div class="hstat-label">AI Agents Built</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" data-target="8" data-suffix="+">0+</div>
+          <div class="hstat-label">Years Exp.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-photo-col reveal" style="transition-delay:.3s">
+      <div class="photo-frame">
+        <div class="photo-border"></div>
+        <div class="photo-img">
+          <div class="photo-placeholder">
+            <div class="photo-placeholder-icon">👤</div>
+            <div class="photo-placeholder-text">Add Photo</div>
+          </div>
+        </div>
+        <div class="photo-corner tl"></div>
+        <div class="photo-corner tr"></div>
+        <div class="photo-corner bl"></div>
+        <div class="photo-corner br"></div>
+        <div class="photo-label pl1">
+          <div class="pl-lbl">Waitlist Signups</div>
+          <div class="pl-val">247<em>+</em></div>
+        </div>
+        <div class="photo-label pl2">
+          <div class="pl-lbl">AI Agents Live</div>
+          <div class="pl-val"><em>10</em>+</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
-     IMPACT STRIP
-══════════════════════════════════════════════════════════ -->
-<div id="impact-strip">
-  <div class="impact-grid">
-    <div class="impact-item fade-in">
-      <span class="impact-number" data-counter="true">$150K+</span>
-      <span class="impact-label">Client Revenue Generated</span>
+<!-- MARQUEE STRIP -->
+<div id="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span class="strip-item">Growth Marketing <span class="strip-dot"></span></span>
+    <span class="strip-item">AI Agent Engineering <span class="strip-dot"></span></span>
+    <span class="strip-item">PromptOps — Founder <span class="strip-dot"></span></span>
+    <span class="strip-item">Marketing Operations <span class="strip-dot"></span></span>
+    <span class="strip-item">SEO &amp; Organic Growth <span class="strip-dot"></span></span>
+    <span class="strip-item">SaaS Product Development <span class="strip-dot"></span></span>
+    <span class="strip-item">Email Automation <span class="strip-dot"></span></span>
+    <span class="strip-item">LLM API Integration <span class="strip-dot"></span></span>
+    <span class="strip-item">Funnel Optimization <span class="strip-dot"></span></span>
+    <span class="strip-item">Revenue Attribution <span class="strip-dot"></span></span>
+    <span class="strip-item">D2C E-Commerce <span class="strip-dot"></span></span>
+    <span class="strip-item">Growth Marketing <span class="strip-dot"></span></span>
+    <span class="strip-item">AI Agent Engineering <span class="strip-dot"></span></span>
+    <span class="strip-item">PromptOps — Founder <span class="strip-dot"></span></span>
+    <span class="strip-item">Marketing Operations <span class="strip-dot"></span></span>
+    <span class="strip-item">SEO &amp; Organic Growth <span class="strip-dot"></span></span>
+    <span class="strip-item">SaaS Product Development <span class="strip-dot"></span></span>
+    <span class="strip-item">Email Automation <span class="strip-dot"></span></span>
+    <span class="strip-item">LLM API Integration <span class="strip-dot"></span></span>
+    <span class="strip-item">Funnel Optimization <span class="strip-dot"></span></span>
+    <span class="strip-item">Revenue Attribution <span class="strip-dot"></span></span>
+    <span class="strip-item">D2C E-Commerce <span class="strip-dot"></span></span>
+  </div>
+</div>
+
+<!-- METRICS BAR -->
+<div id="metrics">
+  <div class="metrics-row">
+    <div class="m-item reveal">
+      <div class="m-num" data-target="150" data-prefix="$" data-suffix="K+">$0K+</div>
+      <div class="m-lbl">Client Revenue</div>
     </div>
-    <div class="impact-item fade-in">
-      <span class="impact-number" data-counter="true">175+</span>
-      <span class="impact-label">Client Engagements</span>
+    <div class="m-item reveal" style="transition-delay:.06s">
+      <div class="m-num" data-target="175" data-suffix="+">0+</div>
+      <div class="m-lbl">Engagements</div>
     </div>
-    <div class="impact-item fade-in">
-      <span class="impact-number" data-counter="true">8+</span>
-      <span class="impact-label">Years Experience</span>
+    <div class="m-item reveal" style="transition-delay:.12s">
+      <div class="m-num">3<em>×</em></div>
+      <div class="m-lbl">Business Scaled</div>
     </div>
-    <div class="impact-item fade-in">
-      <span class="impact-number" data-counter="true">1,000+</span>
-      <span class="impact-label">Newsletter Subscribers</span>
+    <div class="m-item reveal" style="transition-delay:.18s">
+      <div class="m-num">38<em>%</em></div>
+      <div class="m-lbl">Email Open Rate</div>
     </div>
-    <div class="impact-item fade-in">
-      <span class="impact-number" data-counter="true">10+</span>
-      <span class="impact-label">AI Agents Deployed</span>
+    <div class="m-item reveal" style="transition-delay:.24s">
+      <div class="m-num">$<em>3.8K</em></div>
+      <div class="m-lbl">Product Revenue</div>
     </div>
-    <div class="impact-item fade-in">
-      <span class="impact-number" data-counter="true">247+</span>
-      <span class="impact-label">PromptOps Waitlist</span>
-    </div>
-    <div class="impact-item fade-in">
-      <span class="impact-number" data-counter="true">38%</span>
-      <span class="impact-label">Email Open Rate</span>
-    </div>
-    <div class="impact-item fade-in">
-      <span class="impact-number" data-counter="true">3×</span>
-      <span class="impact-label">Avg Business Growth</span>
+    <div class="m-item reveal" style="transition-delay:.30s">
+      <div class="m-num" data-target="247" data-suffix="+">0+</div>
+      <div class="m-lbl">PromptOps Waitlist</div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════
-     CASE STUDIES
-══════════════════════════════════════════════════════════ -->
-<section id="work">
-  <div class="section-tag fade-in">Featured Work</div>
-  <h2 class="section-title fade-in">Case Studies</h2>
-  <p class="section-sub fade-in">Seven real projects. Real numbers. No vanity metrics.</p>
-
-  <div class="case-studies">
-
-    <!-- ─── CASE 01: D2C TEA ─── -->
-    <div class="case-card fade-in">
-      <div class="case-header">
-        <div>
-          <div class="case-meta">
-            <span class="case-number">Case Study 01</span>
-            <span class="case-badge badge-green">D2C Revenue</span>
-          </div>
-          <h3 class="case-title">₹1.2 Cr D2C Revenue Engine from Zero</h3>
-          <p class="case-subtitle">B2C Tea Manufacturing Company · Assam, India · 18 Months</p>
-        </div>
-      </div>
-      <hr class="case-divider">
-      <div class="case-body">
-        <div class="tab-bar">
-          <button class="tab-btn active" onclick="switchTab(this,'tea-overview')">Overview</button>
-          <button class="tab-btn" onclick="switchTab(this,'tea-approach')">Approach</button>
-          <button class="tab-btn" onclick="switchTab(this,'tea-results')">Results</button>
-        </div>
-
-        <!-- Overview -->
-        <div id="tea-overview" class="tab-panel active">
-          <span class="case-section-label">The Challenge</span>
-          <p class="case-challenge">A 25-year-old tea manufacturing company with strong offline distribution had zero online revenue and no digital presence. They needed a D2C e-commerce channel from scratch with a ₹5 lakh first-year budget — competing against premium brands like Vahdam and Tea Trunk with zero brand equity online.</p>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">₹0</span><span class="result-desc">Online revenue at start</span></div>
-            <div class="result-item"><span class="result-metric">0</span><span class="result-desc">Digital presence</span></div>
-            <div class="result-item"><span class="result-metric">₹5L</span><span class="result-desc">First-year budget</span></div>
-            <div class="result-item"><span class="result-metric">18 mo</span><span class="result-desc">Target timeline</span></div>
-          </div>
-        </div>
-
-        <!-- Approach -->
-        <div id="tea-approach" class="tab-panel">
-          <span class="case-section-label">My Approach</span>
-          <ul class="approach-list">
-            <li>Conducted 200+ customer surveys to identify positioning gap: "estate-direct premium Assam tea" — authentic vs. mass-market competitors</li>
-            <li>Built Shopify store with abandoned cart recovery, product bundles, review systems, and email capture — achieved 2.8% conversion rate from day one</li>
-            <li>Executed SEO strategy targeting 80+ keywords with 50+ long-form blog posts, achieving #1 rankings for 12 high-intent terms</li>
-            <li>Built email acquisition funnel: lead magnet (Complete Brewing Guide PDF) → 15% opt-in rate → 5-email welcome series → promotional campaigns achieving 28% open rate</li>
-            <li>Implemented inquiry response automation + phone coordination system, achieving 12% inquiry-to-sale conversion from warm leads</li>
-            <li>Optimised product pages via A/B testing — improved conversion 35%; added bundles increasing average order value 40%</li>
-          </ul>
-          <div class="skills-used">
-            <span class="skill-tag">Shopify</span>
-            <span class="skill-tag">SEO Strategy</span>
-            <span class="skill-tag">Content Marketing</span>
-            <span class="skill-tag">Email Automation</span>
-            <span class="skill-tag">CRO</span>
-            <span class="skill-tag">Lead Nurturing</span>
-            <span class="skill-tag">Ahrefs</span>
-            <span class="skill-tag">A/B Testing</span>
-          </div>
-        </div>
-
-        <!-- Results -->
-        <div id="tea-results" class="tab-panel">
-          <span class="case-section-label">Results · 18 Months</span>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">₹1.2 Cr</span><span class="result-desc">Annual online revenue generated</span></div>
-            <div class="result-item"><span class="result-metric">8,000+</span><span class="result-desc">Monthly organic visitors</span></div>
-            <div class="result-item"><span class="result-metric">5,000+</span><span class="result-desc">Email subscribers built</span></div>
-            <div class="result-item"><span class="result-metric">12%</span><span class="result-desc">Inquiry-to-sale conversion</span></div>
-            <div class="result-item"><span class="result-metric">80%</span><span class="result-desc">Organic traffic — zero paid ads</span></div>
-            <div class="result-item"><span class="result-metric">18 mo</span><span class="result-desc">Full ROI payback period</span></div>
-          </div>
-          <div class="case-quote">
-            <p>"Jachin transformed our business model. We went from zero online presence to generating over ₹1 crore in online revenue in 18 months. His systematic approach to SEO, content, and automation created a sustainable channel that keeps growing."</p>
-            <cite>— Managing Director, Tea Manufacturing Company, Assam</cite>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── CASE 02: LOCAL SEO ─── -->
-    <div class="case-card fade-in">
-      <div class="case-header">
-        <div>
-          <div class="case-meta">
-            <span class="case-number">Case Study 02</span>
-            <span class="case-badge badge-blue">Local SEO</span>
-          </div>
-          <h3 class="case-title">3× Business Growth Across 8 Locations via Local SEO</h3>
-          <p class="case-subtitle">Multi-Location Retail Business · Northeast India · 12 Months</p>
-        </div>
-      </div>
-      <hr class="case-divider">
-      <div class="case-body">
-        <div class="tab-bar">
-          <button class="tab-btn active" onclick="switchTab(this,'seo-overview')">Overview</button>
-          <button class="tab-btn" onclick="switchTab(this,'seo-approach')">Approach</button>
-          <button class="tab-btn" onclick="switchTab(this,'seo-results')">Results</button>
-        </div>
-
-        <div id="seo-overview" class="tab-panel active">
-          <span class="case-section-label">The Challenge</span>
-          <p class="case-challenge">A multi-location service business with 8 physical locations was invisible in local search. They had only 15 reviews across all locations, a 3.8-star average, and 150 monthly visitors total. Competitors with 50–200 reviews were dominating local pack rankings and capturing every nearby customer.</p>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">15</span><span class="result-desc">Total reviews across 8 locations</span></div>
-            <div class="result-item"><span class="result-metric">3.8★</span><span class="result-desc">Average star rating</span></div>
-            <div class="result-item"><span class="result-metric">150</span><span class="result-desc">Monthly visitors combined</span></div>
-            <div class="result-item"><span class="result-metric">Not Ranked</span><span class="result-desc">Local pack visibility</span></div>
-          </div>
-        </div>
-
-        <div id="seo-approach" class="tab-panel">
-          <span class="case-section-label">My Approach</span>
-          <ul class="approach-list">
-            <li>Audited all 8 GBP profiles — found incorrect hours (5/8), missing photos, inconsistent NAP data across 30+ directories</li>
-            <li>Standardised all 8 GBP profiles: 300+ word descriptions, 15–20 photos per location, correct attributes, service area definitions</li>
-            <li>Built citations across 50+ local directories with consistent NAP data to build Google trust signals across all locations simultaneously</li>
-            <li>Implemented systematic review generation: QR codes at POS → automated SMS/email follow-ups → staff training protocol with response templates</li>
-            <li>Responded to 100% of reviews within 24 hours; built tiered response templates for positive, neutral, and critical reviews</li>
-            <li>Created location-specific landing pages with LocalBusiness schema, city-targeted title tags, and location-unique content for each branch</li>
-          </ul>
-          <div class="skills-used">
-            <span class="skill-tag">Google Business Profile</span>
-            <span class="skill-tag">Local SEO</span>
-            <span class="skill-tag">Citation Building</span>
-            <span class="skill-tag">Reputation Management</span>
-            <span class="skill-tag">Schema Markup</span>
-            <span class="skill-tag">Content Strategy</span>
-          </div>
-        </div>
-
-        <div id="seo-results" class="tab-panel">
-          <span class="case-section-label">Results · 12 Months</span>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">450+</span><span class="result-desc">Monthly visitors (from 150) — 3×</span></div>
-            <div class="result-item"><span class="result-metric">295</span><span class="result-desc">Total reviews (from 15)</span></div>
-            <div class="result-item"><span class="result-metric">4.6★</span><span class="result-desc">Average rating (from 3.8)</span></div>
-            <div class="result-item"><span class="result-metric">Top 3</span><span class="result-desc">Local pack rank all 8 locations</span></div>
-            <div class="result-item"><span class="result-metric">18,000+</span><span class="result-desc">Monthly GBP views (from 2,500)</span></div>
-            <div class="result-item"><span class="result-metric">850+</span><span class="result-desc">Monthly calls + directions</span></div>
-          </div>
-          <div class="case-quote">
-            <p>"He tripled our monthly visitors without increasing our advertising budget. The review generation system alone was game-changing — nearly 300 reviews and a 4.6-star average across all 8 locations."</p>
-            <cite>— Operations Director, Multi-Location Business</cite>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── CASE 03: NEWSLETTER ─── -->
-    <div class="case-card fade-in">
-      <div class="case-header">
-        <div>
-          <div class="case-meta">
-            <span class="case-number">Case Study 03</span>
-            <span class="case-badge badge-gold">Newsletter</span>
-          </div>
-          <h3 class="case-title">0 to 1,000+ Subscribers & $3,800 Product Revenue</h3>
-          <p class="case-subtitle">AI News India Newsletter · Founder-Operated · 18 Months</p>
-        </div>
-      </div>
-      <hr class="case-divider">
-      <div class="case-body">
-        <div class="tab-bar">
-          <button class="tab-btn active" onclick="switchTab(this,'nl-overview')">Overview</button>
-          <button class="tab-btn" onclick="switchTab(this,'nl-approach')">Approach</button>
-          <button class="tab-btn" onclick="switchTab(this,'nl-results')">Results</button>
-        </div>
-
-        <div id="nl-overview" class="tab-panel active">
-          <span class="case-section-label">The Challenge</span>
-          <p class="case-challenge">Build an AI-focused newsletter from scratch with zero audience, zero budget, and zero brand — competing against established newsletters like TLDR AI and The Batch. Then monetise a small list profitably without damaging trust or engagement.</p>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">0</span><span class="result-desc">Starting subscribers</span></div>
-            <div class="result-item"><span class="result-metric">$0</span><span class="result-desc">Marketing budget</span></div>
-            <div class="result-item"><span class="result-metric">Crowded</span><span class="result-desc">AI newsletter market</span></div>
-            <div class="result-item"><span class="result-metric">Solo</span><span class="result-desc">Side project, limited time</span></div>
-          </div>
-        </div>
-
-        <div id="nl-approach" class="tab-panel">
-          <span class="case-section-label">My Approach</span>
-          <ul class="approach-list">
-            <li>Identified market gap: AI tools for marketers (not developers) — actionable insights, not theory — carved a specific audience no one else owned</li>
-            <li>Chose Beehiiv for built-in referral programme and SEO-optimised archive; built full automation infrastructure from day one</li>
-            <li>Published 72 consecutive weekly issues without missing a single one — consistency built trust, habit, and algorithm favourability simultaneously</li>
-            <li>Repurposed each newsletter into 5+ content pieces: LinkedIn carousel, Twitter thread, blog post, Instagram visual, Reddit discussion — one piece, seven distributions</li>
-            <li>Built SEO-optimised archive driving 2,000+ monthly organic visitors with 8.5% newsletter conversion rate from organic search</li>
-            <li>Validated product concept via 120+ subscriber surveys before building; used Van Westendorp price sensitivity analysis to land at $37 — optimal without undervaluing</li>
-            <li>Executed 4-week pre-launch content series (free prompts, tutorials) + 7-day email launch sequence with value → proof → urgency arc</li>
-          </ul>
-          <div class="skills-used">
-            <span class="skill-tag">Beehiiv</span>
-            <span class="skill-tag">Content Strategy</span>
-            <span class="skill-tag">SEO</span>
-            <span class="skill-tag">Email Marketing</span>
-            <span class="skill-tag">Product Launch</span>
-            <span class="skill-tag">Gumroad</span>
-            <span class="skill-tag">Audience Research</span>
-            <span class="skill-tag">A/B Testing</span>
-          </div>
-        </div>
-
-        <div id="nl-results" class="tab-panel">
-          <span class="case-section-label">Results · 18 Months</span>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">1,000+</span><span class="result-desc">Subscribers grown organically</span></div>
-            <div class="result-item"><span class="result-metric">38%</span><span class="result-desc">Email open rate (21% industry avg)</span></div>
-            <div class="result-item"><span class="result-metric">8%</span><span class="result-desc">CTR (2.6% industry avg)</span></div>
-            <div class="result-item"><span class="result-metric">$3,800</span><span class="result-desc">Revenue from product launch</span></div>
-            <div class="result-item"><span class="result-metric">100+</span><span class="result-desc">Customers across 7 countries</span></div>
-            <div class="result-item"><span class="result-metric">2%</span><span class="result-desc">Refund rate (5–10% industry avg)</span></div>
-          </div>
-          <div class="case-quote">
-            <p>"The most practical AI newsletter I've read. The Mega Prompt Bundle has saved me at least 10 hours per week — written by someone who actually does marketing, not just talks about it."</p>
-            <cite>— Marketing Manager, United States</cite>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── CASE 04: POLITICAL CAMPAIGN ─── -->
-    <div class="case-card fade-in">
-      <div class="case-header">
-        <div>
-          <div class="case-meta">
-            <span class="case-number">Case Study 04</span>
-            <span class="case-badge badge-blue">Campaign Ops</span>
-          </div>
-          <h3 class="case-title">5× Reach in 45 Days: High-Stakes Campaign Operations</h3>
-          <p class="case-subtitle">District-Level Political Campaign · Assam, India · 45-Day Window</p>
-        </div>
-      </div>
-      <hr class="case-divider">
-      <div class="case-body">
-        <div class="tab-bar">
-          <button class="tab-btn active" onclick="switchTab(this,'camp-overview')">Overview</button>
-          <button class="tab-btn" onclick="switchTab(this,'camp-approach')">Approach</button>
-          <button class="tab-btn" onclick="switchTab(this,'camp-results')">Results</button>
-        </div>
-
-        <div id="camp-overview" class="tab-panel active">
-          <span class="case-section-label">The Challenge</span>
-          <p class="case-challenge">Manage all digital operations for a district-level election during a legally mandated 45-day campaign window — starting with minimal digital presence, strict election commission compliance requirements, and a 24/7 real-time response requirement across every major platform simultaneously.</p>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">45 days</span><span class="result-desc">Total campaign window</span></div>
-            <div class="result-item"><span class="result-metric">8 people</span><span class="result-desc">Team coordinated</span></div>
-            <div class="result-item"><span class="result-metric">300+</span><span class="result-desc">Content pieces produced</span></div>
-            <div class="result-item"><span class="result-metric">100%</span><span class="result-desc">Compliance required</span></div>
-          </div>
-        </div>
-
-        <div id="camp-approach" class="tab-panel">
-          <span class="case-section-label">My Approach</span>
-          <ul class="approach-list">
-            <li>Assembled and coordinated 8-person team (writers, designers, video editors, social managers) with clear RACI framework and daily standups from day one</li>
-            <li>Built rapid-approval workflow: creation → compliance checklist → legal review → scheduling — average 2-hour turnaround maintained throughout campaign</li>
-            <li>Set up 24/7 monitoring rotation with tier-based escalation: Tier 1 (4hr response), Tier 2 (2hr), Tier 3 (30min) — no incident fell through</li>
-            <li>Executed real-time multi-platform strategy across Facebook, Twitter/X, Instagram, WhatsApp, and YouTube — 6–8 posts per day sustained for 45 days</li>
-            <li>Live-streamed 15+ public rallies using StreamYard + professional setup; managed concurrent audience engagement during each stream</li>
-            <li>Maintained 100% compliance across all 300+ content pieces through systematic pre-approval checklists and same-day legal review</li>
-          </ul>
-          <div class="skills-used">
-            <span class="skill-tag">Team Leadership</span>
-            <span class="skill-tag">Campaign Operations</span>
-            <span class="skill-tag">Social Media Management</span>
-            <span class="skill-tag">Live Streaming</span>
-            <span class="skill-tag">Crisis Communications</span>
-            <span class="skill-tag">Compliance Management</span>
-            <span class="skill-tag">Real-Time Analytics</span>
-          </div>
-        </div>
-
-        <div id="camp-results" class="tab-panel">
-          <span class="case-section-label">Results · 45 Days</span>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">5×</span><span class="result-desc">Reach increase (50K → 2.5M+ impressions)</span></div>
-            <div class="result-item"><span class="result-metric">6×</span><span class="result-desc">Engagement growth (500 → 15K+ daily)</span></div>
-            <div class="result-item"><span class="result-metric">35,000+</span><span class="result-desc">New followers across platforms</span></div>
-            <div class="result-item"><span class="result-metric">75,000+</span><span class="result-desc">Cumulative livestream views</span></div>
-            <div class="result-item"><span class="result-metric">0</span><span class="result-desc">Compliance violations</span></div>
-            <div class="result-item"><span class="result-metric">2 hrs</span><span class="result-desc">Average rapid-response time</span></div>
-          </div>
-          <div class="case-quote">
-            <p>"Jachin built our entire digital operation from scratch in 45 days, coordinated a team of 8, and maintained 24/7 rapid-response capability. 300+ content pieces with zero compliance violations in a highly regulated environment."</p>
-            <cite>— Campaign Manager, District-Level Political Campaign</cite>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── CASE 05: MEGA PROMPT BUNDLE ─── -->
-    <div class="case-card fade-in">
-      <div class="case-header">
-        <div>
-          <div class="case-meta">
-            <span class="case-number">Case Study 05</span>
-            <span class="case-badge badge-gold">Product Launch</span>
-          </div>
-          <h3 class="case-title">Launching a $3,800 Digital Product to 800 Subscribers</h3>
-          <p class="case-subtitle">Mega Prompt Bundle · AI News India · 6-Month Campaign</p>
-        </div>
-      </div>
-      <hr class="case-divider">
-      <div class="case-body">
-        <div class="tab-bar">
-          <button class="tab-btn active" onclick="switchTab(this,'prod-overview')">Overview</button>
-          <button class="tab-btn" onclick="switchTab(this,'prod-approach')">Approach</button>
-          <button class="tab-btn" onclick="switchTab(this,'prod-results')">Results</button>
-        </div>
-
-        <div id="prod-overview" class="tab-panel active">
-          <span class="case-section-label">The Challenge</span>
-          <p class="case-challenge">Monetise a small newsletter list (800 subscribers at launch) through a digital product — without damaging engagement or trust. The market was saturated with generic AI prompt libraries selling for $9–99. Standard wisdom said a list this small couldn't generate meaningful revenue without paid ads.</p>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">800</span><span class="result-desc">Subscribers at launch</span></div>
-            <div class="result-item"><span class="result-metric">$0</span><span class="result-desc">Paid marketing budget</span></div>
-            <div class="result-item"><span class="result-metric">Saturated</span><span class="result-desc">AI prompt product market</span></div>
-            <div class="result-item"><span class="result-metric">$2,000</span><span class="result-desc">Initial revenue target</span></div>
-          </div>
-        </div>
-
-        <div id="prod-approach" class="tab-panel">
-          <span class="case-section-label">My Approach</span>
-          <ul class="approach-list">
-            <li>Surveyed 120+ subscribers to identify exact pain points; analysed 200+ competitor product reviews to map every gap in the market</li>
-            <li>Differentiated with 3,500+ role-specific prompts using advanced frameworks (Zero-Shot, Few-Shot, Chain-of-Thought) vs. generic competitor libraries averaging 500 prompts</li>
-            <li>Ran Van Westendorp price sensitivity analysis to find optimal $37 price point; structured early-bird at $27 for existing subscribers to reward loyalty</li>
-            <li>Built 4-week pre-launch content series sharing free prompts and tutorials — warmed audience without a single hard sell</li>
-            <li>Launched waitlist landing page achieving 8.5% conversion rate; 180 subscribers joined the waitlist before launch day</li>
-            <li>Executed 7-day email launch sequence: value → social proof → objection handling → comparison → urgency — achieving 1.7% subscriber-to-customer conversion</li>
-          </ul>
-          <div class="skills-used">
-            <span class="skill-tag">Product Marketing</span>
-            <span class="skill-tag">Pricing Strategy</span>
-            <span class="skill-tag">Email Copywriting</span>
-            <span class="skill-tag">CRO</span>
-            <span class="skill-tag">Customer Research</span>
-            <span class="skill-tag">Gumroad</span>
-            <span class="skill-tag">Prompt Engineering</span>
-            <span class="skill-tag">Launch Strategy</span>
-          </div>
-        </div>
-
-        <div id="prod-results" class="tab-panel">
-          <span class="case-section-label">Results · 6 Months</span>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">$3,800</span><span class="result-desc">Total revenue — 190% of goal</span></div>
-            <div class="result-item"><span class="result-metric">100+</span><span class="result-desc">Customers across 7 countries</span></div>
-            <div class="result-item"><span class="result-metric">1.7%</span><span class="result-desc">Subscriber-to-customer conversion</span></div>
-            <div class="result-item"><span class="result-metric">8.5%</span><span class="result-desc">Landing page conversion rate</span></div>
-            <div class="result-item"><span class="result-metric">$38</span><span class="result-desc">Average order value with upsells</span></div>
-            <div class="result-item"><span class="result-metric">2%</span><span class="result-desc">Refund rate (industry 5–10%)</span></div>
-          </div>
-          <div class="case-quote">
-            <p>"I've bought 3 other AI prompt libraries. This is the only one I actually use daily. The advanced frameworks make a huge difference in output quality — worth every penny."</p>
-            <cite>— Michael T., Content Marketing Manager, United States</cite>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── CASE 06: PROMPTOPS ─── -->
-    <div class="case-card promptops-card fade-in">
-      <div class="promptops-topbar"></div>
-      <div class="case-header">
-        <div>
-          <div class="case-meta">
-            <span class="case-number" style="background:rgba(124,58,237,.12);color:#a78bfa;">Case Study 06 · Founder Build</span>
-            <span class="case-badge badge-purple">⚡ Founder</span>
-          </div>
-          <h3 class="case-title">Building PromptOps — Git for LLM Prompts (0 → Beta)</h3>
-          <p class="case-subtitle">SaaS Developer Tool · Solo Founder · January 2026 – Present</p>
-        </div>
-      </div>
-      <hr class="case-divider">
-      <div class="case-body">
-        <div class="tab-bar">
-          <button class="tab-btn active" onclick="switchTab(this,'po-overview')">Overview</button>
-          <button class="tab-btn" onclick="switchTab(this,'po-build')">What I Built</button>
-          <button class="tab-btn" onclick="switchTab(this,'po-gtm')">Go-to-Market</button>
-          <button class="tab-btn" onclick="switchTab(this,'po-results')">Traction</button>
-        </div>
-
-        <div id="po-overview" class="tab-panel active">
-          <span class="case-section-label">The Problem</span>
-          <p class="case-challenge">Every AI engineering team I worked with had the same silent crisis: LLM prompts hardcoded into application logic with no version history, no testing pipeline, no rollback capability. One bad prompt change could break a customer-facing AI feature — and finding it took hours. I'd experienced this pain first-hand building my own agent workflows. No existing tool solved it cleanly. So I built it.</p>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">$0</span><span class="result-desc">Starting budget — fully bootstrapped</span></div>
-            <div class="result-item"><span class="result-metric">Solo</span><span class="result-desc">Sole founder, designer, developer, marketer</span></div>
-            <div class="result-item"><span class="result-metric">Crowded</span><span class="result-desc">Competing vs LangSmith, Langfuse, Humanloop</span></div>
-            <div class="result-item"><span class="result-metric">Jan 2026</span><span class="result-desc">Zero to full beta in under 60 days</span></div>
-          </div>
-        </div>
-
-        <div id="po-build" class="tab-panel">
-          <span class="case-section-label">Product Built — Full Stack Solo</span>
-          <div class="code-block">
-            <pre><span class="code-comment"># Before PromptOps — hardcoded, untracked</span>
-<span class="code-key">prompt</span> = <span class="code-string">"Summarise this article in 3 bullets..."</span>  <span class="code-comment"># v??? in prod</span>
-
-<span class="code-comment"># After PromptOps — versioned, tested, deployed in 10 seconds</span>
-<span class="code-key">from</span> promptops <span class="code-key">import</span> client
-<span class="code-key">prompt</span> = client.get(<span class="code-string">"summarise-article"</span>, version=<span class="code-string">"latest"</span>)
-<span class="code-comment"># rollback: client.rollback("summarise-article", steps=</span><span class="code-num">1</span><span class="code-comment">)</span></pre>
-          </div>
-          <ul class="approach-list">
-            <li><strong>Version control engine</strong> — every prompt commit stored with author, timestamp, message, and quality score. Full diff view. One-click rollback to any version in seconds, no deployment required</li>
-            <li><strong>Prompt Studio</strong> — multi-model testing environment (GPT-4o, Claude, Gemini) with variable injection, live quality scoring, latency and cost visibility before any deployment</li>
-            <li><strong>Automated eval suite</strong> — LLM-as-judge scoring + rule-based checks trigger on every commit. Bad prompts blocked before reaching production automatically</li>
-            <li><strong>Instant deploy</strong> — PM edits a prompt in the dashboard, it's live in 10 seconds. Zero code deployment, zero engineering queue</li>
-            <li><strong>Python SDK</strong> — single line replaces hardcoded prompt strings. Integration time under 30 minutes. JS/TS SDK in progress</li>
-            <li><strong>Cost analytics dashboard</strong> — LLM spend broken down by prompt, model, team, and day with usage forecasting</li>
-          </ul>
-          <div class="skills-used">
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">Python SDK</span>
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">LLM APIs</span>
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">REST API Design</span>
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">SaaS Architecture</span>
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">Product Design</span>
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">GitHub Actions CI/CD</span>
-          </div>
-        </div>
-
-        <div id="po-gtm" class="tab-panel">
-          <span class="case-section-label">Go-to-Market — Solo, Zero Budget</span>
-          <ul class="approach-list">
-            <li>Identified ICP through first-principles analysis: seed-to-Series-B AI startups and AI agencies — teams big enough to feel PM/engineer coordination pain, small enough to not have internal tooling</li>
-            <li>Built landing page with before/after positioning, code comparison, pricing tiers, and waitlist funnel — all solo in one weekend</li>
-            <li>Leveraged AI News India newsletter (1,000+ subscribers) and social audience as zero-cost distribution channel</li>
-            <li>Built 5-email waitlist nurture sequence: pain story → product demo → social proof → pricing → urgency close</li>
-            <li>Designed three-tier pricing validated against comparable dev tools: free tier for viral adoption, $49 Pro for solo builders, $199 Team for startup coordination pain</li>
-            <li>Published public roadmap to build trust with developer audience — transparency as a competitive moat</li>
-          </ul>
-          <div class="skills-used">
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">GTM Strategy</span>
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">SaaS Pricing</span>
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">Landing Page CRO</span>
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">Email Nurture</span>
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">Developer Marketing</span>
-            <span class="skill-tag" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa;">ICP Definition</span>
-          </div>
-        </div>
-
-        <div id="po-results" class="tab-panel">
-          <span class="case-section-label">Traction · Beta (60 Days)</span>
-          <div class="results-grid">
-            <div class="result-item" style="border-color:rgba(124,58,237,.2);">
-              <span class="result-metric">247+</span>
-              <span class="result-desc">Waitlist signups — zero paid acquisition</span>
-            </div>
-            <div class="result-item" style="border-color:rgba(124,58,237,.2);">
-              <span class="result-metric">&lt;60d</span>
-              <span class="result-desc">Zero to full beta product shipped</span>
-            </div>
-            <div class="result-item" style="border-color:rgba(124,58,237,.2);">
-              <span class="result-metric">3 tiers</span>
-              <span class="result-desc">Free · $49 Pro · $199 Team — live</span>
-            </div>
-            <div class="result-item" style="border-color:rgba(124,58,237,.2);">
-              <span class="result-metric">$1M</span>
-              <span class="result-desc">ARR target — path modelled to 1,700 Pro users</span>
-            </div>
-          </div>
-          <div class="case-quote" style="border-left-color:var(--purple);">
-            <p>"We had a prompt incident last quarter that cost us 6 hours of engineering time and 3 churned customers. With PromptOps we rolled back the next incident in 10 seconds. The ROI was immediate."</p>
-            <cite>— Arjun R., CTO · AI Startup, Series A (Beta User)</cite>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── CASE 07: AI AGENT ENGINEERING ─── -->
-    <div class="case-card fade-in">
-      <div class="case-header">
-        <div>
-          <div class="case-meta">
-            <span class="case-number">Case Study 07</span>
-            <span class="case-badge badge-blue">AI Engineering</span>
-          </div>
-          <h3 class="case-title">10 Production AI Agents: Newsletter Ops on Autopilot</h3>
-          <p class="case-subtitle">AI Systems Builder · AI News India · October 2024 – Present</p>
-        </div>
-      </div>
-      <hr class="case-divider">
-      <div class="case-body">
-        <div class="tab-bar">
-          <button class="tab-btn active" onclick="switchTab(this,'ai-overview')">Overview</button>
-          <button class="tab-btn" onclick="switchTab(this,'ai-agents')">Agent Portfolio</button>
-          <button class="tab-btn" onclick="switchTab(this,'ai-results')">Results</button>
-        </div>
-
-        <div id="ai-overview" class="tab-panel active">
-          <span class="case-section-label">The Challenge</span>
-          <p class="case-challenge">Running a weekly AI newsletter solo meant 15–20 hours per week on research, writing, design, distribution, subscriber management, and analytics. The ceiling on quality was time. The solution wasn't to hire — it was to build a fleet of AI agents that handle the mechanical work so I could focus purely on editorial judgment and strategy.</p>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">20 hrs</span><span class="result-desc">Weekly ops time before agents</span></div>
-            <div class="result-item"><span class="result-metric">Solo</span><span class="result-desc">Zero budget for staff</span></div>
-            <div class="result-item"><span class="result-metric">Phase 1</span><span class="result-desc">n8n / Make.com workflow automations</span></div>
-            <div class="result-item"><span class="result-metric">Phase 2</span><span class="result-desc">OpenClaw LLM agent architecture</span></div>
-          </div>
-        </div>
-
-        <div id="ai-agents" class="tab-panel">
-          <span class="case-section-label">Agent Portfolio — 10 Deployed in Production</span>
-          <ul class="approach-list">
-            <li><strong>Content Research Agent</strong> — monitors AI/tech sources daily, scores articles by relevance via LLM classification, surfaces top stories with pre-written summaries. Research time: 2 hours → 15 minutes</li>
-            <li><strong>Newsletter Drafting Agent</strong> — multi-step pipeline (research → outline → first draft → self-edit) from approved story briefs. Writing time reduced 60% with human final-review gate</li>
-            <li><strong>SEO Content Agent</strong> — generates long-form posts from keyword briefs using Chain-of-Thought prompting, auto-publishes to Ghost via Admin API, submits to Google Search Console for indexing</li>
-            <li><strong>Subscriber Onboarding Agent</strong> — triggered on new signup: personalises welcome email, infers interest segment from source, applies Beehiiv tags, enrols into correct nurture track</li>
-            <li><strong>Lead Scoring & Segmentation Agent</strong> — analyses engagement signals every 48 hours, dynamically updates segments across Beehiiv and ActiveCampaign</li>
-            <li><strong>Product Promotion Agent</strong> — monitors lifecycle stage, triggers contextual product recommendation emails at optimal engagement windows. Conversion improved 40% vs static broadcasts</li>
-            <li><strong>Social Distribution Agent</strong> — repurposes newsletter into platform-native formats for LinkedIn, X, and Medium. One editorial input → 7 content outputs, auto-scheduled</li>
-            <li><strong>Customer Support Agent</strong> — handles tier-1 product enquiries, order status (Gumroad API), and refund requests autonomously. 90%+ queries resolved without human intervention</li>
-            <li><strong>Weekly Analytics Agent</strong> — aggregates metrics from GA4, Beehiiv, and Gumroad, generates formatted report delivered to Notion every Monday morning</li>
-            <li><strong>Performance Report Agent</strong> — weekly digest comparing current vs prior period across all channels, flags anomalies, and suggests 3 actions for the coming week</li>
-          </ul>
-          <div class="skills-used">
-            <span class="skill-tag">OpenClaw</span>
-            <span class="skill-tag">Claude API</span>
-            <span class="skill-tag">OpenAI API</span>
-            <span class="skill-tag">n8n</span>
-            <span class="skill-tag">Make.com</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Ghost API</span>
-            <span class="skill-tag">Beehiiv API</span>
-            <span class="skill-tag">GA4 API</span>
-            <span class="skill-tag">Chain-of-Thought Prompting</span>
-            <span class="skill-tag">ReAct Agents</span>
-          </div>
-        </div>
-
-        <div id="ai-results" class="tab-panel">
-          <span class="case-section-label">Results</span>
-          <div class="results-grid">
-            <div class="result-item"><span class="result-metric">15 min</span><span class="result-desc">Daily research (from 2 hours)</span></div>
-            <div class="result-item"><span class="result-metric">60%</span><span class="result-desc">Writing time reduced</span></div>
-            <div class="result-item"><span class="result-metric">7×</span><span class="result-desc">Content outputs per issue</span></div>
-            <div class="result-item"><span class="result-metric">90%+</span><span class="result-desc">Support queries auto-resolved</span></div>
-            <div class="result-item"><span class="result-metric">40%</span><span class="result-desc">Product conversion lift vs broadcasts</span></div>
-            <div class="result-item"><span class="result-metric">~5 hrs</span><span class="result-desc">Weekly ops time (from 20 hours)</span></div>
-          </div>
-          <div class="case-quote">
-            <p>"The agent architecture I built for AI News India became the proof of concept for PromptOps — real production experience managing LLM prompts at scale, across 10 agents, with version drift and quality control as daily operational realities."</p>
-            <cite>— Jachin Sonowal, Founder</cite>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /case-studies -->
-</section>
-
-<!-- ══════════════════════════════════════════════════════════
-     COMPETENCIES
-══════════════════════════════════════════════════════════ -->
-<div class="section-full" id="competencies" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="section-inner">
-    <div class="section-tag fade-in">Expertise</div>
-    <h2 class="section-title fade-in">Core Competencies</h2>
-    <p class="section-sub fade-in">Built across 175+ engagements, 8 industries, and every marketing budget size.</p>
-
-    <div class="comp-grid">
-      <div class="comp-card fade-in">
-        <span class="comp-icon">⚡</span>
-        <div class="comp-name">Growth Strategy & Funnels</div>
-        <div class="comp-items">Funnel architecture · User acquisition · Lifecycle automation · CRO · A/B testing · Retention systems</div>
-      </div>
-      <div class="comp-card fade-in" data-type="ai">
-        <span class="comp-icon">🤖</span>
-        <div class="comp-name">AI Agent Engineering</div>
-        <div class="comp-items">OpenClaw development · LLM APIs (Claude, OpenAI) · n8n / Make.com · Prompt engineering (Zero-Shot, CoT, ReAct) · 10+ production agents</div>
-      </div>
-      <div class="comp-card fade-in">
-        <span class="comp-icon">📊</span>
-        <div class="comp-name">Marketing Operations</div>
-        <div class="comp-items">Marketing automation · Tech stack management · Process documentation · Analytics dashboards · Revenue attribution</div>
-      </div>
-      <div class="comp-card fade-in">
-        <span class="comp-icon">🔍</span>
-        <div class="comp-name">SEO — All Types</div>
-        <div class="comp-items">Technical SEO · Content-led SEO · Local SEO (multi-location) · Keyword research · Link building · Schema markup</div>
-      </div>
-      <div class="comp-card fade-in">
-        <span class="comp-icon">📧</span>
-        <div class="comp-name">Email & Lifecycle</div>
-        <div class="comp-items">List building · Segmentation · Welcome series · Nurture campaigns · 38% open rates · Monetisation funnels</div>
-      </div>
-      <div class="comp-card fade-in">
-        <span class="comp-icon">🚀</span>
-        <div class="comp-name">Digital Product Launch</div>
-        <div class="comp-items">Product validation · GTM strategy · Pricing strategy · Launch sequences · Customer research · PMF testing</div>
-      </div>
-      <div class="comp-card fade-in">
-        <span class="comp-icon">📣</span>
-        <div class="comp-name">Content & Distribution</div>
-        <div class="comp-items">Content strategy · Multi-platform distribution · Newsletter growth · Repurposing systems · 20K+ monthly impressions</div>
-      </div>
-      <div class="comp-card fade-in">
-        <span class="comp-icon">🎯</span>
-        <div class="comp-name">Analytics & Attribution</div>
-        <div class="comp-items">GA4 Certified · Conversion tracking · Performance dashboards · Marketing KPIs · Revenue attribution models</div>
-      </div>
-      <div class="comp-card fade-in" data-type="ai">
-        <span class="comp-icon">⚡</span>
-        <div class="comp-name">SaaS & Founder</div>
-        <div class="comp-items">0→1 product development · SDK design · SaaS pricing · Developer GTM · Landing page funnels · 247+ signups bootstrapped</div>
-      </div>
-      <div class="comp-card fade-in">
-        <span class="comp-icon">🤝</span>
-        <div class="comp-name">Campaign Leadership</div>
-        <div class="comp-items">Cross-functional coordination · Stakeholder management · Compliance environments · Vendor management · Budget management</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════════
-     TOOLS & TECH STACK
-══════════════════════════════════════════════════════════ -->
-<section id="tools">
-  <div class="section-tag fade-in">Stack</div>
-  <h2 class="section-title fade-in">Tools & Technologies</h2>
-  <p class="section-sub fade-in">Platforms I've used in production — not just listed on a CV.</p>
-
-  <div class="tools-grid">
-    <div class="tool-row fade-in">
-      <div class="tool-category">AI Agents & LLMs</div>
-      <div class="tool-list">OpenClaw, Claude API, OpenAI API, Perplexity API, n8n, Make.com, Zapier, ReAct / CoT prompting, Webhook pipelines, Cron-based agents</div>
-    </div>
-    <div class="tool-row fade-in">
-      <div class="tool-category">Dev & Product</div>
-      <div class="tool-list">Python, REST API design, Python SDK development, GitHub Actions, Ghost Admin API, Gumroad API, GA4 API, Beehiiv API, PromptOps (Founder)</div>
-    </div>
-    <div class="tool-row fade-in">
-      <div class="tool-category">Analytics & SEO</div>
-      <div class="tool-list">GA4 (Certified), Google Search Console, Ahrefs, SEMrush, Screaming Frog, Looker Studio, Hotjar</div>
-    </div>
-    <div class="tool-row fade-in">
-      <div class="tool-category">Email & Automation</div>
-      <div class="tool-list">Beehiiv, ActiveCampaign, Klaviyo, Mailchimp, ConvertKit, Brevo (Sendinblue)</div>
-    </div>
-    <div class="tool-row fade-in">
-      <div class="tool-category">CRM & Commerce</div>
-      <div class="tool-list">HubSpot (Certified), Salesforce basics, Gumroad, Stripe, Razorpay, Meta Business Suite</div>
-    </div>
-    <div class="tool-row fade-in">
-      <div class="tool-category">Web & E-commerce</div>
-      <div class="tool-list">Shopify, WordPress, WooCommerce, Webflow, Ghost, GitHub Pages, HTML/CSS</div>
-    </div>
-    <div class="tool-row fade-in">
-      <div class="tool-category">Content & Creative</div>
-      <div class="tool-list">Canva, Figma, Adobe Suite, CapCut, Descript, Loom, OBS Studio, StreamYard</div>
-    </div>
-    <div class="tool-row fade-in">
-      <div class="tool-category">Social & PM</div>
-      <div class="tool-list">Buffer, LinkedIn Campaign Manager, Meta Business Suite, Notion, Slack, Google Workspace, Asana, Trello</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════
      ABOUT
-══════════════════════════════════════════════════════════ -->
-<div class="section-full" id="about" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="section-inner" style="padding:7rem 0;">
-    <div class="section-tag fade-in">About</div>
-    <h2 class="section-title fade-in">The Person Behind the Numbers</h2>
-
+══════════════════════════════════════════════════════ -->
+<section id="about">
+  <div class="wrap">
     <div class="about-grid">
-      <div class="about-text fade-in">
-        <p>I'm Jachin — a growth marketer, AI builder, and founder based in Guwahati, Assam. For the past 8+ years, I've been building marketing systems that generate real, measurable revenue for 175+ businesses across B2C, B2B, political, and government sectors.</p>
-        <p>My approach: I build infrastructure, not just campaigns. Systems that compound over time — <strong>SEO strategies that keep ranking</strong>, email funnels that keep converting, AI agents that keep running long after the engagement ends.</p>
-        <p>In 2024, I progressed from no-code marketing automations to full AI agent development using OpenClaw and LLM APIs — building and deploying <strong>10+ production agents</strong> that run my newsletter operations autonomously, cutting weekly ops time from 20 hours to under 5.</p>
-        <p>In January 2026, I founded <strong>PromptOps</strong> — a developer tool that gives AI engineering teams Git-style version control, automated evals, and instant deployment for LLM prompts. 247+ teams on the waitlist. Bootstrapped, solo, from idea to beta in under 60 days.</p>
-        <p>I'm open to remote global roles. If you need someone who builds at the intersection of marketing, AI, and product — and treats everything like an engineering problem — let's talk.</p>
+      <div>
+        <div class="s-label reveal">About Me</div>
+        <h2 class="s-title reveal" style="transition-delay:.1s">THE<br>MARKETER<br>WHO BUILDS</h2>
+        <div class="about-text reveal" style="transition-delay:.2s">
+          <p>I build marketing systems that generate revenue — not just traffic. Based in Guwahati, Assam, I've spent 8+ years operating at the intersection of <strong>strategy, automation, and AI</strong> across industries that most marketers never touch simultaneously.</p>
+          <p>From D2C tea brands to government contracts. From political campaigns to B2B manufacturers. From email funnels to <strong>custom AI agents</strong> that replace entire manual workflows. I own the full stack — strategy, execution, tech, and team.</p>
+          <p>Currently building <strong>PromptOps</strong> — Git-style version control and CI/CD for LLM prompts. 247+ teams on the waitlist. Bootstrapped, solo, zero to beta in 60 days. Also running <strong>AI News India</strong> (1,000+ subscribers) and deploying agent-based marketing automation.</p>
+        </div>
 
-        <div class="about-cta">
-          <a href="mailto:jachin@ainewsindia.com" class="btn btn-primary"><span>Let's Work Together</span></a>
-          <a href="https://linkedin.com/in/jachinsonowal" target="_blank" class="btn btn-ghost"><span>LinkedIn</span></a>
-          <a href="https://jachinsonowal.github.io/promptops" target="_blank" class="btn btn-ghost" style="border-color:rgba(124,58,237,.35);color:#a78bfa;"><span>⚡ PromptOps</span></a>
-          <a href="https://ainewsindia.beehiiv.com/subscribe" target="_blank" class="btn btn-ghost"><span>Newsletter</span></a>
+        <div class="about-chips reveal" style="transition-delay:.3s">
+          <a href="mailto:jachinchsaikiasonowal@gmail.com" class="achip">✉ Email</a>
+          <a href="https://linkedin.com/in/jachinsonowal" target="_blank" class="achip">LinkedIn</a>
+          <a href="https://ainewsindia.beehiiv.com/subscribe" target="_blank" class="achip">Newsletter</a>
+          <a href="https://promptops.jachinsonowal.com" target="_blank" class="achip" style="border-color:rgba(201,168,76,0.4);color:var(--gold)">⚡ PromptOps</a>
+          <span class="achip">📍 Guwahati · Remote</span>
+          <span class="achip">US / EU Timezone</span>
         </div>
       </div>
 
-      <div class="about-highlights fade-in">
-        <div class="highlight-item">
-          <div class="highlight-label">Location & Availability</div>
-          <div class="highlight-value">Guwahati, India · Remote Global · US EST / EU CET overlap available</div>
+      <div class="values-list reveal" style="transition-delay:.2s">
+        <div class="vcard">
+          <div class="v-num">01</div>
+          <div>
+            <div class="v-title">Revenue-First Mindset</div>
+            <div class="v-desc">Every campaign built backwards from a revenue goal — never vanity metrics.</div>
+          </div>
         </div>
-        <div class="highlight-item">
-          <div class="highlight-label">Experience</div>
-          <div class="highlight-value">8+ years · 175+ clients · B2B, B2C, Public Sector, Political</div>
+        <div class="vcard">
+          <div class="v-num">02</div>
+          <div>
+            <div class="v-title">AI-Native Operator</div>
+            <div class="v-desc">I build custom agents and LLM systems — not just prompt ChatGPT.</div>
+          </div>
         </div>
-        <div class="highlight-item">
-          <div class="highlight-label">Education</div>
-          <div class="highlight-value">Master of Computer Applications (MCA) · Gauhati University</div>
+        <div class="vcard">
+          <div class="v-num">03</div>
+          <div>
+            <div class="v-title">Systems Thinker</div>
+            <div class="v-desc">I document everything. Clients keep infrastructure that outlasts the engagement.</div>
+          </div>
         </div>
-        <div class="highlight-item">
-          <div class="highlight-label">Certifications</div>
-          <div class="highlight-value">Google Analytics 4 Certified · HubSpot Marketing Software Certified</div>
+        <div class="vcard">
+          <div class="v-num">04</div>
+          <div>
+            <div class="v-title">Founder-Operator Breadth</div>
+            <div class="v-desc">Owned strategy, execution, tech, and team simultaneously. I move fast.</div>
+          </div>
         </div>
-        <div class="highlight-item">
-          <div class="highlight-label">Languages</div>
-          <div class="highlight-value">English (Fluent) · Hindi (Fluent) · Assamese (Native)</div>
+        <div class="vcard">
+          <div class="v-num">05</div>
+          <div>
+            <div class="v-title">Cross-Functional Translator</div>
+            <div class="v-desc">From CEO presentations to developer briefs to front-line staff training.</div>
+          </div>
         </div>
-        <div class="highlight-item">
-          <div class="highlight-label">Currently Building</div>
-          <div class="highlight-value">⚡ PromptOps — SaaS developer tool · 247+ waitlist · Beta live<br>📬 AI News India — Newsletter · 1,000+ subscribers · 38% open rate</div>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-label">Open to Roles</div>
-          <div class="highlight-value">Growth Marketing Manager · Marketing Operations Manager · AI-Enabled Marketing · Director-level · Founding-team at AI-native startups</div>
+        <div class="vcard">
+          <div class="v-num">06</div>
+          <div>
+            <div class="v-title">Founder Mindset</div>
+            <div class="v-desc">Built PromptOps solo — product, SDK, GTM, and 247+ waitlist. Zero budget. Full ownership.</div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════════
-     TESTIMONIALS
-══════════════════════════════════════════════════════════ -->
-<section id="testimonials">
-  <div class="section-tag fade-in">Social Proof</div>
-  <h2 class="section-title fade-in">What Clients Say</h2>
-  <p class="section-sub fade-in">Real feedback from real engagements across 8 years and 175+ clients.</p>
-
-  <div class="testimonials-grid">
-    <div class="testimonial-card fade-in">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"Jachin transformed our business model. We went from zero online presence to generating over ₹1 crore in online revenue in 18 months. His systematic approach created a sustainable channel that keeps growing."</p>
-      <div class="t-author"><strong>Managing Director</strong>Tea Manufacturing Company, Assam</div>
-    </div>
-    <div class="testimonial-card fade-in">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"He tripled our monthly visitors without increasing our advertising budget. The review generation system was game-changing — nearly 300 reviews and a 4.6-star average across all 8 locations."</p>
-      <div class="t-author"><strong>Operations Director</strong>Multi-Location Retail Business</div>
-    </div>
-    <div class="testimonial-card fade-in">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"Built our entire digital campaign operation from scratch in 45 days. Coordinated 8 specialists and maintained 24/7 rapid response with zero compliance violations throughout."</p>
-      <div class="t-author"><strong>Campaign Manager</strong>District-Level Political Campaign</div>
-    </div>
-    <div class="testimonial-card fade-in">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"The Mega Prompt Bundle has saved me at least 10 hours per week. Written by someone who actually does marketing — not just talks about it. The most practical AI resource I've found."</p>
-      <div class="t-author"><strong>Marketing Manager</strong>United States (Newsletter Subscriber)</div>
-    </div>
-    <div class="testimonial-card fade-in">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"I've tried 5+ AI newsletters. This is the only one I actually read every week. Super practical and immediately useful — I implement something from every single issue."</p>
-      <div class="t-author"><strong>Startup Founder</strong>India (Newsletter Subscriber)</div>
-    </div>
-    <div class="testimonial-card fade-in">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-quote">"Jachin's systems and playbooks reduced our onboarding time from 2 weeks to 5 days. His reusable frameworks saved us countless hours — still using them 2 years later."</p>
-      <div class="t-author"><strong>Business Director</strong>Professional Services Client</div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
-     CONTACT
-══════════════════════════════════════════════════════════ -->
-<div id="contact">
-  <div class="contact-inner">
-    <div class="section-tag fade-in" style="justify-content:center;">Let's Work Together</div>
-    <h2 class="contact-title fade-in">Open to Remote<br>Global Roles</h2>
-    <p class="contact-sub fade-in">Available for Growth Marketing Manager, Marketing Operations, AI-Enabled Marketing, and Director-level roles. Also open to advisory or founding-team conversations for AI-native startups. US/EU timezone overlap available.</p>
-    <div class="contact-links fade-in">
-      <a href="mailto:jachin@ainewsindia.com" class="contact-link"><span>✉ Email Me</span></a>
-      <a href="https://linkedin.com/in/jachinsonowal" class="contact-link" target="_blank"><span>💼 LinkedIn</span></a>
-      <a href="https://ainewsindia.beehiiv.com/subscribe" class="contact-link" target="_blank"><span>📰 Newsletter</span></a>
-      <a href="https://jachinsonowal.github.io/promptops" class="contact-link" target="_blank" style="border-color:rgba(124,58,237,.32);color:#a78bfa;"><span>⚡ PromptOps</span></a>
+<!-- ══════════════════════════════════════════════════════
+     EXPERIENCE — FULL CAREER TIMELINE
+══════════════════════════════════════════════════════ -->
+<section id="experience">
+  <div class="wrap">
+    <div class="s-label reveal">Career Timeline</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">HOW I<br>GOT HERE</h2>
+    <p class="s-sub reveal" style="transition-delay:.15s">From early hustle to building AI products. Click any chapter to expand the full story.</p>
+
+    <div class="exp-list reveal" style="transition-delay:.2s">
+
+      <!-- ERA 0 — Pre-Job Foundations -->
+      <div class="exp-item" onclick="toggleExp(this)">
+        <div class="exp-era">🌱</div>
+        <div class="exp-trigger">
+          <div class="exp-left">
+            <div class="exp-num">00</div>
+            <div class="exp-info">
+              <div class="exp-title">THE FOUNDATIONS ERA</div>
+              <div class="exp-meta">Freelance &amp; Self-Built Skills · <span>2017 – 2019</span></div>
+              <span class="exp-era-label">Pre-Job · Learning by Doing</span>
+            </div>
+          </div>
+          <button class="exp-toggle-btn">+</button>
+        </div>
+        <div class="exp-body">
+          <div class="exp-content">
+            <p>Before any formal role, I was already building. During and after my MCA from Gauhati University, I took on whatever client I could find — small local businesses, personal brand projects, digital presence builds. I taught myself SEO by ranking real websites, email marketing by running real lists, and content by producing it daily.</p>
+            <div class="phase-tag">What I Was Building</div>
+            <ul class="ebullets">
+              <li>Local business websites on WordPress — learned HTML/CSS, UI, and web performance hands-on</li>
+              <li>First Google Ads campaigns for a local education institute — ₹5K budget, tracked every click to enrollment</li>
+              <li>Social content for a handful of Assam-based SMEs — began understanding audience behaviour and organic reach</li>
+              <li>Built my first email list from scratch — 200 subscribers, zero budget, manually written sequences</li>
+              <li>Completed foundational certifications in Google Ads, Analytics, and digital marketing fundamentals</li>
+            </ul>
+            <div class="phase-tag">What This Era Taught Me</div>
+            <ul class="ebullets">
+              <li>Clients don't care about traffic — they care about revenue. Learned this the hard way with early vanity reporting</li>
+              <li>Technical skills compound. Every hour learning HTML, GA, or Python paid dividends in every role that followed</li>
+              <li>Scrappy resourcefulness — doing everything yourself before you can delegate anything is irreplaceable training</li>
+            </ul>
+            <div class="exp-results">
+              <div class="eresult"><div class="er-num">MCA<em> 2019</em></div><div class="er-lbl">Gauhati University</div></div>
+              <div class="eresult"><div class="er-num">2<em>yrs</em></div><div class="er-lbl">Self-taught hustle</div></div>
+              <div class="eresult"><div class="er-num">1<em>st</em></div><div class="er-lbl">Paying clients</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERA 1 — Visual Designer Role -->
+      <div class="exp-item" onclick="toggleExp(this)">
+        <div class="exp-era">🎨</div>
+        <div class="exp-trigger">
+          <div class="exp-left">
+            <div class="exp-num">01</div>
+            <div class="exp-info">
+              <div class="exp-title">VISUAL DESIGNER</div>
+              <div class="exp-meta">The New Studio · <span>Apr 2023 – Present</span></div>
+              <span class="exp-era-label">Job Role · Design & Digital</span>
+            </div>
+          </div>
+          <button class="exp-toggle-btn">+</button>
+        </div>
+        <div class="exp-body">
+          <div class="exp-content">
+            <p>Designing digital products and marketing materials across Figma, Canva, and Adobe Creative Suite. Working on UI mockups, website carousels, landing pages, and full product visuals for mobile and web applications — giving me a visual design foundation that sharpened every marketing asset I produce.</p>
+            <div class="phase-tag">Scope of Work</div>
+            <ul class="ebullets">
+              <li>Website carousels and social templates for service businesses — cleaning services, retail, hospitality</li>
+              <li>Mobile app UIs — wireframes to high-fidelity Figma mocks for local app projects</li>
+              <li>SaaS landing page designs — structure, hierarchy, CTA placement, conversion-first layout thinking</li>
+              <li>WordPress site builds — custom themes, page builders, and performance optimisation</li>
+              <li>Marketing one-pagers, pitch decks, and proposal decks for SME clients</li>
+            </ul>
+            <div class="phase-tag">Design Principles I Carry Forward</div>
+            <ul class="ebullets">
+              <li>Every pixel has a reason — good design is invisible, bad design kills conversion</li>
+              <li>Visual hierarchy is also information architecture — structure leads the eye toward action</li>
+              <li>Speed matters: deliver fast, iterate faster. Clients trust speed-plus-quality over perfection-plus-delay</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERA 2 — Growth Consulting -->
+      <div class="exp-item" onclick="toggleExp(this)">
+        <div class="exp-era">📈</div>
+        <div class="exp-trigger">
+          <div class="exp-left">
+            <div class="exp-num">02</div>
+            <div class="exp-info">
+              <div class="exp-title">GROWTH CONSULTANT</div>
+              <div class="exp-meta">Independent Practice · <span>Mar 2019 – Present</span> · India / Remote</div>
+              <span class="exp-era-label">Independent Consulting · 175+ Engagements</span>
+            </div>
+          </div>
+          <button class="exp-toggle-btn">+</button>
+        </div>
+        <div class="exp-body">
+          <div class="exp-content">
+            <p>175+ engagements with 120+ unique clients across B2B manufacturing, D2C, retail, healthcare, political campaigns, and government organisations. Working independently across the full growth stack — strategy, execution, analytics, and team leadership.</p>
+
+            <div class="phase-tag">Tea Brand D2C Launch — ₹1.2 Crore in 18 Months</div>
+            <ul class="ebullets">
+              <li>Full GTM from zero — market research, brand positioning, Shopify store build, payment gateway, logistics setup</li>
+              <li>Technical SEO + content strategy: ranked for 80+ keywords, #1 for 12 high-intent search terms</li>
+              <li>Email funnel: 0 → 5,000+ subscribers, automated welcome, nurture, re-engagement, and post-purchase sequences</li>
+              <li>Result: ₹1.2 Cr ($145K+) annual revenue in 18 months from a standing start. Zero agency. One operator.</li>
+            </ul>
+
+            <div class="phase-tag">Multi-Location Retail SEO — 8 Locations</div>
+            <ul class="ebullets">
+              <li>Google Business Profile audit and complete rebuild across 8 physical locations</li>
+              <li>Citation cleanup: removed 40+ duplicate and inconsistent NAP listings across directories</li>
+              <li>Review generation system and staff training for 25+ frontline employees on reputation management</li>
+              <li>Result: 3× visitor growth, 280+ new reviews, star rating 3.8 → 4.6, Top-3 local pack rankings held 12+ months post-engagement</li>
+            </ul>
+
+            <div class="phase-tag">Political Campaign — 45-Day Election Cycle</div>
+            <ul class="ebullets">
+              <li>Led and managed 8-person content team through an intense 45-day state election campaign</li>
+              <li>300+ content pieces produced — social posts, videos, graphics, manifestos, press releases. Zero compliance violations</li>
+              <li>Real-time content calendar adjusted daily based on news cycle and opponent activity</li>
+              <li>Result: 5× reach (50K → 2.5M+ impressions), 35,000+ new followers in 45 days</li>
+            </ul>
+
+            <div class="phase-tag">B2B Manufacturing &amp; Healthcare</div>
+            <ul class="ebullets">
+              <li>LinkedIn content strategy and lead generation for a manufacturing client — 40+ qualified inbound leads in 6 months</li>
+              <li>Healthcare clinic: Google Ads + SEO combination — 60% increase in appointment bookings, maintained 4.8-star GBP rating</li>
+              <li>Government project compliance: marketing materials and reporting aligned with regulatory requirements across 3 engagements</li>
+            </ul>
+
+            <div class="exp-results">
+              <div class="eresult"><div class="er-num">$<em>145K</em></div><div class="er-lbl">Single client revenue</div></div>
+              <div class="eresult"><div class="er-num">3<em>×</em></div><div class="er-lbl">Retail visitor growth</div></div>
+              <div class="eresult"><div class="er-num">2.5<em>M+</em></div><div class="er-lbl">Campaign impressions</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERA 3 — AI News India Newsletter -->
+      <div class="exp-item" onclick="toggleExp(this)">
+        <div class="exp-era">📰</div>
+        <div class="exp-trigger">
+          <div class="exp-left">
+            <div class="exp-num">03</div>
+            <div class="exp-info">
+              <div class="exp-title">FOUNDER &amp; OPERATOR — AI NEWS INDIA</div>
+              <div class="exp-meta">Newsletter &amp; Media · <span>Jan 2024 – Present</span></div>
+              <span class="exp-era-label">Solo Founder · 1,000+ Subscribers · 0 Ad Spend</span>
+            </div>
+          </div>
+          <button class="exp-toggle-btn">+</button>
+        </div>
+        <div class="exp-body">
+          <div class="exp-content">
+            <p>Built and operate an AI-focused newsletter from scratch with zero paid acquisition. AI News India covers the AI and tech landscape for an Indian and South Asian audience — curated weekly, written to be actionable, not just informative. Full solo ownership: editorial, growth, monetisation, and automation.</p>
+            <div class="phase-tag">Growth Engine — Zero to 1,000+</div>
+            <ul class="ebullets">
+              <li>Content-led SEO and organic social distribution — no paid acquisition used at any point</li>
+              <li>Referral program design with Beehiiv built-in mechanics — subscriber-to-subscriber virality loop</li>
+              <li>Cross-promotion with complementary newsletters and LinkedIn thought leadership</li>
+              <li>Launched with a landing page converting at 8.5% — validated before building content backlog</li>
+            </ul>
+            <div class="phase-tag">Retention & Engagement — 38% Open Rate</div>
+            <ul class="ebullets">
+              <li>50+ A/B tests over 18 months: subject lines, send times, content format, CTA placement</li>
+              <li>Open rate grew from 22% → 38% — nearly 2× the industry average of ~21%</li>
+              <li>Segmented the list by interest tag (AI tools / AI business / AI technical) for personalised content</li>
+              <li>Re-engagement sequence recovered 18% of subscribers who hadn't opened in 30+ days</li>
+            </ul>
+            <div class="phase-tag">Monetisation — Organic $3.8K Revenue</div>
+            <ul class="ebullets">
+              <li>Validated product-market fit via 120+ subscriber surveys before writing a single word of sales copy</li>
+              <li>Built the Mega Prompt Bundle (3,500 prompts) — validated demand before building</li>
+              <li>$3,800 in 8 months, 100+ customers across 7 countries — 100% organic, newsletter-driven</li>
+              <li>Full funnel: newsletter → landing page (8.5% CVR) → email nurture (60% open) → purchase (1.7% conversion)</li>
+            </ul>
+            <div class="exp-results">
+              <div class="eresult"><div class="er-num">$<em>3.8K</em></div><div class="er-lbl">Revenue · 0 ad spend</div></div>
+              <div class="eresult"><div class="er-num">1K<em>+</em></div><div class="er-lbl">Subscribers · 7 countries</div></div>
+              <div class="eresult"><div class="er-num">38<em>%</em></div><div class="er-lbl">Open rate vs 21% avg</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERA 4 — Mega Prompt Bundle -->
+      <div class="exp-item" onclick="toggleExp(this)">
+        <div class="exp-era">💡</div>
+        <div class="exp-trigger">
+          <div class="exp-left">
+            <div class="exp-num">04</div>
+            <div class="exp-info">
+              <div class="exp-title">DIGITAL PRODUCT — MEGA PROMPT BUNDLE</div>
+              <div class="exp-meta">Solo Product Creator · <span>Mid 2024 – Present</span></div>
+              <span class="exp-era-label">Validated · Launched · $3.8K Revenue</span>
+            </div>
+          </div>
+          <button class="exp-toggle-btn">+</button>
+        </div>
+        <div class="exp-body">
+          <div class="exp-content">
+            <p>Before writing a single word of the product, I ran a 120-subscriber survey campaign to validate demand. The result: a 3,500-prompt bundle covering marketing, sales, operations, and content — priced at $29, sold to 100+ customers across 7 countries in 8 months. Built entirely through newsletter-driven organic marketing.</p>
+            <div class="phase-tag">Validation-First Product Development</div>
+            <ul class="ebullets">
+              <li>120+ survey responses collected through the AI News India newsletter — specific pain points mapped before any building</li>
+              <li>Three pricing anchors tested: $19, $29, $49 — $29 hit the sweet spot at highest volume × value</li>
+              <li>Beta list built before launch: 80+ pre-sale expressions of interest</li>
+            </ul>
+            <div class="phase-tag">Product Build</div>
+            <ul class="ebullets">
+              <li>3,500 prompts across 40+ marketing and business use cases — each tested and refined, not bulk-generated</li>
+              <li>Organised by role (marketer, founder, operator, creator) and workflow (ideation → execution → reporting)</li>
+              <li>Supplementary: prompt writing framework, variable injection guide, and model selection guide included</li>
+            </ul>
+            <div class="phase-tag">Distribution &amp; Sales</div>
+            <ul class="ebullets">
+              <li>Gumroad storefront — SEO-optimised listing, A/B tested cover design and copy</li>
+              <li>5-email launch sequence to newsletter list — 60% open rate on launch email, 1.7% overall conversion</li>
+              <li>Affiliate program launched post-90 days — 12 active affiliates driving secondary sales</li>
+              <li>Customer support: AI agent via Gumroad API handling 90%+ of queries without human input</li>
+            </ul>
+            <div class="exp-results">
+              <div class="eresult"><div class="er-num">$<em>3.8K</em></div><div class="er-lbl">8-month revenue</div></div>
+              <div class="eresult"><div class="er-num">100<em>+</em></div><div class="er-lbl">Customers · 7 countries</div></div>
+              <div class="eresult"><div class="er-num">8.5<em>%</em></div><div class="er-lbl">Landing page CVR</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERA 5 — AI Agent Engineering -->
+      <div class="exp-item" onclick="toggleExp(this)">
+        <div class="exp-era">🤖</div>
+        <div class="exp-trigger">
+          <div class="exp-left">
+            <div class="exp-num">05</div>
+            <div class="exp-info">
+              <div class="exp-title">AI AGENT ENGINEER</div>
+              <div class="exp-meta">Personal AI Lab · <span>Oct 2024 – Present</span></div>
+              <span class="exp-era-label">10+ Agents in Production · 25hrs → 8hrs Weekly Ops</span>
+            </div>
+          </div>
+          <button class="exp-toggle-btn">+</button>
+        </div>
+        <div class="exp-body">
+          <div class="exp-content">
+            <p>Progressed from no-code workflow automations to full AI agent development using OpenClaw and LLM APIs. 10+ custom agents running in live production, replacing manual marketing workflows with intelligent, event-driven systems — cutting weekly ops time from 25 hours to under 8.</p>
+            <div class="phase-tag">Phase 1 — Workflow Automation (Oct 2024 – Jan 2025)</div>
+            <ul class="ebullets">
+              <li>Newsletter pipeline: RSS ingestion → relevance scoring → editorial digest (2hrs → 15min daily)</li>
+              <li>Subscriber lifecycle: welcome sequences, engagement tags, win-back flows via Beehiiv + ActiveCampaign</li>
+              <li>Social distribution: newsletter → LinkedIn, X, Medium via API — one input, four platform-native outputs</li>
+              <li>GA4 → Looker Studio → Notion auto-report delivered every Monday with zero manual work</li>
+            </ul>
+            <div class="phase-tag">Phase 2 — OpenClaw Agent Suite (Jan 2025 – Present)</div>
+            <ul class="ebullets">
+              <li><strong style="color:var(--grey2)">Content Research Agent</strong> — monitors 30+ sources, scores relevance, delivers pre-written summaries ready to edit</li>
+              <li><strong style="color:var(--grey2)">Newsletter Drafting Agent</strong> — research → outline → draft pipeline, 60% writing time reduction</li>
+              <li><strong style="color:var(--grey2)">SEO Content Agent</strong> — generates posts, auto-publishes to Ghost, submits URLs to Search Console</li>
+              <li><strong style="color:var(--grey2)">Subscriber Onboarding Agent</strong> — personalises welcome, infers segment, enrolls in correct nurture track</li>
+              <li><strong style="color:var(--grey2)">Product Promotion Agent</strong> — lifecycle-triggered, context-aware promotion (+40% conversion vs. broadcast)</li>
+              <li><strong style="color:var(--grey2)">Social Distribution Agent</strong> — 1 input → 7 platform-native outputs, auto-scheduled at optimal times</li>
+              <li><strong style="color:var(--grey2)">Customer Support Agent</strong> — Gumroad API integration, 90%+ queries resolved without human escalation</li>
+              <li><strong style="color:var(--grey2)">A/B Test Agent</strong> — generates subject line variants, monitors statistical significance, promotes winner automatically</li>
+            </ul>
+            <div class="exp-results">
+              <div class="eresult"><div class="er-num">~25→<em>8hrs</em></div><div class="er-lbl">Weekly ops time</div></div>
+              <div class="eresult"><div class="er-num">22→<em>38%</em></div><div class="er-lbl">Email open rate</div></div>
+              <div class="eresult"><div class="er-num">+<em>40%</em></div><div class="er-lbl">Product conversion</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERA 6 — PromptOps Founder -->
+      <div class="exp-item" onclick="toggleExp(this)">
+        <div class="exp-era">⚡</div>
+        <div class="exp-trigger">
+          <div class="exp-left">
+            <div class="exp-num">06</div>
+            <div class="exp-info">
+              <div class="exp-title">FOUNDER — PROMPTOPS</div>
+              <div class="exp-meta">SaaS Developer Tool · <span>Jan 2026 – Present</span> · Beta</div>
+              <span class="exp-era-label">0 → Beta in &lt;60 Days · 247+ Waitlist · Bootstrapped</span>
+            </div>
+          </div>
+          <button class="exp-toggle-btn">+</button>
+        </div>
+        <div class="exp-body">
+          <div class="exp-content">
+            <p>Identified a critical gap in AI engineering workflows: LLM prompts hardcoded into application logic with no version history, no testing pipeline, no rollback. I felt this pain directly while managing 10+ agents — a single bad prompt edit could break a live production workflow with no way to recover fast. Built PromptOps to solve it — solo, bootstrapped, zero to beta in under 60 days.</p>
+            <div class="phase-tag">What PromptOps Does</div>
+            <ul class="ebullets">
+              <li><strong style="color:var(--grey2)">Version control engine</strong> — every prompt commit with author, timestamp, quality score. Full diff view. One-click rollback in seconds, not hours</li>
+              <li><strong style="color:var(--grey2)">Prompt Studio</strong> — multi-model testing (GPT-4o, Claude, Gemini, Llama), variable injection, live quality + cost scoring before deploy</li>
+              <li><strong style="color:var(--grey2)">Automated eval suite</strong> — LLM-as-judge + rule-based checks on every commit; bad prompts auto-blocked before production</li>
+              <li><strong style="color:var(--grey2)">Python SDK</strong> — one line replaces hardcoded prompts; 30-minute integration time. JS/TS SDK in active development</li>
+              <li><strong style="color:var(--grey2)">Team layer</strong> — role-based access controls, approval workflows, full audit trail, cost analytics dashboard</li>
+            </ul>
+            <div class="phase-tag">Go-to-Market — Solo, Zero Budget</div>
+            <ul class="ebullets">
+              <li>Built landing page, waitlist funnel, and 5-email nurture sequence in one week</li>
+              <li>Leveraged AI News India newsletter (1,000+ subscribers) as primary distribution — zero paid acquisition</li>
+              <li>3-tier pricing live: Free · $49 Pro · $199 Team. Growth ($599) and Enterprise ($2K+) on roadmap</li>
+              <li>Public roadmap published — transparency as competitive moat with developer-first audience</li>
+              <li>247+ signups from 8 countries; beta cohort of 12 teams actively testing version control and evals</li>
+            </ul>
+            <div class="exp-results">
+              <div class="eresult"><div class="er-num">247<em>+</em></div><div class="er-lbl">Waitlist signups</div></div>
+              <div class="eresult"><div class="er-num">&lt;<em>60d</em></div><div class="er-lbl">Zero to beta</div></div>
+              <div class="eresult"><div class="er-num">$<em>0</em></div><div class="er-lbl">Acquisition budget</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══════════════════════════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════════
+     CASE STUDIES — Full Narrative
+══════════════════════════════════════════════════════ -->
+<section id="case-studies">
+  <div class="wrap">
+    <div class="s-label reveal">Deep Dives</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">CASE<br>STUDIES</h2>
+
+    <div class="cs-intro reveal" style="transition-delay:.15s">
+      <p>Five engagements where the stakes were real and the results were measurable. Each one is a complete story — the problem, the strategy, the execution, and the outcome. Click to expand any case.</p>
+    </div>
+
+    <!-- ─── CASE STUDY 01 — TEA BRAND D2C ─── -->
+    <div class="cs-card reveal" style="transition-delay:.2s" onclick="toggleCS(this)">
+      <div class="cs-header">
+        <div class="cs-index">01</div>
+        <div class="cs-header-main">
+          <div class="cs-era">D2C · Growth Marketing · Tea Industry</div>
+          <div class="cs-title">Tea Brand D2C Launch</div>
+          <div class="cs-tagline">Building a ₹1.2 Crore revenue engine from absolute zero — no agency, no team, one operator, 18 months.</div>
+          <div class="cs-meta-pills">
+            <span class="cs-pill">Shopify</span>
+            <span class="cs-pill">SEO</span>
+            <span class="cs-pill">Email Marketing</span>
+            <span class="cs-pill">18 Months</span>
+            <span class="cs-pill">Assam, India</span>
+          </div>
+        </div>
+        <div class="cs-header-right">
+          <div class="cs-kpi-row">
+            <div class="cs-kpi">
+              <div class="cs-kpi-val">$145<em>K+</em></div>
+              <div class="cs-kpi-label">Revenue Generated</div>
+            </div>
+            <div class="cs-kpi">
+              <div class="cs-kpi-val">5<em>K+</em></div>
+              <div class="cs-kpi-label">Email Subscribers</div>
+            </div>
+          </div>
+          <button class="cs-toggle">+</button>
+        </div>
+      </div>
+
+      <div class="cs-body">
+        <div class="cs-content">
+          <div class="cs-narrative">
+            <div class="cs-col">
+              <div class="cs-col-label">The Problem</div>
+              <div class="cs-col-text">
+                A premium Assam tea manufacturer — established offline, invisible online. Despite a quality product with real differentiation (single-estate, artisanal process), they had <strong>zero digital presence, zero direct sales channel</strong>, and total reliance on a B2B wholesale model with razor-thin margins. The brief: build a D2C channel that generates meaningful revenue within 18 months.
+              </div>
+            </div>
+            <div class="cs-col">
+              <div class="cs-col-label">The Strategy</div>
+              <div class="cs-col-text">
+                I designed a <strong>three-phase growth engine</strong>: foundation (brand + store + SEO baseline), acquisition (content + organic search + email list), and monetisation (funnel optimisation + retention). Rather than paid ads, I bet entirely on owned channels — search and email — which compound over time and don't stop when the budget runs out.
+              </div>
+            </div>
+            <div class="cs-col">
+              <div class="cs-col-label">The Outcome</div>
+              <div class="cs-col-text">
+                ₹1.2 Crore ($145K+) in annual online revenue by month 18. The brand ranked <strong>#1 for 12 high-intent keywords</strong> and top-5 for 80+ terms. The 5,000-subscriber email list became a predictable monthly revenue channel — still growing post-engagement. A sustainable, compounding asset, not a rented audience.
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-process">
+            <div class="cs-process-label">Execution Roadmap</div>
+            <div class="cs-steps">
+              <div class="cs-step">
+                <div class="cs-step-dot"></div>
+                <div class="cs-step-num">01</div>
+                <div class="cs-step-title">Foundation</div>
+                <div class="cs-step-desc">Brand positioning, Shopify build, product photography brief, payment + logistics setup. Weeks 1–4.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot"></div>
+                <div class="cs-step-num">02</div>
+                <div class="cs-step-title">SEO Architecture</div>
+                <div class="cs-step-desc">Keyword research (800+ terms mapped), technical SEO audit, content cluster strategy, schema markup.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot"></div>
+                <div class="cs-step-num">03</div>
+                <div class="cs-step-title">Content Engine</div>
+                <div class="cs-step-desc">Monthly blog cadence, 40+ product and category pages written, 12 pillar pieces targeting main buyer intents.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot"></div>
+                <div class="cs-step-num">04</div>
+                <div class="cs-step-title">Email Funnel</div>
+                <div class="cs-step-desc">Lead magnet, pop-up testing (A/B'd to 4.2% opt-in), 7-email welcome sequence, post-purchase, win-back.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot"></div>
+                <div class="cs-step-num">05</div>
+                <div class="cs-step-title">Revenue Ops</div>
+                <div class="cs-step-desc">Klaviyo flows, monthly broadcast cadence, subscription box offer, repeat purchase rate tracking + optimisation.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-results">
+            <div class="cs-result">
+              <div class="cs-result-val">$145<em>K+</em></div>
+              <div class="cs-result-label">Annual Revenue · 18 Months</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">5<em>K+</em></div>
+              <div class="cs-result-label">Email Subscribers Built</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">#1<em> Rank</em></div>
+              <div class="cs-result-label">12 Target Keywords</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">80<em>+</em></div>
+              <div class="cs-result-label">Keywords in Top 10</div>
+            </div>
+          </div>
+
+          <div class="cs-quote">
+            <div class="cs-quote-text">"Jachin transformed our business model. We went from zero online presence to generating over ₹1 crore in online revenue in 18 months. His systematic approach created a sustainable channel that keeps growing."</div>
+            <div class="cs-quote-author">Managing Director</div>
+            <div class="cs-quote-role">Tea Manufacturing Company, Assam</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── CASE STUDY 02 — POLITICAL CAMPAIGN ─── -->
+    <div class="cs-card reveal" style="transition-delay:.25s" onclick="toggleCS(this)">
+      <div class="cs-header">
+        <div class="cs-index">02</div>
+        <div class="cs-header-main">
+          <div class="cs-era">Political Campaign · Content Ops · Team Leadership</div>
+          <div class="cs-title">45-Day Election Campaign</div>
+          <div class="cs-tagline">Leading an 8-person team through the most high-pressure content operation imaginable — 300+ pieces, zero violations, 5× reach.</div>
+          <div class="cs-meta-pills">
+            <span class="cs-pill">Team Lead</span>
+            <span class="cs-pill">Social Strategy</span>
+            <span class="cs-pill">Content Ops</span>
+            <span class="cs-pill">45 Days</span>
+            <span class="cs-pill">Zero Violations</span>
+          </div>
+        </div>
+        <div class="cs-header-right">
+          <div class="cs-kpi-row">
+            <div class="cs-kpi">
+              <div class="cs-kpi-val">2.5<em>M+</em></div>
+              <div class="cs-kpi-label">Impressions</div>
+            </div>
+            <div class="cs-kpi">
+              <div class="cs-kpi-val">5<em>×</em></div>
+              <div class="cs-kpi-label">Reach Growth</div>
+            </div>
+          </div>
+          <button class="cs-toggle">+</button>
+        </div>
+      </div>
+
+      <div class="cs-body">
+        <div class="cs-content">
+          <div class="cs-narrative">
+            <div class="cs-col">
+              <div class="cs-col-label">The Problem</div>
+              <div class="cs-col-text">
+                A political campaign operating in a <strong>compressed 45-day window</strong> with strict compliance requirements, high volume content needs, and a starting reach of just 50,000 impressions per month. The challenge: scale to maximum reach without a single compliance violation — in an environment where any misstep is front-page news.
+              </div>
+            </div>
+            <div class="cs-col">
+              <div class="cs-col-label">The Strategy</div>
+              <div class="cs-col-text">
+                Built and ran a <strong>real-time content operations system</strong>: daily editorial standups, a content brief template for rapid production, a two-stage compliance review process (writer → lead → post), and a live news-cycle response playbook. Every piece of content produced before 8am for peak-hour publishing.
+              </div>
+            </div>
+            <div class="cs-col">
+              <div class="cs-col-label">The Outcome</div>
+              <div class="cs-col-text">
+                50,000 → <strong>2.5 million+ impressions</strong> in 45 days. 35,000+ new followers acquired. 300+ content pieces produced and published with zero compliance incidents. The team operated at media-company velocity inside a political campaign structure — a model the client used as a blueprint for future campaigns.
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-process">
+            <div class="cs-process-label">Operations Framework</div>
+            <div class="cs-steps">
+              <div class="cs-step">
+                <div class="cs-step-dot"></div>
+                <div class="cs-step-num">01</div>
+                <div class="cs-step-title">Team Build</div>
+                <div class="cs-step-desc">Assembled 8-person team: writers, designers, video editors, social manager. Role clarity, daily SOP, briefing templates.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot"></div>
+                <div class="cs-step-num">02</div>
+                <div class="cs-step-title">Content System</div>
+                <div class="cs-step-desc">Topic clusters mapped to campaign pillars. Content calendar with 3-day buffer. Platform-native formats per channel.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot"></div>
+                <div class="cs-step-num">03</div>
+                <div class="cs-step-title">Compliance Gate</div>
+                <div class="cs-step-desc">Two-layer review: content lead + campaign director. Checklist-based approval. Nothing published without sign-off.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot"></div>
+                <div class="cs-step-num">04</div>
+                <div class="cs-step-title">Real-Time Response</div>
+                <div class="cs-step-desc">News monitoring, rapid-response templates, 2-hour turnaround for reactive content when news cycle demanded.</div>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-dot"></div>
+                <div class="cs-step-num">05</div>
+                <div class="cs-step-title">Daily Analytics</div>
+                <div class="cs-step-desc">Morning report: reach, engagement, follower delta. Afternoon adjustment: double down on what worked yesterday.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-results">
+            <div class="cs-result">
+              <div class="cs-result-val">2.5<em>M+</em></div>
+              <div class="cs-result-label">Impressions · 45 Days</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">35<em>K+</em></div>
+              <div class="cs-result-label">New Followers</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">300<em>+</em></div>
+              <div class="cs-result-label">Content Pieces</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">0<em></em></div>
+              <div class="cs-result-label">Compliance Violations</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── CASE STUDY 03 — LOCAL SEO ─── -->
+    <div class="cs-card reveal" style="transition-delay:.3s" onclick="toggleCS(this)">
+      <div class="cs-header">
+        <div class="cs-index">03</div>
+        <div class="cs-header-main">
+          <div class="cs-era">Local SEO · Reputation Management · Multi-Location</div>
+          <div class="cs-title">Multi-Location Retail SEO</div>
+          <div class="cs-tagline">8 locations, 25+ staff trained, one reputation management system — Top-3 local pack in 4 months.</div>
+          <div class="cs-meta-pills">
+            <span class="cs-pill">Google Business Profile</span>
+            <span class="cs-pill">Citation Cleanup</span>
+            <span class="cs-pill">Review Generation</span>
+            <span class="cs-pill">8 Locations</span>
+          </div>
+        </div>
+        <div class="cs-header-right">
+          <div class="cs-kpi-row">
+            <div class="cs-kpi">
+              <div class="cs-kpi-val">3<em>×</em></div>
+              <div class="cs-kpi-label">Visitor Growth</div>
+            </div>
+            <div class="cs-kpi">
+              <div class="cs-kpi-val">4.6<em>★</em></div>
+              <div class="cs-kpi-label">Avg Star Rating</div>
+            </div>
+          </div>
+          <button class="cs-toggle">+</button>
+        </div>
+      </div>
+
+      <div class="cs-body">
+        <div class="cs-content">
+          <div class="cs-narrative">
+            <div class="cs-col">
+              <div class="cs-col-label">The Problem</div>
+              <div class="cs-col-text">
+                A multi-location retail chain with 8 physical stores, average Google rating of 3.8 stars, and inconsistent online presence across directories. Competitors were outranking them in local search despite inferior products. Staff had no understanding of how their behaviour affected the store's online reputation.
+              </div>
+            </div>
+            <div class="cs-col">
+              <div class="cs-col-label">The Strategy</div>
+              <div class="cs-col-text">
+                A <strong>systematic reputation infrastructure rebuild</strong>: audit every listing across 15+ directories, unify NAP data, rebuild GBP profiles with complete information, and create a staff-level review generation process that didn't feel transactional. Then train 25+ employees to maintain it themselves.
+              </div>
+            </div>
+            <div class="cs-col">
+              <div class="cs-col-label">The Outcome</div>
+              <div class="cs-col-text">
+                3× visitor growth across all 8 locations within 4 months. Star rating from 3.8 → 4.6 with 280+ new reviews. All 8 locations reached Top-3 in the local pack for primary search terms. Results held 12+ months post-engagement — the staff maintained the system independently.
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-results">
+            <div class="cs-result">
+              <div class="cs-result-val">3<em>×</em></div>
+              <div class="cs-result-label">Visitor Growth</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">280<em>+</em></div>
+              <div class="cs-result-label">New Reviews</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">3.8→<em>4.6</em></div>
+              <div class="cs-result-label">Star Rating</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">Top<em>-3</em></div>
+              <div class="cs-result-label">All 8 Locations · Local Pack</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── CASE STUDY 04 — AI NEWS INDIA / NEWSLETTER ─── -->
+    <div class="cs-card reveal" style="transition-delay:.35s" onclick="toggleCS(this)">
+      <div class="cs-header">
+        <div class="cs-index">04</div>
+        <div class="cs-header-main">
+          <div class="cs-era">Newsletter Growth · Email Marketing · Digital Product</div>
+          <div class="cs-title">AI News India — Audience to Revenue</div>
+          <div class="cs-tagline">Growing a newsletter from 0 to 1,000+ subscribers with a 38% open rate and a $3.8K product launch — all organic, all owned audience.</div>
+          <div class="cs-meta-pills">
+            <span class="cs-pill">Beehiiv</span>
+            <span class="cs-pill">50+ A/B Tests</span>
+            <span class="cs-pill">Zero Ad Spend</span>
+            <span class="cs-pill">18 Months</span>
+          </div>
+        </div>
+        <div class="cs-header-right">
+          <div class="cs-kpi-row">
+            <div class="cs-kpi">
+              <div class="cs-kpi-val">38<em>%</em></div>
+              <div class="cs-kpi-label">Open Rate</div>
+            </div>
+            <div class="cs-kpi">
+              <div class="cs-kpi-val">$3.8<em>K</em></div>
+              <div class="cs-kpi-label">Product Revenue</div>
+            </div>
+          </div>
+          <button class="cs-toggle">+</button>
+        </div>
+      </div>
+
+      <div class="cs-body">
+        <div class="cs-content">
+          <div class="cs-narrative">
+            <div class="cs-col">
+              <div class="cs-col-label">The Problem</div>
+              <div class="cs-col-text">
+                Starting a newsletter in a crowded AI space with zero audience, zero brand, and zero budget. The constraint was also the opportunity: <strong>no paid acquisition meant every subscriber had to be earned</strong> through content quality and word-of-mouth. The eventual goal was to build a monetisable audience — not just a vanity list.
+              </div>
+            </div>
+            <div class="cs-col">
+              <div class="cs-col-label">The Strategy</div>
+              <div class="cs-col-text">
+                Niche positioning (AI news for India/South Asia, not global tech noise), content-led SEO, relentless A/B testing of everything, and <strong>product validation before product creation</strong>. Build the audience first, then ask them what they need, then build exactly that and sell it back to them.
+              </div>
+            </div>
+            <div class="cs-col">
+              <div class="cs-col-label">The Outcome</div>
+              <div class="cs-col-text">
+                1,000+ subscribers in 18 months. Open rate of 38% — nearly double the 21% industry average — through 50+ systematic A/B tests. The Mega Prompt Bundle launched to this audience generated $3,800 in 8 months with 100+ customers across 7 countries. A self-sustaining content and revenue flywheel.
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-results">
+            <div class="cs-result">
+              <div class="cs-result-val">1<em>K+</em></div>
+              <div class="cs-result-label">Subscribers · 0 Paid</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">38<em>%</em></div>
+              <div class="cs-result-label">Open Rate vs 21% Avg</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">$3.8<em>K</em></div>
+              <div class="cs-result-label">Product Revenue</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">7<em></em></div>
+              <div class="cs-result-label">Countries · 100+ Customers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── CASE STUDY 05 — PROMPTOPS ─── -->
+    <div class="cs-card reveal" style="transition-delay:.4s" onclick="toggleCS(this)">
+      <div class="cs-header">
+        <div class="cs-index">05</div>
+        <div class="cs-header-main">
+          <div class="cs-era">SaaS · Developer Tool · Founder · 0→1</div>
+          <div class="cs-title">PromptOps — From Pain to Product</div>
+          <div class="cs-tagline">Turning a real engineering pain point into a SaaS product — solo, bootstrapped, zero to 247+ waitlist in under 60 days.</div>
+          <div class="cs-meta-pills">
+            <span class="cs-pill">Python SDK</span>
+            <span class="cs-pill">Version Control</span>
+            <span class="cs-pill">LLM Evals</span>
+            <span class="cs-pill">60 Days</span>
+            <span class="cs-pill">Bootstrapped</span>
+          </div>
+        </div>
+        <div class="cs-header-right">
+          <div class="cs-kpi-row">
+            <div class="cs-kpi">
+              <div class="cs-kpi-val">247<em>+</em></div>
+              <div class="cs-kpi-label">Waitlist Signups</div>
+            </div>
+            <div class="cs-kpi">
+              <div class="cs-kpi-val">&lt;60<em>d</em></div>
+              <div class="cs-kpi-label">Zero to Beta</div>
+            </div>
+          </div>
+          <button class="cs-toggle">+</button>
+        </div>
+      </div>
+
+      <div class="cs-body">
+        <div class="cs-content">
+          <div class="cs-narrative">
+            <div class="cs-col">
+              <div class="cs-col-label">The Problem</div>
+              <div class="cs-col-text">
+                Every AI engineering team I spoke to had the same problem: <strong>prompts live inside application code</strong> — hardcoded strings with no version history, no testing pipeline, and no rollback capability. One bad edit breaks production. Recovery takes hours. Teams have no way to test prompt changes systematically before deploying. This is the prompt engineering equivalent of shipping code without Git.
+              </div>
+            </div>
+            <div class="cs-col">
+              <div class="cs-col-label">The Strategy</div>
+              <div class="cs-col-text">
+                <strong>Developer-first product, founder-operator GTM.</strong> Build the exact tool I wished I had, then leverage the newsletter audience for zero-cost distribution and early validation. Price it in tiers to capture indie developers, growing teams, and enterprise — but make the free tier good enough to generate genuine word-of-mouth among engineers.
+              </div>
+            </div>
+            <div class="cs-col">
+              <div class="cs-col-label">The Outcome</div>
+              <div class="cs-col-text">
+                247+ waitlist signups from 8 countries in under 60 days with zero paid acquisition. Beta cohort of 12 teams actively testing. Python SDK shipped. Automated eval suite live. Free / $49 / $199 pricing tiers operational. The product is solving a real problem — validated by the testimonial from a Series A CTO who rolled back a production incident in 10 seconds.
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-results">
+            <div class="cs-result">
+              <div class="cs-result-val">247<em>+</em></div>
+              <div class="cs-result-label">Waitlist · 8 Countries</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">&lt;60<em>d</em></div>
+              <div class="cs-result-label">Concept to Beta</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">$0<em></em></div>
+              <div class="cs-result-label">Acquisition Spend</div>
+            </div>
+            <div class="cs-result">
+              <div class="cs-result-val">3<em></em></div>
+              <div class="cs-result-label">Pricing Tiers Live</div>
+            </div>
+          </div>
+
+          <div class="cs-quote">
+            <div class="cs-quote-text">"We had a prompt incident that cost us 6 hours of engineering time and 3 churned customers. With PromptOps we rolled back the next incident in 10 seconds. The ROI was immediate."</div>
+            <div class="cs-quote-author">Arjun R.</div>
+            <div class="cs-quote-role">CTO, AI Startup · Series A</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PORTFOLIO (Work Grid)
+══════════════════════════════════════════════════════ -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="s-label reveal">Selected Work</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">PORT<br>FOLIO</h2>
+    <div class="port-grid reveal" style="transition-delay:.2s">
+
+      <div class="pcard">
+        <div class="ptumb">
+          <div class="ptumb-ph" style="background:linear-gradient(135deg,#1a0a2e,#0d1a2e);">⚡</div>
+          <div class="ptumb-overlay"></div>
+        </div>
+        <div class="pinfo">
+          <div class="p-label" style="color:var(--gold)">Founder · SaaS · Dev Tool</div>
+          <div class="p-name">PromptOps</div>
+          <div class="p-desc">Git-style version control, automated evals, and instant deploy for LLM prompts. Built solo from zero to beta in &lt;60 days — SDK, landing page, GTM, and 247+ waitlist.</div>
+          <div class="p-metrics">247+ Waitlist · Free / $49 / $199 · &lt;60 Days Build</div>
+          <div class="p-cta">View Product</div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="ptumb">
+          <div class="ptumb-ph" style="background:linear-gradient(135deg,#0a1a0a,#0d200d);">🛒</div>
+          <div class="ptumb-overlay"></div>
+        </div>
+        <div class="pinfo">
+          <div class="p-label">Case Study · D2C Growth</div>
+          <div class="p-name">Tea Brand D2C Launch</div>
+          <div class="p-desc">Built the entire go-to-market from zero — Shopify store, SEO ranking #1 for 12 keywords, 5,000-subscriber email funnel. No agency. One operator, one system.</div>
+          <div class="p-metrics">$145K+ Revenue · 18 Months · 0 → 5K Subscribers</div>
+          <div class="p-cta">Read Case Study</div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="ptumb">
+          <div class="ptumb-ph" style="background:linear-gradient(135deg,#1a0a0a,#200d0d);">🤖</div>
+          <div class="ptumb-overlay"></div>
+        </div>
+        <div class="pinfo">
+          <div class="p-label">AI Engineering · Automation</div>
+          <div class="p-name">OpenClaw Agent Suite</div>
+          <div class="p-desc">10+ custom AI agents in live production — research, drafting, SEO publishing, A/B testing, support, and social distribution running autonomously.</div>
+          <div class="p-metrics">25hrs → 8hrs Ops · 22% → 38% Open Rate · +40% Conversion</div>
+          <div class="p-cta">Read Case Study</div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="ptumb">
+          <div class="ptumb-ph" style="background:linear-gradient(135deg,#1a1400,#201a00);">📰</div>
+          <div class="ptumb-overlay"></div>
+        </div>
+        <div class="pinfo">
+          <div class="p-label">Founder · Newsletter Growth</div>
+          <div class="p-name">AI News India</div>
+          <div class="p-desc">Built from scratch with zero paid acquisition. 50+ A/B tests, open rates from 22% → 38% — nearly double industry average. A self-sustaining content flywheel.</div>
+          <div class="p-metrics">0 → 1,000+ Subscribers · 38% Open Rate · 0 Ad Spend</div>
+          <div class="p-cta">Read Case Study</div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="ptumb">
+          <div class="ptumb-ph" style="background:linear-gradient(135deg,#001a0a,#00200d);">💰</div>
+          <div class="ptumb-overlay"></div>
+        </div>
+        <div class="pinfo">
+          <div class="p-label">Founder · Digital Product</div>
+          <div class="p-name">Mega Prompt Bundle</div>
+          <div class="p-desc">Validated via 120+ subscriber surveys before writing a word. 3,500 prompts, launched to warm audience, sold to 100+ customers across 7 countries in 8 months.</div>
+          <div class="p-metrics">$3.8K Revenue · 100+ Customers · 7 Countries · 8.5% CVR</div>
+          <div class="p-cta">Read Case Study</div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="ptumb">
+          <div class="ptumb-ph" style="background:linear-gradient(135deg,#0a001a,#0d0020);">📊</div>
+          <div class="ptumb-overlay"></div>
+        </div>
+        <div class="pinfo">
+          <div class="p-label">Case Study · Campaign Ops</div>
+          <div class="p-name">Political Campaign Ops</div>
+          <div class="p-desc">Led an 8-person content team through a 45-day election cycle. 300+ content pieces, zero compliance violations — 5× reach in 45 days.</div>
+          <div class="p-metrics">50K → 2.5M+ Impressions · 5× Reach · 35K Followers</div>
+          <div class="p-cta">Read Case Study</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════════════════ -->
+<section id="services">
+  <div class="wrap">
+    <div class="s-label reveal">Services</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">WHAT<br>I DO</h2>
+    <div class="services-grid reveal" style="transition-delay:.2s">
+      <div class="svc">
+        <span class="svc-num">01</span>
+        <div class="svc-icon">📈</div>
+        <div class="svc-title">Growth Strategy &amp; Funnels</div>
+        <div class="svc-desc">Full-funnel architecture from awareness to retention. Multi-channel acquisition, CRO, and lifecycle marketing built around revenue goals — not traffic reports.</div>
+      </div>
+      <div class="svc">
+        <span class="svc-num">02</span>
+        <div class="svc-icon">📧</div>
+        <div class="svc-title">Email Marketing &amp; Automation</div>
+        <div class="svc-desc">List growth, segmentation, sequences, and win-backs. Built for deliverability and conversion, not just open rates. 38% open rate benchmark from my own list.</div>
+      </div>
+      <div class="svc">
+        <span class="svc-num">03</span>
+        <div class="svc-icon">🔍</div>
+        <div class="svc-title">SEO &amp; Organic Growth</div>
+        <div class="svc-desc">Technical SEO, local SEO, content-driven acquisition, and Google Business Profile management. Ranked #1 for 12 target keywords in a competitive niche.</div>
+      </div>
+      <div class="svc">
+        <span class="svc-num">04</span>
+        <div class="svc-icon">⚙️</div>
+        <div class="svc-title">Marketing Operations</div>
+        <div class="svc-desc">Tech stack setup, workflow automation, CRM implementation, dashboards, and SOPs that make your marketing engine run without constant intervention.</div>
+      </div>
+      <div class="svc">
+        <span class="svc-num">05</span>
+        <div class="svc-icon">🤖</div>
+        <div class="svc-title">AI Agent Engineering</div>
+        <div class="svc-desc">Custom agents with OpenClaw and LLM APIs that automate content, lead scoring, support, and reporting end-to-end. Founder of PromptOps — version control for LLM prompts.</div>
+      </div>
+      <div class="svc">
+        <span class="svc-num">06</span>
+        <div class="svc-icon">🏆</div>
+        <div class="svc-title">Cross-Functional Execution</div>
+        <div class="svc-desc">Embedded strategic partner: sales alignment, executive reporting, vendor coordination, and team training. I operate, I don't just advise.</div>
+      </div>
+      <div class="svc">
+        <span class="svc-num">07</span>
+        <div class="svc-icon">⚡</div>
+        <div class="svc-title">SaaS Product &amp; GTM</div>
+        <div class="svc-desc">0→1 product development, SDK design, developer landing pages, waitlist funnels, and SaaS pricing strategy. Proven: 247+ signups, bootstrapped solo, &lt;60 days.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SKILLS
+══════════════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="s-label reveal">Competencies</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">SKILL<br>SET</h2>
+    <div class="skills-grid reveal" style="transition-delay:.2s">
+      <div class="sb">
+        <div class="sb-title">Growth &amp; Revenue</div>
+        <div class="stags">
+          <span class="stag">Funnel Architecture</span>
+          <span class="stag">Multi-Channel Acq.</span>
+          <span class="stag">CRO &amp; A/B Testing</span>
+          <span class="stag">Lifecycle Marketing</span>
+          <span class="stag">Revenue Attribution</span>
+          <span class="stag">GTM Strategy</span>
+          <span class="stag">Newsletter Growth</span>
+        </div>
+      </div>
+      <div class="sb">
+        <div class="sb-title">Marketing Ops</div>
+        <div class="stags">
+          <span class="stag">Automation Design</span>
+          <span class="stag">CRM Administration</span>
+          <span class="stag">Tech Stack Mgmt</span>
+          <span class="stag">SOPs &amp; Playbooks</span>
+          <span class="stag">Campaign Ops</span>
+          <span class="stag">Budget Management</span>
+          <span class="stag">Analytics Dashboards</span>
+        </div>
+      </div>
+      <div class="sb">
+        <div class="sb-title">AI &amp; Agents</div>
+        <div class="stags">
+          <span class="stag">OpenClaw Skills Dev</span>
+          <span class="stag">LLM API Integration</span>
+          <span class="stag">n8n · Make · Zapier</span>
+          <span class="stag">Prompt Engineering</span>
+          <span class="stag">AI Content Systems</span>
+          <span class="stag">API Orchestration</span>
+          <span class="stag">PromptOps (Founder)</span>
+        </div>
+      </div>
+      <div class="sb">
+        <div class="sb-title">SaaS &amp; Dev Tools</div>
+        <div class="stags">
+          <span class="stag">0→1 Product Build</span>
+          <span class="stag">Python SDK Design</span>
+          <span class="stag">REST API Design</span>
+          <span class="stag">SaaS Pricing Strategy</span>
+          <span class="stag">Developer GTM</span>
+          <span class="stag">Waitlist Funnels</span>
+          <span class="stag">GitHub Actions CI/CD</span>
+        </div>
+      </div>
+      <div class="sb">
+        <div class="sb-title">Channel Expertise</div>
+        <div class="stags">
+          <span class="stag">Technical SEO</span>
+          <span class="stag">Local SEO</span>
+          <span class="stag">Content SEO</span>
+          <span class="stag">Email Marketing</span>
+          <span class="stag">Social Organic</span>
+          <span class="stag">B2B Lead Gen</span>
+          <span class="stag">Reputation Mgmt</span>
+        </div>
+      </div>
+      <div class="sb">
+        <div class="sb-title">Analytics &amp; Data</div>
+        <div class="stags">
+          <span class="stag">GA4 Certified</span>
+          <span class="stag">Google Tag Manager</span>
+          <span class="stag">Looker Studio</span>
+          <span class="stag">Ahrefs / SEMrush</span>
+          <span class="stag">A/B Test Design</span>
+          <span class="stag">Attribution Modelling</span>
+        </div>
+      </div>
+      <div class="sb">
+        <div class="sb-title">Leadership</div>
+        <div class="stags">
+          <span class="stag">Team Coordination</span>
+          <span class="stag">Sales-Mktg Alignment</span>
+          <span class="stag">Executive Reporting</span>
+          <span class="stag">Vendor Management</span>
+          <span class="stag">Govt Compliance</span>
+          <span class="stag">Client Partnerships</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="wrap">
+    <div class="s-label reveal">Tech Stack</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">TOOLS<br>I USE</h2>
+    <div class="reveal" style="transition-delay:.2s">
+      <table class="tools-tbl">
+        <tr><td>AI &amp; Agents</td><td>OpenClaw, ChatGPT API (GPT-4o), Claude API, Perplexity AI, Custom GPTs, PromptOps (Founder), Advanced Prompt Engineering Frameworks</td></tr>
+        <tr><td>Dev &amp; SDK</td><td>Python, Python SDK development, REST API design, GitHub Actions, Ghost Admin API, Beehiiv API, Gumroad API, GA4 Reporting API, Anthropic API, OpenAI API</td></tr>
+        <tr><td>Automation</td><td>n8n (self-hosted), Make.com, Zapier, API webhooks, cron-triggered pipelines, JSON orchestration</td></tr>
+        <tr><td>Analytics &amp; SEO</td><td>Google Analytics 4 (Certified), Search Console, GTM, Ahrefs, SEMrush, Screaming Frog, Hotjar, Looker Studio</td></tr>
+        <tr><td>Email &amp; CRM</td><td>Beehiiv, ActiveCampaign, Klaviyo, Mailchimp, ConvertKit, HubSpot (Certified), Brevo, Salesforce basics</td></tr>
+        <tr><td>E-Commerce &amp; Web</td><td>Shopify, WooCommerce, WordPress, Webflow, Ghost, GitHub Pages, HTML/CSS, Schema Markup</td></tr>
+        <tr><td>Design &amp; Content</td><td>Canva, Figma, Adobe Photoshop, Illustrator, CapCut, Descript, OBS Studio, StreamYard, Loom</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CERTIFICATIONS
+══════════════════════════════════════════════════════ -->
+<section id="certifications">
+  <div class="wrap">
+    <div class="s-label reveal">Credentials</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">CERTIFI<br>CATIONS</h2>
+    <div class="certs-grid reveal" style="transition-delay:.2s">
+      <div class="ccard">
+        <div class="cbadge">📊</div>
+        <div>
+          <div class="c-name">Google Analytics 4</div>
+          <div class="c-issuer">Google</div>
+          <div class="c-date">2024 — Renews Annually</div>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="cbadge">🔍</div>
+        <div>
+          <div class="c-name">Google Ads Search</div>
+          <div class="c-issuer">Google</div>
+          <div class="c-date">2025 — Valid 1 Year</div>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="cbadge">📱</div>
+        <div>
+          <div class="c-name">Meta Marketing Science</div>
+          <div class="c-issuer">Meta</div>
+          <div class="c-date">2025 — Valid 1 Year</div>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="cbadge">🧡</div>
+        <div>
+          <div class="c-name">HubSpot Marketing Software</div>
+          <div class="c-issuer">HubSpot Academy</div>
+          <div class="c-date">2024 — Valid Through 2026</div>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="cbadge">✍️</div>
+        <div>
+          <div class="c-name">HubSpot Content Marketing</div>
+          <div class="c-issuer">HubSpot Academy</div>
+          <div class="c-date">2025 — Valid Through 2027</div>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="cbadge">🏆</div>
+        <div>
+          <div class="c-name">Semrush SEO Toolkit</div>
+          <div class="c-issuer">Semrush Academy</div>
+          <div class="c-date">2025 — Valid 1 Year</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════════════════ -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="s-label reveal">Social Proof</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">WHAT<br>THEY SAY</h2>
+    <div class="tgrid reveal" style="transition-delay:.2s">
+      <div class="tcard">
+        <p class="t-text">"Jachin transformed our business model. We went from zero online presence to generating over ₹1 crore in online revenue in 18 months. His systematic approach created a sustainable channel that keeps growing."</p>
+        <div class="t-author">Managing Director</div>
+        <div class="t-role">Tea Manufacturing Company, Assam</div>
+        <span class="t-badge">Revenue Client</span>
+      </div>
+      <div class="tcard">
+        <p class="t-text">"We had a prompt incident that cost us 6 hours of engineering time and 3 churned customers. With PromptOps we rolled back the next incident in 10 seconds. The ROI was immediate."</p>
+        <div class="t-author">Arjun R.</div>
+        <div class="t-role">CTO, AI Startup · Series A</div>
+        <span class="t-badge">PromptOps Beta User</span>
+      </div>
+      <div class="tcard">
+        <p class="t-text">"The Mega Prompt Bundle has saved me at least 10 hours per week. Written by someone who actually does marketing — not just talks about it. The most practical AI resource I've found."</p>
+        <div class="t-author">Marketing Manager</div>
+        <div class="t-role">United States · Newsletter Subscriber</div>
+        <span class="t-badge">Product Customer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <div class="s-label reveal">Education</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">ACADEMIC<br>BACKGROUND</h2>
+    <div class="edu-grid reveal" style="transition-delay:.2s">
+      <div class="ecard">
+        <div class="e-icon">🎓</div>
+        <div class="e-deg">Master of Computer Applications</div>
+        <div class="e-inst">Gauhati University</div>
+        <div class="e-year">2019</div>
+        <div class="e-detail">Software development, information systems, programming — the technical foundation behind every marketing system and AI build.</div>
+      </div>
+      <div class="ecard">
+        <div class="e-icon">💻</div>
+        <div class="e-deg">BSc Computer Science</div>
+        <div class="e-inst">Undergraduate Foundation</div>
+        <div class="e-year">2017</div>
+        <div class="e-detail">Computer science, mathematics, and information technology — the roots of technical thinking that informs marketing architecture.</div>
+      </div>
+      <div class="ecard">
+        <div class="e-icon">📚</div>
+        <div class="e-deg">12th Standard — Science</div>
+        <div class="e-inst">Higher Secondary Science</div>
+        <div class="e-year">2014</div>
+        <div class="e-detail">Science stream. Analytical thinking and problem-solving disciplines that still shape how I approach business challenges.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOBBIES -->
+<section id="hobbies">
+  <div class="wrap">
+    <div class="s-label reveal">Beyond Work</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">INTERESTS</h2>
+    <div class="hobbies-row reveal" style="transition-delay:.2s">
+      <span class="hchip">📚 Reading</span>
+      <span class="hchip">🎙️ Podcasts</span>
+      <span class="hchip">🏸 Badminton</span>
+      <span class="hchip">✍️ Story Writing</span>
+      <span class="hchip">🤖 Building Agents</span>
+      <span class="hchip">📰 Newsletter Publishing</span>
+      <span class="hchip">🎯 Marketing Strategy</span>
+      <span class="hchip">🌐 AI Tools &amp; Research</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CTA
+══════════════════════════════════════════════════════ -->
+<section id="cta">
+  <div class="cta-bg-text">LET'S WORK</div>
+  <div class="wrap">
+    <div class="cta-inner reveal">
+      <span class="cta-pretitle">Open to Work — 2026</span>
+      <h2 class="cta-title">LET'S<br>BUILD<br><em>TOGETHER</em></h2>
+      <p class="cta-sub">Open to freelance, full-time remote, and consulting engagements.<br>US/EU timezone overlap · Responds within 24 hours.</p>
+      <div class="cta-btns">
+        <a href="mailto:jachinchsaikiasonowal@gmail.com" class="btn-gold"><span>Send an Email</span></a>
+        <a href="https://linkedin.com/in/jachinsonowal" target="_blank" class="btn-ghost">View LinkedIn →</a>
+      </div>
+      <div class="cta-contacts">
+        <div class="cta-ci">📧 <a href="mailto:jachinchsaikiasonowal@gmail.com">jachinchsaikiasonowal@gmail.com</a></div>
+        <div class="cta-ci">💼 <a href="https://linkedin.com/in/jachinsonowal" target="_blank">linkedin.com/in/jachinsonowal</a></div>
+        <div class="cta-ci">📰 <a href="https://ainewsindia.beehiiv.com/subscribe" target="_blank">ainewsindia.beehiiv.com</a></div>
+        <div class="cta-ci">⚡ <a href="https://promptops.jachinsonowal.com" target="_blank" style="color:var(--gold)">promptops.jachinsonowal.com</a></div>
+        <div class="cta-ci">📍 Guwahati, Assam · Remote-First</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Jachin Saikia Sonowal · Guwahati, India · Growth Marketer · AI Builder · Founder of PromptOps</p>
+  <div class="f-logo">JACHIN<span>.</span></div>
+  <div class="f-note">© 2026 Jachin Saikia Sonowal · Growth Marketer · AI Builder · Founder of PromptOps</div>
 </footer>
-
-</main>
 
 <script src="script.js"></script>
 </body>
