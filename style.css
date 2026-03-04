@@ -553,13 +553,13 @@ h2.s-title {
 
 /* ─── PromptOps Hero CTA ─── */
 .chip-promptops {
-  display: block;
-  width: 100%;
-  max-width: 420px;
+  display: inline-flex;
+  width: fit-content%;
+  max-width: 340px;
   background: linear-gradient(135deg, rgba(201,168,76,0.12) 0%, rgba(201,168,76,0.04) 100%);
   border: 1px solid var(--gold);
   border-radius: 4px;
-  padding: 18px 22px;
+  padding: 12px 20px;
   text-decoration: none;
   color: var(--gold);
   position: relative;
@@ -651,7 +651,7 @@ h2.s-title {
 
 .chip-po-title {
   font-family: var(--font-d);
-  font-size: 24px; letter-spacing: 2px;
+  font-size: 17px; letter-spacing: 2px;
   color: var(--white);
   display: block;
 }
