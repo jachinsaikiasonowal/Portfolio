@@ -1,30 +1,37 @@
 /* ═══════════════════════════════════════════════════════════════
    script.js — Jachin Saikia Sonowal Portfolio
    ───────────────────────────────────────────────────────────────
-   SECTIONS (use Ctrl+F to jump):
-   1. JS READY CLASS
-   2. REVEAL ANIMATIONS
-   3. LOADER
-   4. CUSTOM CURSOR
-   5. NAV SCROLL STATE
-   6. TEXT SCRAMBLE
-   7. COUNTER ANIMATION
-   8. EXPERIENCE ACCORDION
-   9. PARALLAX ORBS
-   10. PORTFOLIO CARD TILT
+   SECTIONS:
+   1.  JS-READY CLASS
+   2.  REVEAL ANIMATIONS (IntersectionObserver)
+   3.  LOADER
+   4.  CUSTOM CURSOR
+   5.  CURSOR TRAIL
+   6.  NAV SCROLL STATE
+   7.  MOBILE NAV
+   8.  ACTIVE NAV HIGHLIGHT
+   9.  TEXT SCRAMBLE (hero name)
+   10. COUNTER ROLL ANIMATION
+   11. EXPERIENCE ACCORDION
+   12. PARALLAX ORBS
+   13. PORTFOLIO CARD TILT (3D)
+   14. MAGNETIC BUTTONS
+   15. STAGGER REVEAL (grid children)
+   16. SCROLL PROGRESS BAR
 ═══════════════════════════════════════════════════════════════ */
 
 
 /* ─────────────────────────────────────────────────────────────
-   1. JS READY CLASS — add immediately so CSS transitions kick in
+   1. JS-READY CLASS
+   Add immediately so CSS reveal transitions activate
 ───────────────────────────────────────────────────────────────*/
 document.documentElement.classList.add('js-ready');
 
 
 /* ─────────────────────────────────────────────────────────────
    2. REVEAL ANIMATIONS
-   - Uses opacity + translateY only (safe, no clip-path bugs)
-   - Fires the moment 1% of element is visible
+   - Uses opacity + translateY only (bulletproof, no clip-path)
+   - Fires the instant 1% of element enters viewport
    - Nuclear fallback: reveals everything after 4s
 ───────────────────────────────────────────────────────────────*/
 var revealObserver = null;
@@ -43,19 +50,19 @@ function initReveal() {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.01, rootMargin: '0px 0px 60px 0px' });
+  }, { threshold: 0.01, rootMargin: '0px 0px 80px 0px' });
 
   els.forEach(function(el) {
     var rect = el.getBoundingClientRect();
-    // Already in viewport? reveal immediately
-    if (rect.top < window.innerHeight + 60) {
+    // Already visible in viewport? reveal right away
+    if (rect.top < window.innerHeight + 80) {
       setTimeout(function() { revealEl(el); }, 80);
     } else {
       revealObserver.observe(el);
     }
   });
 
-  // Nuclear fallback — reveal everything after 4s no matter what
+  // Nuclear fallback: reveal everything after 4s regardless
   setTimeout(function() {
     document.querySelectorAll('.reveal, .reveal-side').forEach(function(el) {
       revealEl(el);
@@ -65,28 +72,35 @@ function initReveal() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   3. LOADER — multiple fallbacks so it ALWAYS fires
+   3. LOADER
+   Multiple fallbacks to guarantee it always fires
 ───────────────────────────────────────────────────────────────*/
 var loaderFired = false;
 
 function doLoader() {
   if (loaderFired) return;
   loaderFired = true;
+
   var loader = document.getElementById('loader');
   if (loader) loader.classList.add('done');
+
   initReveal();
   startScramble();
   initCounters();
   initTilt();
 }
 
-window.addEventListener('load', function() { setTimeout(doLoader, 800); });
-document.addEventListener('DOMContentLoaded', function() { setTimeout(doLoader, 500); });
-setTimeout(doLoader, 1800); // Hard fallback
+// Primary: window load
+window.addEventListener('load', function() { setTimeout(doLoader, 900); });
+// Fallback 1: DOMContentLoaded + 600ms
+document.addEventListener('DOMContentLoaded', function() { setTimeout(doLoader, 600); });
+// Fallback 2: Hard timeout at 2s
+setTimeout(doLoader, 2000);
 
 
 /* ─────────────────────────────────────────────────────────────
    4. CUSTOM CURSOR
+   Dot follows mouse exactly. Ring follows with easing.
 ───────────────────────────────────────────────────────────────*/
 var cur  = document.getElementById('cursor');
 var ring = document.getElementById('cursor-ring');
@@ -98,10 +112,13 @@ document.addEventListener('mousemove', function(e) {
 });
 
 function animateCursor() {
-  if (cur)  { cur.style.left = mx + 'px'; cur.style.top = my + 'px'; }
+  if (cur) {
+    cur.style.left = mx + 'px';
+    cur.style.top  = my + 'px';
+  }
   if (ring) {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
+    rx += (mx - rx) * 0.11;
+    ry += (my - ry) * 0.11;
     ring.style.left = rx + 'px';
     ring.style.top  = ry + 'px';
   }
@@ -109,9 +126,69 @@ function animateCursor() {
 }
 animateCursor();
 
+// Hide cursor when it leaves the window
+document.addEventListener('mouseleave', function() {
+  if (cur)  cur.style.opacity = '0';
+  if (ring) ring.style.opacity = '0';
+});
+document.addEventListener('mouseenter', function() {
+  if (cur)  cur.style.opacity = '1';
+  if (ring) ring.style.opacity = '1';
+});
+
 
 /* ─────────────────────────────────────────────────────────────
-   5. NAV SCROLL STATE
+   5. CURSOR TRAIL
+   Six diminishing ghost dots that follow the cursor
+───────────────────────────────────────────────────────────────*/
+(function() {
+  var TRAIL_COUNT = 7;
+  var trail = [];
+  var positions = [];
+
+  for (var i = 0; i < TRAIL_COUNT; i++) {
+    var size = (4.5 - i * 0.5);
+    var dot  = document.createElement('div');
+    dot.style.cssText = [
+      'position:fixed',
+      'pointer-events:none',
+      'border-radius:50%',
+      'z-index:2147483640',
+      'width:'  + size + 'px',
+      'height:' + size + 'px',
+      'background:rgba(201,168,76,' + (0.3 - i * 0.04) + ')',
+      'transform:translate(-50%,-50%)',
+      'top:0',
+      'left:0',
+      'will-change:left,top'
+    ].join(';');
+    document.body.appendChild(dot);
+    trail.push(dot);
+    positions.push({ x: 0, y: 0 });
+  }
+
+  var tmx = 0, tmy = 0;
+  document.addEventListener('mousemove', function(e) { tmx = e.clientX; tmy = e.clientY; });
+
+  function animTrail() {
+    positions[0].x += (tmx - positions[0].x) * 0.3;
+    positions[0].y += (tmy - positions[0].y) * 0.3;
+    for (var j = 1; j < TRAIL_COUNT; j++) {
+      positions[j].x += (positions[j-1].x - positions[j].x) * 0.42;
+      positions[j].y += (positions[j-1].y - positions[j].y) * 0.42;
+    }
+    for (var k = 0; k < TRAIL_COUNT; k++) {
+      trail[k].style.left = positions[k].x + 'px';
+      trail[k].style.top  = positions[k].y + 'px';
+    }
+    requestAnimationFrame(animTrail);
+  }
+  animTrail();
+})();
+
+
+/* ─────────────────────────────────────────────────────────────
+   6. NAV SCROLL STATE
 ───────────────────────────────────────────────────────────────*/
 window.addEventListener('scroll', function() {
   var nav = document.getElementById('nav');
@@ -120,121 +197,36 @@ window.addEventListener('scroll', function() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   6. TEXT SCRAMBLE — hero name animation
+   7. MOBILE NAV TOGGLE
 ───────────────────────────────────────────────────────────────*/
-var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+var mobToggle = document.getElementById('mob-toggle');
+var mobNav    = document.getElementById('mob-nav');
 
-function scramble(el, target, duration) {
-  var start = null;
-  var len = target.length;
-  function step(ts) {
-    if (!start) start = ts;
-    var progress = Math.min((ts - start) / duration, 1);
-    var revealed = Math.floor(progress * len);
-    var result = '';
-    for (var i = 0; i < len; i++) {
-      if (i < revealed) result += target[i];
-      else result += CHARS[Math.floor(Math.random() * CHARS.length)];
-    }
-    el.textContent = result;
-    if (progress < 1) requestAnimationFrame(step);
-    else el.textContent = target;
-  }
-  requestAnimationFrame(step);
-}
-
-function startScramble() {
-  var nameEl = document.getElementById('scramble-name');
-  if (nameEl) setTimeout(function() { scramble(nameEl, 'JACHIN', 1200); }, 200);
-}
-
-
-/* ─────────────────────────────────────────────────────────────
-   7. COUNTER ROLL ANIMATION — metrics numbers count up
-───────────────────────────────────────────────────────────────*/
-function animateCounter(el) {
-  var target   = parseInt(el.dataset.target);
-  var prefix   = el.dataset.prefix  || '';
-  var suffix   = el.dataset.suffix  || '';
-  var duration = 1600;
-  var start    = null;
-  function step(ts) {
-    if (!start) start = ts;
-    var progress = Math.min((ts - start) / duration, 1);
-    var eased    = 1 - Math.pow(1 - progress, 3);
-    var val      = Math.floor(eased * target);
-    var suf      = suffix.replace('+', '');
-    var plus     = suffix.indexOf('+') !== -1 ? '+' : '';
-    el.innerHTML = prefix + val + '<em>' + suf + '</em>' + plus;
-    if (progress < 1) requestAnimationFrame(step);
-    else el.innerHTML = prefix + target + '<em>' + suffix + '</em>';
-  }
-  requestAnimationFrame(step);
-}
-
-function initCounters() {
-  var cIO = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting && e.target.dataset.target) {
-        animateCounter(e.target);
-        cIO.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('[data-target]').forEach(function(el) { cIO.observe(el); });
-}
-
-
-/* ─────────────────────────────────────────────────────────────
-   8. EXPERIENCE ACCORDION — click to expand/collapse
-───────────────────────────────────────────────────────────────*/
-function toggleExp(el) {
-  var isOpen = el.classList.contains('open');
-  document.querySelectorAll('.exp-item.open').forEach(function(i) {
-    i.classList.remove('open');
-  });
-  if (!isOpen) el.classList.add('open');
-}
-
-
-/* ─────────────────────────────────────────────────────────────
-   9. PARALLAX ORBS — subtle depth effect on scroll
-───────────────────────────────────────────────────────────────*/
-window.addEventListener('scroll', function() {
-  var y = window.scrollY;
-  document.querySelectorAll('.orb').forEach(function(orb, i) {
-    orb.style.transform = 'translateY(' + (y * (i === 0 ? -0.08 : 0.06)) + 'px) scale(1)';
-  });
-}, { passive: true });
-
-
-/* ─────────────────────────────────────────────────────────────
-   10. PORTFOLIO CARD TILT — 3D mouse-follow effect
-───────────────────────────────────────────────────────────────*/
-function initTilt() {
-  document.querySelectorAll('.pcard').forEach(function(card) {
-    card.addEventListener('mousemove', function(e) {
-      var r = card.getBoundingClientRect();
-      var x = ((e.clientX - r.left) / r.width  - 0.5) * 10;
-      var y = ((e.clientY - r.top)  / r.height - 0.5) * -10;
-      card.style.transform = 'perspective(600px) rotateY(' + x + 'deg) rotateX(' + y + 'deg) translateY(-4px)';
-    });
-    card.addEventListener('mouseleave', function() {
-      card.style.transform = '';
-    });
+if (mobToggle && mobNav) {
+  mobToggle.addEventListener('click', function() {
+    var isOpen = mobNav.classList.toggle('open');
+    mobToggle.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 }
 
+function closeMob() {
+  if (mobNav) mobNav.classList.remove('open');
+  if (mobToggle) mobToggle.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 
 /* ─────────────────────────────────────────────────────────────
-   11. ACTIVE NAV — highlights current section link on scroll
+   8. ACTIVE NAV HIGHLIGHT
+   Highlights the nav link matching the current section
 ───────────────────────────────────────────────────────────────*/
 (function() {
   var sections = document.querySelectorAll('section[id], div[id]');
   var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
   function onScroll() {
-    var scrollY = window.scrollY + 120;
+    var scrollY = window.scrollY + 140;
     var current = '';
     sections.forEach(function(sec) {
       if (sec.offsetTop <= scrollY) current = sec.id;
@@ -251,13 +243,153 @@ function initTilt() {
 
 
 /* ─────────────────────────────────────────────────────────────
-   12. MAGNETIC BUTTONS — subtle cursor attraction on hover
+   9. TEXT SCRAMBLE — hero name matrix effect on load
+───────────────────────────────────────────────────────────────*/
+var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&';
+
+function scramble(el, target, duration) {
+  var start = null;
+  var len = target.length;
+
+  function step(ts) {
+    if (!start) start = ts;
+    var progress = Math.min((ts - start) / duration, 1);
+    var revealed = Math.floor(progress * len);
+    var result = '';
+
+    for (var i = 0; i < len; i++) {
+      if (i < revealed) {
+        result += target[i];
+      } else {
+        result += CHARS[Math.floor(Math.random() * CHARS.length)];
+      }
+    }
+
+    el.textContent = result;
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      el.textContent = target;
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+function startScramble() {
+  var nameEl = document.getElementById('scramble-name');
+  if (nameEl) {
+    setTimeout(function() { scramble(nameEl, 'JACHIN', 1400); }, 250);
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   10. COUNTER ROLL ANIMATION
+   Numbers count up with cubic easing when scrolled into view
+───────────────────────────────────────────────────────────────*/
+function animateCounter(el) {
+  var target   = parseInt(el.dataset.target, 10);
+  var prefix   = el.dataset.prefix  || '';
+  var suffix   = el.dataset.suffix  || '';
+  var duration = 1800;
+  var start    = null;
+
+  function step(ts) {
+    if (!start) start = ts;
+    var progress = Math.min((ts - start) / duration, 1);
+    // Cubic ease-out
+    var eased = 1 - Math.pow(1 - progress, 3);
+    var val   = Math.floor(eased * target);
+    // Separate '+' from the display suffix
+    var cleanSuf = suffix.replace('+', '');
+    var plus     = suffix.indexOf('+') !== -1 ? '+' : '';
+
+    el.innerHTML = prefix + val + '<em>' + cleanSuf + '</em>' + plus;
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      el.innerHTML = prefix + target + '<em>' + suffix + '</em>';
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+function initCounters() {
+  var cIO = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting && e.target.dataset.target) {
+        animateCounter(e.target);
+        cIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  document.querySelectorAll('[data-target]').forEach(function(el) {
+    cIO.observe(el);
+  });
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   11. EXPERIENCE ACCORDION
+   Only one item open at a time. Click again to close.
+───────────────────────────────────────────────────────────────*/
+function toggleExp(el) {
+  var isOpen = el.classList.contains('open');
+  // Close all open items
+  document.querySelectorAll('.exp-item.open').forEach(function(i) {
+    i.classList.remove('open');
+  });
+  // Open clicked item (unless it was already open)
+  if (!isOpen) el.classList.add('open');
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   12. PARALLAX ORBS — subtle depth movement on scroll
+───────────────────────────────────────────────────────────────*/
+window.addEventListener('scroll', function() {
+  var y = window.scrollY;
+  document.querySelectorAll('.orb').forEach(function(orb, i) {
+    var speed = i === 0 ? -0.07 : 0.05;
+    orb.style.transform = 'translateY(' + (y * speed) + 'px) scale(1)';
+  });
+}, { passive: true });
+
+
+/* ─────────────────────────────────────────────────────────────
+   13. PORTFOLIO CARD TILT — 3D perspective mouse-follow
+───────────────────────────────────────────────────────────────*/
+function initTilt() {
+  document.querySelectorAll('.pcard').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var r  = card.getBoundingClientRect();
+      var x  = ((e.clientX - r.left)  / r.width  - 0.5) * 12;
+      var y  = ((e.clientY - r.top)   / r.height - 0.5) * -12;
+      card.style.transform = 'perspective(700px) rotateY(' + x + 'deg) rotateX(' + y + 'deg) translateY(-6px)';
+      card.style.transition = 'transform 0.1s ease';
+    });
+
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = '';
+      card.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s';
+    });
+  });
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   14. MAGNETIC BUTTONS — subtle cursor attraction on hover
 ───────────────────────────────────────────────────────────────*/
 document.querySelectorAll('.btn-gold, .btn-ghost, .nav-hire').forEach(function(btn) {
   btn.addEventListener('mousemove', function(e) {
-    var r = btn.getBoundingClientRect();
-    var dx = (e.clientX - (r.left + r.width  / 2)) * 0.18;
-    var dy = (e.clientY - (r.top  + r.height / 2)) * 0.18;
+    var r  = btn.getBoundingClientRect();
+    var dx = (e.clientX - (r.left + r.width  / 2)) * 0.2;
+    var dy = (e.clientY - (r.top  + r.height / 2)) * 0.2;
     btn.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
   });
   btn.addEventListener('mouseleave', function() {
@@ -267,62 +399,45 @@ document.querySelectorAll('.btn-gold, .btn-ghost, .nav-hire').forEach(function(b
 
 
 /* ─────────────────────────────────────────────────────────────
-   13. STAGGER REVEAL — child elements inside grid sections
-        fire in sequence rather than all at once
+   15. STAGGER REVEAL
+   Grid children animate in sequence, not all at once
 ───────────────────────────────────────────────────────────────*/
 (function() {
-  var grids = document.querySelectorAll('.services-grid, .skills-grid, .certs-grid, .tgrid');
+  var grids = document.querySelectorAll(
+    '.services-grid, .skills-grid, .certs-grid, .tgrid, .edu-grid, .case-grid'
+  );
   grids.forEach(function(grid) {
     var children = grid.children;
     for (var i = 0; i < children.length; i++) {
-      children[i].style.transitionDelay = (i * 0.05) + 's';
+      children[i].style.transitionDelay = (i * 0.045) + 's';
     }
   });
 })();
 
 
 /* ─────────────────────────────────────────────────────────────
-   14. CURSOR TRAIL — faint ghost dots that follow the cursor
+   16. SCROLL PROGRESS BAR
+   Thin gold line at the very top showing scroll progress
 ───────────────────────────────────────────────────────────────*/
 (function() {
-  var TRAIL_COUNT = 6;
-  var trail = [];
-  var positions = [];
+  var bar = document.createElement('div');
+  bar.style.cssText = [
+    'position:fixed',
+    'top:0',
+    'left:0',
+    'height:2px',
+    'background:linear-gradient(to right,#C9A84C,#E8C96A)',
+    'z-index:10001',
+    'width:0%',
+    'transition:width 0.1s linear',
+    'pointer-events:none'
+  ].join(';');
+  document.body.appendChild(bar);
 
-  for (var i = 0; i < TRAIL_COUNT; i++) {
-    var dot = document.createElement('div');
-    dot.style.cssText = [
-      'position:fixed', 'pointer-events:none',
-      'border-radius:50%', 'z-index:2147483640',
-      'width:' + (4 - i * 0.5) + 'px',
-      'height:' + (4 - i * 0.5) + 'px',
-      'background:rgba(201,168,76,' + (0.25 - i * 0.04) + ')',
-      'transform:translate(-50%,-50%)',
-      'transition:opacity 0.3s',
-      'top:0', 'left:0'
-    ].join(';');
-    document.body.appendChild(dot);
-    trail.push(dot);
-    positions.push({ x: 0, y: 0 });
-  }
-
-  var trailMx = 0, trailMy = 0;
-  document.addEventListener('mousemove', function(e) {
-    trailMx = e.clientX; trailMy = e.clientY;
-  });
-
-  function animTrail() {
-    positions[0].x += (trailMx - positions[0].x) * 0.35;
-    positions[0].y += (trailMy - positions[0].y) * 0.35;
-    for (var j = 1; j < TRAIL_COUNT; j++) {
-      positions[j].x += (positions[j-1].x - positions[j].x) * 0.45;
-      positions[j].y += (positions[j-1].y - positions[j].y) * 0.45;
-    }
-    for (var k = 0; k < TRAIL_COUNT; k++) {
-      trail[k].style.left = positions[k].x + 'px';
-      trail[k].style.top  = positions[k].y + 'px';
-    }
-    requestAnimationFrame(animTrail);
-  }
-  animTrail();
+  window.addEventListener('scroll', function() {
+    var scrollTop  = window.scrollY;
+    var docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+    var pct        = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  }, { passive: true });
 })();

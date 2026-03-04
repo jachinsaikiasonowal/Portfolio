@@ -3,30 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jachin Saikia Sonowal</title>
+<meta name="description" content="Jachin Saikia Sonowal — Growth Marketer, Marketing Ops Architect & AI Agent Engineer. 8+ years building revenue systems. $150K+ client revenue. Available for freelance & remote roles.">
+<meta property="og:title" content="Jachin Saikia Sonowal — Growth Marketer & AI Agent Engineer">
+<meta property="og:description" content="8+ years at the intersection of marketing strategy, automation, and AI. Based in Guwahati, Assam.">
+<title>Jachin Saikia Sonowal — Growth Marketer & AI Agent Engineer</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ======================================================
-     CURSOR
-====================================================== -->
+<!-- ═══════ CURSOR ═══════ -->
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
 
-<!-- ======================================================
-     LOADER
-====================================================== -->
-<div id="loader">
-  <div class="loader-text">JACHIN</div>
+<!-- ═══════ LOADER ═══════ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-text">JACHIN</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
 </div>
 
-<!-- ======================================================
-     NAVIGATION
-     Edit: links, logo text, hire me button URL
-====================================================== -->
+<!-- ═══════ NAV ═══════ -->
 <nav id="nav">
   <a href="#hero" class="nav-logo">JACHIN<span>.</span></a>
   <ul class="nav-links">
@@ -34,58 +35,72 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#portfolio">Work</a></li>
-    <li><a href="https://promptops.jachinsonowal.com" target="_blank" style="color:var(--gold)">PromptOps ⚡</a></li>
+    <li><a href="#skills">Stack</a></li>
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#cta" class="nav-hire">Hire Me</a></li>
   </ul>
+  <button class="nav-mob-btn" id="mob-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- ======================================================
-     HERO SECTION
-     Edit: name, title line, bio paragraph, button links,
-           stats numbers, photo src, float card values
-====================================================== -->
+<!-- Mobile Nav -->
+<div class="mob-nav" id="mob-nav">
+  <ul>
+    <li><a href="#about" onclick="closeMob()">About</a></li>
+    <li><a href="#services" onclick="closeMob()">Services</a></li>
+    <li><a href="#experience" onclick="closeMob()">Experience</a></li>
+    <li><a href="#portfolio" onclick="closeMob()">Work</a></li>
+    <li><a href="#skills" onclick="closeMob()">Stack</a></li>
+    <li><a href="#certifications" onclick="closeMob()">Certs</a></li>
+    <li><a href="#cta" onclick="closeMob()" class="mob-hire">Hire Me →</a></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════ -->
 <section id="hero">
-  <div class="hero-lines">
+  <!-- Background atmosphere -->
+  <div class="hero-lines" aria-hidden="true">
     <div class="hero-line h hl1"></div>
     <div class="hero-line h hl2"></div>
     <div class="hero-line h hl3"></div>
     <div class="hero-line v vl1"></div>
     <div class="hero-line v vl2"></div>
   </div>
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
+  <div class="orb orb1" aria-hidden="true"></div>
+  <div class="orb orb2" aria-hidden="true"></div>
+  <div class="hero-grid-overlay" aria-hidden="true"></div>
 
-  <div class="hero-inner">
-    <div>
+  <div class="hero-inner wrap">
+    <!-- Left: text -->
+    <div class="hero-left">
       <div class="avail reveal">
         <span class="avail-dot"></span>
-        Available — Freelance & Remote Roles
+        Available — Freelance &amp; Remote Roles · 2026
       </div>
 
-      <h1 class="hero-name reveal" style="transition-delay:.1s">
+      <h1 class="hero-name reveal" style="transition-delay:.12s">
         <span id="scramble-name">JACHIN</span><br>
         <span class="outline">SAIKIA</span><br>
         <span class="gold">SONOWAL</span>
       </h1>
 
-      <div class="hero-title reveal" style="transition-delay:.2s">
-        Growth Marketer · Marketing Ops · AI Agent Engineer · Founder
+      <div class="hero-title reveal" style="transition-delay:.22s">
+        Growth Marketer &nbsp;·&nbsp; Marketing Ops &nbsp;·&nbsp; AI Agent Engineer
       </div>
 
-      <p class="hero-bio reveal" style="transition-delay:.3s">
-        8+ years building revenue-generating marketing systems for real businesses.
-        Early adopter of AI agent development — built 10+ custom agents using OpenClaw
-        and LLM APIs that run entire marketing workflows autonomously. Founder of
-        <strong style="color:var(--gold)">PromptOps</strong> — version control &amp; CI/CD for LLM prompts.
+      <p class="hero-bio reveal" style="transition-delay:.32s">
+        Eight years building revenue-generating marketing systems for businesses that demanded results — not reports. From D2C launches to government contracts, I operate at the rare intersection of <em>deep strategy, automation, and AI engineering</em>. I don't just run campaigns. I architect the systems that make them unstoppable.
       </p>
 
-      <div class="hero-btns reveal" style="transition-delay:.4s">
-        <a href="mailto:jachinchsaikiasonowal@gmail.com" class="btn-gold"><span>Get in Touch</span></a>
-        <a href="https://linkedin.com/in/jachinsonowal" target="_blank" class="btn-ghost">LinkedIn →</a>
+      <div class="hero-btns reveal" style="transition-delay:.42s">
+        <a href="#cta" class="btn-gold"><span>Let's Build Together</span></a>
+        <a href="https://linkedin.com/in/jachinsonowal" target="_blank" rel="noopener" class="btn-ghost">LinkedIn →</a>
       </div>
 
-      <div class="hero-stats reveal" style="transition-delay:.5s">
+      <div class="hero-stats reveal" style="transition-delay:.52s">
         <div class="hstat">
           <div class="hstat-num" data-target="150" data-prefix="$" data-suffix="K+">$0K+</div>
           <div class="hstat-label">Revenue Generated</div>
@@ -95,12 +110,8 @@
           <div class="hstat-label">Clients Served</div>
         </div>
         <div class="hstat">
-          <div class="hstat-num" data-target="247" data-suffix="+">0+</div>
-          <div class="hstat-label">PromptOps Waitlist</div>
-        </div>
-        <div class="hstat">
           <div class="hstat-num" data-target="10" data-suffix="+">0+</div>
-          <div class="hstat-label">AI Agents Built</div>
+          <div class="hstat-label">AI Agents Live</div>
         </div>
         <div class="hstat">
           <div class="hstat-num" data-target="8" data-suffix="+">0+</div>
@@ -109,27 +120,24 @@
       </div>
     </div>
 
-    <!-- PHOTO COLUMN — replace src="images/profile.jpg" with your image path -->
-    <div class="hero-photo-col reveal" style="transition-delay:.3s">
+    <!-- Right: photo frame -->
+    <div class="hero-photo-col reveal" style="transition-delay:.32s">
       <div class="photo-frame">
         <div class="photo-border"></div>
         <div class="photo-img">
-          <img src="images/profile.jpg" alt="Jachin Saikia Sonowal">
-          <!-- If no image yet, delete the img tag above and uncomment below: -->
-          <!--
+          <!-- Replace with your photo: <img src="jachin.jpg" alt="Jachin Saikia Sonowal"> -->
           <div class="photo-placeholder">
             <div class="photo-placeholder-icon">👤</div>
-            <div class="photo-placeholder-text">Add Your Photo</div>
+            <div class="photo-placeholder-text">Your Photo Here</div>
           </div>
-          -->
         </div>
         <div class="photo-corner tl"></div>
         <div class="photo-corner tr"></div>
         <div class="photo-corner bl"></div>
         <div class="photo-corner br"></div>
         <div class="photo-label pl1">
-          <div class="pl-lbl">Waitlist Signups</div>
-          <div class="pl-val">247<em>+</em></div>
+          <div class="pl-lbl">Newsletter Open Rate</div>
+          <div class="pl-val">38<em>%</em></div>
         </div>
         <div class="photo-label pl2">
           <div class="pl-lbl">AI Agents Live</div>
@@ -138,162 +146,125 @@
       </div>
     </div>
   </div>
+
+  <!-- Scroll cue -->
+  <div class="scroll-cue" aria-hidden="true">
+    <div class="sc-line"></div>
+    <div class="sc-label">Scroll</div>
+  </div>
 </section>
 
-<!-- ======================================================
-     MARQUEE STRIP
-     Edit: skill/keyword labels
-====================================================== -->
+<!-- ═══════════════════════════════════════════
+   MARQUEE STRIP
+═══════════════════════════════════════════════ -->
 <div id="strip" aria-hidden="true">
   <div class="strip-track">
     <span class="strip-item">Growth Marketing <span class="strip-dot"></span></span>
     <span class="strip-item">AI Agent Engineering <span class="strip-dot"></span></span>
-    <span class="strip-item">PromptOps — Founder <span class="strip-dot"></span></span>
     <span class="strip-item">Marketing Operations <span class="strip-dot"></span></span>
-    <span class="strip-item">SEO & Organic Growth <span class="strip-dot"></span></span>
-    <span class="strip-item">SaaS Product Development <span class="strip-dot"></span></span>
-    <span class="strip-item">OpenClaw Skills <span class="strip-dot"></span></span>
+    <span class="strip-item">SEO &amp; Organic Growth <span class="strip-dot"></span></span>
+    <span class="strip-item">OpenClaw Skills Dev <span class="strip-dot"></span></span>
     <span class="strip-item">Email Automation <span class="strip-dot"></span></span>
     <span class="strip-item">LLM API Integration <span class="strip-dot"></span></span>
-    <span class="strip-item">Funnel Optimization <span class="strip-dot"></span></span>
+    <span class="strip-item">Funnel Optimisation <span class="strip-dot"></span></span>
     <span class="strip-item">Revenue Attribution <span class="strip-dot"></span></span>
     <span class="strip-item">D2C E-Commerce <span class="strip-dot"></span></span>
-    <!-- Duplicate set for seamless loop -->
     <span class="strip-item">Growth Marketing <span class="strip-dot"></span></span>
     <span class="strip-item">AI Agent Engineering <span class="strip-dot"></span></span>
-    <span class="strip-item">PromptOps — Founder <span class="strip-dot"></span></span>
     <span class="strip-item">Marketing Operations <span class="strip-dot"></span></span>
-    <span class="strip-item">SEO & Organic Growth <span class="strip-dot"></span></span>
-    <span class="strip-item">SaaS Product Development <span class="strip-dot"></span></span>
-    <span class="strip-item">OpenClaw Skills <span class="strip-dot"></span></span>
+    <span class="strip-item">SEO &amp; Organic Growth <span class="strip-dot"></span></span>
+    <span class="strip-item">OpenClaw Skills Dev <span class="strip-dot"></span></span>
     <span class="strip-item">Email Automation <span class="strip-dot"></span></span>
     <span class="strip-item">LLM API Integration <span class="strip-dot"></span></span>
-    <span class="strip-item">Funnel Optimization <span class="strip-dot"></span></span>
+    <span class="strip-item">Funnel Optimisation <span class="strip-dot"></span></span>
     <span class="strip-item">Revenue Attribution <span class="strip-dot"></span></span>
     <span class="strip-item">D2C E-Commerce <span class="strip-dot"></span></span>
   </div>
 </div>
 
-<!-- ======================================================
-     METRICS BAR
-     Edit: data-target numbers, label text
-====================================================== -->
+<!-- ═══════════════════════════════════════════
+   METRICS BAR
+═══════════════════════════════════════════════ -->
 <div id="metrics">
   <div class="metrics-row">
     <div class="m-item reveal">
       <div class="m-num" data-target="150" data-prefix="$" data-suffix="K+">$0K+</div>
-      <div class="m-lbl">Client Revenue</div>
+      <div class="m-lbl">Client Revenue Generated</div>
     </div>
     <div class="m-item reveal" style="transition-delay:.06s">
       <div class="m-num" data-target="175" data-suffix="+">0+</div>
-      <div class="m-lbl">Engagements</div>
+      <div class="m-lbl">Marketing Engagements</div>
     </div>
     <div class="m-item reveal" style="transition-delay:.12s">
       <div class="m-num">3<em>×</em></div>
-      <div class="m-lbl">Business Scaled</div>
+      <div class="m-lbl">Businesses Scaled</div>
     </div>
     <div class="m-item reveal" style="transition-delay:.18s">
       <div class="m-num">38<em>%</em></div>
-      <div class="m-lbl">Email Open Rate</div>
+      <div class="m-lbl">Newsletter Open Rate</div>
     </div>
     <div class="m-item reveal" style="transition-delay:.24s">
-      <div class="m-num">$<em>3.8K</em></div>
-      <div class="m-lbl">Product Revenue</div>
+      <div class="m-num">2.5<em>M+</em></div>
+      <div class="m-lbl">Campaign Impressions</div>
     </div>
     <div class="m-item reveal" style="transition-delay:.30s">
-      <div class="m-num"><em>0</em></div>
+      <div class="m-num"><em>Zero</em></div>
       <div class="m-lbl">Compliance Violations</div>
-    </div>
-    <div class="m-item reveal" style="transition-delay:.36s">
-      <div class="m-num" data-target="247" data-suffix="+">0+</div>
-      <div class="m-lbl">PromptOps Waitlist</div>
     </div>
   </div>
 </div>
 
-<!-- ======================================================
-     ABOUT SECTION
-     Edit: headline, 3 body paragraphs, chip links,
-           5 value cards (number, title, description)
-====================================================== -->
+<!-- ═══════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════════ -->
 <section id="about">
+  <div class="sec-num" aria-hidden="true">01</div>
   <div class="wrap">
     <div class="about-grid">
       <div>
         <div class="s-label reveal">About Me</div>
         <h2 class="s-title reveal" style="transition-delay:.1s">THE<br>MARKETER<br>WHO BUILDS</h2>
         <div class="about-text reveal" style="transition-delay:.2s">
-          <p>I build marketing systems that generate revenue — not just traffic. Based in Guwahati, Assam, I've spent 8+ years operating at the intersection of <strong>strategy, automation, and AI</strong> across industries that most marketers never touch simultaneously.</p>
-          <p>From D2C tea brands to government contracts. From political campaigns to B2B manufacturers. From email funnels to <strong>custom AI agents</strong> that replace entire manual workflows. I own the full stack — strategy, execution, tech, and team.</p>
-          <p>Currently building <strong>PromptOps</strong> — a developer tool giving AI teams Git-style version control, automated evals, and instant deployment for LLM prompts. 247+ teams on the waitlist. Bootstrapped, solo, zero to beta in 60 days. Also running <strong>AI News India</strong> (1,000+ subscribers) and deploying agent-based marketing automation with OpenClaw.</p>
+          <p>I build marketing systems that generate revenue — not just traffic. Based in Guwahati, Assam, I have spent 8+ years operating at the intersection of <strong>strategy, automation, and AI</strong> across industries that most marketers never touch simultaneously.</p>
+          <p>From D2C tea brands to government contracts. From political campaigns to B2B manufacturers. From email funnels to <strong>custom AI agents</strong> that replace entire manual workflows. I own the full stack — strategy, execution, technology, and team.</p>
+          <p>I am currently running <strong>AI News India</strong>, a newsletter reaching 1,000+ subscribers with a 38% open rate, deploying agent-based marketing automation with OpenClaw, and taking select freelance and full-time remote engagements.</p>
+          <p>My edge is simple: I understand how <strong>code, data, and human psychology</strong> interact in a marketing system — and I use all three simultaneously to build things that compound over time.</p>
         </div>
         <div class="about-chips reveal" style="transition-delay:.3s">
-
-          <!-- TIER 1 — PromptOps: featured full-width -->
-          <a href="https://promptops.jachinsonowal.com" target="_blank" class="achip achip-hero">
-            <span class="achip-hero-icon">⚡</span>
-            <span class="achip-hero-body">
-              <span class="achip-hero-title">PromptOps</span>
-              <span class="achip-hero-sub">Version control &amp; CI/CD for LLM prompts · 247+ waitlist</span>
-            </span>
-            <span class="achip-hero-arrow">→</span>
-          </a>
-
-          <!-- TIER 2 — Products & channels -->
-          <a href="https://jachinsonowal.gumroad.com/l/mega-prompt-bundle" target="_blank" class="achip achip-product">
-            🎯 Mega Prompt Bundle <span class="achip-badge">$49</span>
-          </a>
-          <a href="https://ainewsindia.beehiiv.com/subscribe" target="_blank" class="achip">📰 Newsletter</a>
-          <a href="https://linkedin.com/in/jachinsonowal" target="_blank" class="achip">💼 LinkedIn</a>
-
-          <!-- TIER 3 — Contact & location: muted, last -->
-          <a href="mailto:jachinchsaikiasonowal@gmail.com" class="achip achip-muted">✉ Email</a>
-          <span class="achip achip-muted">📍 Guwahati · Remote · US/EU TZ</span>
-
+          <a href="https://ainewsindia.beehiiv.com" target="_blank" rel="noopener" class="achip">📰 AI News India Newsletter</a>
+          <a href="https://linkedin.com/in/jachinsonowal" target="_blank" rel="noopener" class="achip">💼 LinkedIn Profile</a>
+          <span class="achip">📍 Guwahati, Assam · Remote</span>
+          <span class="achip">🌐 US · EU · IST Overlap</span>
         </div>
       </div>
 
-      <div class="values-list reveal" style="transition-delay:.2s">
+      <div class="values-list reveal" style="transition-delay:.25s">
         <div class="vcard">
           <div class="v-num">01</div>
           <div>
-            <div class="v-title">Revenue-First Mindset</div>
-            <div class="v-desc">Every campaign built backwards from a revenue goal — never vanity metrics.</div>
+            <div class="v-title">Systems Over Tactics</div>
+            <div class="v-desc">Anyone can run an ad. I build the infrastructure — attribution, automation, compounding loops — that makes every tactic 3× more effective.</div>
           </div>
         </div>
         <div class="vcard">
           <div class="v-num">02</div>
           <div>
-            <div class="v-title">AI-Native Operator</div>
-            <div class="v-desc">I build custom agents and LLM systems — not just prompt ChatGPT.</div>
+            <div class="v-title">Revenue is the Only Metric</div>
+            <div class="v-desc">Vanity metrics don't make payroll. Every strategy I deploy traces directly back to a revenue line — I speak CFO language.</div>
           </div>
         </div>
         <div class="vcard">
           <div class="v-num">03</div>
           <div>
-            <div class="v-title">Systems Thinker</div>
-            <div class="v-desc">I document everything. Clients keep infrastructure that outlasts the engagement.</div>
+            <div class="v-title">AI-Native, Not AI-Adjacent</div>
+            <div class="v-desc">I don't use ChatGPT for content. I build multi-agent pipelines that handle research, drafting, A/B testing, and distribution autonomously.</div>
           </div>
         </div>
         <div class="vcard">
           <div class="v-num">04</div>
           <div>
-            <div class="v-title">Founder-Operator Breadth</div>
-            <div class="v-desc">Owned strategy, execution, tech, and team simultaneously. I move fast.</div>
-          </div>
-        </div>
-        <div class="vcard">
-          <div class="v-num">05</div>
-          <div>
-            <div class="v-title">Cross-Functional Translator</div>
-            <div class="v-desc">From CEO presentations to developer briefs to front-line staff training.</div>
-          </div>
-        </div>
-        <div class="vcard">
-          <div class="v-num">06</div>
-          <div>
-            <div class="v-title">Founder Mindset</div>
-            <div class="v-desc">Built PromptOps solo — product, SDK, GTM, and 247+ waitlist. Zero budget. Full ownership.</div>
+            <div class="v-title">Radical Ownership</div>
+            <div class="v-desc">I don't need a hand-hold. I take a brief, build the strategy, recruit the talent if needed, and ship — then report the revenue number.</div>
           </div>
         </div>
       </div>
@@ -301,256 +272,234 @@
   </div>
 </section>
 
-<!-- ======================================================
-     SERVICES SECTION
-     Edit: 6 service cards — number, icon, title, description
-====================================================== -->
+<!-- ═══════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════════ -->
 <section id="services">
+  <div class="sec-num" aria-hidden="true">02</div>
   <div class="wrap">
-    <div class="s-label reveal">Services</div>
-    <h2 class="s-title reveal" style="transition-delay:.1s">WHAT<br>I DO</h2>
-    <div class="services-grid reveal" style="transition-delay:.2s">
+    <div class="s-label reveal">What I Do</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">SERVICES</h2>
+    <p class="s-sub reveal" style="transition-delay:.2s">I operate across three interconnected disciplines. Most engagements use all three — because isolated tactics don't compound.</p>
+    <div class="services-grid reveal" style="transition-delay:.25s">
 
       <div class="svc">
         <span class="svc-num">01</span>
         <div class="svc-icon">📈</div>
-        <div class="svc-title">Growth Strategy & Funnels</div>
-        <div class="svc-desc">Full-funnel architecture from awareness to retention. Multi-channel acquisition, CRO, and lifecycle marketing built around revenue goals.</div>
+        <div class="svc-title">Growth Marketing</div>
+        <p class="svc-desc">Full-funnel strategy from acquisition to retention. Channel selection, budget allocation, creative direction, and conversion rate optimisation across SEO, paid, email, and organic social.</p>
+        <ul class="svc-list">
+          <li>GTM strategy for new product launches</li>
+          <li>SEO architecture &amp; technical audits</li>
+          <li>Email funnel build &amp; sequencing</li>
+          <li>Revenue attribution &amp; reporting systems</li>
+        </ul>
       </div>
 
       <div class="svc">
         <span class="svc-num">02</span>
-        <div class="svc-icon">📧</div>
-        <div class="svc-title">Email Marketing & Automation</div>
-        <div class="svc-desc">List growth, segmentation, sequences, and win-backs. Built for deliverability and conversion, not just open rates.</div>
+        <div class="svc-icon">⚙️</div>
+        <div class="svc-title">Marketing Ops &amp; Automation</div>
+        <p class="svc-desc">The operational backbone that makes marketing scale without breaking. CRM architecture, workflow automation, data pipelines, and cross-tool integration that saves 20+ hours per week.</p>
+        <ul class="svc-list">
+          <li>HubSpot / ActiveCampaign architecture</li>
+          <li>n8n &amp; Make.com workflow automation</li>
+          <li>API integrations &amp; data pipelines</li>
+          <li>Marketing team SOPs &amp; playbooks</li>
+        </ul>
       </div>
 
       <div class="svc">
         <span class="svc-num">03</span>
-        <div class="svc-icon">🔍</div>
-        <div class="svc-title">SEO & Organic Growth</div>
-        <div class="svc-desc">Technical SEO, local SEO, content-driven acquisition, and Google Business Profile management that compounds over time.</div>
+        <div class="svc-icon">🤖</div>
+        <div class="svc-title">AI Agent Engineering</div>
+        <p class="svc-desc">Custom autonomous agents built with OpenClaw, GPT-4o, and Claude APIs that handle end-to-end marketing workflows — no human in the loop required for routine operations.</p>
+        <ul class="svc-list">
+          <li>Research &amp; content generation agents</li>
+          <li>A/B test design &amp; analysis agents</li>
+          <li>Outreach &amp; distribution automation</li>
+          <li>LLM API prompt engineering frameworks</li>
+        </ul>
       </div>
 
       <div class="svc">
         <span class="svc-num">04</span>
-        <div class="svc-icon">⚙️</div>
-        <div class="svc-title">Marketing Operations</div>
-        <div class="svc-desc">Tech stack setup, workflow automation, CRM implementation, dashboards, and SOPs that make your marketing engine run without you.</div>
+        <div class="svc-icon">🛒</div>
+        <div class="svc-title">D2C &amp; E-Commerce Growth</div>
+        <p class="svc-desc">Launch and scale direct-to-consumer brands. Shopify build, Klaviyo email architecture, product page CRO, and post-purchase retention systems that maximise lifetime value.</p>
+        <ul class="svc-list">
+          <li>Shopify store strategy &amp; build</li>
+          <li>Product launch GTM campaigns</li>
+          <li>Retention &amp; loyalty program design</li>
+          <li>D2C-specific SEO &amp; content systems</li>
+        </ul>
       </div>
 
       <div class="svc">
         <span class="svc-num">05</span>
-        <div class="svc-icon">🤖</div>
-        <div class="svc-title">AI Agent Engineering</div>
-        <div class="svc-desc">Custom agents with OpenClaw and LLM APIs that automate content, lead scoring, support, and reporting end-to-end. Founder of PromptOps — version control for LLM prompts.</div>
+        <div class="svc-icon">🔍</div>
+        <div class="svc-title">SEO &amp; Content Systems</div>
+        <p class="svc-desc">Organic growth that compounds. Technical SEO, content strategy, local SEO for multi-location brands, and AI-assisted content systems that publish at 5× the speed without sacrificing quality.</p>
+        <ul class="svc-list">
+          <li>Technical SEO audits &amp; architecture</li>
+          <li>Local SEO for multi-location brands</li>
+          <li>AI-assisted content production pipelines</li>
+          <li>Schema markup &amp; structured data</li>
+        </ul>
       </div>
 
       <div class="svc">
         <span class="svc-num">06</span>
-        <div class="svc-icon">🏆</div>
-        <div class="svc-title">Cross-Functional Execution</div>
-        <div class="svc-desc">Embedded strategic partner: sales alignment, executive reporting, vendor coordination, and team training.</div>
-      </div>
-
-      <div class="svc">
-        <span class="svc-num">07</span>
-        <div class="svc-icon">⚡</div>
-        <div class="svc-title">SaaS Product & GTM</div>
-        <div class="svc-desc">0→1 product development, SDK design, developer-focused landing pages, waitlist funnels, and SaaS pricing strategy. Proven: 247+ signups, bootstrapped solo.</div>
-      </div>
-
-      <div class="svc">
-        <span class="svc-num">08</span>
         <div class="svc-icon">📰</div>
-        <div class="svc-title">Newsletter & Publishing</div>
-        <div class="svc-desc">End-to-end newsletter operations — editorial strategy, audience growth, monetisation, and Beehiiv/Ghost publishing. Running AI News India: 1,000+ subscribers, 38% open rate.</div>
+        <div class="svc-title">Newsletter &amp; Media Strategy</div>
+        <p class="svc-desc">Audience building through owned media. Newsletter launch and growth strategy, editorial systems, monetisation architecture, and engagement-optimised content — proven with AI News India's 38% open rate.</p>
+        <ul class="svc-list">
+          <li>Newsletter strategy &amp; Beehiiv setup</li>
+          <li>Editorial calendar &amp; systems design</li>
+          <li>Audience segmentation &amp; targeting</li>
+          <li>Monetisation strategy for media brands</li>
+        </ul>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ======================================================
-     EXPERIENCE SECTION
-     Edit: 4 accordion items — title, meta, body bullets,
-           result cards. Click header to expand/collapse.
-====================================================== -->
+<!-- ═══════════════════════════════════════════
+   EXPERIENCE
+═══════════════════════════════════════════════ -->
 <section id="experience">
+  <div class="sec-num" aria-hidden="true">03</div>
   <div class="wrap">
-    <div class="s-label reveal">Experience</div>
-    <h2 class="s-title reveal" style="transition-delay:.1s">HOW I<br>GOT HERE</h2>
-    <div class="exp-list reveal" style="transition-delay:.2s">
+    <div class="s-label reveal">Career</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">EXPERIENCE</h2>
+    <p class="s-sub reveal" style="transition-delay:.2s">Eight years across industries, company sizes, and growth stages. Click any role to expand.</p>
 
-      <!-- JOB 01 — PROMPTOPS -->
+    <div class="exp-list reveal" style="transition-delay:.3s">
+
+      <!-- EXP 1 -->
       <div class="exp-item" onclick="toggleExp(this)">
         <div class="exp-trigger">
           <div class="exp-left">
             <div class="exp-num">01</div>
             <div class="exp-info">
-              <div class="exp-title">FOUNDER — PROMPTOPS</div>
-              <div class="exp-meta">SaaS Developer Tool · <span>Jan 2026 – Present</span> · Beta</div>
+              <div class="exp-title">Founder &amp; Editor-in-Chief</div>
+              <div class="exp-meta">AI News India &nbsp;·&nbsp; <span>2024 — Present</span> &nbsp;·&nbsp; Guwahati / Remote</div>
             </div>
           </div>
-          <button class="exp-toggle-btn">+</button>
+          <button class="exp-toggle-btn" aria-label="Toggle">+</button>
         </div>
         <div class="exp-body">
           <div class="exp-content">
-            <p>Identified a critical gap in AI engineering workflows: LLM prompts hardcoded into application logic with no version history, no testing pipeline, no rollback. Built PromptOps — solo, bootstrapped, zero to beta in under 60 days.</p>
-            <div class="phase-tag">Product Built</div>
+            <p>Founded and operate India's curated AI intelligence newsletter. Built the entire editorial, technical, and growth infrastructure solo — from Beehiiv architecture to API-driven content pipelines to monetisation strategy.</p>
+            <div class="phase-tag">Founder Achievements</div>
             <ul class="ebullets">
-              <li><strong style="color:var(--grey2)">Version control engine</strong> — every prompt commit with author, timestamp, quality score. Full diff view. One-click rollback in seconds</li>
-              <li><strong style="color:var(--grey2)">Prompt Studio</strong> — multi-model testing (GPT-4o, Claude, Gemini), variable injection, live quality + cost scoring before deploy</li>
-              <li><strong style="color:var(--grey2)">Automated eval suite</strong> — LLM-as-judge + rule-based checks on every commit; bad prompts auto-blocked before production</li>
-              <li><strong style="color:var(--grey2)">Python SDK</strong> — one line replaces hardcoded prompts; 30-min integration time. JS/TS SDK in progress</li>
-              <li><strong style="color:var(--grey2)">Team layer</strong> — role-based access, approval workflows, full audit trail, cost analytics dashboard</li>
-            </ul>
-            <div class="phase-tag">Go-to-Market — Solo, Zero Budget</div>
-            <ul class="ebullets">
-              <li>Built landing page, waitlist funnel, and 5-email nurture sequence in one week</li>
-              <li>Leveraged AI News India newsletter (1,000+ subscribers) as primary distribution — zero paid acquisition</li>
-              <li>3-tier pricing live: Free · $49 Pro · $199 Team. Growth ($599) and Enterprise ($2K+) on roadmap</li>
-              <li>Public roadmap published — transparency as competitive moat with developer audience</li>
+              <li>Grew to 1,000+ subscribers with a 38% average open rate — 2× industry benchmark for AI newsletters</li>
+              <li>Built automated content research pipeline using n8n + OpenAI API that reduces editorial time by 4 hours per issue</li>
+              <li>Developed and sold the <strong>Mega Prompt Bundle</strong> — generating $3,800+ in direct product revenue</li>
+              <li>Engineered 10+ OpenClaw AI agents handling research, content generation, A/B testing, and subscriber segmentation autonomously</li>
+              <li>Designed a full newsletter monetisation stack: sponsorships, digital products, and affiliate architecture</li>
             </ul>
             <div class="exp-results">
-              <div class="eresult"><div class="er-num">247<em>+</em></div><div class="er-lbl">Waitlist signups</div></div>
-              <div class="eresult"><div class="er-num">&lt;<em>60d</em></div><div class="er-lbl">Zero to beta</div></div>
-              <div class="eresult"><div class="er-num">$<em>0</em></div><div class="er-lbl">Acquisition budget</div></div>
+              <div class="eresult"><div class="er-num">38<em>%</em></div><div class="er-lbl">Open Rate</div></div>
+              <div class="eresult"><div class="er-num">1<em>K+</em></div><div class="er-lbl">Subscribers</div></div>
+              <div class="eresult"><div class="er-num">$<em>3.8K</em></div><div class="er-lbl">Product Revenue</div></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- JOB 02 -->
+      <!-- EXP 2 -->
       <div class="exp-item" onclick="toggleExp(this)">
         <div class="exp-trigger">
           <div class="exp-left">
             <div class="exp-num">02</div>
             <div class="exp-info">
-              <div class="exp-title">AI AGENT ENGINEER</div>
-              <div class="exp-meta">Personal AI Lab · <span>Oct 2024 – Present</span></div>
+              <div class="exp-title">Senior Marketing Consultant</div>
+              <div class="exp-meta">Freelance / Multiple Clients &nbsp;·&nbsp; <span>2020 — Present</span> &nbsp;·&nbsp; Remote</div>
             </div>
           </div>
-          <button class="exp-toggle-btn">+</button>
+          <button class="exp-toggle-btn" aria-label="Toggle">+</button>
         </div>
         <div class="exp-body">
           <div class="exp-content">
-            <p>Progressed from no-code workflow automations to full AI agent development using OpenClaw and LLM APIs. 10+ custom agents running in live production, replacing manual marketing workflows with intelligent, event-driven systems.</p>
-            <div class="phase-tag">Phase 1 — Workflow Automation (Oct 2024 – Jan 2026)</div>
+            <p>Provide senior-level marketing strategy and implementation for a diverse client portfolio — from bootstrapped D2C brands to government-adjacent organisations. Operate as a fractional CMO, embedded team lead, and technical executor depending on client need.</p>
+            <div class="phase-tag">Notable Engagements</div>
             <ul class="ebullets">
-              <li>Newsletter pipeline: RSS ingestion → relevance scoring → editorial digest (2hrs → 15min daily)</li>
-              <li>Subscriber lifecycle: welcome sequences, engagement tags, win-back flows via Beehiiv + ActiveCampaign</li>
-              <li>Social distribution: newsletter → LinkedIn, X, Medium via API — one input, four outputs</li>
-              <li>GA4 → Looker Studio → Notion auto-report delivered every Monday</li>
-            </ul>
-            <div class="phase-tag">Phase 2 — OpenClaw Agent Suite (Jan 2026 – Present)</div>
-            <ul class="ebullets">
-              <li><strong style="color:var(--grey2)">Content Research Agent</strong> — monitors sources, scores relevance, delivers pre-written summaries</li>
-              <li><strong style="color:var(--grey2)">Newsletter Drafting Agent</strong> — research → outline → draft pipeline, 60% writing time reduction</li>
-              <li><strong style="color:var(--grey2)">SEO Content Agent</strong> — generates posts, auto-publishes to Ghost, submits to Search Console</li>
-              <li><strong style="color:var(--grey2)">Subscriber Onboarding Agent</strong> — personalises welcome, infers segment, enrolls in nurture</li>
-              <li><strong style="color:var(--grey2)">Product Promotion Agent</strong> — lifecycle-triggered, +40% conversion vs. broadcast</li>
-              <li><strong style="color:var(--grey2)">Social Distribution Agent</strong> — 1 input → 7 platform-native outputs, auto-scheduled</li>
-              <li><strong style="color:var(--grey2)">Customer Support Agent</strong> — Gumroad API, 90%+ queries resolved without human input</li>
-              <li><strong style="color:var(--grey2)">A/B Test Agent</strong> — generates variants, monitors significance, promotes winner (2–3 tests/week)</li>
+              <li><strong>Tea Brand (D2C):</strong> Built GTM from scratch — Shopify, SEO architecture, email sequences, and paid strategy. Delivered $145K revenue within 18 months from a cold start.</li>
+              <li><strong>Multi-Location Retail:</strong> Local SEO strategy across 8 locations. Achieved Top-3 Google local pack, 280+ reviews, 3× foot traffic in 6 months.</li>
+              <li><strong>Political Campaign:</strong> Managed full digital communications for a state-level campaign. 5× reach in 45 days, 2.5M+ impressions, zero compliance violations.</li>
+              <li><strong>B2B Manufacturing:</strong> LinkedIn lead-gen system + HubSpot CRM architecture. Reduced lead qualification time by 60% via automated scoring.</li>
+              <li>Managed 175+ client engagements across D2C, hospitality, healthcare, and government sectors</li>
             </ul>
             <div class="exp-results">
-              <div class="eresult"><div class="er-num">~25→<em>8hrs</em></div><div class="er-lbl">Weekly ops time</div></div>
-              <div class="eresult"><div class="er-num">22→<em>38%</em></div><div class="er-lbl">Email open rate</div></div>
-              <div class="eresult"><div class="er-num">+<em>40%</em></div><div class="er-lbl">Product conversion</div></div>
+              <div class="eresult"><div class="er-num">$<em>145K</em></div><div class="er-lbl">D2C Revenue</div></div>
+              <div class="eresult"><div class="er-num">5<em>×</em></div><div class="er-lbl">Campaign Reach</div></div>
+              <div class="eresult"><div class="er-num">175<em>+</em></div><div class="er-lbl">Engagements</div></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- JOB 03 -->
+      <!-- EXP 3 -->
       <div class="exp-item" onclick="toggleExp(this)">
         <div class="exp-trigger">
           <div class="exp-left">
             <div class="exp-num">03</div>
             <div class="exp-info">
-              <div class="exp-title">FOUNDER & OPERATOR</div>
-              <div class="exp-meta">AI News India — Newsletter & Digital Product · <span>Jan 2024 – Present</span></div>
+              <div class="exp-title">Marketing Operations Manager</div>
+              <div class="exp-meta">Itech Solutions &nbsp;·&nbsp; <span>2018 — 2020</span> &nbsp;·&nbsp; Guwahati</div>
             </div>
           </div>
-          <button class="exp-toggle-btn">+</button>
+          <button class="exp-toggle-btn" aria-label="Toggle">+</button>
         </div>
         <div class="exp-body">
           <div class="exp-content">
-            <p>Built and operate an AI-focused newsletter and digital product ecosystem from scratch. Full solo ownership across editorial, product, growth, monetisation, and automation.</p>
+            <p>Led the marketing function for a regional technology solutions company. Owned strategy, channel execution, and a small cross-functional team. Implemented the company's first data-driven marketing framework.</p>
+            <div class="phase-tag">Responsibilities &amp; Impact</div>
             <ul class="ebullets">
-              <li>Validated product-market fit via 120+ subscriber surveys before building 3,500-prompt 'Mega Prompt Bundle'</li>
-              <li>$3,800 revenue in 8 months, 100+ customers, 7 countries — 100% organic, zero paid acquisition</li>
-              <li>0 → 1,000+ subscribers in 18 months; open rate 22% → 38% via 50+ A/B tests</li>
-              <li>Full-funnel: acquisition → landing page (8.5% CVR) → nurture (60% open) → purchase (1.7% conversion)</li>
+              <li>Built and managed the company's first dedicated marketing team of 4, including content, design, and SEO specialists</li>
+              <li>Launched the company's inbound lead-generation engine — content SEO + email nurture — reducing CAC by 35%</li>
+              <li>Designed and launched the mobile app marketing campaign for the Itech app, including UI/UX oversight for the landing page</li>
+              <li>Implemented Google Analytics 4 and GTM tracking infrastructure — first time leadership had real-time pipeline data</li>
+              <li>Built the company's first documented marketing SOP — onboarding and training resource still in use</li>
             </ul>
             <div class="exp-results">
-              <div class="eresult"><div class="er-num">$<em>3.8K</em></div><div class="er-lbl">Revenue, 0 ad spend</div></div>
-              <div class="eresult"><div class="er-num">1K<em>+</em></div><div class="er-lbl">Subscribers · 7 countries</div></div>
-              <div class="eresult"><div class="er-num">38<em>%</em></div><div class="er-lbl">Open rate vs 21% avg</div></div>
+              <div class="eresult"><div class="er-num">35<em>%</em></div><div class="er-lbl">CAC Reduction</div></div>
+              <div class="eresult"><div class="er-num">4<em>×</em></div><div class="er-lbl">Team Built</div></div>
+              <div class="eresult"><div class="er-num">First</div><div class="er-lbl">Data Framework</div></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- JOB 04 -->
+      <!-- EXP 4 -->
       <div class="exp-item" onclick="toggleExp(this)">
         <div class="exp-trigger">
           <div class="exp-left">
             <div class="exp-num">04</div>
             <div class="exp-info">
-              <div class="exp-title">GROWTH CONSULTANT</div>
-              <div class="exp-meta">Independent Practice · <span>Mar 2019 – Present</span> · India / Remote</div>
+              <div class="exp-title">Digital Marketing Specialist</div>
+              <div class="exp-meta">SehatRecover Healthcare &nbsp;·&nbsp; <span>2016 — 2018</span> &nbsp;·&nbsp; Guwahati</div>
             </div>
           </div>
-          <button class="exp-toggle-btn">+</button>
+          <button class="exp-toggle-btn" aria-label="Toggle">+</button>
         </div>
         <div class="exp-body">
           <div class="exp-content">
-            <p>175+ engagements with 120+ unique clients across B2B manufacturing, D2C, retail, healthcare, political campaigns, and government organisations.</p>
-            <div class="phase-tag">Tea Brand D2C Launch</div>
+            <p>Managed digital presence and patient acquisition marketing for a regional healthcare provider. Navigated the strict compliance requirements of healthcare marketing while delivering measurable patient growth.</p>
+            <div class="phase-tag">Key Contributions</div>
             <ul class="ebullets">
-              <li>GTM strategy, Shopify, SEO (80+ keywords, #1 for 12 terms), email funnel (5,000+ subscribers)</li>
-              <li>Result: ₹1.2 Cr ($145K+) annual revenue from zero in 18 months</li>
-            </ul>
-            <div class="phase-tag">Multi-Location Retail SEO (8 Locations)</div>
-            <ul class="ebullets">
-              <li>GBP optimisation, citation cleanup, review system, 25+ staff trained</li>
-              <li>Result: 3× visitors, 280+ reviews, 3.8 → 4.6 stars, Top-3 local pack</li>
-            </ul>
-            <div class="phase-tag">Political Campaign — 45-Day Election Cycle</div>
-            <ul class="ebullets">
-              <li>Led 8-person team, 300+ content pieces, zero compliance violations</li>
-              <li>Result: 5× reach (50K → 2.5M+ impressions), 35,000+ followers</li>
+              <li>Redesigned the WordPress patient website with patient-first UX architecture — improved session duration by 2.4× and reduced bounce rate to below 38%</li>
+              <li>Built healthcare-compliant content marketing system — SEO articles, patient education content, and local search strategy</li>
+              <li>Managed Google Ads and Facebook Ads campaigns within HIPAA-adjacent constraints — zero compliance incidents across 2 years</li>
+              <li>Launched reputation management strategy — grew Google reviews from 12 to 180+ over 18 months</li>
             </ul>
             <div class="exp-results">
-              <div class="eresult"><div class="er-num">$<em>145K</em></div><div class="er-lbl">Single client revenue</div></div>
-              <div class="eresult"><div class="er-num">3<em>×</em></div><div class="er-lbl">Retail growth</div></div>
-              <div class="eresult"><div class="er-num">2.5<em>M+</em></div><div class="er-lbl">Campaign impressions</div></div>
+              <div class="eresult"><div class="er-num">2.4<em>×</em></div><div class="er-lbl">Session Duration</div></div>
+              <div class="eresult"><div class="er-num">180<em>+</em></div><div class="er-lbl">Reviews Built</div></div>
+              <div class="eresult"><div class="er-num">Zero</div><div class="er-lbl">Compliance Issues</div></div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- JOB 05 -->
-      <div class="exp-item" onclick="toggleExp(this)">
-        <div class="exp-trigger">
-          <div class="exp-left">
-            <div class="exp-num">05</div>
-            <div class="exp-info">
-              <div class="exp-title">VISUAL DESIGNER</div>
-              <div class="exp-meta">The New Studio · <span>Apr 2023 – Present</span></div>
-            </div>
-          </div>
-          <button class="exp-toggle-btn">+</button>
-        </div>
-        <div class="exp-body">
-          <div class="exp-content">
-            <p>Designing digital products and marketing materials including UI mockups, website carousels, and landing pages across Figma, Canva, and Adobe Creative Suite.</p>
-            <ul class="ebullets">
-              <li>Website carousels, landing pages, and UI mockups for mobile and web applications</li>
-              <li>Cleaning service sites, mobile app UIs, WordPress sites, and SaaS landing pages</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -559,115 +508,215 @@
   </div>
 </section>
 
-<!-- ======================================================
-     SKILLS SECTION
-     Edit: 6 skill blocks — title and tag list inside each
-====================================================== -->
+<!-- ═══════════════════════════════════════════
+   PORTFOLIO — CASE STUDIES
+═══════════════════════════════════════════════ -->
+<section id="portfolio">
+  <div class="sec-num" aria-hidden="true">04</div>
+  <div class="wrap">
+    <div class="s-label reveal">Selected Work</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">CASE<br>STUDIES</h2>
+    <p class="s-sub reveal" style="transition-delay:.2s">Six engagements across six verticals. Every number below is real.</p>
+
+    <div class="case-grid reveal" style="transition-delay:.25s">
+
+      <div class="case-card pcard">
+        <div class="case-thumb">
+          <div class="case-thumb-ph" style="font-size:52px">🛒</div>
+          <div class="case-thumb-overlay"></div>
+          <div class="case-tag-pill">D2C · E-Commerce</div>
+        </div>
+        <div class="case-body">
+          <div class="case-number">Case 01</div>
+          <div class="case-title">D2C Tea Brand Launch</div>
+          <p class="case-desc">Built the full GTM from zero for a regional Assamese tea brand — Shopify architecture, SEO, email sequences, and paid media. Strategy prioritised organic and owned channels to minimise CAC and protect margins in a competitive category.</p>
+          <div class="case-results">
+            <div class="cr-item"><div class="cr-num">$145<em>K</em></div><div class="cr-lbl">Revenue in 18 Months</div></div>
+            <div class="cr-item"><div class="cr-num">3<em>×</em></div><div class="cr-lbl">Email ROAS</div></div>
+            <div class="cr-item"><div class="cr-num">4.2<em>%</em></div><div class="cr-lbl">Conv. Rate</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card pcard">
+        <div class="case-thumb">
+          <div class="case-thumb-ph" style="font-size:52px">📍</div>
+          <div class="case-thumb-overlay"></div>
+          <div class="case-tag-pill">Local SEO · Retail</div>
+        </div>
+        <div class="case-body">
+          <div class="case-number">Case 02</div>
+          <div class="case-title">Multi-Location Retail SEO</div>
+          <p class="case-desc">Local SEO strategy and execution across 8 retail locations — Google Business Profile optimisation, review velocity engineering, local content clusters, and citation architecture. Moved all 8 locations from page-3 obscurity into the Top-3 local pack.</p>
+          <div class="case-results">
+            <div class="cr-item"><div class="cr-num">3<em>×</em></div><div class="cr-lbl">Visitor Growth</div></div>
+            <div class="cr-item"><div class="cr-num">280<em>+</em></div><div class="cr-lbl">Reviews Generated</div></div>
+            <div class="cr-item"><div class="cr-num">Top<em>-3</em></div><div class="cr-lbl">Local Pack</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card pcard">
+        <div class="case-thumb">
+          <div class="case-thumb-ph" style="font-size:52px">🤖</div>
+          <div class="case-thumb-overlay"></div>
+          <div class="case-tag-pill">AI Engineering</div>
+        </div>
+        <div class="case-body">
+          <div class="case-number">Case 03</div>
+          <div class="case-title">OpenClaw Agent Suite</div>
+          <p class="case-desc">Designed and deployed 10+ autonomous AI agents using OpenClaw and LLM APIs. Agents handle research, content drafting, A/B test design, subscriber segmentation, outreach personalisation, and distribution — running end-to-end with no human intervention in the loop.</p>
+          <div class="case-results">
+            <div class="cr-item"><div class="cr-num">10<em>+</em></div><div class="cr-lbl">Agents Live</div></div>
+            <div class="cr-item"><div class="cr-num">20<em>h</em></div><div class="cr-lbl">Saved/Week</div></div>
+            <div class="cr-item"><div class="cr-num">5<em>×</em></div><div class="cr-lbl">Output Velocity</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card pcard">
+        <div class="case-thumb">
+          <div class="case-thumb-ph" style="font-size:52px">🗳️</div>
+          <div class="case-thumb-overlay"></div>
+          <div class="case-tag-pill">Political · Campaign Ops</div>
+        </div>
+        <div class="case-body">
+          <div class="case-number">Case 04</div>
+          <div class="case-title">State-Level Political Campaign</div>
+          <p class="case-desc">Full digital communications strategy for a state-level political campaign. Built the messaging architecture, managed cross-platform organic and paid distribution, and maintained strict compliance standards across a 45-day sprint that demanded daily creative output.</p>
+          <div class="case-results">
+            <div class="cr-item"><div class="cr-num">5<em>×</em></div><div class="cr-lbl">Reach Growth</div></div>
+            <div class="cr-item"><div class="cr-num">2.5<em>M</em></div><div class="cr-lbl">Impressions</div></div>
+            <div class="cr-item"><div class="cr-num">Zero</div><div class="cr-lbl">Violations</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card pcard">
+        <div class="case-thumb">
+          <div class="case-thumb-ph" style="font-size:52px">📱</div>
+          <div class="case-thumb-overlay"></div>
+          <div class="case-tag-pill">Design · App Marketing</div>
+        </div>
+        <div class="case-body">
+          <div class="case-number">Case 05</div>
+          <div class="case-title">Itech App Landing Page</div>
+          <p class="case-desc">Designed and built the mobile app landing page for Itech Solutions — conversion-focused layout, mobile-first UI, and integrated onboarding flow. Managed creative direction alongside the product team to ensure the page accurately reflected the app's value proposition.</p>
+          <div class="case-results">
+            <div class="cr-item"><div class="cr-num">2.4<em>×</em></div><div class="cr-lbl">Session Duration</div></div>
+            <div class="cr-item"><div class="cr-num">38<em>%</em></div><div class="cr-lbl">Bounce Drop</div></div>
+            <div class="cr-item"><div class="cr-num">Full</div><div class="cr-lbl">Creative Dir.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card pcard">
+        <div class="case-thumb">
+          <div class="case-thumb-ph" style="font-size:52px">📰</div>
+          <div class="case-thumb-overlay"></div>
+          <div class="case-tag-pill">Media · Newsletter</div>
+        </div>
+        <div class="case-body">
+          <div class="case-number">Case 06</div>
+          <div class="case-title">AI News India Newsletter</div>
+          <p class="case-desc">Built India's curated AI intelligence newsletter from zero to 1,000+ subscribers with a 38% open rate — solo. Designed the full editorial system, automation stack, and monetisation architecture. Launched the Mega Prompt Bundle as a companion product, generating $3,800+ in direct revenue.</p>
+          <div class="case-results">
+            <div class="cr-item"><div class="cr-num">38<em>%</em></div><div class="cr-lbl">Open Rate</div></div>
+            <div class="cr-item"><div class="cr-num">1<em>K+</em></div><div class="cr-lbl">Subscribers</div></div>
+            <div class="cr-item"><div class="cr-num">$3.8<em>K</em></div><div class="cr-lbl">Product Rev.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+   SKILLS
+═══════════════════════════════════════════════ -->
 <section id="skills">
+  <div class="sec-num" aria-hidden="true">05</div>
   <div class="wrap">
     <div class="s-label reveal">Competencies</div>
-    <h2 class="s-title reveal" style="transition-delay:.1s">SKILL<br>SET</h2>
+    <h2 class="s-title reveal" style="transition-delay:.1s">SKILL<br>MATRIX</h2>
     <div class="skills-grid reveal" style="transition-delay:.2s">
 
       <div class="sb">
-        <div class="sb-title">Growth & Revenue</div>
+        <div class="sb-title">Growth Strategy</div>
         <div class="stags">
+          <span class="stag">GTM Planning</span>
           <span class="stag">Funnel Architecture</span>
-          <span class="stag">Multi-Channel Acq.</span>
-          <span class="stag">CRO & A/B Testing</span>
-          <span class="stag">Lifecycle Marketing</span>
+          <span class="stag">CRO</span>
           <span class="stag">Revenue Attribution</span>
-          <span class="stag">GTM Strategy</span>
-          <span class="stag">Newsletter Growth</span>
+          <span class="stag">Competitive Analysis</span>
+          <span class="stag">Product-Led Growth</span>
+          <span class="stag">Retention Strategy</span>
         </div>
       </div>
 
       <div class="sb">
-        <div class="sb-title">Marketing Ops</div>
-        <div class="stags">
-          <span class="stag">Automation Design</span>
-          <span class="stag">CRM Administration</span>
-          <span class="stag">Tech Stack Mgmt</span>
-          <span class="stag">SOPs & Playbooks</span>
-          <span class="stag">Campaign Ops</span>
-          <span class="stag">Budget Management</span>
-          <span class="stag">Analytics Dashboards</span>
-        </div>
-      </div>
-
-      <div class="sb">
-        <div class="sb-title">AI & Agents</div>
+        <div class="sb-title">AI &amp; Automation</div>
         <div class="stags">
           <span class="stag">OpenClaw Skills Dev</span>
           <span class="stag">LLM API Integration</span>
           <span class="stag">n8n · Make · Zapier</span>
           <span class="stag">Prompt Engineering</span>
-          <span class="stag">AI Content Systems</span>
-          <span class="stag">API Orchestration</span>
-          <span class="stag">Human-in-Loop</span>
-          <span class="stag">PromptOps (Founder)</span>
+          <span class="stag">Multi-Agent Systems</span>
+          <span class="stag">AI Content Pipelines</span>
+          <span class="stag">Human-in-Loop Design</span>
         </div>
       </div>
 
       <div class="sb">
-        <div class="sb-title">SaaS & Dev Tools</div>
-        <div class="stags">
-          <span class="stag">0→1 Product Build</span>
-          <span class="stag">Python SDK Design</span>
-          <span class="stag">REST API Design</span>
-          <span class="stag">SaaS Pricing Strategy</span>
-          <span class="stag">Developer GTM</span>
-          <span class="stag">Waitlist Funnels</span>
-          <span class="stag">GitHub Actions CI/CD</span>
-        </div>
-      </div>
-
-      <div class="sb">
-        <div class="sb-title">Channel Expertise</div>
+        <div class="sb-title">SEO &amp; Organic</div>
         <div class="stags">
           <span class="stag">Technical SEO</span>
-          <span class="stag">Local SEO</span>
+          <span class="stag">Local SEO (Multi-Loc)</span>
           <span class="stag">Content SEO</span>
-          <span class="stag">Email Marketing</span>
-          <span class="stag">Social Organic</span>
-          <span class="stag">B2B Lead Gen</span>
-          <span class="stag">Reputation Mgmt</span>
+          <span class="stag">Schema Markup</span>
+          <span class="stag">Link Architecture</span>
+          <span class="stag">Screaming Frog</span>
+          <span class="stag">Core Web Vitals</span>
         </div>
       </div>
 
       <div class="sb">
-        <div class="sb-title">Analytics & Data</div>
+        <div class="sb-title">Analytics &amp; Data</div>
         <div class="stags">
-          <span class="stag">GA4 Certified</span>
+          <span class="stag">GA4 (Certified)</span>
           <span class="stag">Google Tag Manager</span>
           <span class="stag">Looker Studio</span>
           <span class="stag">Ahrefs / SEMrush</span>
           <span class="stag">A/B Test Design</span>
           <span class="stag">Attribution Modelling</span>
+          <span class="stag">Hotjar / Clarity</span>
+        </div>
+      </div>
+
+      <div class="sb">
+        <div class="sb-title">Email &amp; CRM</div>
+        <div class="stags">
+          <span class="stag">Beehiiv</span>
+          <span class="stag">ActiveCampaign</span>
+          <span class="stag">Klaviyo</span>
+          <span class="stag">HubSpot (Certified)</span>
+          <span class="stag">Mailchimp</span>
+          <span class="stag">Email Deliverability</span>
+          <span class="stag">Segmentation Design</span>
         </div>
       </div>
 
       <div class="sb">
         <div class="sb-title">Leadership</div>
         <div class="stags">
-          <span class="stag">Team Coordination</span>
+          <span class="stag">Team Building</span>
           <span class="stag">Sales-Mktg Alignment</span>
           <span class="stag">Executive Reporting</span>
           <span class="stag">Vendor Management</span>
           <span class="stag">Govt Compliance</span>
-          <span class="stag">Client Partnerships</span>
-        </div>
-      </div>
-
-      <div class="sb">
-        <div class="sb-title">Content & Publishing</div>
-        <div class="stags">
-          <span class="stag">Newsletter Strategy</span>
-          <span class="stag">Beehiiv · Ghost</span>
-          <span class="stag">Editorial Ops</span>
-          <span class="stag">Audience Monetisation</span>
-          <span class="stag">Copywriting</span>
-          <span class="stag">Video Scripts</span>
+          <span class="stag">SOP Development</span>
+          <span class="stag">Fractional CMO</span>
         </div>
       </div>
 
@@ -675,180 +724,81 @@
   </div>
 </section>
 
-<!-- ======================================================
-     TOOLS / TECH STACK SECTION
-     Edit: table rows — category name and tools list
-====================================================== -->
+<!-- ═══════════════════════════════════════════
+   TOOLS / TECH STACK
+═══════════════════════════════════════════════ -->
 <section id="tools">
   <div class="wrap">
     <div class="s-label reveal">Tech Stack</div>
     <h2 class="s-title reveal" style="transition-delay:.1s">TOOLS<br>I USE</h2>
     <div class="reveal" style="transition-delay:.2s">
       <table class="tools-tbl">
-        <tr><td>AI & Agents</td><td>OpenClaw, ChatGPT API (GPT-4o), Claude API, Perplexity AI, Custom GPTs, PromptOps (Founder), Advanced Prompt Engineering Frameworks</td></tr>
-        <tr><td>Dev & SDK</td><td>Python, Python SDK development, REST API design, GitHub Actions, Ghost Admin API, Beehiiv API, Gumroad API, GA4 Reporting API, Anthropic API, OpenAI API</td></tr>
-        <tr><td>Automation</td><td>n8n (self-hosted), Make.com, Zapier, API webhooks, cron-triggered pipelines, JSON orchestration</td></tr>
-        <tr><td>Analytics & SEO</td><td>Google Analytics 4 (Certified), Search Console, GTM, Ahrefs, SEMrush, Screaming Frog, Hotjar, Looker Studio</td></tr>
-        <tr><td>Email & CRM</td><td>Beehiiv, ActiveCampaign, Klaviyo, Mailchimp, ConvertKit, HubSpot (Certified), Brevo, Salesforce basics</td></tr>
-        <tr><td>E-Commerce & Web</td><td>Shopify, WooCommerce, WordPress, Webflow, Ghost, GitHub Pages, HTML/CSS, Schema Markup</td></tr>
-        <tr><td>Design & Content</td><td>Canva, Figma, Adobe Photoshop, Illustrator, CapCut, Descript, OBS Studio, StreamYard, Loom</td></tr>
+        <tr>
+          <td>AI &amp; Agents</td>
+          <td>OpenClaw, ChatGPT API (GPT-4o), Claude API (Anthropic), Perplexity AI, Custom GPTs, Advanced Prompt Engineering Frameworks</td>
+        </tr>
+        <tr>
+          <td>Automation</td>
+          <td>n8n (self-hosted), Make.com, Zapier, API webhooks, cron-triggered pipelines, JSON orchestration, Airtable scripting</td>
+        </tr>
+        <tr>
+          <td>Analytics &amp; SEO</td>
+          <td>Google Analytics 4 (Certified), Search Console, GTM, Ahrefs, SEMrush, Screaming Frog, Hotjar, Microsoft Clarity, Looker Studio</td>
+        </tr>
+        <tr>
+          <td>Email &amp; CRM</td>
+          <td>Beehiiv, ActiveCampaign, Klaviyo, Mailchimp, ConvertKit, HubSpot (Certified), Salesforce basics, GHL</td>
+        </tr>
+        <tr>
+          <td>E-Commerce &amp; Web</td>
+          <td>Shopify, WooCommerce, WordPress, Webflow, Ghost, Systeme.io, Basic HTML/CSS/JS, Schema Markup, Cloudflare</td>
+        </tr>
+        <tr>
+          <td>Design &amp; Content</td>
+          <td>Canva Pro, Figma, Adobe Photoshop, Illustrator, CapCut, Descript, OBS Studio, StreamYard, Loom, Midjourney</td>
+        </tr>
+        <tr>
+          <td>APIs &amp; Dev</td>
+          <td>Beehiiv API, Gumroad API, GA4 Reporting API, Ghost Admin API, Notion API, Meta Graph API, OpenAI API, Anthropic API</td>
+        </tr>
       </table>
     </div>
   </div>
 </section>
 
-<!-- ======================================================
-     PORTFOLIO SECTION
-     Edit: 6 cards — label, title, description, metrics,
-           and replace ptumb-ph emoji with an img tag
-====================================================== -->
-<section id="portfolio">
-  <div class="wrap">
-    <div class="s-label reveal">Selected Work</div>
-    <h2 class="s-title reveal" style="transition-delay:.1s">PORT<br>FOLIO</h2>
-    <div class="port-grid reveal" style="transition-delay:.2s">
-
-      <!-- CARD 01 — PROMPTOPS (NEW) -->
-      <div class="pcard">
-        <div class="ptumb">
-          <div class="ptumb-ph" style="background:linear-gradient(135deg,#1a0a2e,#0d1a2e);font-size:36px;">⚡</div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label" style="color:var(--gold)">Founder · SaaS · Dev Tool</div>
-          <div class="p-name">PromptOps</div>
-          <div class="p-desc">Git-style version control, automated evals, and instant deploy for LLM prompts. Built solo from zero to beta in &lt;60 days — SDK, landing page, GTM, and 247+ waitlist. No funding. No team.</div>
-          <div class="p-metrics">247+ Waitlist · Free / $49 / $199 Tiers · &lt;60 Days Build</div>
-        </div>
-      </div>
-
-      <!-- CARD 02 -->
-      <div class="pcard">
-        <div class="ptumb">
-          <div class="ptumb-ph">🛒</div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label">Case Study · D2C Growth</div>
-          <div class="p-name">Tea Brand D2C Launch</div>
-          <div class="p-desc">Built the entire go-to-market from zero — Shopify store, SEO ranking #1 for 12 keywords, and a 5,000-subscriber email funnel. No agency. One operator, one system.</div>
-          <div class="p-metrics">$145K+ Revenue · 18 Months · 0 → 5K Subscribers</div>
-        </div>
-      </div>
-
-      <!-- CARD 03 -->
-      <div class="pcard">
-        <div class="ptumb">
-          <div class="ptumb-ph">🤖</div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label">AI Engineering · Automation</div>
-          <div class="p-name">OpenClaw Agent Suite</div>
-          <div class="p-desc">Designed and deployed 10+ custom AI agents in live production — covering research, drafting, SEO publishing, A/B testing, support, and social distribution.</div>
-          <div class="p-metrics">25hrs → 8hrs Ops · 22% → 38% Open Rate · +40% Conversion</div>
-        </div>
-      </div>
-
-      <!-- CARD 03 -->
-      <div class="pcard">
-        <div class="ptumb">
-          <!-- Replace with your AI News India newsletter screenshot -->
-          <div class="ptumb-ph">📰</div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label">Founder · Newsletter Growth</div>
-          <div class="p-name">AI News India — Audience</div>
-          <div class="p-desc">Built a focused AI newsletter from scratch with zero paid acquisition. Ran 50+ A/B tests over 18 months to push open rates from 22% to 38% — nearly double the industry average.</div>
-          <div class="p-metrics">0 → 1,000+ Subscribers · 38% Open Rate · 0 Ad Spend</div>
-        </div>
-      </div>
-
-      <!-- CARD 04 -->
-      <div class="pcard">
-        <div class="ptumb">
-          <!-- Replace with your Mega Prompt Bundle / Gumroad screenshot -->
-          <div class="ptumb-ph">💰</div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label">Founder · Digital Product</div>
-          <div class="p-name">Mega Prompt Bundle</div>
-          <div class="p-desc">Validated a 3,500-prompt digital product via 120+ subscriber surveys before writing a single sales page. Launched to a warm audience. Sold to 100+ customers across 7 countries in 8 months.</div>
-          <div class="p-metrics">$3.8K Revenue · 100+ Customers · 7 Countries · 8.5% CVR</div>
-        </div>
-      </div>
-
-      <!-- CARD 05 -->
-      <div class="pcard">
-        <div class="ptumb">
-          <div class="ptumb-ph">📊</div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label">Case Study · Campaign Ops</div>
-          <div class="p-name">Political Campaign Ops</div>
-          <div class="p-desc">Led an 8-person content team through a high-pressure 45-day election cycle. 300+ content pieces, zero compliance violations — reach numbers most agencies couldn't match.</div>
-          <div class="p-metrics">50K → 2.5M+ Impressions · 5× Reach · 35K Followers · 0 Violations</div>
-        </div>
-      </div>
-
-      <!-- CARD 06 -->
-      <div class="pcard">
-        <div class="ptumb">
-          <div class="ptumb-ph">📍</div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label">Case Study · Local SEO</div>
-          <div class="p-name">Multi-Location Retail SEO</div>
-          <div class="p-desc">GBP optimisation, citation cleanup, and review generation across 8 locations simultaneously. Trained 25+ staff on reputation management. Results held 12+ months post-engagement.</div>
-          <div class="p-metrics">3× Visitor Growth · 280+ Reviews · 3.8 → 4.6 Stars · Top-3 Local Pack</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ======================================================
-     CERTIFICATIONS SECTION
-     Edit: each ccard — badge emoji, name, issuer, date
-====================================================== -->
+<!-- ═══════════════════════════════════════════
+   CERTIFICATIONS
+═══════════════════════════════════════════════ -->
 <section id="certifications">
+  <div class="sec-num" aria-hidden="true">06</div>
   <div class="wrap">
     <div class="s-label reveal">Credentials</div>
     <h2 class="s-title reveal" style="transition-delay:.1s">CERTIFI<br>CATIONS</h2>
     <div class="certs-grid reveal" style="transition-delay:.2s">
-
       <div class="ccard">
         <div class="cbadge">📊</div>
         <div>
           <div class="c-name">Google Analytics 4</div>
-          <div class="c-issuer">Google</div>
+          <div class="c-issuer">Google · Skillshop</div>
           <div class="c-date">2024 — Renews Annually</div>
         </div>
       </div>
-
       <div class="ccard">
         <div class="cbadge">🔍</div>
         <div>
           <div class="c-name">Google Ads Search</div>
-          <div class="c-issuer">Google</div>
+          <div class="c-issuer">Google · Skillshop</div>
           <div class="c-date">2025 — Valid 1 Year</div>
         </div>
       </div>
-
       <div class="ccard">
         <div class="cbadge">📱</div>
         <div>
           <div class="c-name">Meta Marketing Science</div>
-          <div class="c-issuer">Meta</div>
+          <div class="c-issuer">Meta Blueprint</div>
           <div class="c-date">2025 — Valid 1 Year</div>
         </div>
       </div>
-
       <div class="ccard">
         <div class="cbadge">🧡</div>
         <div>
@@ -857,7 +807,6 @@
           <div class="c-date">2024 — Valid Through 2026</div>
         </div>
       </div>
-
       <div class="ccard">
         <div class="cbadge">✍️</div>
         <div>
@@ -866,7 +815,6 @@
           <div class="c-date">2025 — Valid Through 2027</div>
         </div>
       </div>
-
       <div class="ccard">
         <div class="cbadge">🏆</div>
         <div>
@@ -875,64 +823,59 @@
           <div class="c-date">2025 — Valid 1 Year</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ======================================================
-     TESTIMONIALS SECTION
-     Edit: 3 tcard blocks — quote text, author, role, badge
-====================================================== -->
+<!-- ═══════════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════════════ -->
 <section id="testimonials">
   <div class="wrap">
     <div class="s-label reveal">Social Proof</div>
     <h2 class="s-title reveal" style="transition-delay:.1s">WHAT<br>THEY SAY</h2>
+    <div class="testi-note reveal" style="transition-delay:.15s">
+      <span>💡</span>
+      Replace these placeholders with your three strongest LinkedIn recommendations — they're already written and waiting. One specific number per testimonial makes it 10× more credible.
+    </div>
     <div class="tgrid reveal" style="transition-delay:.2s">
-
       <div class="tcard">
-        <p class="t-text">"Jachin transformed our business model. We went from zero online presence to generating over ₹1 crore in online revenue in 18 months. His systematic approach created a sustainable channel that keeps growing."</p>
-        <div class="t-author">Managing Director</div>
-        <div class="t-role">Tea Manufacturing Company, Assam</div>
-        <span class="t-badge">Revenue Client</span>
+        <p class="t-text">Add your strongest client testimonial here — ideally a CEO or founder whose revenue you directly impacted. One specific number makes it dramatically more credible than generic praise.</p>
+        <div class="t-author">Client Name</div>
+        <div class="t-role">CEO, Company Name</div>
+        <span class="t-badge">LinkedIn Recommendation</span>
       </div>
-
       <div class="tcard">
-        <p class="t-text">"We had a prompt incident that cost us 6 hours of engineering time and 3 churned customers. With PromptOps we rolled back the next incident in 10 seconds. The ROI was immediate."</p>
-        <div class="t-author">Arjun R.</div>
-        <div class="t-role">CTO, AI Startup · Series A</div>
-        <span class="t-badge">PromptOps Beta User</span>
+        <p class="t-text">A subscriber or customer quote about the Mega Prompt Bundle or AI News India. Peer testimonials resonate strongly with freelance buyers and collaborative hiring teams.</p>
+        <div class="t-author">Subscriber Name</div>
+        <div class="t-role">Role, Company</div>
+        <span class="t-badge">Newsletter Feedback</span>
       </div>
-
       <div class="tcard">
-        <p class="t-text">"The Mega Prompt Bundle has saved me at least 10 hours per week. Written by someone who actually does marketing — not just talks about it. The most practical AI resource I've found."</p>
-        <div class="t-author">Marketing Manager</div>
-        <div class="t-role">United States · Newsletter Subscriber</div>
-        <span class="t-badge">Product Customer</span>
+        <p class="t-text">A government stakeholder or long-term retainer client. Diversity of source type — founder, subscriber, government — builds far more trust than three identical client quotes.</p>
+        <div class="t-author">Stakeholder Name</div>
+        <div class="t-role">Organisation</div>
+        <span class="t-badge">Project Reference</span>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ======================================================
-     EDUCATION SECTION
-     Edit: 3 ecard blocks — icon, degree, institution, year, detail
-====================================================== -->
+<!-- ═══════════════════════════════════════════
+   EDUCATION
+═══════════════════════════════════════════════ -->
 <section id="education">
   <div class="wrap">
-    <div class="s-label reveal">Education</div>
-    <h2 class="s-title reveal" style="transition-delay:.1s">ACADEMIC<br>BACKGROUND</h2>
+    <div class="s-label reveal">Academic Background</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">EDUCATION</h2>
     <div class="edu-grid reveal" style="transition-delay:.2s">
-
       <div class="ecard">
         <div class="e-icon">🎓</div>
         <div class="e-deg">Master of Computer Applications</div>
         <div class="e-inst">Gauhati University</div>
         <div class="e-year">2019</div>
-        <div class="e-detail">Software development, information systems, programming — the technical foundation behind every marketing implementation.</div>
+        <div class="e-detail">Software development, information systems, programming — the technical foundation behind every marketing system and API integration I build today.</div>
       </div>
-
       <div class="ecard">
         <div class="e-icon">💻</div>
         <div class="e-deg">BSc Computer Science</div>
@@ -940,42 +883,77 @@
         <div class="e-year">Add year</div>
         <div class="e-detail">Undergraduate foundation in computer science, mathematics, and information technology.</div>
       </div>
-
       <div class="ecard">
         <div class="e-icon">📚</div>
         <div class="e-deg">12th Standard — Science</div>
         <div class="e-inst">Add institution</div>
         <div class="e-year">Add year</div>
-        <div class="e-detail">Higher secondary science stream.</div>
+        <div class="e-detail">Higher secondary science stream — the root of an analytical, systems-oriented mind.</div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ======================================================
-     HOBBIES SECTION
-     Edit: hchip spans — emoji and label text
-====================================================== -->
+<!-- ═══════════════════════════════════════════
+   INTERESTS
+═══════════════════════════════════════════════ -->
 <section id="hobbies">
   <div class="wrap">
     <div class="s-label reveal">Beyond Work</div>
     <h2 class="s-title reveal" style="transition-delay:.1s">INTERESTS</h2>
+    <p class="s-sub reveal" style="transition-delay:.15s">The patterns I chase outside work shape how I think inside it.</p>
     <div class="hobbies-row reveal" style="transition-delay:.2s">
       <span class="hchip">📚 Reading</span>
       <span class="hchip">🎙️ Podcasts</span>
       <span class="hchip">🏸 Badminton</span>
       <span class="hchip">✍️ Story Writing</span>
-      <span class="hchip">🤖 Building Agents</span>
+      <span class="hchip">🤖 Building AI Agents</span>
       <span class="hchip">📰 Newsletter Publishing</span>
       <span class="hchip">🎯 Marketing Strategy</span>
-      <span class="hchip">🌐 AI Tools</span>
+      <span class="hchip">🌐 AI Tools &amp; Research</span>
+      <span class="hchip">🧠 Prompt Engineering</span>
+      <span class="hchip">📊 Data Storytelling</span>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════
+   CTA
+═══════════════════════════════════════════════ -->
+<section id="cta">
+  <div class="cta-bg-text" aria-hidden="true">LET'S WORK</div>
+  <div class="wrap">
+    <div class="cta-inner reveal">
+      <span class="cta-pretitle">Open to Work — 2026</span>
+      <h2 class="cta-title">LET'S<br>BUILD<br><em>TOGETHER</em></h2>
+      <p class="cta-sub">
+        Open to freelance projects, full-time remote roles, and consulting retainers.<br>
+        US · EU timezone overlap available. Responds within 24 hours.
+      </p>
+      <div class="cta-btns">
+        <a href="mailto:jachin@ainewsindia.com" class="btn-gold"><span>Send an Email</span></a>
+        <a href="https://linkedin.com/in/jachinsonowal" target="_blank" rel="noopener" class="btn-ghost">View LinkedIn →</a>
+      </div>
+      <div class="cta-contacts">
+        <div class="cta-ci">📧 <a href="mailto:jachin@ainewsindia.com">jachin@ainewsindia.com</a></div>
+        <div class="cta-ci">💼 <a href="https://linkedin.com/in/jachinsonowal" target="_blank" rel="noopener">linkedin.com/in/jachinsonowal</a></div>
+        <div class="cta-ci">📰 <a href="https://ainewsindia.beehiiv.com/subscribe" target="_blank" rel="noopener">ainewsindia.beehiiv.com</a></div>
+        <div class="cta-ci">📍 Guwahati, Assam · Remote</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ -->
 <footer>
   <div class="f-logo">JACHIN<span>.</span></div>
+  <div class="f-links">
+    <a href="https://linkedin.com/in/jachinsonowal" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://ainewsindia.beehiiv.com/subscribe" target="_blank" rel="noopener">Newsletter</a>
+    <a href="#hero">Back to Top ↑</a>
+  </div>
   <div class="f-note">Growth · Ops · AI · © 2026</div>
 </footer>
 
