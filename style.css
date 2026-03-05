@@ -791,6 +791,38 @@ h2.s-title {
 /* Contact + status rows stretch full width */
 .chips-row .achip { flex: 1; justify-content: center; }
 .achip-icon { font-size: 14px; }
+/* Premium SVG icon inside chips */
+.achip-icon-svg {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; flex-shrink: 0;
+  color: currentColor; opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.achip:hover .achip-icon-svg { opacity: 1; }
+
+/* Contact chips — LinkedIn, Email, GitHub trio */
+.achip-contact {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border-color: rgba(201,168,76,0.2) !important;
+  color: var(--grey2) !important;
+  font-size: 11px !important;
+  transition: all 0.25s;
+  flex: 1;
+}
+.achip-contact:hover {
+  border-color: var(--gold) !important;
+  color: var(--white) !important;
+  background: rgba(201,168,76,0.06);
+  transform: translateY(-1px);
+}
+
+/* GitHub chip — distinctive hover */
+.achip-github:hover {
+  border-color: rgba(201,168,76,0.9) !important;
+  color: var(--gold) !important;
+  background: rgba(201,168,76,0.08);
+  box-shadow: 0 4px 16px rgba(201,168,76,0.12);
+}
 .achip-stat {
   font-family: var(--font-c); font-size: 9px;
   letter-spacing: 1.5px; text-transform: uppercase;
@@ -1088,6 +1120,8 @@ h2.s-title {
   background: linear-gradient(135deg, var(--black3), var(--black4));
   transition: transform 0.5s ease;
 }
+.ptumb-ph svg { transition: transform 0.5s ease, opacity 0.3s ease; opacity: 0.85; }
+.pcard:hover .ptumb-ph svg { transform: scale(1.08); opacity: 1; }
 .ptumb-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(8,8,8,0.6), transparent 50%);
@@ -1432,7 +1466,9 @@ h2.s-title {
   font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey2);
   transition: all 0.2s;
 }
+.hchip svg { color: currentColor; opacity: 0.7; flex-shrink: 0; transition: opacity 0.2s; }
 .hchip:hover { border-color: var(--gold); color: var(--gold); }
+.hchip:hover svg { opacity: 1; }
 
 /* ═══════════════════════════════════════════════
    CTA
@@ -1480,6 +1516,22 @@ footer {
 }
 .f-logo { font-family: var(--font-d); font-size: 18px; letter-spacing: 4px; color: var(--white); }
 .f-logo span { color: var(--gold); }
+.f-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.f-social {
+  display: flex; gap: 16px; align-items: center;
+}
+.f-social-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 2px;
+  border: 1px solid var(--border2);
+  color: var(--grey); text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.f-social-link:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201,168,76,0.06);
+}
 .f-note { font-family: var(--font-c); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); }
 
 /* ═══════════════════════════════════════════════
@@ -1514,8 +1566,8 @@ section + section { margin-top: 0; }
 
   /* hero */
   .hero-inner { grid-template-columns: 1fr; padding: 60px 20px 40px; gap: 48px; }
-  .hero-photo-col { order: -1; height: 360px; }
-  .photo-frame { width: 240px; height: 320px; }
+  .hero-photo-col { order: 0; height: 320px; }
+  .photo-frame { width: 220px; height: 290px; }
   .photo-label.pl1 { left: 0; bottom: 0; }
   .photo-label.pl2 { right: 0; top: 0; }
   .hero-name { font-size: clamp(60px, 14vw, 90px); }
@@ -1557,6 +1609,17 @@ section + section { margin-top: 0; }
 
   footer { padding: 20px; flex-direction: column; gap: 12px; text-align: center; }
   .f-right { align-items: center; }
+  /* Mobile: make hstat-detail always visible below stat */
+  .hstat-detail {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    position: static !important;
+    white-space: normal !important;
+    border-left: none !important;
+    padding-left: 0 !important;
+    margin-top: 4px !important;
+    font-size: 9px !important;
+  }
 }
 
 /* ═══════════════════════════════════════════════
@@ -2004,6 +2067,13 @@ footer { justify-content:space-between; }
   border-radius:3px; padding:18px 20px; min-width:185px;
   backdrop-filter:blur(20px);
 }
+/* Prevent ops dashboard overlapping hero name at 1280-1400px */
+@media (max-width: 1400px) {
+  #ops-dashboard { right: 16px; min-width: 165px; padding: 14px 16px; }
+}
+@media (max-width: 1280px) {
+  #ops-dashboard { top: auto; bottom: 80px; transform: none; right: 20px; }
+}
 .ops-title {
   font-family:var(--font-c); font-size:8px; letter-spacing:4px;
   text-transform:uppercase; color:var(--gold); opacity:0.7;
@@ -2052,16 +2122,28 @@ footer { justify-content:space-between; }
 .btn-gold, .btn-ghost { will-change:transform; }
 
 /* ═══════════════════════════════════════════════
-   MOBILE PERFORMANCE — spare terminal + key UI
+   MOBILE PERFORMANCE — selective animation reduction
 ═══════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  *:not(#terminal-overlay):not(.term-inner):not(.term-header):not(.term-body):not(.term-hint):not(.term-cursor):not(#mob-term-btn):not(#loader):not(#loader *) {
-    animation-duration: 0.01ms !important;
-  }
-  *:not(#terminal-overlay):not(.term-inner):not(.term-header):not(.term-body):not(.term-hint):not(.term-cursor):not(#mob-term-btn):not(#loader):not(#loader *) {
-    transition-duration: 0.01ms !important;
-  }
+  /* Only kill expensive/distracting animations, preserve key reveals */
+  .sonowal-stream,
+  .saikia-haze { animation: none !important; }
+  
+  /* Simplify particle system on mobile */
   .particle { display: none; }
+  
+  /* Keep reveal animations but make them instant fade (no translate) */
+  .reveal {
+    opacity: 0;
+    transform: none !important;
+    transition: opacity 0.4s ease !important;
+  }
+  .reveal.visible {
+    opacity: 1 !important;
+  }
+  
+  /* Simplify shimmer/pulse on PromptOps card */
+  .chip-promptops::before { display: none; }
 }
 
 /* ACCESSIBILITY */
