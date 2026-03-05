@@ -110,7 +110,24 @@ a, button, .exp-item, .pcard, .svc, .vcard, .cs-card { cursor: none !important; 
   0%   { left: -100%; }
   100% { left: 0%; }
 }
+/* LOADER SUBTITLE */
+.loader-main {
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
 
+.loader-subtitle {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.8;
+  line-height: 1;
+}
 /* ═══════════════════════════════════════════════
    GRAIN OVERLAY
 ═══════════════════════════════════════════════ */
