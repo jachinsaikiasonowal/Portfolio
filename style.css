@@ -919,6 +919,14 @@ h2.s-title {
   z-index: 2;
 }
 .exp-item.open .exp-era { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+/* SVG era icons — slightly larger container to show detail */
+.exp-era--svg {
+  width: 36px; height: 36px; top: 30px;
+  border: 1px solid rgba(201,168,76,0.25);
+  background: rgba(201,168,76,0.04);
+}
+.exp-era--svg svg { display: block; }
+.exp-item.open .exp-era--svg { border-color: var(--gold); background: rgba(201,168,76,0.12); }
 
 .exp-trigger {
   display: flex; align-items: center; justify-content: space-between;
@@ -1401,6 +1409,15 @@ h2.s-title {
 .ecard { background: var(--black2); padding: 32px; transition: background 0.3s; }
 .ecard:hover { background: var(--black3); }
 .e-icon { font-size: 28px; margin-bottom: 14px; }
+.e-icon--svg {
+  width: 52px; height: 52px; margin-bottom: 16px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 12px;
+  transition: background 0.3s, border-color 0.3s;
+}
+.ecard:hover .e-icon--svg { background: rgba(201,168,76,0.12); border-color: rgba(201,168,76,0.4); }
 .e-deg { font-family: var(--font-d); font-size: 18px; letter-spacing: 1px; margin-bottom: 4px; }
 .e-inst { font-family: var(--font-c); font-size: 12px; letter-spacing: 1px; color: var(--gold); margin-bottom: 3px; }
 .e-year { font-family: var(--font-c); font-size: 11px; color: var(--grey); }
