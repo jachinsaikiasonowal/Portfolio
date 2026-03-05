@@ -806,7 +806,6 @@ h2.s-title {
 #services { background: var(--black2); }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border2); }
 .svc:last-child { grid-column: 1 / -1; display: flex; gap: 40px; align-items: flex-start; }
-.svc:last-child .svc-icon { font-size: 36px; flex-shrink: 0; margin-bottom: 0; margin-top: 4px; }
 .svc:last-child .svc-desc { max-width: 640px; }
 .svc {
   background: var(--black2); padding: 40px 36px;
@@ -823,7 +822,24 @@ h2.s-title {
   font-family: var(--font-d); font-size: 11px; letter-spacing: 3px;
   color: var(--gold); margin-bottom: 20px; display: block;
 }
-.svc-icon { font-size: 28px; margin-bottom: 16px; }
+.svc-icon {
+  width: 40px; height: 40px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+.svc:last-child .svc-icon { margin-bottom: 0; margin-top: 4px; }
+
+.svc-svg {
+  width: 40px; height: 40px;
+  color: var(--gold);
+  opacity: 0.55;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  display: block;
+}
+.svc:hover .svc-svg {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(201,168,76,0.45));
+}
 .svc-title {
   font-family: var(--font-d); font-size: 22px; letter-spacing: 1px;
   color: var(--white); margin-bottom: 12px;
