@@ -886,8 +886,11 @@ function closeTerminal(){
   console.log('%c💡 Type "JACHIN" on the page to open JACHIN_OS terminal.',g+'font-size:12px;font-weight:700;');
 })();
 
+// ═══════════════════════════════════════════════
 // TYPING ANIMATION
-const textToType = "Growth Marketer · Marketing Ops · AI Enabled · Founder";
+// ═══════════════════════════════════════════════
+
+const textToType = "Growth Marketer · AI Builder · Product Operator · Founder";
 const typingElement = document.getElementById('typing-text');
 const cursor = document.querySelector('.typing-cursor');
 let index = 0;
@@ -896,13 +899,18 @@ function typeText() {
   if (index < textToType.length) {
     typingElement.textContent += textToType.charAt(index);
     index++;
-    setTimeout(typeText, 80);
+    setTimeout(typeText, 80); // 80ms delay between characters (adjust for speed)
   } else {
+    // Animation complete - remove cursor animation
     typingElement.classList.add('complete');
     if (cursor) cursor.classList.add('complete');
   }
 }
 
+// Start typing when page loads
 document.addEventListener('DOMContentLoaded', function() {
   typeText();
 });
+
+// Or if you prefer it to start after a delay:
+// setTimeout(() => typeText(), 500); // 500ms delay before starting

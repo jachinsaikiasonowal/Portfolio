@@ -1850,7 +1850,10 @@ footer { justify-content:space-between; }
   #btt{right:16px;bottom:16px;}
   .f-right{align-items:flex-start;}
 }
-/* TYPING ANIMATION */
+
+/* ═══════════════════════════════════════════════
+   TYPING ANIMATION
+═══════════════════════════════════════════════ */
 #typing-text {
   display: inline-block;
   overflow: hidden;
@@ -1870,15 +1873,24 @@ footer { justify-content:space-between; }
 }
 
 @keyframes typing {
-  0% { width: 0; }
-  100% { width: 100%; }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes blink-cursor {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
 }
 
+/* Optional: Remove animation after completion */
 #typing-text.complete {
   animation: none;
   border-right: none;
@@ -1886,4 +1898,27 @@ footer { justify-content:space-between; }
 
 .typing-cursor.complete {
   animation: none;
+}
+
+/* ═══════════════════════════════════════════════
+   CLOUDINARY PROFILE PHOTO
+═══════════════════════════════════════════════ */
+.photo-img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--black3);
+}
+
+.photo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.photo-img img:hover {
+  opacity: 0.9;
 }
