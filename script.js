@@ -885,3 +885,24 @@ function closeTerminal(){
   console.log('%c  ✓ Available · $150K+ revenue · 247+ PromptOps waitlist',w+'font-size:12px;');
   console.log('%c💡 Type "JACHIN" on the page to open JACHIN_OS terminal.',g+'font-size:12px;font-weight:700;');
 })();
+
+// TYPING ANIMATION
+const textToType = "Growth Marketer · Marketing Ops · AI Enabled · Founder";
+const typingElement = document.getElementById('typing-text');
+const cursor = document.querySelector('.typing-cursor');
+let index = 0;
+
+function typeText() {
+  if (index < textToType.length) {
+    typingElement.textContent += textToType.charAt(index);
+    index++;
+    setTimeout(typeText, 80);
+  } else {
+    typingElement.classList.add('complete');
+    if (cursor) cursor.classList.add('complete');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  typeText();
+});
