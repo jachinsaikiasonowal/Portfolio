@@ -111,6 +111,10 @@
     <div class="hud-readout hr-br">
       <span class="hud-key">VER</span><span class="hud-val">2026.1</span>
     </div>
+    <!-- CMD prompt — easter egg trigger, no written instruction -->
+    <div class="hud-readout hr-cmd" onclick="openTerminal()" aria-hidden="false" title="">
+      <span class="hud-key">CMD</span><span class="hud-cmd-cursor">›_</span>
+    </div>
   </div>
 
   <!-- ⑧ OPERATIONS DASHBOARD PANEL — fixed to right edge -->
@@ -240,12 +244,6 @@
     </div>
   </div>
   <canvas id="particle-canvas" aria-hidden="true"></canvas>
-
-  <!-- TERMINAL HINT — >_ prompt, click or type JACHIN to discover -->
-  <div class="hud-term-prompt" onclick="openTerminal()" aria-hidden="true">
-    <span class="htp-label">CMD</span>
-    <span class="htp-cursor">›_</span>
-  </div>
 </section>
 
 <!-- MARQUEE STRIP -->
@@ -1620,7 +1618,9 @@
     <h2 class="s-title reveal" style="transition-delay:.1s">CERTIFI<br>CATIONS</h2>
     <div class="certs-grid reveal" style="transition-delay:.2s">
       <div class="ccard">
-        <div class="cbadge">📊</div>
+        <div class="cbadge">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleanalytics.svg" class="cbadge-logo" alt="Google Analytics">
+        </div>
         <div>
           <div class="c-name">Google Analytics 4</div>
           <div class="c-issuer">Google</div>
@@ -1628,7 +1628,9 @@
         </div>
       </div>
       <div class="ccard">
-        <div class="cbadge">🔍</div>
+        <div class="cbadge">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleads.svg" class="cbadge-logo" alt="Google Ads">
+        </div>
         <div>
           <div class="c-name">Google Ads Search</div>
           <div class="c-issuer">Google</div>
@@ -1636,7 +1638,9 @@
         </div>
       </div>
       <div class="ccard">
-        <div class="cbadge">📱</div>
+        <div class="cbadge">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" class="cbadge-logo" alt="Meta">
+        </div>
         <div>
           <div class="c-name">Meta Marketing Science</div>
           <div class="c-issuer">Meta</div>
@@ -1644,7 +1648,9 @@
         </div>
       </div>
       <div class="ccard">
-        <div class="cbadge">🧡</div>
+        <div class="cbadge">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hubspot.svg" class="cbadge-logo" alt="HubSpot">
+        </div>
         <div>
           <div class="c-name">HubSpot Marketing Software</div>
           <div class="c-issuer">HubSpot Academy</div>
@@ -1652,7 +1658,9 @@
         </div>
       </div>
       <div class="ccard">
-        <div class="cbadge">✍️</div>
+        <div class="cbadge">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hubspot.svg" class="cbadge-logo" alt="HubSpot">
+        </div>
         <div>
           <div class="c-name">HubSpot Content Marketing</div>
           <div class="c-issuer">HubSpot Academy</div>
@@ -1660,7 +1668,9 @@
         </div>
       </div>
       <div class="ccard">
-        <div class="cbadge">🏆</div>
+        <div class="cbadge">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/semrush.svg" class="cbadge-logo" alt="Semrush">
+        </div>
         <div>
           <div class="c-name">Semrush SEO Toolkit</div>
           <div class="c-issuer">Semrush Academy</div>

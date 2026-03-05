@@ -494,32 +494,38 @@ h2.s-title {
 .pl-val em { color: var(--gold); font-style: normal; }
 
 /* ═══════════════════════════════════════════════
-   TERMINAL >_ HINT — hero HUD corner easter egg
+   HUD CMD — terminal easter egg readout
 ═══════════════════════════════════════════════ */
-.hud-term-prompt {
-  position: absolute;
-  bottom: 52px; right: 36px;
-  z-index: 10;
-  cursor: none;
-  display: flex; align-items: center; gap: 5px;
-  opacity: 0.18;
-  transition: opacity 0.35s ease;
+.hr-cmd {
+  bottom: 26px; left: 32px;   /* sits just above STATUS readout's corner */
   pointer-events: auto;
+  cursor: none;
+  opacity: 0.45;
+  transition: opacity 0.25s ease;
   user-select: none;
 }
-.hud-term-prompt:hover { opacity: 0.75; }
-.htp-label {
-  font-family: var(--font-c);
-  font-size: 7px; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--grey);
-}
-.htp-cursor {
+.hr-cmd:hover { opacity: 1; }
+.hud-cmd-cursor {
+  color: var(--gold);
   font-family: 'Courier New', monospace;
-  font-size: 13px; color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 0;
   animation: blink 1s step-end infinite;
-  line-height: 1;
 }
-@media (max-width: 960px) { .hud-term-prompt { display: none; } }
+
+/* ═══════════════════════════════════════════════
+   CERT BADGE LOGOS
+═══════════════════════════════════════════════ */
+.cbadge-logo {
+  width: 26px; height: 26px;
+  display: block;
+  /* Invert black SVG to white, then tint slightly warm */
+  filter: invert(1) sepia(0.15) opacity(0.75);
+  transition: filter 0.2s ease;
+}
+.ccard:hover .cbadge-logo {
+  filter: invert(0.85) sepia(0.6) saturate(3) hue-rotate(5deg) opacity(0.95);
+}
 
 /* ═══════════════════════════════════════════════
    MARQUEE STRIP
@@ -1914,6 +1920,7 @@ footer { justify-content:space-between; }
   #ops-dashboard{display:none;}
   #rev-ticker{display:none;}
   #ambient-hud{display:none;}
+  .hr-cmd{display:none;}
   #btt{right:16px;bottom:16px;}
   .f-right{align-items:flex-start;}
 }
