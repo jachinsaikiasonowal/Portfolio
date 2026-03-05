@@ -181,7 +181,7 @@ nav.scrolled {
    LAYOUT HELPERS
 ═══════════════════════════════════════════════ */
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 60px; }
-section { padding: 120px 0; }
+section { padding: 120px 0; position: relative; }
 section[id], #strip, #metrics {
   scroll-margin-top: 80px;
 }
@@ -608,6 +608,14 @@ h2.s-title {
 }
 .m-item:hover { background: var(--black3); }
 .m-item:hover::before { transform: scaleX(1); }
+/* Top-down gold scan on hover */
+.m-item::after {
+  content: ''; position: absolute;
+  top: -2px; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.8; transition: top 0.5s ease;
+}
+.m-item:hover::after { top: calc(100% + 2px); }
 .m-num {
   font-family: var(--font-d); font-size: 38px; letter-spacing: 1px;
   color: var(--white); line-height: 1;
@@ -1163,13 +1171,13 @@ h2.s-title {
 
 /* Main case study card */
 .cs-card {
+  position: relative;
   background: var(--black2);
   border: 1px solid var(--border2);
   border-radius: 2px;
   margin-bottom: 2px;
   overflow: hidden;
   transition: border-color 0.4s;
-  position: relative;
 }
 .cs-card:hover { border-color: var(--border); }
 .cs-card.open { border-color: rgba(201,168,76,0.35); }
@@ -1672,7 +1680,7 @@ section + section { margin-top: 0; }
    CROSSHAIR CURSOR — hide old, build reticle
 ═══════════════════════════════════════════════ */
 #cursor, #cursor-ring { display: none !important; }
-body { cursor: none; }
+/* cursor:none already set in root body{} rule — no duplicate needed */
 
 #crosshair {
   position: fixed; top: 0; left: 0;
@@ -1833,24 +1841,11 @@ body.cursor-click #crosshair .ch-dot { width:9px; height:9px; opacity:0.5; }
   100% { text-shadow:none; }
 }
 
-/* ═══════════════════════════════════════════════
-   METRICS — SCAN LINE ON HOVER
-═══════════════════════════════════════════════ */
-.m-item {
-  overflow:hidden;
-}
-.m-item::after {
-  content:''; position:absolute;
-  top:-2px; left:0; right:0; height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  opacity:0.8; transition:top 0.5s ease;
-}
-.m-item:hover::after { top:calc(100% + 2px); }
+/* .m-item::after scan-line — merged into main .m-item block above */
 
 /* ═══════════════════════════════════════════════
    AMBIENT SECTION RADIAL DEPTH
 ═══════════════════════════════════════════════ */
-section { position:relative; }
 section > .wrap { position:relative; z-index:1; }
 section::after {
   content:''; position:absolute; inset:0; z-index:0;
@@ -1870,8 +1865,7 @@ section::after {
 /* ═══════════════════════════════════════════════
    FOOTER LIVE CLOCK
 ═══════════════════════════════════════════════ */
-footer { justify-content:space-between; }
-.f-right { display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+/* footer & .f-right fully defined above in FOOTER section */
 .f-clock {
   font-family:var(--font-d); font-size:12px;
   letter-spacing:3px; color:var(--gold); opacity:0.65;
@@ -1992,7 +1986,7 @@ footer { justify-content:space-between; }
 /* ═══════════════════════════════════════════════
    CASE STUDY — CLASSIFIED SCAN
 ═══════════════════════════════════════════════ */
-.cs-card { position:relative; }
+/* .cs-card position:relative merged into main .cs-card block above */
 .cs-scan-overlay {
   position:absolute; left:0; right:0; top:0; bottom:0;
   z-index:20; pointer-events:none; overflow:hidden;
@@ -2138,7 +2132,7 @@ footer { justify-content:space-between; }
     transform: none !important;
     transition: opacity 0.4s ease !important;
   }
-  .reveal.visible {
+  .reveal.in {
     opacity: 1 !important;
   }
   
