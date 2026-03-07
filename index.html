@@ -168,7 +168,6 @@ body {
   /* cursor managed by pointer media query below */
 }
 
-
 /* ═══════════════════════════════════════════════
    SCROLLBAR
 ═══════════════════════════════════════════════ */
@@ -1158,7 +1157,7 @@ h2.s-title {
 .eresult {
   border: 1px solid var(--border); border-radius: 2px; padding: 16px;
   text-align: center; transition: border-color 0.2s;
-  position: relative; overflow: hidden;
+  position: relative; overflow: visible;
 }
 .eresult::before {
   content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
@@ -1166,7 +1165,7 @@ h2.s-title {
   transition: transform 0.3s;
 }
 .eresult:hover::before { transform: scaleX(1); }
-.er-num { font-family: var(--font-d); font-size: 24px; letter-spacing: 1px; color: var(--white); }
+.er-num { font-family: var(--font-d); font-size: 24px; letter-spacing: 1px; color: var(--white); white-space: nowrap; overflow: visible; min-width: 0; }
 .er-num em { color: var(--gold); font-style: normal; }
 .er-lbl { font-family: var(--font-c); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-top: 4px; }
 
@@ -1301,7 +1300,6 @@ h2.s-title {
   cursor: none;
   transition: padding-left 0.3s;
 }
-
 
 .cs-index {
   font-family: var(--font-d);
@@ -1833,6 +1831,7 @@ body.cursor-click #crosshair .ch-dot { width:9px; height:9px; opacity:0.5; }
    SCROLL PROGRESS BAR
 ═══════════════════════════════════════════════ */
 #scroll-progress {
+  display: none;  /* LINE ANIMATION DISABLED */
   position:fixed; top:0; left:0; right:0; height:2px;
   z-index:100002;
   background:linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2));
@@ -2198,9 +2197,9 @@ section::after {
 .cpb-step.cpb-active{color:var(--gold);font-weight:600;}
 .cpb-arrow{font-size:10px;color:var(--border);margin:0 10px;flex-shrink:0;}
 #section-cut{display:flex;align-items:center;gap:24px;padding:0 60px;height:56px;background:var(--black3);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);overflow:hidden;}
-.cut-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);transform:scaleX(0);transform-origin:center;transition:transform 0.8s cubic-bezier(0.16,1,0.3,1);}
+.cut-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);display:none;}
 .cut-label{font-family:var(--font-c);font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);opacity:0;transition:opacity 0.6s ease 0.5s;white-space:nowrap;flex-shrink:0;}
-#section-cut.cut-fired .cut-line{transform:scaleX(1);}
+#section-cut.cut-fired .cut-line{display:none;}
 #section-cut.cut-fired .cut-label{opacity:0.7;}
 .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:none;padding:8px;z-index:10001;}
 .nav-burger span{display:block;height:1px;background:var(--grey2);border-radius:1px;transition:transform 0.3s ease,opacity 0.3s ease;transform-origin:center;}
@@ -2479,7 +2478,6 @@ a, button { touch-action: manipulation; }
 .cut-label { font-family: var(--font-c); font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold3); }
 @media (max-width:768px) { .sec-cut { padding: 48px 20px; } }
 
-
 /* ═══════════════════════════════════════════════════════════
    PROMPTOPS SECTION — AI Teams Product
 ═══════════════════════════════════════════════════════════ */
@@ -2643,7 +2641,6 @@ a, button { touch-action: manipulation; }
 .po-strip-lbl    { font-family: var(--font-c); font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--grey); margin-top: 5px; }
 .po-strip-sub    { font-size: 12px; color: var(--grey); font-weight: 300; margin-top: 6px; line-height: 1.5; }
 
-
 /* ── SEC-CUT LABEL VARIANTS ── */
 .cut-label-minion {
   display: flex;
@@ -2697,7 +2694,6 @@ a, button { touch-action: manipulation; }
   body, * { cursor: auto !important; }
   #crosshair, #crosshair-dot { display: none !important; }
 }
-
 
 /* ═══════════════════════════════════════════════════════
    PREMIUM SECTION DIVIDER  (replaces minion dividers)
@@ -2806,7 +2802,6 @@ a, button { touch-action: manipulation; }
 .cut-label-minion, .minion-icon, .minion-icon-r,
 .banana-icon, .banana-icon-r, .cut-label-vibe { display: none !important; }
 
-
   /* ════ GOD MODE UPGRADE STYLES ════ */
 /* ════════════════════════════════════════════════════════
    NEW EFFECTS — GOD MODE UPGRADE
@@ -2830,7 +2825,6 @@ a, button { touch-action: manipulation; }
   border-radius: 4px;
   box-shadow: 0 8px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(201,168,76,0.1);
 }
-
 
 /* ── TILT CARD BASE ───────────────────────────────────── */
 .tilt-card {
@@ -3161,7 +3155,6 @@ nav.scrolled {
   box-shadow: 0 0 8px rgba(201,168,76,0.4);
 }
 
-
   /* ════ SKIP LINK ════ */
   .skip-link{position:absolute;top:-48px;left:16px;background:var(--gold);color:#0A0A0A;padding:10px 20px;font-family:"Courier New",monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;z-index:999999;transition:top .15s ease;text-decoration:none;border-radius:0 0 4px 4px;}
   .skip-link:focus{top:0;outline:2px solid #E8C96A;}
@@ -3471,7 +3464,6 @@ body.light-mode #now-widget .nw-item {
 .sp-item strong { color: var(--gold); font-weight: 600; }
 .sp-sep { width: 1px; height: 12px; background: var(--border); flex-shrink: 0; }
 @keyframes spTicker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-
 
 /* ═══════════════════════════════════════════════════════════════
    ██████╗ ██████╗ ███████╗███╗   ███╗██╗██╗   ██╗███╗   ███╗
@@ -3839,11 +3831,6 @@ body.light-mode #now-widget .nw-item {
 /* ════════════════════════════════════════════
    SCROLL PROGRESS BAR — plasma glow
 ════════════════════════════════════════════ */
-#scroll-progress {
-  background: linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2)) !important;
-  box-shadow: 0 0 8px rgba(201,168,76,0.5), 0 0 20px rgba(201,168,76,0.2) !important;
-  height: 2px !important;
-}
 
 /* ════════════════════════════════════════════
    AGENT NETWORK CANVAS WRAP — deep field
@@ -4259,10 +4246,137 @@ footer {
   /* ════════════════════════════════════════════════════════════════════════
      END ULTIMATE ENHANCEMENT SUITE — 100+ IMPROVEMENTS APPLIED
      ════════════════════════════════════════════════════════════════════════ */
+
+
+  /* ════════════════════════════════════════════════════════════
+     PARALLAX LAYERED SHAPES BACKGROUND
+     ════════════════════════════════════════════════════════════ */
+
+  /* Base parallax layer container */
+  .parallax-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  /* Shape styles */
+  .shape {
+    position: absolute;
+    opacity: 0.08;
+    will-change: transform;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+  }
+
+  /* Circle shapes */
+  .shape-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+
+  /* Hexagon shapes - using border approach */
+  .shape-hexagon {
+    width: 100px;
+    height: 115px;
+    background: transparent;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  /* Abstract shapes - irregular polygons */
+  .shape-abstract {
+    width: 90px;
+    height: 90px;
+    clip-path: polygon(
+      30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%
+    );
+  }
+
+  /* Layer 1: Slowest parallax (smallest multiplier) */
+  .layer-1 {
+    transform: translateY(0);
+  }
+
+  /* Layer 2: Medium parallax */
+  .layer-2 {
+    transform: translateY(0);
+  }
+
+  /* Layer 3: Fastest parallax (largest multiplier) */
+  .layer-3 {
+    transform: translateY(0);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .shape {
+      opacity: 0.05;
+      border-width: 0.5px;
+    }
+
+    .shape-circle {
+      width: 50px;
+      height: 50px;
+    }
+
+    .shape-hexagon {
+      width: 60px;
+      height: 70px;
+    }
+
+    .shape-abstract {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  /* Accessibility: disable parallax for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .parallax-layer {
+      transform: none !important;
+    }
+  }
+
 </style>
 </head>
 
 <body>
+
+  <!-- ════════════════════════════════════════════════════════════
+       PARALLAX LAYERED SHAPES BACKGROUND
+       Multiple transparent layers moving at different speeds
+       ════════════════════════════════════════════════════════════ -->
+
+  <!-- Layer 1: Slow, large shapes -->
+  <div class="parallax-layer layer-1">
+    <div class="shape shape-circle" style="top: 10%; left: 5%;"></div>
+    <div class="shape shape-hexagon" style="top: 40%; left: 15%;"></div>
+    <div class="shape shape-circle" style="top: 70%; left: 10%;"></div>
+    <div class="shape shape-abstract" style="top: 50%; right: 12%;"></div>
+  </div>
+
+  <!-- Layer 2: Medium speed, medium shapes -->
+  <div class="parallax-layer layer-2">
+    <div class="shape shape-hexagon" style="top: 20%; right: 8%;"></div>
+    <div class="shape shape-circle" style="top: 55%; left: 20%;"></div>
+    <div class="shape shape-abstract" style="top: 15%; left: 60%;"></div>
+    <div class="shape shape-circle" style="top: 75%; right: 15%;"></div>
+  </div>
+
+  <!-- Layer 3: Fast, small shapes -->
+  <div class="parallax-layer layer-3">
+    <div class="shape shape-abstract" style="top: 5%; left: 35%;"></div>
+    <div class="shape shape-circle" style="top: 30%; right: 25%;"></div>
+    <div class="shape shape-hexagon" style="top: 65%; left: 45%;"></div>
+    <div class="shape shape-circle" style="top: 80%; right: 5%;"></div>
+  </div>
+
+
   <a href="#hero" class="skip-link" tabindex="1">Skip to content</a>
 
 <!-- THEME TOGGLE -->
@@ -4369,14 +4483,12 @@ footer {
   </div>
 </div>
 
-
 <!-- LOADER -->
 <div id="loader">
   <div class="loader-text">JACHIN</div>
   <div class="loader-bar"></div>
   <div class="loader-count" id="loader-count">0</div>
 </div>
-
 
 <nav id="nav">
   <a href="#hero" class="nav-logo">JACHIN<span>.</span></a>
@@ -4577,7 +4689,6 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
 <!-- MOBILE TERMINAL BUTTON — fixed, always visible on touch -->
 <button id="mob-term-btn" onclick="openTerminal()" aria-label="Open JACHIN_OS terminal">›_</button>
 
-
 <!-- MARQUEE STRIP -->
 <div id="strip" aria-hidden="true">
   <div class="strip-track">
@@ -4607,7 +4718,6 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
 </div>
 
 <!-- METRICS BAR -->
-
 
 <div id="metrics">
   <div class="metrics-row">
@@ -4863,7 +4973,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">00</div>
+            <div class="exp-num">01</div>
             <div class="exp-info">
               <div class="exp-title">THE FOUNDATIONS ERA</div>
               <div class="exp-meta">Freelance &amp; Self-Built Skills · <span>2017 – 2019</span></div>
@@ -4898,7 +5008,6 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
       </div>
 
-
       <!-- ERA 0.5 — SUN ENTERPRISE (Corporate Foundation) -->
       <div class="exp-item" onclick="toggleExp(this)">
         <div class="exp-era exp-era--svg">
@@ -4911,7 +5020,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">01</div>
+            <div class="exp-num">02</div>
             <div class="exp-info">
               <div class="exp-title">DIGITAL MARKETING EXECUTIVE</div>
               <div class="exp-meta">SUN Enterprise · <span>Feb 2018 – Mar 2020 </span></div>
@@ -4969,7 +5078,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">02</div>
+            <div class="exp-num">03</div>
             <div class="exp-info">
               <div class="exp-title">VISUAL DESIGNER</div>
               <div class="exp-meta">The New Studio · <span>Feb 2021 – Present</span>&nbsp;<span style="color:var(--grey);font-size:11px;letter-spacing:1px;">(Part-time / Project Basis)</span></div>
@@ -5011,7 +5120,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">03</div>
+            <div class="exp-num">04</div>
             <div class="exp-info">
               <div class="exp-title">GROWTH CONSULTANT</div>
               <div class="exp-meta">Independent Practice · <span>Feb 2021 – Present</span> · India / Remote</div>
@@ -5077,7 +5186,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">04</div>
+            <div class="exp-num">05</div>
             <div class="exp-info">
               <div class="exp-title">FOUNDER &amp; OPERATOR — AI NEWS INDIA</div>
               <div class="exp-meta">Newsletter &amp; Media · <span>Jan 2024 – Present</span></div>
@@ -5132,7 +5241,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">05</div>
+            <div class="exp-num">06</div>
             <div class="exp-info">
               <div class="exp-title">DIGITAL PRODUCT — MEGA PROMPT BUNDLE</div>
               <div class="exp-meta">Solo Product Creator · <span>Mid 2024 – Present</span></div>
@@ -5191,7 +5300,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">06</div>
+            <div class="exp-num">07</div>
             <div class="exp-info">
               <div class="exp-title">AI AGENT ENGINEER</div>
               <div class="exp-meta">Personal AI Lab · <span>Oct 2024 – Present</span></div>
@@ -5246,7 +5355,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">07</div>
+            <div class="exp-num">08</div>
             <div class="exp-info">
               <div class="exp-title">FOUNDER — PROMPTOPS</div>
               <div class="exp-meta">SaaS Developer Tool · <span>Jan 2026 – Present</span> · Beta</div>
@@ -5815,7 +5924,6 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
   </div>
 </section>
 
-
 <!-- SECTION DIVIDER → AI SYSTEMS -->
 <div class="sdp-wrap" aria-hidden="true">
   <div class="sdp-rule"></div>
@@ -5840,7 +5948,6 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
   </div>
   <div class="sdp-rule"></div>
 </div>
-
 
 <!-- ══════════════════════════════════════════════════════
      AI SYSTEMS — Case Study: Agent Operating System
@@ -6025,7 +6132,6 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
   </div>
 </section>
 
-
 <!-- SECTION DIVIDER → PROMPTOPS -->
 <div class="sdp-wrap" aria-hidden="true">
   <div class="sdp-rule"></div>
@@ -6047,7 +6153,6 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
   </div>
   <div class="sdp-rule"></div>
 </div>
-
 
 <!-- ══════════════════════════════════════════════════════
      PROMPTOPS — Prompt Management Platform for AI Teams
@@ -7132,7 +7237,6 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
   </div>
 </footer>
 
-
 <!-- REVERSE MARQUEE -->
 <div id="strip2" aria-hidden="true">
   <div class="strip2-track">
@@ -8096,7 +8200,6 @@ function closeTerminal(){
   console.log('%c$ jachin --boot\n%c> JACHIN_OS v2026.1 initialized\n%c> awaiting input_',g+'font-size:11px;',g+'font-size:11px;',g+'font-size:12px;font-weight:700;');
 })();
 
-
 /* ══════════════════════════════════════════════════════════
    AI SYSTEMS — AGENT NETWORK CANVAS
 ══════════════════════════════════════════════════════════ */
@@ -8459,7 +8562,6 @@ function closeTerminal(){
 
 })();
 
-
 /* ══════════════════════════════════════════════════════════
    AI SYSTEMS — STATS CARD BAR ANIMATION
 ══════════════════════════════════════════════════════════ */
@@ -8501,7 +8603,6 @@ document.addEventListener('visibilitychange', function() {
 ════════════════════════════════════════════════════════ */
 
 (function() {
-
 
 /* ─── GLASSMORPHIC CARD TILT (3D perspective) ──────── */
 (function(){
@@ -8555,7 +8656,6 @@ document.addEventListener('visibilitychange', function() {
     });
   }, { passive: true });
 })();
-
 
 /* ─── MAGNETIC RADIAL LIGHT ON BUTTONS ─────────────── */
 (function(){
@@ -9087,6 +9187,45 @@ console.log('%c⚡ GOD MODE ACTIVE', 'font-size:14px;color:#C9A84C;font-weight:7
   /* ════════════════════════════════════════════════════════════════════════
      END ULTIMATE JAVASCRIPT SUITE
      ════════════════════════════════════════════════════════════════════════ */
+
+
+  /* ════════════════════════════════════════════════════════════
+     PARALLAX SCROLL EFFECT - JavaScript Controller
+     ════════════════════════════════════════════════════════════ */
+
+  (function(){
+    var layer1 = document.querySelector('.layer-1');
+    var layer2 = document.querySelector('.layer-2');
+    var layer3 = document.querySelector('.layer-3');
+
+    if(!layer1 || !layer2 || !layer3) return;
+
+    var ticking = false;
+    var scrollY = 0;
+
+    window.addEventListener('scroll', function(){
+      scrollY = window.scrollY;
+      
+      if(!ticking){
+        window.requestAnimationFrame(function(){
+          // Layer 1: Slowest (0.3x scroll speed)
+          layer1.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
+          
+          // Layer 2: Medium (0.5x scroll speed)
+          layer2.style.transform = 'translateY(' + (scrollY * 0.5) + 'px)';
+          
+          // Layer 3: Fastest (0.8x scroll speed)
+          layer3.style.transform = 'translateY(' + (scrollY * 0.8) + 'px)';
+          
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    console.log('%c✨ Parallax Layers Active', 'font-size:12px;color:#C9A84C;font-weight:700;');
+  })();
+
 </script>
 </body>
 </html>
