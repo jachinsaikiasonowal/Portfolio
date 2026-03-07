@@ -23,6 +23,99 @@
   <meta name="keywords" content="Growth Marketer, AI Agent Engineer, Marketing Operations, PromptOps, Guwahati, India, Remote Marketing">
   <link rel="icon" id="dyn-favicon" type="image/png">
 
+  <script>
+  /* ═══════════════════════════════════════════════════════
+     ANIMATED FAVICON — "J" monogram with orbiting gold arc
+  ═══════════════════════════════════════════════════════ */
+  (function() {
+    var canvas = document.createElement('canvas');
+    canvas.width = 64; canvas.height = 64;
+    var ctx = canvas.getContext('2d');
+    var favicon = document.getElementById('dyn-favicon');
+    if (!favicon) return;
+    var frame = 0;
+
+    function drawFrame(f) {
+      var s = 64;
+      ctx.clearRect(0, 0, s, s);
+
+      // BG disc
+      ctx.beginPath(); ctx.arc(32, 32, 30, 0, Math.PI*2);
+      ctx.fillStyle = '#0A0A0A'; ctx.fill();
+
+      // Static outer border
+      ctx.beginPath(); ctx.arc(32, 32, 29.5, 0, Math.PI*2);
+      ctx.strokeStyle = 'rgba(201,168,76,0.2)'; ctx.lineWidth = 0.8; ctx.stroke();
+
+      // Spinning arc 1 — main gold arc
+      var a1 = f * 0.022;
+      ctx.save();
+      ctx.beginPath(); ctx.arc(32, 32, 27, a1, a1 + Math.PI * 1.3);
+      ctx.strokeStyle = '#C9A84C'; ctx.lineWidth = 2.2; ctx.lineCap = 'round';
+      ctx.shadowColor = '#C9A84C'; ctx.shadowBlur = 6;
+      ctx.stroke(); ctx.restore();
+
+      // Counter-spinning arc 2 — dimmer
+      var a2 = -f * 0.014 + Math.PI;
+      ctx.save();
+      ctx.beginPath(); ctx.arc(32, 32, 22, a2, a2 + Math.PI * 0.7);
+      ctx.strokeStyle = 'rgba(201,168,76,0.4)'; ctx.lineWidth = 1.2; ctx.lineCap = 'round';
+      ctx.stroke(); ctx.restore();
+
+      // Dot on arc 1 tip — orbiting beacon
+      var bx = 32 + 27 * Math.cos(a1 + Math.PI * 1.3);
+      var by = 32 + 27 * Math.sin(a1 + Math.PI * 1.3);
+      ctx.save();
+      ctx.beginPath(); ctx.arc(bx, by, 2.5, 0, Math.PI*2);
+      ctx.fillStyle = '#E8C96A'; ctx.shadowColor = '#E8C96A'; ctx.shadowBlur = 8;
+      ctx.fill(); ctx.restore();
+
+      // "J" letterform
+      ctx.save();
+      ctx.strokeStyle = '#F0DFA0'; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.shadowColor = 'rgba(201,168,76,0.5)'; ctx.shadowBlur = 4;
+      // top bar
+      ctx.beginPath(); ctx.moveTo(27, 19); ctx.lineTo(40, 19); ctx.stroke();
+      // stem
+      ctx.beginPath(); ctx.moveTo(36, 19); ctx.lineTo(36, 38);
+      ctx.bezierCurveTo(36, 44, 27, 47, 24, 42); ctx.stroke();
+      ctx.restore();
+
+      // Corner marks
+      ctx.save(); ctx.strokeStyle = 'rgba(201,168,76,0.45)'; ctx.lineWidth = 1.4; ctx.lineCap = 'square';
+      ctx.beginPath(); ctx.moveTo(8,13); ctx.lineTo(8,8); ctx.lineTo(13,8); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(51,8); ctx.lineTo(56,8); ctx.lineTo(56,13); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(8,51); ctx.lineTo(8,56); ctx.lineTo(13,56); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(56,51); ctx.lineTo(56,56); ctx.lineTo(51,56); ctx.stroke();
+      ctx.restore();
+
+      favicon.href = canvas.toDataURL('image/png');
+    }
+
+    var tick = 0;
+    function loop() {
+      tick++;
+      if (tick % 2 === 0 && !document.hidden) drawFrame(tick);
+      requestAnimationFrame(loop);
+    }
+    drawFrame(0);
+    requestAnimationFrame(loop);
+
+    // Cycling tab title
+    var titles = [
+      'Jachin Saikia Sonowal — Growth Marketer · AI Builder',
+      '⚡ Available for Hire — 2026',
+      '🤖 PromptOps Founder · 247+ Waitlist',
+      '📈 $145K+ Revenue · 175+ Clients',
+      'Jachin Saikia Sonowal — Growth Marketer · AI Builder',
+    ];
+    var ti = 0;
+    setInterval(function(){
+      if (!document.hidden) { ti = (ti+1) % titles.length; document.title = titles[ti]; }
+    }, 5000);
+  })();
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1889,11 +1982,14 @@ section::after {
   backdrop-filter:blur(14px);
   font-family:var(--font-c); font-size:9px;
   letter-spacing:3px; text-transform:uppercase;
-  opacity:0; transform:translateY(10px);
-  transition:opacity 0.4s ease,transform 0.4s ease;
+  opacity:0; visibility:hidden; transform:translateY(10px);
+  transition:opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
   pointer-events:none; max-width:440px;
 }
-#ambient-hud.ahud-on { opacity:1; transform:translateY(0); }
+#ambient-hud.ahud-on {
+  opacity:1; visibility:visible; transform:translateY(0);
+  transition:opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0s;
+}
 .ahud-dot {
   width:5px; height:5px; border-radius:50%;
   background:var(--gold); flex-shrink:0;
@@ -1910,9 +2006,13 @@ section::after {
   background:rgba(6,6,6,0.9); border:1px solid var(--border);
   border-right:none; padding:22px 11px;
   backdrop-filter:blur(14px);
-  opacity:0; transition:opacity 0.5s ease 2s;
+  opacity:0; visibility:hidden;
+  transition:opacity 0.5s ease 2s, visibility 0s linear 2.5s;
 }
-#rev-ticker.ticker-on { opacity:1; }
+#rev-ticker.ticker-on {
+  opacity:1; visibility:visible;
+  transition:opacity 0.5s ease 2s, visibility 0s linear 2s;
+}
 #rev-ticker-val {
   font-family:var(--font-d); font-size:13px;
   letter-spacing:2px; color:var(--gold); display:block; margin-bottom:6px;
@@ -2041,7 +2141,7 @@ section::after {
 ═══════════════════════════════════════════════ */
 #neural-canvas {
   position:absolute; inset:0; width:100%; height:100%;
-  pointer-events:none; z-index:0; opacity:0.8;
+  pointer-events:none; z-index:0; opacity:0.45;
 }
 .hud-scanline {
   position:absolute; inset:0; pointer-events:none; z-index:0; opacity:0.5;
@@ -3064,11 +3164,861 @@ nav.scrolled {
   /* ════ SKIP LINK ════ */
   .skip-link{position:absolute;top:-48px;left:16px;background:var(--gold);color:#0A0A0A;padding:10px 20px;font-family:"Courier New",monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;z-index:999999;transition:top .15s ease;text-decoration:none;border-radius:0 0 4px 4px;}
   .skip-link:focus{top:0;outline:2px solid #E8C96A;}
+
+/* ════════════════════════════════════════════
+   LIGHT MODE TOGGLE
+════════════════════════════════════════════ */
+#theme-toggle {
+  position: fixed; bottom: 28px; left: 28px; z-index: 9999;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--black3); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.3s ease;
+  color: var(--gold);
+}
+#theme-toggle:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); transform: scale(1.1); }
+#theme-toggle svg { width: 16px; height: 16px; transition: opacity 0.3s; }
+#theme-toggle .icon-sun { display: none; }
+#theme-toggle .icon-moon { display: block; }
+
+body.light-mode {
+  --black:   #F5F2EA;
+  --black2:  #ECEADE;
+  --black3:  #E4E0D4;
+  --black4:  #D8D4C8;
+  --white:   #1A1610;
+  --grey:    #6B6357;
+  --grey2:   #4A4238;
+  --border:  rgba(140,100,30,0.2);
+  --border2: rgba(140,100,30,0.10);
+  background: #F5F2EA;
+  color: #1A1610;
+}
+body.light-mode #theme-toggle .icon-sun { display: block; }
+body.light-mode #theme-toggle .icon-moon { display: none; }
+body.light-mode nav { background: rgba(245,242,234,0.96); }
+body.light-mode .hero-name .outline { -webkit-text-stroke-color: rgba(26,22,16,0.3); }
+body.light-mode #strip, body.light-mode #strip2 { background: var(--black3); }
+body.light-mode .loader-text { color: var(--black); -webkit-text-stroke-color: var(--gold3); }
+body.light-mode #terminal-overlay .term-inner { background: #1A1610; border-color: var(--gold3); }
+body.light-mode .nav-hire { color: var(--white) !important; background: var(--gold); }
+
+/* ════════════════════════════════════════════
+   "CURRENTLY" NOW WIDGET
+════════════════════════════════════════════ */
+#now-widget {
+  position: fixed; right: 28px; top: 50%; transform: translateY(-50%);
+  z-index: 9998; width: 200px;
+  background: rgba(8,8,8,0.94);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--gold);
+  backdrop-filter: blur(20px);
+  padding: 16px;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0.5s;
+  opacity: 0; visibility: hidden; pointer-events: none;
+}
+#now-widget.visible {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0s;
+}
+.nw-header {
+  font-family: var(--font-c); font-size: 8px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 6px;
+}
+.nw-header::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); animation: sonar 2s infinite; }
+.nw-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border2); }
+.nw-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.nw-label { font-family: var(--font-c); font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); margin-bottom: 3px; }
+.nw-val { font-size: 11px; font-weight: 400; color: var(--grey2); line-height: 1.5; }
+.nw-val strong { color: var(--white); font-weight: 500; }
+@media(max-width:1300px) { #now-widget { display: none; } }
+
+/* ════════════════════════════════════════════
+   RESUME DOWNLOAD BUTTON (NAV)
+════════════════════════════════════════════ */
+.nav-resume {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-c); font-size: 11px; font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--grey2); text-decoration: none;
+  border: 1px solid var(--border2); padding: 7px 16px; border-radius: 2px;
+  transition: all 0.25s;
+}
+.nav-resume:hover { border-color: var(--gold); color: var(--gold); }
+.nav-resume::after { display: none !important; }
+
+/* ════════════════════════════════════════════
+   CONTACT FORM (embedded in CTA)
+════════════════════════════════════════════ */
+#contact-form-wrap {
+  margin-top: 60px; padding-top: 60px;
+  border-top: 1px solid var(--border2);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.cf-label {
+  font-family: var(--font-c); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 28px;
+  display: flex; align-items: center; gap: 12px;
+}
+.cf-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--border), transparent); }
+.cf-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;
+}
+@media(max-width:600px) { .cf-grid { grid-template-columns: 1fr; } }
+.cf-field {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.cf-field label {
+  font-family: var(--font-c); font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--grey);
+}
+.cf-field input,
+.cf-field select,
+.cf-field textarea {
+  background: var(--black2); border: 1px solid var(--border2);
+  color: var(--white); font-family: var(--font-b); font-size: 14px; font-weight: 300;
+  padding: 12px 16px; border-radius: 2px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  outline: none; width: 100%;
+  -webkit-appearance: none;
+}
+.cf-field input:focus,
+.cf-field select:focus,
+.cf-field textarea:focus {
+  border-color: var(--gold); box-shadow: 0 0 0 2px rgba(201,168,76,0.1);
+}
+.cf-field select option { background: var(--black3); }
+.cf-field textarea { resize: vertical; min-height: 120px; }
+.cf-field-full { grid-column: 1 / -1; }
+.cf-submit {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--gold); color: var(--black);
+  padding: 14px 36px; border: none; border-radius: 2px;
+  font-family: var(--font-c); font-size: 12px; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  cursor: pointer; transition: all 0.25s; margin-top: 8px;
+  position: relative; overflow: hidden;
+}
+.cf-submit::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--gold2); transform: translateX(-100%); transition: transform 0.3s ease;
+}
+.cf-submit:hover::before { transform: translateX(0); }
+.cf-submit span { position: relative; z-index: 1; }
+.cf-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(201,168,76,0.25); }
+.cf-success {
+  display: none; align-items: center; gap: 12px;
+  padding: 16px 20px; border: 1px solid rgba(74,222,128,0.3);
+  background: rgba(74,222,128,0.05); border-radius: 2px; margin-top: 16px;
+  font-family: var(--font-c); font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: #4ade80;
+}
+.cf-success.show { display: flex; }
+.cf-note {
+  margin-top: 12px; font-size: 12px; font-weight: 300;
+  color: var(--grey); line-height: 1.6;
+}
+
+/* ════════════════════════════════════════════
+   MOBILE BOTTOM DOCK
+════════════════════════════════════════════ */
+#mob-dock {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9990;
+  background: rgba(8,8,8,0.97);
+  border-top: 1px solid var(--border);
+  padding: 10px 0 env(safe-area-inset-bottom, 10px);
+  backdrop-filter: blur(24px);
+}
+.mob-dock-items {
+  display: flex; align-items: center; justify-content: space-around;
+  max-width: 400px; margin: 0 auto;
+}
+.mob-dock-item {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  color: var(--grey); text-decoration: none; transition: color 0.2s;
+  font-family: var(--font-c); font-size: 8px; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 4px 8px;
+}
+.mob-dock-item.active, .mob-dock-item:hover { color: var(--gold); }
+.mob-dock-item svg { width: 18px; height: 18px; }
+@media(max-width:640px) { #mob-dock { display: block; } }
+@media(max-width:640px) { body { padding-bottom: 70px; } }
+@media(max-width:640px) { footer { padding-bottom: 80px; } }
+
+/* ════════════════════════════════════════════
+   READING LIST / STACK SECTION
+════════════════════════════════════════════ */
+#now-reading {
+  background: var(--black2);
+  padding: 80px 0;
+  border-top: 1px solid var(--border2);
+}
+.reading-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; margin-top: 40px;
+}
+@media(max-width:768px) { .reading-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:480px) { .reading-grid { grid-template-columns: 1fr; } }
+.rcard {
+  background: var(--black3); padding: 24px;
+  position: relative; overflow: hidden; transition: background 0.3s;
+}
+.rcard:hover { background: var(--black4); }
+.rcard-type {
+  font-family: var(--font-c); font-size: 8px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.rcard-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; animation: sonar 2.5s infinite; }
+.rcard-title { font-family: var(--font-d); font-size: 17px; letter-spacing: 1px; color: var(--white); margin-bottom: 6px; line-height: 1.1; }
+.rcard-sub { font-size: 12px; font-weight: 300; color: var(--grey); line-height: 1.5; }
+.rcard-tag {
+  display: inline-block; margin-top: 12px;
+  font-family: var(--font-c); font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--grey); border: 1px solid var(--border2); padding: 3px 8px; border-radius: 1px;
+}
+.rcard::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+}
+.rcard:hover::after { transform: scaleX(1); }
+
+/* ════════════════════════════════════════════
+   RESUME DOWNLOAD HERO CHIP
+════════════════════════════════════════════ */
+.resume-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-c); font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--grey2); border: 1px solid var(--border2); padding: 8px 16px; border-radius: 2px;
+  text-decoration: none; transition: all 0.25s; margin-top: 8px;
+}
+.resume-chip:hover { border-color: var(--gold); color: var(--gold); }
+.resume-chip svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+/* ════════════════════════════════════════════
+   SOCIAL PROOF TICKER (below hero)
+════════════════════════════════════════════ */
+.sp-ticker-wrap {
+  overflow: hidden; white-space: nowrap; pointer-events: none;
+  background: rgba(201,168,76,0.04); border-top: 1px solid var(--border2);
+  border-bottom: 1px solid var(--border2); padding: 0;
+}
+.sp-ticker-track {
+  display: inline-flex; gap: 0;
+  animation: spTicker 30s linear infinite;
+  will-change: transform;
+}
+.sp-item {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-c); font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--grey); padding: 10px 24px;
+}
+.sp-item strong { color: var(--gold); font-weight: 600; }
+.sp-sep { width: 1px; height: 12px; background: var(--border); flex-shrink: 0; }
+@keyframes spTicker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   ██████╗ ██████╗ ███████╗███╗   ███╗██╗██╗   ██╗███╗   ███╗
+   ██╔══██╗██╔══██╗██╔════╝████╗ ████║██║██║   ██║████╗ ████║
+   ██████╔╝██████╔╝█████╗  ██╔████╔██║██║██║   ██║██╔████╔██║
+   ██╔═══╝ ██╔══██╗██╔══╝  ██║╚██╔╝██║██║██║   ██║██║╚██╔╝██║
+   ██║     ██║  ██║███████╗██║ ╚═╝ ██║██║╚██████╔╝██║ ╚═╝ ██║
+   ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚═╝ ╚═════╝ ╚═╝     ╚═╝
+   100 CHARISMA · 100 AURA — VISUAL SUPREMACY OVERRIDES
+═══════════════════════════════════════════════════════════════ */
+
+/* ── FIX: SYS STATUS label — move to wrapper instead of overflow:hidden card ── */
+.ais-stats-card { overflow: visible !important; }
+.ais-stats-card::before {
+  background: #0F0F0F !important;
+  z-index: 2;
+}
+
+/* ── GLOBAL DEEP SHADOW BASE ── */
+:root {
+  --shadow-gold: 0 0 0 1px rgba(201,168,76,0.08), 0 4px 24px rgba(0,0,0,0.6), 0 1px 0 rgba(201,168,76,0.06) inset;
+  --shadow-hover: 0 0 0 1px rgba(201,168,76,0.22), 0 8px 40px rgba(0,0,0,0.7), 0 0 60px rgba(201,168,76,0.04);
+  --glow-gold: 0 0 20px rgba(201,168,76,0.15), 0 0 60px rgba(201,168,76,0.05);
+  --glow-strong: 0 0 30px rgba(201,168,76,0.25), 0 0 80px rgba(201,168,76,0.08);
+}
+
+/* ════════════════════════════════════════════
+   HERO — maximum drama
+════════════════════════════════════════════ */
+#hero {
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,168,76,0.028) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 80% at 10% 50%, rgba(201,168,76,0.012) 0%, transparent 60%),
+    var(--black) !important;
+}
+
+.hero-name .gold {
+  text-shadow: 0 0 80px rgba(201,168,76,0.18), 0 0 160px rgba(201,168,76,0.06);
+}
+
+.btn-gold {
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.4), 0 4px 20px rgba(201,168,76,0.12), inset 0 1px 0 rgba(255,255,255,0.08);
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.btn-gold:hover {
+  box-shadow: 0 0 0 1px rgba(232,201,106,0.6), 0 8px 32px rgba(201,168,76,0.28), inset 0 1px 0 rgba(255,255,255,0.12);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  box-shadow: inset 0 1px 0 rgba(201,168,76,0.04);
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.btn-ghost:hover {
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.35), 0 4px 20px rgba(201,168,76,0.08), inset 0 1px 0 rgba(201,168,76,0.06);
+  transform: translateY(-1px);
+}
+.btn-calendly {
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.btn-calendly:hover { transform: translateY(-1px); }
+
+.photo-frame {
+  filter: drop-shadow(0 0 40px rgba(201,168,76,0.08)) drop-shadow(0 20px 60px rgba(0,0,0,0.8));
+}
+.photo-img, .photo-img-el {
+  filter: contrast(1.06) brightness(0.96) saturate(0.85);
+  transition: filter 0.5s ease !important;
+}
+.photo-frame:hover .photo-img,
+.photo-frame:hover .photo-img-el {
+  filter: contrast(1.08) brightness(1.02) saturate(0.9);
+}
+
+/* ════════════════════════════════════════════
+   METRICS BAR — premium counter glow
+════════════════════════════════════════════ */
+#metrics {
+  background:
+    linear-gradient(180deg, rgba(201,168,76,0.018) 0%, transparent 100%),
+    var(--black2) !important;
+}
+.m-item {
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.m-item:hover {
+  background: var(--black3) !important;
+  box-shadow: inset 0 0 30px rgba(201,168,76,0.04);
+}
+.m-num {
+  text-shadow: 0 0 40px rgba(201,168,76,0.08);
+  transition: text-shadow 0.3s;
+}
+.m-item:hover .m-num {
+  text-shadow: 0 0 20px rgba(201,168,76,0.2), 0 0 60px rgba(201,168,76,0.06);
+}
+
+/* ════════════════════════════════════════════
+   EXPERIENCE ACCORDION — surgical gold lines
+════════════════════════════════════════════ */
+.exp-item {
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.exp-item::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(180deg, transparent, var(--gold3), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.exp-item.open::before { opacity: 1; }
+.exp-item.open {
+  box-shadow: inset 1px 0 0 rgba(201,168,76,0.15), 0 0 40px rgba(0,0,0,0.3);
+}
+
+/* ════════════════════════════════════════════
+   PORTFOLIO CARDS — layered glass depth
+════════════════════════════════════════════ */
+.pcard {
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1) !important;
+  box-shadow: var(--shadow-gold);
+}
+.pcard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover) !important;
+}
+.ptumb-ph {
+  background: linear-gradient(135deg, #0D0D0D 0%, #161616 40%, #111 100%) !important;
+  position: relative;
+}
+.ptumb-ph::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(201,168,76,0.012) 20px, rgba(201,168,76,0.012) 21px);
+  pointer-events: none;
+}
+
+/* ════════════════════════════════════════════
+   CASE STUDY CARDS — cinematic reveal
+════════════════════════════════════════════ */
+.cs-card {
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1) !important;
+  box-shadow: var(--shadow-gold);
+}
+.cs-card:hover {
+  box-shadow: var(--shadow-hover) !important;
+  transform: translateY(-1px);
+}
+.cs-card.open {
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.3), 0 12px 60px rgba(0,0,0,0.5), 0 0 80px rgba(201,168,76,0.04) !important;
+}
+.cs-index {
+  background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.02));
+  -webkit-background-clip: text;
+  transition: color 0.4s;
+}
+.cs-card.open .cs-index {
+  color: transparent !important;
+  background: linear-gradient(135deg, var(--gold), var(--gold3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ════════════════════════════════════════════
+   SKILLS TAGS — glow on hover
+════════════════════════════════════════════ */
+.stag {
+  transition: all 0.2s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.stag:hover {
+  border-color: rgba(201,168,76,0.5) !important;
+  color: var(--white) !important;
+  background: rgba(201,168,76,0.06) !important;
+  box-shadow: 0 0 12px rgba(201,168,76,0.08);
+  transform: translateY(-1px);
+}
+
+/* ════════════════════════════════════════════
+   CERTIFICATION CARDS
+════════════════════════════════════════════ */
+.ccard {
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1) !important;
+  position: relative;
+}
+.ccard:hover {
+  background: var(--black3) !important;
+  box-shadow: inset 0 0 20px rgba(201,168,76,0.03);
+}
+.cbadge {
+  transition: all 0.35s !important;
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.05), inset 0 1px 0 rgba(201,168,76,0.04);
+}
+.ccard:hover .cbadge {
+  border-color: rgba(201,168,76,0.4) !important;
+  background: rgba(201,168,76,0.1) !important;
+  box-shadow: 0 0 16px rgba(201,168,76,0.1), inset 0 1px 0 rgba(201,168,76,0.06);
+}
+
+/* ════════════════════════════════════════════
+   TESTIMONIAL CARDS — editorial gold quote
+════════════════════════════════════════════ */
+.tcard {
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1) !important;
+  position: relative; overflow: hidden;
+}
+.tcard::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+  transform: scaleX(0); transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.tcard:hover::after { transform: scaleX(1); }
+.tcard:hover {
+  background: rgba(20,18,14,0.95) !important;
+  box-shadow: inset 0 0 40px rgba(201,168,76,0.025);
+}
+.tcard::before {
+  font-size: 120px !important;
+  color: rgba(201,168,76,0.07) !important;
+  transition: color 0.4s, transform 0.4s;
+}
+.tcard:hover::before {
+  color: rgba(201,168,76,0.14) !important;
+  transform: scale(1.1) translateY(-4px) !important;
+}
+
+/* ════════════════════════════════════════════
+   EDUCATION CARDS
+════════════════════════════════════════════ */
+.ecard {
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1) !important;
+  position: relative; overflow: hidden;
+}
+.ecard::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.ecard:hover::after { transform: scaleX(1); }
+.ecard:hover {
+  box-shadow: inset 0 0 30px rgba(201,168,76,0.025);
+}
+
+/* ════════════════════════════════════════════
+   CURRENTLY / RCARD — live-data pulse
+════════════════════════════════════════════ */
+.rcard {
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1) !important;
+  box-shadow: inset 0 1px 0 rgba(201,168,76,0.04);
+}
+.rcard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(201,168,76,0.08), 0 0 0 1px rgba(201,168,76,0.1) !important;
+}
+.rcard-title {
+  transition: color 0.25s;
+}
+.rcard:hover .rcard-title { color: var(--gold2) !important; }
+
+/* ════════════════════════════════════════════
+   PROMPTOPS SECTION — premium glow card
+════════════════════════════════════════════ */
+#promptops .glass-card,
+.promptops-card {
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.12), 0 8px 48px rgba(0,0,0,0.6), 0 0 100px rgba(201,168,76,0.04);
+  transition: box-shadow 0.4s !important;
+}
+#promptops .glass-card:hover,
+.promptops-card:hover {
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.25), 0 16px 64px rgba(0,0,0,0.7), 0 0 120px rgba(201,168,76,0.07) !important;
+}
+
+/* ════════════════════════════════════════════
+   SERVICES (SVC) — entry animation accent
+════════════════════════════════════════════ */
+.svc {
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.svc:hover {
+  background: rgba(12,12,10,0.98) !important;
+  box-shadow: inset 0 0 24px rgba(201,168,76,0.03);
+}
+.svc:hover .svc-title { color: var(--gold2) !important; }
+
+/* ════════════════════════════════════════════
+   AI SYSTEMS STATS CARD — premium re-skin
+════════════════════════════════════════════ */
+.ais-stats-card {
+  background: linear-gradient(135deg, rgba(18,16,10,0.98) 0%, rgba(12,11,8,0.99) 100%) !important;
+  border: 1px solid rgba(201,168,76,0.18) !important;
+  box-shadow:
+    0 0 0 1px rgba(201,168,76,0.06),
+    0 8px 48px rgba(0,0,0,0.7),
+    0 0 80px rgba(201,168,76,0.04),
+    inset 0 1px 0 rgba(201,168,76,0.06) !important;
+}
+.aisc-val {
+  text-shadow: 0 0 30px rgba(201,168,76,0.1);
+  transition: text-shadow 0.3s;
+}
+.aisc-row:hover .aisc-val {
+  text-shadow: 0 0 20px rgba(201,168,76,0.22), 0 0 60px rgba(201,168,76,0.06) !important;
+}
+.aisc-fill {
+  background: linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2)) !important;
+  box-shadow: 0 0 8px rgba(201,168,76,0.3);
+}
+.aisc-bar { background: rgba(201,168,76,0.08) !important; height: 2px !important; }
+
+/* ════════════════════════════════════════════
+   CTA SECTION — deep atmospheric
+════════════════════════════════════════════ */
+#cta {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201,168,76,0.03) 0%, transparent 70%),
+    var(--black) !important;
+}
+.cta-title em {
+  text-shadow: 0 0 60px rgba(201,168,76,0.08);
+}
+.cta-bg-text {
+  color: rgba(201,168,76,0.025) !important;
+  text-shadow: 0 0 80px rgba(201,168,76,0.04);
+}
+
+/* ════════════════════════════════════════════
+   NAV — elevated glass bar
+════════════════════════════════════════════ */
+#site-nav {
+  background: rgba(5,5,5,0.92) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  box-shadow: 0 1px 0 rgba(201,168,76,0.08), 0 4px 20px rgba(0,0,0,0.5) !important;
+}
+.nav-link::after {
+  background: var(--gold) !important;
+  box-shadow: 0 0 8px rgba(201,168,76,0.4);
+}
+.hire-btn {
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.3), 0 2px 12px rgba(201,168,76,0.1) !important;
+}
+.hire-btn:hover {
+  box-shadow: 0 0 0 1px rgba(232,201,106,0.5), 0 4px 20px rgba(201,168,76,0.2) !important;
+}
+
+/* ════════════════════════════════════════════
+   SECTION TITLES — typographic glow
+════════════════════════════════════════════ */
+.s-title {
+  position: relative;
+}
+.s-title::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0;
+  width: 32px; height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  opacity: 0.6;
+}
+
+/* ════════════════════════════════════════════
+   SCROLL PROGRESS BAR — plasma glow
+════════════════════════════════════════════ */
+#scroll-progress {
+  background: linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2)) !important;
+  box-shadow: 0 0 8px rgba(201,168,76,0.5), 0 0 20px rgba(201,168,76,0.2) !important;
+  height: 2px !important;
+}
+
+/* ════════════════════════════════════════════
+   AGENT NETWORK CANVAS WRAP — deep field
+════════════════════════════════════════════ */
+.network-wrap {
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.018) 0%, transparent 70%),
+    rgba(5,5,5,0.95) !important;
+  box-shadow: inset 0 0 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.08) !important;
+}
+
+/* ════════════════════════════════════════════
+   HOVER INTERACTION — reading grid underline
+════════════════════════════════════════════ */
+.rcard::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, var(--gold3), transparent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.rcard:hover::before { transform: scaleX(1); }
+
+/* ════════════════════════════════════════════
+   VCARD (experience sub items) — gold thread
+════════════════════════════════════════════ */
+.vcard {
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.vcard:hover {
+  padding-left: 12px !important;
+  border-left-color: var(--gold) !important;
+  box-shadow: -4px 0 20px rgba(201,168,76,0.08);
+}
+
+/* ════════════════════════════════════════════
+   STRIP MARQUEE — deeper gold shine
+════════════════════════════════════════════ */
+#strip {
+  box-shadow: 0 2px 20px rgba(201,168,76,0.15), inset 0 1px 0 rgba(255,255,255,0.08) !important;
+}
+
+/* ════════════════════════════════════════════
+   HOBBIES CHIPS
+════════════════════════════════════════════ */
+.hchip {
+  transition: all 0.25s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.hchip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(201,168,76,0.08), 0 0 0 1px rgba(201,168,76,0.3) !important;
+}
+
+/* ════════════════════════════════════════════
+   AIS LEGEND PILLS
+════════════════════════════════════════════ */
+.ais-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+}
+
+/* ════════════════════════════════════════════
+   CONTACT FORM FIELDS — deep focus glow
+════════════════════════════════════════════ */
+.cf-field input:focus,
+.cf-field select:focus,
+.cf-field textarea:focus {
+  border-color: rgba(201,168,76,0.6) !important;
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.08), 0 0 20px rgba(201,168,76,0.06) !important;
+  background: rgba(18,16,10,0.98) !important;
+}
+
+/* ════════════════════════════════════════════
+   FOOTER — polished terminus
+════════════════════════════════════════════ */
+footer {
+  background:
+    linear-gradient(180deg, var(--black2) 0%, rgba(6,5,3,0.99) 100%) !important;
+  box-shadow: 0 -1px 0 rgba(201,168,76,0.08) !important;
+}
+
+/* ════════════════════════════════════════════
+   GLOBAL REVEALS — smoother entry
+════════════════════════════════════════════ */
+.reveal {
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1) !important;
+}
+
+/* ════════════════════════════════════════════
+   THEME TOGGLE BUTTON — premium pill
+════════════════════════════════════════════ */
+#theme-toggle {
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.2), 0 4px 16px rgba(0,0,0,0.5) !important;
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1) !important;
+}
+#theme-toggle:hover {
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.4), 0 4px 20px rgba(201,168,76,0.1), 0 0 20px rgba(201,168,76,0.06) !important;
+  transform: scale(1.05);
+}
+/* ── WHO HIRES ME chips ── */
+.hire-audience {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin: 10px 0 22px;
+}
+.ha-chip {
+  font-family: var(--font-c); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--grey);
+  border: 1px solid rgba(201,168,76,0.18);
+  padding: 4px 10px; border-radius: 1px;
+  transition: all 0.2s;
+}
+.ha-chip:hover {
+  color: var(--gold); border-color: rgba(201,168,76,0.4);
+  background: rgba(201,168,76,0.04);
+}
+
+/* ── Upgrade testimonials: 3 testimonials feel thin. Add a logo bar above ── */
+.client-industries {
+  display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
+  padding: 20px 0 40px;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 48px;
+}
+.ci-label {
+  font-family: var(--font-c); font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--grey); flex-shrink: 0;
+}
+.ci-tag {
+  font-family: var(--font-c); font-size: 10px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--grey2);
+  border: 1px solid var(--border2); padding: 5px 12px;
+  transition: all 0.2s;
+}
+.ci-tag:hover { border-color: var(--border); color: var(--white); }
+
+/* ── Engagement modes on services ── */
+.engagement-modes {
+  display: flex; gap: 2px; margin-bottom: 48px; flex-wrap: wrap;
+}
+.em-card {
+  flex: 1; min-width: 180px;
+  background: var(--black2); border: 1px solid var(--border2);
+  padding: 20px 22px; transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+  position: relative; overflow: hidden;
+}
+.em-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0); transform-origin: center;
+  transition: transform 0.4s;
+}
+.em-card:hover::before { transform: scaleX(1); }
+.em-card:hover { background: var(--black3); transform: translateY(-1px); }
+.em-type { font-family: var(--font-d); font-size: 18px; letter-spacing: 1px; color: var(--white); margin-bottom: 4px; }
+.em-desc { font-family: var(--font-c); font-size: 10px; letter-spacing: 1.5px; color: var(--grey); text-transform: uppercase; }
+.em-cta { 
+  display: inline-block; margin-top: 12px;
+  font-family: var(--font-c); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold); 
+}
+
   </style>
 </head>
 
 <body>
   <a href="#hero" class="skip-link" tabindex="1">Skip to content</a>
+
+<!-- THEME TOGGLE -->
+<button id="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+  </svg>
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <circle cx="12" cy="12" r="5"/>
+    <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+    <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+  </svg>
+</button>
+
+<!-- CURRENTLY / NOW WIDGET -->
+<div id="now-widget" aria-label="What Jachin is doing now">
+  <div class="nw-header">NOW · LIVE</div>
+  <div class="nw-item">
+    <div class="nw-label">Building</div>
+    <div class="nw-val"><strong>PromptOps</strong> — version control for LLM prompts</div>
+  </div>
+  <div class="nw-item">
+    <div class="nw-label">Reading</div>
+    <div class="nw-val"><strong>$100M Leads</strong> — Alex Hormozi</div>
+  </div>
+  <div class="nw-item">
+    <div class="nw-label">Thinking about</div>
+    <div class="nw-val">AI agent memory architectures for autonomous marketing</div>
+  </div>
+  <div class="nw-item">
+    <div class="nw-label">Open to</div>
+    <div class="nw-val"><strong>Head of Growth</strong> · AI Automation · Fractional CMO</div>
+  </div>
+</div>
+
+<!-- MOBILE BOTTOM DOCK -->
+<nav id="mob-dock" aria-label="Mobile navigation dock">
+  <div class="mob-dock-items">
+    <a href="#hero" class="mob-dock-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      Home
+    </a>
+    <a href="#about" class="mob-dock-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      About
+    </a>
+    <a href="#case-studies" class="mob-dock-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      Work
+    </a>
+    <a href="#ai-systems" class="mob-dock-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      AI
+    </a>
+    <a href="#cta" class="mob-dock-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Hire
+    </a>
+  </div>
+</nav>
 
 <!-- CROSSHAIR CURSOR -->
 <div id="crosshair" aria-hidden="true">
@@ -3131,8 +4081,14 @@ nav.scrolled {
     <li><a href="#about">About</a></li>
     <li><a href="#case-studies">Work</a></li>
     <li><a href="#ai-systems">AI Systems</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="https://promptops.jachinsonowal.com" target="_blank" rel="noopener noreferrer" style="color:var(--gold)"><svg viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="10" height="13" style="display:inline-block;vertical-align:middle;margin-right:3px;margin-bottom:1px"><polygon points="7,1 3,9 6,9 5,15 9,7 6,7" fill="currentColor"/></svg>PromptOps ↗</a></li>
     <li><a href="#cta" class="nav-hire">Hire Me</a></li>
+    <li><a href="https://drive.google.com/file/d/your-resume-id/view" target="_blank" rel="noopener noreferrer" class="nav-resume" aria-label="Download CV">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" width="11" height="11">
+        <path d="M8 1v9M4 7l4 4 4-4M2 13h12" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>CV
+    </a></li>
   </ul>
 </nav>
 
@@ -3207,7 +4163,16 @@ nav.scrolled {
     <div>
       <div class="avail reveal">
         <span class="avail-dot"></span>
-        Available — Head of Growth · Marketing Ops · AI Automation Roles
+        Available Now — Growth · Marketing Ops · AI Systems Architect
+      </div>
+
+      <!-- WHO HIRES ME — quick scan chips for decision makers -->
+      <div class="reveal hire-audience" style="transition-delay:.07s">
+        <span class="ha-chip">Series A–C Startups</span>
+        <span class="ha-chip">D2C &amp; E-Commerce</span>
+        <span class="ha-chip">B2B SaaS &amp; Tech</span>
+        <span class="ha-chip">SMEs that want to scale</span>
+        <span class="ha-chip">AI-Native Teams</span>
       </div>
 
       <h1 class="hero-name reveal" style="transition-delay:.1s">
@@ -3222,12 +4187,20 @@ nav.scrolled {
       </div>
 
       <p class="hero-bio reveal" style="transition-delay:.3s">
-        8 years. 175+ clients. $145K+ generated. I build marketing systems that run themselves — strategy, automation, and AI agents that work while you sleep. Currently founding <strong style="color:var(--gold)">PromptOps</strong> — version control for LLM prompts. 247+ waitlist. Zero ad spend.
+        8 years. 175+ clients. $145K+ revenue — built from scratch, no agency, no team.
+I don't run campaigns. I build systems that generate revenue while you're focused on everything else.
+        <span style="color:var(--grey2);font-size:0.92em;">Full-time · Fractional · Project-based · Remote · Reply in 24hrs.</span>
       </p>
 
       <div class="hero-btns reveal" style="transition-delay:.4s">
         <a href="/cdn-cgi/l/email-protection#3c565d5f5455525f544f5d5557555d4f5352534b5d507c5b515d5550125f5351" class="btn-gold"><span>Get in Touch</span></a>
         <a href="https://linkedin.com/in/jachinsonowal" target="_blank" rel="noopener noreferrer" class="btn-ghost">LinkedIn →</a>
+        <a href="https://drive.google.com/file/d/your-resume-id/view" target="_blank" rel="noopener noreferrer" class="resume-chip">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M8 1v9M4 7l4 4 4-4M2 13h12" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Resume / CV
+        </a>
       </div>
 
       <div class="hero-stats reveal" style="transition-delay:.5s">
@@ -3366,12 +4339,12 @@ nav.scrolled {
   <div class="wrap">
     <div class="about-grid">
       <div>
-        <div class="s-label reveal">About Me</div>
-        <h2 class="s-title reveal" style="transition-delay:.1s">THE MARKETER<br>WHO BUILDS</h2>
+        <div class="s-label reveal">About</div>
+        <h2 class="s-title reveal" style="transition-delay:.1s">THE OPERATOR<br>WHO SHIPS</h2>
         <div class="about-text reveal" style="transition-delay:.2s">
-          <p>I build marketing systems that generate revenue. Based in Guwahati, Assam, I've spent 8+ years operating at the intersection of <strong>strategy, automation, and Operations</strong> across industries mainly MSMEs.</p>
-          <p>From D2C brands to government contracts. From political campaigns to B2B manufacturers. From email funnels to <strong>custom AI agents</strong> that replace entire manual workflows. I own the full stack — strategy, execution, tech, and team.</p>
-          <p>Currently building <strong>PromptOps</strong> — Git-style version control and CI/CD for LLM prompts. 247+ teams on the waitlist. Bootstrapped, solo, zero to beta in 60 days challenge. Also running <strong>AI News India Newsletter</strong> (1,000+ subscribers) and deploying agent-based marketing automation.</p>
+          <p>I build marketing systems that generate revenue. Guwahati-based, remote-first. 8+ years with D2C brands, B2B manufacturers, government clients, political campaigns, and service businesses — mostly operators who couldn't afford to waste time or money.</p>
+          <p>I've never separated strategy from execution. I write the brief, build the funnel, wire the automation, run the team, and ship the report. When the engagement ends, you keep a <strong>working system</strong> — not a deck of recommendations.</p>
+          <p>Right now: founding <strong>PromptOps</strong> — version control and CI/CD for LLM prompts. 247+ teams on the waitlist, zero paid acquisition, solo-built in under 60 days. Also running <strong>AI News India</strong> (1,000+ subscribers, 38% open rate).</p>
         </div>
 
         <div class="about-chips reveal" style="transition-delay:.3s">
@@ -3483,43 +4456,43 @@ nav.scrolled {
         <div class="vcard">
           <div class="v-num">01</div>
           <div>
-            <div class="v-title">Revenue-First Mindset</div>
-            <div class="v-desc">Every campaign built backwards from a revenue goal- never vanity metrics.</div>
+            <div class="v-title">Revenue-First, Always</div>
+            <div class="v-desc">Every brief starts at the revenue goal and works backwards. Impressions, rankings, and open rates only matter if they convert.</div>
           </div>
         </div>
         <div class="vcard">
           <div class="v-num">02</div>
           <div>
-            <div class="v-title">AI-Native Operator</div>
-            <div class="v-desc">I build custom agents and LLM systems — not just prompt ChatGPT.</div>
+            <div class="v-title">Actually AI-Native</div>
+            <div class="v-desc">I architect and ship production agent systems. 26 agents running live. Not "I use AI in my workflow" — I built the agents that run the workflow.</div>
           </div>
         </div>
         <div class="vcard">
           <div class="v-num">03</div>
           <div>
-            <div class="v-title">Systems Thinker</div>
-            <div class="v-desc">I document everything. Clients keep infrastructure that outlasts the engagement.</div>
+            <div class="v-title">Systems, Not Services</div>
+            <div class="v-desc">SOPs, playbooks, agent configs — fully documented. You keep infrastructure that runs without me after the engagement ends.</div>
           </div>
         </div>
         <div class="vcard">
           <div class="v-num">04</div>
           <div>
-            <div class="v-title">Founder-Operator Breadth</div>
-            <div class="v-desc">Owned strategy, execution, tech, and team simultaneously. I move fast.</div>
+            <div class="v-title">Full-Stack Ownership</div>
+            <div class="v-desc">Strategy, execution, tech stack, and team — simultaneously, under real pressure, with real stakes. I've done all of it at once.</div>
           </div>
         </div>
         <div class="vcard">
           <div class="v-num">05</div>
           <div>
-            <div class="v-title">Cross-Functional Translator</div>
-            <div class="v-desc">From CEO presentations to developer briefs to front-line staff training.</div>
+            <div class="v-title">Speaks Every Room</div>
+            <div class="v-desc">CEO deck in the morning, developer spec by afternoon, team training by end of week. I translate without losing the thread.</div>
           </div>
         </div>
         <div class="vcard">
           <div class="v-num">06</div>
           <div>
-            <div class="v-title">Bias to Action</div>
-            <div class="v-desc">Built PromptOps solo — product, SDK, GTM, and 247+ waitlist in 60 days. Zero budget. Full ownership.</div>
+            <div class="v-title">Bias to Ship</div>
+            <div class="v-desc">PromptOps: concept to live beta in 60 days, $0 budget, 247+ waitlist. I don't plan in circles. I build until it works.</div>
           </div>
         </div>
       </div>
@@ -3532,9 +4505,9 @@ nav.scrolled {
 ══════════════════════════════════════════════════════ -->
 <section id="experience">
   <div class="wrap">
-    <div class="s-label reveal">Career Timeline</div>
-    <h2 class="s-title reveal" style="transition-delay:.1s">HOW I GOT HERE</h2>
-    <p class="s-sub reveal" style="transition-delay:.15s">From early hustle to building AI products. Click any chapter to expand the full story.</p>
+    <div class="s-label reveal">Timeline</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">THE<br>JOURNEY</h2>
+    <p class="s-sub reveal" style="transition-delay:.15s">Eight years. Every role was a deliberate step. Click any chapter to expand.</p>
 
     <div class="exp-list reveal" style="transition-delay:.2s">
 
@@ -4020,11 +4993,11 @@ nav.scrolled {
 ══════════════════════════════════════════════════════ -->
 <section id="case-studies">
   <div class="wrap">
-    <div class="s-label reveal">Deep Dives</div>
+    <div class="s-label reveal">The Work</div>
     <h2 class="s-title reveal" style="transition-delay:.1s">CASE<br>STUDIES</h2>
 
     <div class="cs-intro reveal" style="transition-delay:.15s">
-      <p>Five engagements where the stakes were real and the results were measurable. Each one is a complete story — the problem, the strategy, the execution, and the outcome. Click to expand any case.</p>
+      <p>Five engagements. Real stakes. Measurable numbers at the end of each one. The full story — problem, decision, execution, outcome. Click to open.</p>
     </div>
 
     <!-- ─── CASE STUDY 01 — TEA BRAND D2C ─── -->
@@ -4043,7 +5016,7 @@ nav.scrolled {
         <div class="cs-header-main">
           <div class="cs-era">D2C · Growth Marketing · Tea Industry</div>
           <div class="cs-title">Tea Brand D2C Launch</div>
-          <div class="cs-tagline">Building a ₹1.2 Crore revenue engine from absolute zero — no agency, no team, one operator, 18 months.</div>
+          <div class="cs-tagline">₹1.2 Crore in 18 months. No agency. No team. One operator, one system, built from nothing.</div>
           <div class="cs-meta-pills">
             <span class="cs-pill">Shopify</span>
             <span class="cs-pill">SEO</span>
@@ -4073,20 +5046,19 @@ nav.scrolled {
             <div class="cs-col">
               <div class="cs-col-label">The Problem</div>
               <div class="cs-col-text">
-                A premium Assam tea manufacturer — established offline, invisible online. Despite a quality product with real differentiation (single-estate, artisanal process), they had <strong>zero digital presence, zero direct sales channel</strong>, and total reliance on a B2B wholesale model with razor-thin margins. The brief: build a D2C channel that generates meaningful revenue within 18 months.
+                A premium Assam tea manufacturer. Established offline, invisible online. Real differentiation — single-estate, artisanal — but <strong>zero digital presence, no direct sales channel</strong>, and total dependence on B2B wholesale at margins that couldn't sustain the business long-term. The brief: build a D2C channel that generates meaningful revenue within 18 months.
               </div>
             </div>
             <div class="cs-col">
               <div class="cs-col-label">The Strategy</div>
               <div class="cs-col-text">
-                I designed a <strong>three-phase growth engine</strong>: foundation (brand + store + SEO baseline), acquisition (content + organic search + email list), and monetisation (funnel optimisation + retention). Rather than paid ads, I bet entirely on owned channels — search and email — which compound over time and don't stop when the budget runs out.
+                Three phases: <strong>foundation</strong> (brand, store, SEO baseline), <strong>acquisition</strong> (organic search, content, email list), <strong>monetisation</strong> (funnel optimisation, retention). I bet entirely on owned channels — search and email. No paid ads. Channels that compound over time and don't die when the budget does.
               </div>
             </div>
             <div class="cs-col">
               <div class="cs-col-label">The Outcome</div>
               <div class="cs-col-text">
-                ₹1.2 Crore ($145K+) in annual online revenue by month 18. The brand ranked <strong>#1 for 12 high-intent keywords</strong> and top-5 for 80+ terms. The 5,000-subscriber email list became a predictable monthly revenue channel — still growing post-engagement. A sustainable, compounding asset, not a rented audience.
-              </div>
+                ₹1.2 Crore ($145K+) annual online revenue by month 18. #1 for 12 high-intent keywords. Top-5 for 80+ terms. A 5,000-subscriber email list that became a predictable monthly revenue channel — still growing after the engagement ended. Not a rented audience. A compounding asset.</div>
             </div>
           </div>
 
@@ -4170,7 +5142,7 @@ nav.scrolled {
         <div class="cs-header-main">
           <div class="cs-era">Political Campaign · Content Ops · Team Leadership</div>
           <div class="cs-title">45-Day Election Campaign</div>
-          <div class="cs-tagline">Leading an 8-person team through the most high-pressure content operation imaginable — 300+ pieces, zero violations, 5× reach.</div>
+          <div class="cs-tagline">8-person team. 45 days. 300+ pieces. Zero violations. 50K to 2.5M+ impressions.</div>
           <div class="cs-meta-pills">
             <span class="cs-pill">Team Lead</span>
             <span class="cs-pill">Social Strategy</span>
@@ -4200,19 +5172,19 @@ nav.scrolled {
             <div class="cs-col">
               <div class="cs-col-label">The Problem</div>
               <div class="cs-col-text">
-                A political campaign operating in a <strong>compressed 45-day window</strong> with strict compliance requirements, high volume content needs, and a starting reach of just 50,000 impressions per month. The challenge: scale to maximum reach without a single compliance violation — in an environment where any misstep is front-page news.
+                A political campaign. 45-day window, strict compliance, 50,000 impressions/month at the start. Scale to maximum reach with zero violations — in an environment where one misstep is front-page news the next morning.
               </div>
             </div>
             <div class="cs-col">
               <div class="cs-col-label">The Strategy</div>
               <div class="cs-col-text">
-                Built and ran a <strong>real-time content operations system</strong>: daily editorial standups, a content brief template for rapid production, a two-stage compliance review process (writer → lead → post), and a live news-cycle response playbook. Every piece of content produced before 8am for peak-hour publishing.
+                Built a real-time content ops system: daily standups, rapid-production brief templates, a two-stage compliance gate (writer → lead → director), and a news-cycle response playbook. Every piece published before 8am. Nothing went live unsigned.
               </div>
             </div>
             <div class="cs-col">
               <div class="cs-col-label">The Outcome</div>
               <div class="cs-col-text">
-                50,000 → <strong>2.5 million+ impressions</strong> in 45 days. 35,000+ new followers acquired. 300+ content pieces produced and published with zero compliance incidents. The team operated at media-company velocity inside a political campaign structure — a model the client used as a blueprint for future campaigns.
+                50K → 2.5M+ impressions in 45 days. 35,000+ new followers. 300+ pieces published, zero compliance incidents — not one. The team ran at media-company velocity inside a campaign structure. The client used this exact model as the blueprint for every campaign after.
               </div>
             </div>
           </div>
@@ -4582,20 +5554,13 @@ nav.scrolled {
         </div>
 
         <p class="ais-lead reveal" style="transition-delay:.12s">
-          A <strong>custom AI operating system</strong> designed, architected, and running in
-          live production — 26 specialised agents across 6 departments, orchestrated as a
-          single autonomous marketing and operations engine.
+          I designed, built, and run a <strong>custom AI operating system</strong> — 26 specialised agents across 6 departments, orchestrated as a single autonomous engine. It's running in live production right now, while you're reading this.
         </p>
         <p class="ais-lead reveal" style="transition-delay:.15s">
-          Not a set of ChatGPT prompts. Not a no-code workflow. An <strong>event-driven,
-          memory-persistent system</strong> with a layered security vault, self-improving
-          feedback loops, and measurable output at every stage. Reduced weekly marketing
-          ops from <strong>25 hours to under 8</strong>.
+          Not prompt wrappers. Not Zapier automations. An <strong>event-driven, memory-persistent architecture</strong> — layered security vault, self-improving feedback loops, measurable output at every stage. Weekly ops: 25 hours down to under 8.
         </p>
         <p class="ais-lead reveal" style="transition-delay:.17s">
-          Built on a <strong>structured Markdown memory architecture</strong> —
-          context files agents read and write across sessions. Every agent knows its role,
-          its history, and its access boundaries at all times.
+          Every agent reads and writes its own context files across sessions — a <strong>structured Markdown memory architecture</strong> I designed for marketing workloads. Each agent knows its role, its full history, and exactly what it's allowed to touch. This is what I can build for your team.
         </p>
         <div class="ais-tag reveal" style="transition-delay:.18s">
           Architecture is proprietary · What you see is the shape, not the blueprint
@@ -4799,13 +5764,11 @@ nav.scrolled {
         </div>
 
         <p class="po-desc">
-          <strong>Git-style version control, CI/CD pipelines, and automated evaluation suites
-          for LLM prompts.</strong> The infrastructure layer AI teams didn&rsquo;t know they needed &mdash;
-          until a bad prompt edit broke production at 2am.
+          <strong>Git for your prompts. Version control, CI/CD pipelines, and automated evals</strong> — so a bad prompt edit doesn&rsquo;t break production at 2am with no way back.
         </p>
         <p class="po-desc">
-          Built for every role on an AI product team &mdash; from the engineers managing prompt logic
-          to the PMs tracking quality metrics to the growth marketers iterating on copy.
+          Built for every role on an AI product team &mdash; engineers who manage prompt logic,
+          PMs tracking quality metrics, and marketers iterating on copy.
           <strong>Prompts are code. They deserve the same discipline.</strong>
         </p>
 
@@ -4995,157 +5958,34 @@ nav.scrolled {
 <!-- ══════════════════════════════════════════════════════
      PORTFOLIO (Work Grid)
 ══════════════════════════════════════════════════════ -->
-<section id="portfolio">
-  <div class="wrap">
-    <div class="s-label reveal">Selected Work</div>
-    <h2 class="s-title reveal" style="transition-delay:.1s">PORTFOLIO</h2>
-    <div class="port-grid reveal" style="transition-delay:.2s">
-
-      <div class="pcard">
-        <div class="ptumb">
-          <div class="ptumb-ph" style="background:linear-gradient(135deg,#1a0a2e,#0d1a2e);">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-              <polygon points="20,4 24,16 36,16 26,23 30,35 20,28 10,35 14,23 4,16 16,16" fill="#C9A84C" opacity="0.85"/>
-            </svg>
-          </div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label" style="color:var(--gold)">Founder · SaaS · Dev Tool</div>
-          <div class="p-name">PromptOps</div>
-          <div class="p-desc">Git-style version control, automated evals, and instant deploy for LLM prompts. Built solo from zero to beta in &lt;60 days — SDK, landing page, GTM, and 247+ waitlist.</div>
-          <div class="p-metrics">247+ Waitlist · Free / $49 / $199 · &lt;60 Days Build</div>
-          <div class="p-cta">View Product</div>
-        </div>
-      </div>
-
-      <div class="pcard">
-        <div class="ptumb">
-          <div class="ptumb-ph" style="background:linear-gradient(135deg,#0a1a0a,#0d200d);">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-              <path d="M8 12h18l-2 16H10L8 12z" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity="0.8"/>
-              <path d="M26 16c2 0 6 1 6 5s-4 5-6 5" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-              <line x1="8" y1="12" x2="26" y2="12" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-              <path d="M12 12 C12 12 13 7 17 6 C21 5 22 9 22 9" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.5"/>
-              <line x1="12" y1="19" x2="12" y2="24" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
-              <line x1="17" y1="19" x2="17" y2="25" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
-              <line x1="22" y1="19" x2="22" y2="24" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
-            </svg>
-          </div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label">Case Study · D2C Growth</div>
-          <div class="p-name">Tea Brand D2C Launch</div>
-          <div class="p-desc">Built the entire go-to-market from zero — Shopify store, SEO ranking #1 for 12 keywords, 5,000-subscriber email funnel. No agency. One operator, one system.</div>
-          <div class="p-metrics">$145K+ Revenue · 18 Months · 0 → 5K Subscribers</div>
-          <div class="p-cta">Read Case Study</div>
-        </div>
-      </div>
-
-      <div class="pcard">
-        <div class="ptumb">
-          <div class="ptumb-ph" style="background:linear-gradient(135deg,#1a0a0a,#200d0d);">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-              <rect x="10" y="12" width="20" height="16" rx="4" stroke="#C9A84C" stroke-width="1.5" fill="rgba(201,168,76,0.08)"/>
-              <circle cx="15" cy="19" r="2.5" fill="#C9A84C" opacity="0.85"/>
-              <circle cx="25" cy="19" r="2.5" fill="#C9A84C" opacity="0.85"/>
-              <path d="M15 24 Q20 27 25 24" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.7"/>
-              <line x1="20" y1="8" x2="20" y2="12" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-              <circle cx="20" cy="7" r="2" fill="#C9A84C" opacity="0.5"/>
-              <line x1="10" y1="22" x2="6" y2="22" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/>
-              <line x1="30" y1="22" x2="34" y2="22" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/>
-              <line x1="13" y1="28" x2="13" y2="33" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/>
-              <line x1="27" y1="28" x2="27" y2="33" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/>
-            </svg>
-          </div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label">AI Engineering · Automation</div>
-          <div class="p-name">OpenClaw Agent Suite</div>
-          <div class="p-desc">10+ custom AI agents in live production — research, drafting, SEO publishing, A/B testing, support, and social distribution running autonomously.</div>
-          <div class="p-metrics">25hrs → 8hrs Ops · 22% → 38% Open Rate · +40% Conversion</div>
-          <div class="p-cta">Read Case Study</div>
-        </div>
-      </div>
-
-      <div class="pcard">
-        <div class="ptumb">
-          <div class="ptumb-ph" style="background:linear-gradient(135deg,#1a1400,#201a00);">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-              <rect x="5" y="10" width="30" height="20" rx="3" stroke="#C9A84C" stroke-width="1.5" fill="rgba(201,168,76,0.06)"/>
-              <polyline points="5,12 20,22 35,12" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9"/>
-              <line x1="5" y1="26" x2="14" y2="19" stroke="#C9A84C" stroke-width="1" stroke-linecap="round" opacity="0.35"/>
-              <line x1="35" y1="26" x2="26" y2="19" stroke="#C9A84C" stroke-width="1" stroke-linecap="round" opacity="0.35"/>
-            </svg>
-          </div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label">Founder · Newsletter Growth</div>
-          <div class="p-name">AI News India</div>
-          <div class="p-desc">Built from scratch with zero paid acquisition. 50+ A/B tests, open rates from 22% → 38% — nearly double industry average. A self-sustaining content flywheel.</div>
-          <div class="p-metrics">0 → 1,000+ Subscribers · 38% Open Rate · 0 Ad Spend</div>
-          <div class="p-cta">Read Case Study</div>
-        </div>
-      </div>
-
-      <div class="pcard">
-        <div class="ptumb">
-          <div class="ptumb-ph" style="background:linear-gradient(135deg,#001a0a,#00200d);">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-              <circle cx="20" cy="15" r="9" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity="0.6"/>
-              <path d="M16 15 C16 12.8 17.8 11 20 11 C22.2 11 24 12.8 24 15 C24 17 22.2 18.8 21 20L20 22" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.9"/>
-              <line x1="20" y1="23" x2="20" y2="25" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-              <circle cx="20" cy="26.5" r="1.5" fill="#C9A84C" opacity="0.8"/>
-              <line x1="15" y1="31" x2="25" y2="31" stroke="#C9A84C" stroke-width="1.3" stroke-linecap="round" opacity="0.35"/>
-            </svg>
-          </div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label">Founder · Digital Product</div>
-          <div class="p-name">Mega Prompt Bundle</div>
-          <div class="p-desc">Validated via 120+ subscriber surveys before writing a word. 3,500 prompts, launched to warm audience, sold to 100+ customers across 7 countries in 8 months.</div>
-          <div class="p-metrics">$3.8K Revenue · 100+ Customers · 7 Countries · 8.5% CVR</div>
-          <div class="p-cta">Read Case Study</div>
-        </div>
-      </div>
-
-      <div class="pcard">
-        <div class="ptumb">
-          <div class="ptumb-ph" style="background:linear-gradient(135deg,#0a001a,#0d0020);">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-              <rect x="5" y="10" width="30" height="20" rx="2" stroke="#C9A84C" stroke-width="1.5" fill="rgba(201,168,76,0.05)"/>
-              <line x1="5" y1="10" x2="35" y2="10" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-              <polyline points="8,26 14,20 19,23 25,16 32,18" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9"/>
-              <circle cx="32" cy="18" r="2.5" fill="#C9A84C" opacity="0.85"/>
-              <line x1="8" y1="30" x2="32" y2="30" stroke="#C9A84C" stroke-width="1" stroke-linecap="round" opacity="0.25"/>
-            </svg>
-          </div>
-          <div class="ptumb-overlay"></div>
-        </div>
-        <div class="pinfo">
-          <div class="p-label">Case Study · Campaign Ops</div>
-          <div class="p-name">Political Campaign Ops</div>
-          <div class="p-desc">Led an 8-person content team through a 45-day election cycle. 300+ content pieces, zero compliance violations — 5× reach in 45 days.</div>
-          <div class="p-metrics">50K → 2.5M+ Impressions · 5× Reach · 35K Followers</div>
-          <div class="p-cta">Read Case Study</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════
-     SERVICES
-══════════════════════════════════════════════════════ -->
 <section id="services">
   <div class="wrap">
     <div class="s-label reveal">Services</div>
     <h2 class="s-title reveal" style="transition-delay:.1s">WHAT<br>I DO</h2>
+
+    <!-- ENGAGEMENT MODES — critical for any hiring decision maker -->
+    <div class="engagement-modes reveal" style="transition-delay:.15s">
+      <div class="em-card">
+        <div class="em-type">Full-Time</div>
+        <div class="em-desc">Head of Growth · Marketing Ops · AI Systems Lead</div>
+        <div class="em-cta">Available now →</div>
+      </div>
+      <div class="em-card">
+        <div class="em-type">Fractional</div>
+        <div class="em-desc">Embedded 2–4 days/week · you get the operator, not the deck</div>
+        <div class="em-cta">Startups &amp; scaling teams →</div>
+      </div>
+      <div class="em-card">
+        <div class="em-type">Consulting</div>
+        <div class="em-desc">Fixed-scope · Audit, Strategy, or Build — defined deliverable, defined end date</div>
+        <div class="em-cta">Project-based →</div>
+      </div>
+      <div class="em-card">
+        <div class="em-type">AI Build</div>
+        <div class="em-desc">Custom agent systems · spec to live production · no no-code</div>
+        <div class="em-cta">Spec → shipped →</div>
+      </div>
+    </div>
     <div class="services-grid reveal" style="transition-delay:.2s">
 
       <!-- 01 Growth Strategy & Funnels — funnel with upward trend line -->
@@ -5159,7 +5999,7 @@ nav.scrolled {
           </svg>
         </div>
         <div class="svc-title">Growth Strategy &amp; Funnels</div>
-        <div class="svc-desc">Full-funnel architecture from awareness to retention. Multi-channel acquisition, CRO, and lifecycle marketing built around revenue goals — not traffic reports.</div>
+        <div class="svc-desc">Full-funnel built backwards from your revenue number. Acquisition, conversion, retention — wired together. I don't optimise for traffic. I optimise for what the traffic does after it lands.</div>
       </div>
 
       <!-- 02 Email Marketing & Automation — envelope with circuit nodes -->
@@ -5175,7 +6015,7 @@ nav.scrolled {
           </svg>
         </div>
         <div class="svc-title">Email Marketing &amp; Automation</div>
-        <div class="svc-desc">List growth, segmentation, sequences, and win-backs. Built for deliverability and conversion, not just open rates. 38% open rate benchmark from my own list.</div>
+        <div class="svc-desc">List growth, segmentation, sequences, win-backs. My own newsletter runs at 38% open rate. I build yours to the same standard — every send planned, every segment intentional, every flow measured.</div>
       </div>
 
       <!-- 03 SEO & Organic Growth — magnifier with upward bar chart inside -->
@@ -5189,7 +6029,7 @@ nav.scrolled {
           </svg>
         </div>
         <div class="svc-title">SEO &amp; Organic Growth</div>
-        <div class="svc-desc">Technical SEO, local SEO, content-driven acquisition, and Google Business Profile management. Ranked #1 for 12 target keywords in a competitive niche.</div>
+        <div class="svc-desc">Technical SEO, content architecture, local search, GBP management. I've ranked brands #1 for competitive keywords with zero paid media. Organic that compounds — not an agency retainer that plateaus at month six.</div>
       </div>
 
       <!-- 04 Marketing Operations — hexagon grid / system nodes -->
@@ -5203,7 +6043,7 @@ nav.scrolled {
           </svg>
         </div>
         <div class="svc-title">Marketing Operations</div>
-        <div class="svc-desc">Tech stack setup, workflow automation, CRM implementation, dashboards, and SOPs that make your marketing engine run without constant intervention.</div>
+        <div class="svc-desc">Stack setup, CRM implementation, workflow automation, dashboards, SOPs. Built so your marketing engine runs when I'm not there — and scales when you add headcount.</div>
       </div>
 
       <!-- 05 AI Agent Engineering — neural network nodes -->
@@ -5231,7 +6071,7 @@ nav.scrolled {
           </svg>
         </div>
         <div class="svc-title">AI Agent Engineering</div>
-        <div class="svc-desc">Custom agents with OpenClaw (proprietary AI framework) and LLM APIs that automate content, lead scoring, support, and reporting end-to-end. Founder of PromptOps — version control for LLM prompts.</div>
+        <div class="svc-desc">Custom agents built on OpenClaw — my proprietary orchestration framework — and direct LLM APIs. Content pipelines, lead scoring, customer support, reporting, research. I've shipped 26 into production. I can build the same for your highest-leverage workflows.</div>
       </div>
 
       <!-- 06 Cross-Functional Execution — intersecting arrows forming a star -->
@@ -5253,7 +6093,7 @@ nav.scrolled {
           </svg>
         </div>
         <div class="svc-title">Cross-Functional Execution</div>
-        <div class="svc-desc">Embedded strategic partner: sales alignment, executive reporting, vendor coordination, and team training. I operate, I don't just advise.</div>
+        <div class="svc-desc">I operate inside your team, not above it. Sales alignment, exec reporting, vendor management, team training. I stay until the system works — not until the retainer runs out.</div>
       </div>
 
       <!-- 07 SaaS Product & GTM — rocket with orbit arc (last = full-width) -->
@@ -5275,7 +6115,96 @@ nav.scrolled {
           </svg>
         </div>
         <div class="svc-title">SaaS Product &amp; GTM</div>
-        <div class="svc-desc">0→1 product development, SDK design, developer landing pages, waitlist funnels, and SaaS pricing strategy. Proven: 247+ signups, bootstrapped solo, &lt;60 days.</div>
+        <div class="svc-desc">0→1 product launches: positioning, pricing, SDK, waitlist strategy, launch sequence. I've done it with my own product — 247+ signups from 8 countries in under 60 days, bootstrapped, $0 spent. Same playbook, your product.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════════════════ -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="s-label reveal">Client &amp; Professional Work</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">PROVEN<br>RESULTS</h2>
+    <p class="reveal" style="font-size:14px;color:var(--grey);font-weight:300;max-width:560px;margin-bottom:48px;line-height:1.7;transition-delay:.15s">Three engagements across D2C, AI engineering, and campaign operations — each with a measurable outcome you can verify.</p>
+
+    <div class="port-grid reveal" style="transition-delay:.2s">
+
+      <div class="pcard">
+        <div class="ptumb">
+          <div class="ptumb-ph" style="background:linear-gradient(135deg,#0a1a0a,#0d200d);">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+              <rect x="8" y="8" width="64" height="64" rx="4" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+              <path d="M20 56 L20 28 Q20 24 24 24 L40 24" stroke="rgba(201,168,76,0.6)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M40 24 L56 40 L40 56 L24 56" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <circle cx="40" cy="40" r="6" stroke="rgba(201,168,76,0.8)" stroke-width="1.5" fill="none"/>
+              <line x1="30" y1="44" x2="30" y2="56" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+              <line x1="50" y1="44" x2="50" y2="56" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="ptumb-overlay"></div>
+        </div>
+        <div class="pinfo">
+          <div class="p-label">D2C Growth · 18 Months · Assam Tea</div>
+          <div class="p-name">Tea Brand D2C Launch</div>
+          <div class="p-desc">Built the entire go-to-market from absolute zero — Shopify store, #1 keyword rankings, 5,000-subscriber email funnel. No agency. One operator. One system that kept compounding.</div>
+          <div class="p-metrics">$145K+ Revenue · 18 Months · #1 for 12 Keywords · 5K Subscribers</div>
+          <a href="#case-studies" class="p-cta">Read Full Case Study</a>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="ptumb">
+          <div class="ptumb-ph" style="background:linear-gradient(135deg,#0d0a1a,#1a0d20);">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+              <circle cx="40" cy="40" r="6" fill="rgba(241,87,87,0.9)"/>
+              <circle cx="20" cy="28" r="4" stroke="rgba(96,165,250,0.7)" stroke-width="1.2" fill="none"/>
+              <circle cx="60" cy="22" r="4" stroke="rgba(74,222,128,0.7)" stroke-width="1.2" fill="none"/>
+              <circle cx="28" cy="58" r="4" stroke="rgba(201,168,76,0.7)" stroke-width="1.2" fill="none"/>
+              <circle cx="58" cy="54" r="4" stroke="rgba(251,146,60,0.7)" stroke-width="1.2" fill="none"/>
+              <line x1="40" y1="40" x2="20" y2="28" stroke="rgba(96,165,250,0.25)" stroke-width="1"/>
+              <line x1="40" y1="40" x2="60" y2="22" stroke="rgba(74,222,128,0.25)" stroke-width="1"/>
+              <line x1="40" y1="40" x2="28" y2="58" stroke="rgba(201,168,76,0.25)" stroke-width="1"/>
+              <line x1="40" y1="40" x2="58" y2="54" stroke="rgba(251,146,60,0.25)" stroke-width="1"/>
+              <circle cx="40" cy="40" r="18" stroke="rgba(241,87,87,0.15)" stroke-width="1" stroke-dasharray="3 4"/>
+            </svg>
+          </div>
+          <div class="ptumb-overlay"></div>
+        </div>
+        <div class="pinfo">
+          <div class="p-label">AI Engineering · Live Production · Automation</div>
+          <div class="p-name">AI Agent OS (OpenClaw)</div>
+          <div class="p-desc">26 specialised AI agents orchestrated as a single autonomous marketing engine — content, revenue, build, security, intelligence. Cut weekly ops from 25hrs to under 8. Running live.</div>
+          <div class="p-metrics">25hrs → 8hrs · 38% Open Rate · +40% Conversion · 90% Support Automated</div>
+          <a href="#ai-systems" class="p-cta">See the Architecture</a>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="ptumb">
+          <div class="ptumb-ph" style="background:linear-gradient(135deg,#1a0808,#200d0d);">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+              <rect x="12" y="24" width="56" height="36" rx="3" stroke="rgba(201,168,76,0.35)" stroke-width="1.2" fill="none"/>
+              <line x1="12" y1="34" x2="68" y2="34" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+              <circle cx="20" cy="29" r="2" fill="rgba(241,87,87,0.6)"/>
+              <circle cx="28" cy="29" r="2" fill="rgba(251,146,60,0.6)"/>
+              <circle cx="36" cy="29" r="2" fill="rgba(74,222,128,0.6)"/>
+              <path d="M20 46 L28 42 L36 48 L48 38 L60 44" stroke="rgba(201,168,76,0.7)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M20 52 L60 52" stroke="rgba(201,168,76,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
+            </svg>
+          </div>
+          <div class="ptumb-overlay"></div>
+        </div>
+        <div class="pinfo">
+          <div class="p-label">Campaign Operations · Political · 45 Days</div>
+          <div class="p-name">Election Campaign: 50K → 2.5M</div>
+          <div class="p-desc">Led an 8-person content team through a compressed 45-day election cycle. 300+ pieces, zero compliance violations. Scaled from 50K to 2.5M+ impressions. Maximum pressure, zero errors.</div>
+          <div class="p-metrics">50K → 2.5M+ Impressions · 5× Reach · 35K Followers · 0 Violations</div>
+          <a href="#case-studies" class="p-cta">Read Full Case Study</a>
+        </div>
       </div>
 
     </div>
@@ -5420,6 +6349,49 @@ nav.scrolled {
 <!-- ══════════════════════════════════════════════════════
      CERTIFICATIONS
 ══════════════════════════════════════════════════════ -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="s-label reveal">What Clients Say</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">RESULTS,<br>IN THEIR WORDS</h2>
+
+    <!-- INDUSTRIES SERVED — gives hiring weight to the testimonials below -->
+    <div class="client-industries reveal" style="transition-delay:.15s">
+      <span class="ci-label">Clients across:</span>
+      <span class="ci-tag">D2C / E-Commerce</span>
+      <span class="ci-tag">B2B Manufacturing</span>
+      <span class="ci-tag">Political Campaigns</span>
+      <span class="ci-tag">AI / SaaS</span>
+      <span class="ci-tag">Government</span>
+      <span class="ci-tag">Professional Services</span>
+      <span class="ci-tag">MSMEs</span>
+      <span class="ci-label" style="margin-left:auto;color:var(--gold)">175+ Total Clients</span>
+    </div>
+    <div class="tgrid reveal" style="transition-delay:.2s">
+      <div class="tcard">
+        <p class="t-text">"Jachin transformed our business model. We went from zero online presence to generating over ₹1 crore in online revenue in 18 months. His systematic approach created a sustainable channel that keeps growing."</p>
+        <div class="t-author">Managing Director</div>
+        <div class="t-role">Tea Manufacturing Company, Assam</div>
+        <span class="t-badge">D2C · $145K+ Revenue Built</span>
+      </div>
+      <div class="tcard">
+        <p class="t-text">"We had a prompt incident that cost us 6 hours of engineering time and 3 churned customers. With PromptOps we rolled back the next incident in 10 seconds. The ROI was immediate."</p>
+        <div class="t-author">Arjun R.</div>
+        <div class="t-role">CTO, AI Startup · Series A</div>
+        <span class="t-badge">Series A CTO · PromptOps</span>
+      </div>
+      <div class="tcard">
+        <p class="t-text">"The Mega Prompt Bundle has saved me at least 10 hours per week. Written by someone who actually does marketing — not just talks about it. The most practical AI resource I've found."</p>
+        <div class="t-author">Marketing Manager</div>
+        <div class="t-role">United States · Newsletter Subscriber</div>
+        <span class="t-badge">Newsletter · 7 Countries</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════════════════ -->
 <section id="certifications">
   <div class="wrap">
     <div class="s-label reveal">Credentials</div>
@@ -5484,36 +6456,6 @@ nav.scrolled {
           <div class="c-issuer">Semrush Academy</div>
           <div class="c-date">2025 — Valid 1 Year</div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════
-     TESTIMONIALS
-══════════════════════════════════════════════════════ -->
-<section id="testimonials">
-  <div class="wrap">
-    <div class="s-label reveal">Social Proof</div>
-    <h2 class="s-title reveal" style="transition-delay:.1s">WHAT<br>THEY SAY</h2>
-    <div class="tgrid reveal" style="transition-delay:.2s">
-      <div class="tcard">
-        <p class="t-text">"Jachin transformed our business model. We went from zero online presence to generating over ₹1 crore in online revenue in 18 months. His systematic approach created a sustainable channel that keeps growing."</p>
-        <div class="t-author">Managing Director</div>
-        <div class="t-role">Tea Manufacturing Company, Assam</div>
-        <span class="t-badge">Revenue Client</span>
-      </div>
-      <div class="tcard">
-        <p class="t-text">"We had a prompt incident that cost us 6 hours of engineering time and 3 churned customers. With PromptOps we rolled back the next incident in 10 seconds. The ROI was immediate."</p>
-        <div class="t-author">Arjun R.</div>
-        <div class="t-role">CTO, AI Startup · Series A</div>
-        <span class="t-badge">PromptOps Beta User</span>
-      </div>
-      <div class="tcard">
-        <p class="t-text">"The Mega Prompt Bundle has saved me at least 10 hours per week. Written by someone who actually does marketing — not just talks about it. The most practical AI resource I've found."</p>
-        <div class="t-author">Marketing Manager</div>
-        <div class="t-role">United States · Newsletter Subscriber</div>
-        <span class="t-badge">Product Customer</span>
       </div>
     </div>
   </div>
@@ -5687,15 +6629,70 @@ nav.scrolled {
 </section>
 
 <!-- ══════════════════════════════════════════════════════
+     NOW READING / CURRENT STACK
+══════════════════════════════════════════════════════ -->
+<section id="now-reading">
+  <div class="wrap">
+    <div class="s-label reveal">On the radar</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s">CURRENTLY</h2>
+    <div class="reading-grid reveal" style="transition-delay:.2s">
+
+      <div class="rcard">
+        <div class="rcard-type"><span class="rcard-dot"></span>Reading Now</div>
+        <div class="rcard-title">$100M LEADS</div>
+        <div class="rcard-sub">Alex Hormozi — Dissecting the full-funnel lead gen architecture that scales to 8 figures without paid ads.</div>
+        <span class="rcard-tag">Business · Growth</span>
+      </div>
+
+      <div class="rcard">
+        <div class="rcard-type"><span class="rcard-dot"></span>Building Now</div>
+        <div class="rcard-title">PROMPTOPS v0.2</div>
+        <div class="rcard-sub">Shipping diff-based prompt versioning + rollback. 247+ waitlist. Bootstrapped solo, zero VC.</div>
+        <span class="rcard-tag">SaaS · AI</span>
+      </div>
+
+      <div class="rcard">
+        <div class="rcard-type"><span class="rcard-dot"></span>Exploring</div>
+        <div class="rcard-title">AGENT MEMORY</div>
+        <div class="rcard-sub">Long-term episodic memory for marketing AI agents — how do agents remember what campaigns worked last quarter?</div>
+        <span class="rcard-tag">Research · AI</span>
+      </div>
+
+      <div class="rcard">
+        <div class="rcard-type"><span class="rcard-dot"></span>Learning</div>
+        <div class="rcard-title">MCP + TOOL USE</div>
+        <div class="rcard-sub">Anthropic's Model Context Protocol. Building composable tool-chains for content, SEO, and email automation agents.</div>
+        <span class="rcard-tag">Dev · API</span>
+      </div>
+
+      <div class="rcard">
+        <div class="rcard-type"><span class="rcard-dot"></span>Listening</div>
+        <div class="rcard-title">THE TIM FERRISS SHOW</div>
+        <div class="rcard-sub">Dissecting mental models of world-class performers — cross-applying frameworks from investing to marketing systems.</div>
+        <span class="rcard-tag">Podcast · Strategy</span>
+      </div>
+
+      <div class="rcard">
+        <div class="rcard-type"><span class="rcard-dot"></span>Watching</div>
+        <div class="rcard-title">GTM TEARDOWNS</div>
+        <div class="rcard-sub">Reverse-engineering how Notion, Linear, and Loom grew to $1B+ with sub-$1M in paid acquisition. Writing notes.</div>
+        <span class="rcard-tag">Case Study · Growth</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
      CTA
 ══════════════════════════════════════════════════════ -->
 <section id="cta">
   <div class="cta-bg-text">LET'S WORK</div>
   <div class="wrap">
     <div class="cta-inner reveal">
-      <span class="cta-pretitle">Open to Work — 2026</span>
-      <h2 class="cta-title">LET'S<br>BUILD<br><em>TOGETHER</em></h2>
-      <p class="cta-sub">Open to full-time remote, fractional, and consulting roles in Growth, Marketing Ops, or AI Automation.<br>India (INR) &amp; Global (USD/EUR) · US/EU timezone overlap · Responds within 24 hours.</p>
+      <span class="cta-pretitle">Available Now — Reply within 24 hours</span>
+      <h2 class="cta-title">LET'S<br>BUILD<br><em>SOMETHING</em></h2>
+      <p class="cta-sub">Full-time hire, fractional lead, consulting project, or AI system built from scratch — tell me what you're working on. I'll give you a straight answer within 24 hours.<br><span style="font-size:0.88em;color:var(--grey)">India (INR) &amp; Global (USD/EUR) · Remote-first · US/EU timezone overlap</span></p>
       <div class="cta-btns">
         <a href="/cdn-cgi/l/email-protection#c0aaa1a3a8a9aea3a8b3a1a9aba9a1b3afaeafb7a1ac80a7ada1a9aceea3afad" class="btn-gold"><span>Send an Email</span></a>
         <a href="https://calendly.com/jachinsonowal" target="_blank" rel="noopener noreferrer" class="btn-calendly">
@@ -5749,6 +6746,51 @@ nav.scrolled {
           </svg>
           Guwahati, Assam · Remote-First
         </div>
+      </div>
+
+      <!-- ═══ EMBEDDED CONTACT FORM ═══ -->
+      <div id="contact-form-wrap">
+        <div class="cf-label">Send a Direct Message</div>
+        <div class="cf-grid">
+          <div class="cf-field">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" placeholder="Alex Chen" autocomplete="name"/>
+          </div>
+          <div class="cf-field">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" placeholder="alex@company.com" autocomplete="email"/>
+          </div>
+          <div class="cf-field">
+            <label for="cf-company">Company / Org</label>
+            <input type="text" id="cf-company" placeholder="Acme Inc."/>
+          </div>
+          <div class="cf-field">
+            <label for="cf-type">Engagement Type</label>
+            <select id="cf-type">
+              <option value="" disabled selected>Select one...</option>
+              <option value="fulltime">Full-Time Role</option>
+              <option value="fractional">Fractional / Part-Time</option>
+              <option value="consulting">Consulting Project</option>
+              <option value="promptops">PromptOps Partnership</option>
+              <option value="collab">Collaboration / Content</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="cf-field cf-field-full">
+            <label for="cf-msg">What are you working on?</label>
+            <textarea id="cf-msg" placeholder="Describe your challenge, goal, or opportunity. I read every message and respond within 24 hours."></textarea>
+          </div>
+        </div>
+        <button class="cf-submit" onclick="submitContactForm()">
+          <span>Send Message →</span>
+        </button>
+        <div class="cf-success" id="cf-success">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14">
+            <polyline points="2,8 6,12 14,4"/>
+          </svg>
+          Message received. I'll respond within 24 hours.
+        </div>
+        <p class="cf-note">This form sends directly to my inbox. No spam, no CRM — just a real reply from me.</p>
       </div>
     </div>
   </div>
@@ -6281,7 +7323,7 @@ function initActiveNav(){
     // activity / label
     this.active    = false;
     this.activeT   = 0;
-    this.labelA    = idx===8 ? 0.5 : 0; // PromptOps always slightly labelled
+    this.labelA    = 0; // labels only appear on hover/active
   }
 
   function rgba(c, a) {
@@ -6289,16 +7331,20 @@ function initActiveNav(){
   }
 
   function placeAgents() {
-    // 3×3 grid with organic jitter
-    var padX=W*0.11, padY=H*0.14;
-    var cellW=(W-padX*2)/2, cellH=(H-padY*2)/2;
+    // Grid confined to RIGHT half of canvas — keeps nodes away from hero name text
+    var padLeft = W * 0.48;   // never go left of centre
+    var padRight = W * 0.10;
+    var padY = H * 0.12;
+    var cols = 3, rows = 3;
+    var cellW = (W - padLeft - padRight) / (cols - 1);
+    var cellH = (H - padY * 2) / (rows - 1);
     agents.forEach(function(a,i){
-      var col=i%3, row=Math.floor(i/3);
-      a.baseX = padX + col*cellW + (Math.random()-.5)*cellW*0.35;
-      a.baseY = padY + row*cellH + (Math.random()-.5)*cellH*0.35;
-      // PromptOps Core: push toward center-right area
-      if (i===8) { a.baseX=W*0.72; a.baseY=H*0.5; }
-      a.x=a.baseX; a.y=a.baseY;
+      var col = i % cols, row = Math.floor(i / cols);
+      a.baseX = padLeft + col * cellW + (Math.random()-.5) * cellW * 0.32;
+      a.baseY = padY    + row * cellH + (Math.random()-.5) * cellH * 0.32;
+      // PromptOps Core (idx 8): dead centre-right
+      if (i === 8) { a.baseX = W * 0.78; a.baseY = H * 0.50; }
+      a.x = a.baseX; a.y = a.baseY;
     });
   }
 
@@ -6829,84 +7875,221 @@ function closeTerminal(){
 
   function spawnPulse() {
     var ci = Math.floor(Math.random() * CONNS.length);
-    pulses.push({ ci: ci, prog: 0 });
+    var a = AGENTS[CONNS[ci][0]];
+    pulses.push({ ci: ci, prog: 0, col: DCOL[a.d] });
+  }
+
+  /* ── Bezier control point (slight arc on each edge) ── */
+  function getCurve(ax, ay, bx, by) {
+    var mx = (ax + bx) / 2, my = (ay + by) / 2;
+    var dx = bx - ax, dy = by - ay;
+    var perp = 0.12;
+    return { cx: mx - dy * perp, cy: my + dx * perp };
+  }
+
+  /* ── Draw hexagon shape ── */
+  function hexPath(ctx, x, y, r) {
+    ctx.beginPath();
+    for (var i = 0; i < 6; i++) {
+      var angle = (Math.PI / 3) * i - Math.PI / 6;
+      var px2 = x + r * Math.cos(angle);
+      var py2 = y + r * Math.sin(angle);
+      i === 0 ? ctx.moveTo(px2, py2) : ctx.lineTo(px2, py2);
+    }
+    ctx.closePath();
   }
 
   function draw() {
-    if (document.hidden) { return; }
+    if (document.hidden) { requestAnimationFrame(draw); return; }
     ctx.clearRect(0, 0, W, H);
-    t += .007;
+    t += .006;
 
-    // Spawn
-    if (Math.random() < .045) spawnPulse();
+    /* ── 1. SUBTLE GRID BACKGROUND ── */
+    var gridSize = 48;
+    ctx.save();
+    ctx.strokeStyle = 'rgba(201,168,76,0.028)';
+    ctx.lineWidth = 0.5;
+    for (var gx = 0; gx < W; gx += gridSize) {
+      ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke();
+    }
+    for (var gy = 0; gy < H; gy += gridSize) {
+      ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke();
+    }
+    ctx.restore();
 
-    // Draw connections
+    /* ── 2. DEPTH GLOW RADIALS around JACHIN hub ── */
+    var hub = getNode(22); // JACHIN index
+    var hubPulse = 0.5 + 0.5 * Math.sin(t * 1.2);
+    for (var ring = 3; ring > 0; ring--) {
+      var rg = ctx.createRadialGradient(hub.px, hub.py, 0, hub.px, hub.py, 80 + ring * 40 + hubPulse * 20);
+      rg.addColorStop(0, 'rgba(241,87,87,0.0' + (ring * 2) + ')');
+      rg.addColorStop(1, 'transparent');
+      ctx.save();
+      ctx.fillStyle = rg;
+      ctx.beginPath(); ctx.arc(hub.px, hub.py, 80 + ring * 40 + hubPulse * 20, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    /* ── 3. DRAW CONNECTIONS (curved, dept-colored glow) ── */
     CONNS.forEach(function(c) {
       var a = getNode(c[0]), b = getNode(c[1]), w = c[2];
+      var col = DCOL[AGENTS[c[0]].d];
+      var cv = getCurve(a.px, a.py, b.px, b.py);
+
+      // Glow layer (thick, low alpha)
       ctx.save();
-      ctx.strokeStyle = 'rgba(201,168,76,' + (w * .11) + ')';
-      ctx.lineWidth = w > .85 ? 1.1 : .7;
-      ctx.beginPath(); ctx.moveTo(a.px, a.py); ctx.lineTo(b.px, b.py); ctx.stroke();
+      ctx.strokeStyle = col;
+      ctx.globalAlpha = w * 0.045;
+      ctx.lineWidth = 3.5;
+      ctx.beginPath();
+      ctx.moveTo(a.px, a.py);
+      ctx.quadraticCurveTo(cv.cx, cv.cy, b.px, b.py);
+      ctx.stroke();
+      ctx.restore();
+
+      // Core line
+      ctx.save();
+      ctx.strokeStyle = col;
+      ctx.globalAlpha = w * 0.13;
+      ctx.lineWidth = w > 0.85 ? 1.2 : 0.7;
+      ctx.setLineDash(w > 0.85 ? [] : [3, 5]);
+      ctx.beginPath();
+      ctx.moveTo(a.px, a.py);
+      ctx.quadraticCurveTo(cv.cx, cv.cy, b.px, b.py);
+      ctx.stroke();
+      ctx.setLineDash([]);
       ctx.restore();
     });
 
-    // Draw pulses
-    pulses = pulses.filter(function(p) { return p.prog < 1; });
+    /* ── 4. ANIMATED PULSES (dept-colored, along bezier curve) ── */
+    if (Math.random() < 0.055) spawnPulse();
+    pulses = pulses.filter(function(p) { return p.prog <= 1; });
     pulses.forEach(function(p) {
-      p.prog += .013;
+      p.prog += 0.012;
       var c = CONNS[p.ci];
       var a = getNode(c[0]), b = getNode(c[1]);
-      var px = a.px + (b.px - a.px) * p.prog;
-      var py = a.py + (b.py - a.py) * p.prog;
-      var alpha = p.prog < .1 ? p.prog * 10 : p.prog > .88 ? (1 - p.prog) * 8.3 : 1;
+      var cv = getCurve(a.px, a.py, b.px, b.py);
+      // Quadratic bezier position
+      var t2 = p.prog;
+      var px2 = (1-t2)*(1-t2)*a.px + 2*(1-t2)*t2*cv.cx + t2*t2*b.px;
+      var py2 = (1-t2)*(1-t2)*a.py + 2*(1-t2)*t2*cv.cy + t2*t2*b.py;
+      var alpha = p.prog < 0.12 ? p.prog / 0.12 : p.prog > 0.85 ? (1 - p.prog) / 0.15 : 1;
+
+      // Glow halo
       ctx.save();
-      ctx.globalAlpha = alpha * .95;
-      ctx.fillStyle = '#E8C96A';
-      ctx.shadowColor = '#C9A84C'; ctx.shadowBlur = 7;
-      ctx.beginPath(); ctx.arc(px, py, 2.5, 0, Math.PI*2); ctx.fill();
+      ctx.globalAlpha = alpha * 0.35;
+      ctx.shadowColor = p.col; ctx.shadowBlur = 14;
+      ctx.fillStyle = p.col;
+      ctx.beginPath(); ctx.arc(px2, py2, 4.5, 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+
+      // Bright core dot
+      ctx.save();
+      ctx.globalAlpha = alpha * 0.95;
+      ctx.fillStyle = '#FFFFFF';
+      ctx.shadowColor = p.col; ctx.shadowBlur = 8;
+      ctx.beginPath(); ctx.arc(px2, py2, 2, 0, Math.PI * 2); ctx.fill();
       ctx.restore();
     });
 
-    // Draw nodes
+    /* ── 5. DRAW NODES ── */
     AGENTS.forEach(function(ag, i) {
       var px = ag.x * W, py = ag.y * H;
       var isHub = ag.n === 'JACHIN';
-      var isSec = ag.d === 'security';
+      var isSecurity = ag.d === 'security';
       var isHov = (i === hovered);
-      var r = isHub ? 12 : (ag.p >= 95 ? 8 : 6.5);
+      var r = isHub ? 14 : (ag.p >= 96 ? 9 : 6.5);
       var col = DCOL[ag.d];
+      var floatY = Math.sin(t * 0.9 + i * 0.6) * 1.8;
 
-      // pulse ring
-      if (isHub || isHov || ag.p >= 95) {
-        var pulse = .5 + .5 * Math.sin(t * 1.8 + i * .7);
-        var rr = r + 5 + pulse * (isHub ? 5 : 3) + (isHov ? 5 : 0);
+      // Outer glow ring (ambient)
+      if (isHub || ag.p >= 95 || isHov) {
+        var pulseR = r + 6 + (isHub ? 4 * Math.sin(t * 1.4) : 2 * Math.sin(t * 1.1 + i));
+        var glowAlpha = isHub ? 0.22 + 0.1 * Math.sin(t * 1.4) : 0.12;
         ctx.save();
-        ctx.globalAlpha = isHov ? .4 : (isHub ? .28 : .14 + pulse * .07);
-        ctx.strokeStyle = col; ctx.lineWidth = isHub ? 1.5 : 1;
-        ctx.beginPath(); ctx.arc(px, py, rr, 0, Math.PI*2); ctx.stroke();
+        ctx.beginPath(); ctx.arc(px, py + floatY, pulseR + 6, 0, Math.PI * 2);
+        ctx.fillStyle = col; ctx.globalAlpha = glowAlpha * 0.4;
+        ctx.fill();
+        ctx.restore();
+
+        ctx.save();
+        ctx.beginPath(); ctx.arc(px, py + floatY, pulseR, 0, Math.PI * 2);
+        ctx.strokeStyle = col; ctx.globalAlpha = glowAlpha + (isHov ? 0.2 : 0);
+        ctx.lineWidth = isHub ? 1.5 : 1; ctx.stroke();
         ctx.restore();
       }
 
-      // Node
+      // Hover extra ring
+      if (isHov) {
+        ctx.save();
+        ctx.beginPath(); ctx.arc(px, py + floatY, r + 14, 0, Math.PI * 2);
+        ctx.strokeStyle = col; ctx.globalAlpha = 0.25;
+        ctx.lineWidth = 1; ctx.setLineDash([2, 4]);
+        ctx.stroke(); ctx.setLineDash([]);
+        ctx.restore();
+      }
+
+      // Node shape: hexagon for security/hub, circle for rest
       ctx.save();
-      ctx.globalAlpha = isHov ? 1 : .88;
-      ctx.fillStyle = (isHov || isHub) ? col : '#0d0d0d';
-      ctx.beginPath(); ctx.arc(px, py, r, 0, Math.PI*2); ctx.fill();
-      ctx.strokeStyle = col; ctx.lineWidth = isHov ? 1.5 : 1;
-      ctx.stroke();
+      ctx.globalAlpha = isHov ? 1 : 0.9;
+
+      if (isHub) {
+        // Hub: filled circle with inner glow
+        var grd = ctx.createRadialGradient(px, py + floatY, 0, px, py + floatY, r);
+        grd.addColorStop(0, 'rgba(241,87,87,0.9)');
+        grd.addColorStop(0.6, 'rgba(200,60,60,0.8)');
+        grd.addColorStop(1, 'rgba(160,30,30,0.6)');
+        ctx.fillStyle = grd;
+        ctx.shadowColor = '#f17777'; ctx.shadowBlur = 20;
+        ctx.beginPath(); ctx.arc(px, py + floatY, r, 0, Math.PI * 2); ctx.fill();
+        // White core
+        ctx.fillStyle = 'rgba(255,230,230,0.85)';
+        ctx.shadowBlur = 0;
+        ctx.beginPath(); ctx.arc(px, py + floatY, r * 0.35, 0, Math.PI * 2); ctx.fill();
+      } else if (isSecurity) {
+        // Security nodes: hexagon
+        hexPath(ctx, px, py + floatY, r);
+        ctx.fillStyle = isHov ? col : 'rgba(10,10,10,0.9)';
+        ctx.shadowColor = col; ctx.shadowBlur = isHov ? 12 : 6;
+        ctx.fill();
+        ctx.strokeStyle = col; ctx.lineWidth = isHov ? 2 : 1.2;
+        ctx.stroke();
+      } else {
+        // Standard nodes: circle with gradient fill
+        var bg = ctx.createRadialGradient(px - r*0.3, py + floatY - r*0.3, 0, px, py + floatY, r);
+        bg.addColorStop(0, isHov ? col : 'rgba(20,20,20,0.95)');
+        bg.addColorStop(1, isHov ? col : 'rgba(8,8,8,0.95)');
+        ctx.fillStyle = bg;
+        ctx.shadowColor = col; ctx.shadowBlur = isHov ? 10 : 4;
+        ctx.beginPath(); ctx.arc(px, py + floatY, r, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = col; ctx.lineWidth = isHov ? 1.5 : (ag.p >= 95 ? 1.2 : 0.8);
+        ctx.stroke();
+      }
       ctx.restore();
 
       // Label
       if (isHov || isHub || r >= 8) {
         ctx.save();
-        ctx.font = (isHub ? 'bold ' : '') + '9px "Barlow Condensed", sans-serif';
-        ctx.fillStyle = isHov ? '#F2EFE8' : col;
-        ctx.globalAlpha = isHov ? 1 : (isHub ? .95 : .72);
+        ctx.font = isHub ? 'bold 10px "Barlow Condensed",sans-serif' : '8.5px "Barlow Condensed",sans-serif';
+        ctx.fillStyle = isHov ? '#FFFFFF' : (isHub ? '#FF9999' : col);
+        ctx.globalAlpha = isHov ? 1 : (isHub ? 1 : 0.78);
         ctx.textAlign = 'center';
-        ctx.fillText(ag.n, px, py + r + 11);
+        ctx.shadowColor = isHub ? 'rgba(241,87,87,0.6)' : col;
+        ctx.shadowBlur = isHov ? 8 : 4;
+        ctx.fillText(ag.n, px, py + floatY + r + 12);
         ctx.restore();
       }
     });
+
+    /* ── 6. SCANLINE SWEEP (subtle, fast) ── */
+    var scanY = (t * 30) % (H + 40) - 20;
+    var scanGrad = ctx.createLinearGradient(0, scanY - 8, 0, scanY + 8);
+    scanGrad.addColorStop(0, 'transparent');
+    scanGrad.addColorStop(0.5, 'rgba(201,168,76,0.022)');
+    scanGrad.addColorStop(1, 'transparent');
+    ctx.fillStyle = scanGrad;
+    ctx.fillRect(0, scanY - 8, W, 16);
 
     requestAnimationFrame(draw);
   }
@@ -7229,5 +8412,148 @@ console.log('%c⚡ GOD MODE ACTIVE', 'font-size:14px;color:#C9A84C;font-weight:7
   })();
   </script>
 
+  <!-- ══ ENHANCED FEATURES SCRIPT ══ -->
+  <script>
+  /* ─── THEME TOGGLE ─────────────────────────── */
+  (function(){
+    var btn = document.getElementById('theme-toggle');
+    if(!btn) return;
+    // Persist preference
+    if(localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    btn.addEventListener('click', function(){
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+  })();
+
+  /* ─── NOW WIDGET — show after 4s scroll ────── */
+  (function(){
+    var widget = document.getElementById('now-widget');
+    if(!widget) return;
+    var shown = false;
+    function showWidget() {
+      if(shown) return; shown = true;
+      widget.classList.add('visible');
+    }
+    // Show after scrolling past hero
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > window.innerHeight * 0.6) showWidget();
+    }, { passive: true });
+    // Fallback — show after 5s
+    setTimeout(showWidget, 5000);
+  })();
+
+  /* ─── MOBILE DOCK — active state on scroll ── */
+  (function(){
+    var dock = document.getElementById('mob-dock');
+    if(!dock) return;
+    var items = dock.querySelectorAll('.mob-dock-item');
+    var sections = ['hero','about','case-studies','ai-systems','cta'];
+    function updateDock(){
+      var scrollY = window.scrollY + window.innerHeight / 3;
+      var active = 'hero';
+      sections.forEach(function(id){
+        var el = document.getElementById(id);
+        if(el && el.offsetTop <= scrollY) active = id;
+      });
+      items.forEach(function(item){
+        var href = item.getAttribute('href');
+        item.classList.toggle('active', href === '#'+active);
+      });
+    }
+    window.addEventListener('scroll', updateDock, { passive: true });
+    updateDock();
+  })();
+
+  /* ─── CONTACT FORM HANDLER ─────────────────── */
+  function submitContactForm() {
+    var name    = document.getElementById('cf-name')  ? document.getElementById('cf-name').value.trim()    : '';
+    var email   = document.getElementById('cf-email') ? document.getElementById('cf-email').value.trim()   : '';
+    var company = document.getElementById('cf-company')? document.getElementById('cf-company').value.trim(): '';
+    var type    = document.getElementById('cf-type')  ? document.getElementById('cf-type').value            : '';
+    var msg     = document.getElementById('cf-msg')   ? document.getElementById('cf-msg').value.trim()     : '';
+
+    if(!name || !email || !msg) {
+      // Highlight empty required fields
+      ['cf-name','cf-email','cf-msg'].forEach(function(id){
+        var el = document.getElementById(id);
+        if(el && !el.value.trim()){
+          el.style.borderColor = '#f87171';
+          el.addEventListener('input', function(){ el.style.borderColor=''; }, { once: true });
+        }
+      });
+      return;
+    }
+
+    // Build mailto link (no backend needed — preserves the solo/authentic brand)
+    var subject = encodeURIComponent('[Portfolio] ' + (type ? type.charAt(0).toUpperCase()+type.slice(1) : 'Inquiry') + ' from ' + name);
+    var body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      'Company: ' + (company || 'N/A') + '\n' +
+      'Type: ' + (type || 'N/A') + '\n\n' +
+      'Message:\n' + msg
+    );
+    var mailLink = 'mailto:jachinchsaikiasonowal@gmail.com?subject=' + subject + '&body=' + body;
+    window.location.href = mailLink;
+
+    // Show success state
+    var succ = document.getElementById('cf-success');
+    if(succ) succ.classList.add('show');
+    // Reset after 4s
+    setTimeout(function(){
+      if(succ) succ.classList.remove('show');
+    }, 5000);
+  }
+
+  /* ─── SOCIAL PROOF TICKER — inject if not present ── */
+  (function(){
+    // Check if element already exists to avoid duplicates
+    if(document.querySelector('.sp-ticker-wrap')) return;
+    var html = '<div class="sp-ticker-wrap" aria-hidden="true"><div class="sp-ticker-track">';
+    var items = [
+      ['$145K+','Client Revenue Generated'],
+      ['175+','Clients Across 5 Industries'],
+      ['38%','Email Open Rate (2× Industry Avg)'],
+      ['2.5M+','Campaign Impressions'],
+      ['247+','PromptOps Waitlist — Zero Ads'],
+      ['10+','Live AI Agents Built'],
+      ['3×','Local SEO Growth in 4 Months'],
+      ['$3.8K','Product Revenue, Bootstrapped'],
+      ['8+','Years of Growth Experience'],
+      ['0','Ad Spend on Newsletter'],
+    ];
+    // Duplicate for seamless loop
+    [items, items].forEach(function(set){
+      set.forEach(function(item, i){
+        html += '<span class="sp-item"><strong>' + item[0] + '</strong> ' + item[1] + '</span>';
+        if(i < set.length - 1) html += '<span class="sp-sep"></span>';
+      });
+    });
+    html += '</div></div>';
+
+    // Inject after #metrics if exists, else after #strip
+    var metrics = document.getElementById('metrics');
+    var strip   = document.getElementById('strip');
+    var target  = metrics || strip;
+    if(target && target.nextSibling) {
+      target.insertAdjacentHTML('afterend', html);
+    }
+  })();
+
+  /* ─── NOW WIDGET — dismiss on click outside ── */
+  (function(){
+    var widget = document.getElementById('now-widget');
+    if(!widget) return;
+    document.addEventListener('click', function(e){
+      if(widget.classList.contains('visible') && !widget.contains(e.target)){
+        // Don't auto-dismiss — let it persist for UX value
+      }
+    });
+  })();
+
+  </script>
 </body>
 </html>
