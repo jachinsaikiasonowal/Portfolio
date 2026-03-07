@@ -1837,6 +1837,7 @@ body.cursor-click #crosshair .ch-dot { width:9px; height:9px; opacity:0.5; }
   z-index:100002;
   background:linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2));
   transform-origin:left; transform:scaleX(0);
+  transition: transform 0.1s linear;
   box-shadow:0 0 10px rgba(201,168,76,0.5);
   pointer-events:none;
 }
@@ -3285,6 +3286,7 @@ body.light-mode .nav-hire { color: var(--white) !important; background: var(--go
   transition: border-color 0.25s, box-shadow 0.25s;
   outline: none; width: 100%;
   -webkit-appearance: none;
+  appearance: none;
 }
 .cf-field input:focus,
 .cf-field select:focus,
@@ -3577,12 +3579,14 @@ body.light-mode .nav-hire { color: var(--white) !important; background: var(--go
 .cs-index {
   background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.02));
   -webkit-background-clip: text;
+  background-clip: text;
   transition: color 0.4s;
 }
 .cs-card.open .cs-index {
   color: transparent !important;
   background: linear-gradient(135deg, var(--gold), var(--gold3));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
