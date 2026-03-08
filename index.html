@@ -1031,6 +1031,10 @@ h2.s-title {
 ═══════════════════════════════════════════════ */
 #experience { background: var(--black); border-bottom: 1px solid var(--border2); }
 
+
+  100% { transform: translateX(100vw); }
+}
+
 /* Timeline track on the left */
 .exp-list {
   display: flex; flex-direction: column;
@@ -3570,17 +3574,24 @@ body.light-mode #now-widget .nw-item {
 ════════════════════════════════════════════ */
 .exp-item {
   position: relative;
-  transition: all 0.35s cubic-bezier(0.16,1,0.3,1) !important;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1) !important;
+  box-shadow: var(--shadow-gold);
 }
-.exp-item::before {
+.exp-item:hover {
+  box-shadow: var(--shadow-hover) !important;
+  transform: translateY(-1px);
+}
+.exp-item::after {
   content: '';
   position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
   background: linear-gradient(180deg, transparent, var(--gold3), transparent);
   opacity: 0; transition: opacity 0.4s;
+  z-index: 11; pointer-events: none;
 }
-.exp-item.open::before { opacity: 1; }
+.exp-item.open::after { opacity: 1; }
 .exp-item.open {
-  box-shadow: inset 1px 0 0 rgba(201,168,76,0.15), 0 0 40px rgba(0,0,0,0.3);
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.3), 0 12px 60px rgba(0,0,0,0.5), 0 0 80px rgba(201,168,76,0.04) !important;
+  transform: translateY(0) !important;
 }
 
 /* ════════════════════════════════════════════
@@ -7186,9 +7197,14 @@ function initCounters() {
    EXP ACCORDION
 ───────────────────────────────────────────── */
 function toggleExp(el) {
-  var open = el.classList.contains('open');
+  var isOpen = el.classList.contains('open');
   document.querySelectorAll('.exp-item.open').forEach(function(i){ i.classList.remove('open'); });
-  if(!open) el.classList.add('open');
+  if (isOpen) return;
+  el.classList.add('open');
+  setTimeout(function(){
+    var r = el.getBoundingClientRect();
+    if (r.top < 80) window.scrollBy({ top: r.top - 80, behavior: 'smooth' });
+  }, 80);
 }
 
 /* ─────────────────────────────────────────────
