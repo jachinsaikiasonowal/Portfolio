@@ -168,6 +168,7 @@ body {
   /* cursor managed by pointer media query below */
 }
 
+
 /* ═══════════════════════════════════════════════
    SCROLLBAR
 ═══════════════════════════════════════════════ */
@@ -1157,7 +1158,7 @@ h2.s-title {
 .eresult {
   border: 1px solid var(--border); border-radius: 2px; padding: 16px;
   text-align: center; transition: border-color 0.2s;
-  position: relative; overflow: visible;
+  position: relative; overflow: hidden;
 }
 .eresult::before {
   content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
@@ -1165,7 +1166,7 @@ h2.s-title {
   transition: transform 0.3s;
 }
 .eresult:hover::before { transform: scaleX(1); }
-.er-num { font-family: var(--font-d); font-size: 24px; letter-spacing: 1px; color: var(--white); white-space: nowrap; overflow: visible; min-width: 0; }
+.er-num { font-family: var(--font-d); font-size: 24px; letter-spacing: 1px; color: var(--white); }
 .er-num em { color: var(--gold); font-style: normal; }
 .er-lbl { font-family: var(--font-c); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-top: 4px; }
 
@@ -1300,6 +1301,7 @@ h2.s-title {
   cursor: none;
   transition: padding-left 0.3s;
 }
+
 
 .cs-index {
   font-family: var(--font-d);
@@ -1831,7 +1833,6 @@ body.cursor-click #crosshair .ch-dot { width:9px; height:9px; opacity:0.5; }
    SCROLL PROGRESS BAR
 ═══════════════════════════════════════════════ */
 #scroll-progress {
-  display: none;  /* LINE ANIMATION DISABLED */
   position:fixed; top:0; left:0; right:0; height:2px;
   z-index:100002;
   background:linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2));
@@ -2197,9 +2198,9 @@ section::after {
 .cpb-step.cpb-active{color:var(--gold);font-weight:600;}
 .cpb-arrow{font-size:10px;color:var(--border);margin:0 10px;flex-shrink:0;}
 #section-cut{display:flex;align-items:center;gap:24px;padding:0 60px;height:56px;background:var(--black3);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);overflow:hidden;}
-.cut-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);display:none;}
+.cut-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);transform:scaleX(0);transform-origin:center;transition:transform 0.8s cubic-bezier(0.16,1,0.3,1);}
 .cut-label{font-family:var(--font-c);font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);opacity:0;transition:opacity 0.6s ease 0.5s;white-space:nowrap;flex-shrink:0;}
-#section-cut.cut-fired .cut-line{display:none;}
+#section-cut.cut-fired .cut-line{transform:scaleX(1);}
 #section-cut.cut-fired .cut-label{opacity:0.7;}
 .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:none;padding:8px;z-index:10001;}
 .nav-burger span{display:block;height:1px;background:var(--grey2);border-radius:1px;transition:transform 0.3s ease,opacity 0.3s ease;transform-origin:center;}
@@ -2478,6 +2479,7 @@ a, button { touch-action: manipulation; }
 .cut-label { font-family: var(--font-c); font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold3); }
 @media (max-width:768px) { .sec-cut { padding: 48px 20px; } }
 
+
 /* ═══════════════════════════════════════════════════════════
    PROMPTOPS SECTION — AI Teams Product
 ═══════════════════════════════════════════════════════════ */
@@ -2641,6 +2643,7 @@ a, button { touch-action: manipulation; }
 .po-strip-lbl    { font-family: var(--font-c); font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--grey); margin-top: 5px; }
 .po-strip-sub    { font-size: 12px; color: var(--grey); font-weight: 300; margin-top: 6px; line-height: 1.5; }
 
+
 /* ── SEC-CUT LABEL VARIANTS ── */
 .cut-label-minion {
   display: flex;
@@ -2694,6 +2697,7 @@ a, button { touch-action: manipulation; }
   body, * { cursor: auto !important; }
   #crosshair, #crosshair-dot { display: none !important; }
 }
+
 
 /* ═══════════════════════════════════════════════════════
    PREMIUM SECTION DIVIDER  (replaces minion dividers)
@@ -2802,6 +2806,7 @@ a, button { touch-action: manipulation; }
 .cut-label-minion, .minion-icon, .minion-icon-r,
 .banana-icon, .banana-icon-r, .cut-label-vibe { display: none !important; }
 
+
   /* ════ GOD MODE UPGRADE STYLES ════ */
 /* ════════════════════════════════════════════════════════
    NEW EFFECTS — GOD MODE UPGRADE
@@ -2825,6 +2830,7 @@ a, button { touch-action: manipulation; }
   border-radius: 4px;
   box-shadow: 0 8px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(201,168,76,0.1);
 }
+
 
 /* ── TILT CARD BASE ───────────────────────────────────── */
 .tilt-card {
@@ -3155,6 +3161,7 @@ nav.scrolled {
   box-shadow: 0 0 8px rgba(201,168,76,0.4);
 }
 
+
   /* ════ SKIP LINK ════ */
   .skip-link{position:absolute;top:-48px;left:16px;background:var(--gold);color:#0A0A0A;padding:10px 20px;font-family:"Courier New",monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;z-index:999999;transition:top .15s ease;text-decoration:none;border-radius:0 0 4px 4px;}
   .skip-link:focus{top:0;outline:2px solid #E8C96A;}
@@ -3464,6 +3471,7 @@ body.light-mode #now-widget .nw-item {
 .sp-item strong { color: var(--gold); font-weight: 600; }
 .sp-sep { width: 1px; height: 12px; background: var(--border); flex-shrink: 0; }
 @keyframes spTicker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
 
 /* ═══════════════════════════════════════════════════════════════
    ██████╗ ██████╗ ███████╗███╗   ███╗██╗██╗   ██╗███╗   ███╗
@@ -3831,6 +3839,11 @@ body.light-mode #now-widget .nw-item {
 /* ════════════════════════════════════════════
    SCROLL PROGRESS BAR — plasma glow
 ════════════════════════════════════════════ */
+#scroll-progress {
+  background: linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2)) !important;
+  box-shadow: 0 0 8px rgba(201,168,76,0.5), 0 0 20px rgba(201,168,76,0.2) !important;
+  height: 2px !important;
+}
 
 /* ════════════════════════════════════════════
    AGENT NETWORK CANVAS WRAP — deep field
@@ -3992,391 +4005,10 @@ footer {
   text-transform: uppercase; color: var(--gold); 
 }
 
-  
-  /* ════════════════════════════════════════════════════════════════════════
-     ULTIMATE ENHANCEMENT SUITE — 100+ DESIGN & PERFORMANCE IMPROVEMENTS
-     TIERS 1-10: ANIMATIONS, EFFECTS, INTERACTIONS, TEXT, BACKGROUNDS,
-     PERFORMANCE, ACCESSIBILITY, ADVANCED EFFECTS, UTILITIES, & RESPONSIVE
-     ════════════════════════════════════════════════════════════════════════ */
-
-  /* TIER 1: MICRO-INTERACTIONS & ANIMATIONS */
-  .btn-gold { position: relative; --mx: 0; --my: 0; overflow: hidden; will-change: transform; }
-  .btn-gold:hover { transform: translate(var(--mx), var(--my)) scale(1.05); }
-  .btn-gold::before { content: ''; position: absolute; inset: 0; background: var(--gold2); transform: translateX(-100%); transition: transform 0.3s ease; z-index: -1; border-radius: 2px; }
-  .btn-gold:hover::before { transform: translateX(0); }
-  
-  .btn-ghost { position: relative; overflow: hidden; }
-  .btn-ghost::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle, rgba(201,168,76,0.3), transparent); opacity: 0; transition: opacity 0.3s ease; }
-  .btn-ghost:hover::after { opacity: 1; }
-
-  @keyframes parallaxText { 0% { transform: translateY(20px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
-  .parallax-text { animation: parallaxText 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
-
-  @keyframes textReveal { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
-  .reveal-text { animation: textReveal 0.8s ease-out forwards; }
-
-  @keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-  .gradient-animate { background-size: 200% 200%; animation: gradientShift 4s ease infinite; }
-
-  @keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.7); } 50% { box-shadow: 0 0 0 20px rgba(201, 168, 76, 0); } }
-  .pulse-glow { animation: pulseGlow 2s infinite; }
-
-  @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-  .float-element { animation: float 3s ease-in-out infinite; }
-
-  @keyframes shimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
-  .shimmer { animation: shimmer 2s infinite; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); background-size: 1000px 100%; }
-
-  @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-  .bounce { animation: bounce 2s infinite; }
-
-  @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-  .rotate-element { animation: rotate 4s linear infinite; }
-
-  /* TIER 2: ADVANCED VISUAL EFFECTS */
-  .glass-effect { background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); }
-
-  .neumorphic { background: var(--black2); box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3), inset -2px -2px 5px rgba(255, 255, 255, 0.05); border-radius: 8px; }
-
-  .glow { box-shadow: 0 0 20px rgba(201, 168, 76, 0.4); }
-  .glow:hover { box-shadow: 0 0 40px rgba(201, 168, 76, 0.6); }
-
-  .gradient-border { position: relative; background: var(--black); border: 2px solid transparent; background-clip: padding-box; }
-  .gradient-border::before { content: ''; position: absolute; inset: -2px; background: linear-gradient(135deg, var(--gold), var(--gold2), var(--gold3)); border-radius: inherit; z-index: -1; }
-
-  @keyframes blurIn { from { opacity: 0; filter: blur(10px); } to { opacity: 1; filter: blur(0); } }
-  .blur-in { animation: blurIn 0.8s ease-out forwards; }
-
-  @keyframes zoomIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
-  .zoom-in { animation: zoomIn 0.6s ease-out forwards; }
-
-  @keyframes slideInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
-  @keyframes slideInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
-  .slide-in-left { animation: slideInLeft 0.8s ease-out forwards; }
-  .slide-in-right { animation: slideInRight 0.8s ease-out forwards; }
-
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  .fade-in { animation: fadeIn 0.8s ease-out forwards; }
-
-  .stagger-item { animation: fadeIn 0.8s ease-out forwards; }
-  .stagger-item:nth-child(1) { animation-delay: 0.1s; }
-  .stagger-item:nth-child(2) { animation-delay: 0.2s; }
-  .stagger-item:nth-child(3) { animation-delay: 0.3s; }
-  .stagger-item:nth-child(4) { animation-delay: 0.4s; }
-  .stagger-item:nth-child(5) { animation-delay: 0.5s; }
-  .stagger-item:nth-child(n+6) { animation-delay: calc(0.1s * (n - 5) + 0.5s); }
-
-  @keyframes wave { 0% { transform: rotateZ(0deg); } 100% { transform: rotateZ(360deg); } }
-  .wave { animation: wave 1s linear infinite; transform-origin: center; }
-
-  /* TIER 3: SCROLL & REVEAL EFFECTS */
-  @keyframes scrollReveal { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-  .scroll-reveal { animation: scrollReveal 0.8s ease-out forwards; }
-
-  @keyframes scrollFade { from { opacity: 0; } to { opacity: 1; } }
-  .scroll-fade { animation: scrollFade 1s ease-out forwards; }
-
-  @keyframes scrollScale { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
-  .scroll-scale { animation: scrollScale 0.8s ease-out forwards; }
-
-  @keyframes scrollRotate { from { opacity: 0; transform: rotate(-10deg); } to { opacity: 1; transform: rotate(0deg); } }
-  .scroll-rotate { animation: scrollRotate 0.8s ease-out forwards; }
-
-  .scroll-stagger { animation: scrollReveal 0.8s ease-out forwards; }
-  .scroll-stagger:nth-child(1) { animation-delay: 0s; }
-  .scroll-stagger:nth-child(2) { animation-delay: 0.15s; }
-  .scroll-stagger:nth-child(3) { animation-delay: 0.3s; }
-  .scroll-stagger:nth-child(4) { animation-delay: 0.45s; }
-  .scroll-stagger:nth-child(5) { animation-delay: 0.6s; }
-  .scroll-stagger:nth-child(n+6) { animation-delay: calc(0.15s * (n - 5) + 0.6s); }
-
-  /* TIER 4: HOVER & INTERACTION EFFECTS */
-  .hover-scale { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
-  .hover-scale:hover { transform: scale(1.08); }
-
-  .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
-  .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(201, 168, 76, 0.2); }
-
-  .hover-rotate { transition: transform 0.3s ease; }
-  .hover-rotate:hover { transform: rotate(5deg); }
-
-  .hover-color { transition: color 0.3s ease, background 0.3s ease; }
-  .hover-color:hover { color: var(--gold); }
-
-  .underline-animate { position: relative; }
-  .underline-animate::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s ease; }
-  .underline-animate:hover::after { width: 100%; }
-
-  .border-animate { position: relative; border: 2px solid var(--border); transition: border-color 0.3s ease; }
-  .border-animate:hover { border-color: var(--gold); }
-
-  .shadow-expand { transition: box-shadow 0.3s ease; }
-  .shadow-expand:hover { box-shadow: 0 20px 40px rgba(201, 168, 76, 0.3); }
-
-  .opacity-fade { transition: opacity 0.3s ease; }
-  .opacity-fade:hover { opacity: 0.7; }
-
-  .filter-brightness { transition: filter 0.3s ease; }
-  .filter-brightness:hover { filter: brightness(1.2); }
-
-  /* TIER 5: TEXT & TYPOGRAPHY EFFECTS */
-  .gradient-text { background: linear-gradient(135deg, var(--gold), var(--gold2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-
-  .gradient-text-animate { background: linear-gradient(135deg, var(--gold), var(--gold2), var(--gold)) 0% 0% / 200% 200%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 4s ease infinite; }
-
-  .text-glow { text-shadow: 0 0 10px rgba(201, 168, 76, 0.5); }
-
-  @keyframes letterSpacing { 0% { letter-spacing: -0.05em; } 100% { letter-spacing: 0.05em; } }
-  .letter-spacing-animate { animation: letterSpacing 2s ease infinite alternate; }
-
-  .text-transform-hover { transition: text-transform 0.3s ease, letter-spacing 0.3s ease; }
-  .text-transform-hover:hover { text-transform: uppercase; letter-spacing: 0.1em; }
-
-  .line-through-animate { position: relative; }
-  .line-through-animate::before { content: ''; position: absolute; left: 0; top: 50%; width: 0; height: 2px; background: var(--gold); transition: width 0.3s ease; }
-  .line-through-animate:hover::before { width: 100%; }
-
-  /* TIER 6: BACKGROUND & GRADIENT EFFECTS */
-  .gradient-bg-animate { background: linear-gradient(135deg, var(--black), var(--black2), var(--black3)); background-size: 200% 200%; animation: gradientShift 6s ease infinite; }
-
-  .mesh-gradient { background: linear-gradient(45deg, #C9A84C, #E8C96A, #8A6A20); filter: blur(100px); opacity: 0.1; }
-
-  .diagonal-stripe { background: repeating-linear-gradient(45deg, var(--black), var(--black) 10px, var(--black2) 10px, var(--black2) 20px); }
-
-  .dot-pattern { background-image: radial-gradient(circle, rgba(201, 168, 76, 0.2) 1px, transparent 1px); background-size: 20px 20px; }
-
-  @keyframes bgShift { 0% { background-position: 0% 0%; } 100% { background-position: 100% 100%; } }
-  .bg-animate { background-size: 200% 200%; animation: bgShift 10s ease infinite; }
-
-  .gradient-overlay { position: relative; }
-  .gradient-overlay::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, transparent, rgba(201, 168, 76, 0.1)); pointer-events: none; }
-
-  .radial-gradient { background: radial-gradient(circle at 30% 70%, rgba(201, 168, 76, 0.2), transparent); }
-
-  .gradient-transition { background: linear-gradient(135deg, var(--black), var(--black3)); transition: background 0.5s ease; }
-  .gradient-transition:hover { background: linear-gradient(45deg, var(--black2), var(--black4)); }
-
-  /* TIER 7: PERFORMANCE & ACCESSIBILITY */
-  .will-transform { will-change: transform; }
-  .will-opacity { will-change: opacity; }
-  .will-background { will-change: background-color; }
-
-  .gpu-accelerate { transform: translateZ(0); backface-visibility: hidden; perspective: 1000px; }
-
-  .contain-layout { contain: layout; }
-  .contain-style { contain: style; }
-  .contain-paint { contain: paint; }
-  .contain-strict { contain: strict; }
-
-  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
-
-  @media (prefers-contrast: more) { :root { --gold: #8A6A20; --border: rgba(201, 168, 76, 0.4); } body { color: #FFFFFF; } a { text-decoration: underline; } }
-
-  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
-
-  .skip-link { position: absolute; top: -40px; left: 0; background: var(--gold); color: var(--black); padding: 8px 16px; text-decoration: none; z-index: 100; }
-  .skip-link:focus { top: 0; }
-
-  body.keyboard-nav *:focus { outline: 2px dashed var(--gold); outline-offset: 4px; }
-
-  /* TIER 8: ADVANCED INTERACTIVE EFFECTS */
-  @keyframes flip { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
-  .flip-element { animation: flip 2s infinite; transform-style: preserve-3d; }
-
-  @keyframes rotateX { 0% { transform: rotateX(0deg); } 100% { transform: rotateX(360deg); } }
-  .rotate-x { animation: rotateX 3s linear infinite; transform-style: preserve-3d; }
-
-  @keyframes rotateY { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
-  .rotate-y { animation: rotateY 3s linear infinite; transform-style: preserve-3d; }
-
-  @keyframes skew { 0%, 100% { transform: skewX(0deg); } 50% { transform: skewX(10deg); } }
-  .skew-element { animation: skew 2s ease infinite; }
-
-  @keyframes morph { 0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; } 50% { border-radius: 70% 30% 46% 66% / 30% 74% 30% 66%; } }
-  .morph { animation: morph 4s ease-in-out infinite; }
-
-  @keyframes liquidSwipe { 0% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); } 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } }
-  .liquid-swipe { animation: liquidSwipe 1s cubic-bezier(0.77, 0, 0.175, 1) forwards; }
-
-  @keyframes squiggle { 0%, 100% { transform: translateX(-2px) translateY(0); } 25% { transform: translateX(2px) translateY(-2px); } 50% { transform: translateX(-2px) translateY(2px); } 75% { transform: translateX(2px) translateY(-2px); } }
-  .squiggle { animation: squiggle 0.4s ease-in-out infinite; }
-
-  @keyframes heartbeat { 0%, 100% { transform: scale(1); } 10%, 30% { transform: scale(0.9); } 20%, 40%, 60%, 80% { transform: scale(1); } 50% { transform: scale(1.1); } }
-  .heartbeat { animation: heartbeat 1.3s ease-in-out infinite; }
-
-  @keyframes lightning { 0%, 100% { opacity: 1; } 10% { opacity: 0.2; } 20% { opacity: 1; } 30% { opacity: 0.3; } 40%, 100% { opacity: 1; } }
-  .lightning { animation: lightning 0.5s ease-in infinite; }
-
-  /* TIER 9: UTILITY CLASSES */
-  .abs-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-  .fixed-center { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-
-  .flex-center { display: flex; align-items: center; justify-content: center; }
-  .flex-between { display: flex; align-items: center; justify-content: space-between; }
-
-  .text-truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .text-clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-
-  .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
-  .hidden { display: none !important; }
-
-  .opacity-0 { opacity: 0; }
-  .opacity-50 { opacity: 0.5; }
-  .opacity-100 { opacity: 1; }
-
-  .shadow-sm { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
-  .shadow-md { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); }
-  .shadow-lg { box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
-
-  .transition-fast { transition: all 0.1s ease; }
-  .transition-base { transition: all 0.3s ease; }
-  .transition-slow { transition: all 0.6s ease; }
-
-  /* TIER 10: FINAL TOUCHES */
-  @media (max-width: 768px) { .hide-mobile { display: none; } .btn-gold { --mx: 0 !important; --my: 0 !important; } }
-
-  ::selection { background: var(--gold); color: var(--black); }
-  ::-moz-selection { background: var(--gold); color: var(--black); }
-
-  a { transition: color 0.3s ease; }
-  a:hover { color: var(--gold2); }
-
-  button, a, [role="button"] { cursor: pointer; }
-
-  /* ════════════════════════════════════════════════════════════════════════
-     END ULTIMATE ENHANCEMENT SUITE — 100+ IMPROVEMENTS APPLIED
-     ════════════════════════════════════════════════════════════════════════ */
-
-
-  /* ════════════════════════════════════════════════════════════
-     PARALLAX LAYERED SHAPES BACKGROUND
-     ════════════════════════════════════════════════════════════ */
-
-  /* Base parallax layer container */
-  .parallax-layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-    pointer-events: none;
-    will-change: transform;
-  }
-
-  /* Shape styles */
-  .shape {
-    position: absolute;
-    opacity: 0.08;
-    will-change: transform;
-    border: 1px solid var(--gold);
-    border-radius: 2px;
-  }
-
-  /* Circle shapes */
-  .shape-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-  }
-
-  /* Hexagon shapes - using border approach */
-  .shape-hexagon {
-    width: 100px;
-    height: 115px;
-    background: transparent;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  }
-
-  /* Abstract shapes - irregular polygons */
-  .shape-abstract {
-    width: 90px;
-    height: 90px;
-    clip-path: polygon(
-      30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%
-    );
-  }
-
-  /* Layer 1: Slowest parallax (smallest multiplier) */
-  .layer-1 {
-    transform: translateY(0);
-  }
-
-  /* Layer 2: Medium parallax */
-  .layer-2 {
-    transform: translateY(0);
-  }
-
-  /* Layer 3: Fastest parallax (largest multiplier) */
-  .layer-3 {
-    transform: translateY(0);
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .shape {
-      opacity: 0.05;
-      border-width: 0.5px;
-    }
-
-    .shape-circle {
-      width: 50px;
-      height: 50px;
-    }
-
-    .shape-hexagon {
-      width: 60px;
-      height: 70px;
-    }
-
-    .shape-abstract {
-      width: 55px;
-      height: 55px;
-    }
-  }
-
-  /* Accessibility: disable parallax for users who prefer reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    .parallax-layer {
-      transform: none !important;
-    }
-  }
-
-</style>
+  </style>
 </head>
 
 <body>
-
-  <!-- ════════════════════════════════════════════════════════════
-       PARALLAX LAYERED SHAPES BACKGROUND
-       Multiple transparent layers moving at different speeds
-       ════════════════════════════════════════════════════════════ -->
-
-  <!-- Layer 1: Slow, large shapes -->
-  <div class="parallax-layer layer-1">
-    <div class="shape shape-circle" style="top: 10%; left: 5%;"></div>
-    <div class="shape shape-hexagon" style="top: 40%; left: 15%;"></div>
-    <div class="shape shape-circle" style="top: 70%; left: 10%;"></div>
-    <div class="shape shape-abstract" style="top: 50%; right: 12%;"></div>
-  </div>
-
-  <!-- Layer 2: Medium speed, medium shapes -->
-  <div class="parallax-layer layer-2">
-    <div class="shape shape-hexagon" style="top: 20%; right: 8%;"></div>
-    <div class="shape shape-circle" style="top: 55%; left: 20%;"></div>
-    <div class="shape shape-abstract" style="top: 15%; left: 60%;"></div>
-    <div class="shape shape-circle" style="top: 75%; right: 15%;"></div>
-  </div>
-
-  <!-- Layer 3: Fast, small shapes -->
-  <div class="parallax-layer layer-3">
-    <div class="shape shape-abstract" style="top: 5%; left: 35%;"></div>
-    <div class="shape shape-circle" style="top: 30%; right: 25%;"></div>
-    <div class="shape shape-hexagon" style="top: 65%; left: 45%;"></div>
-    <div class="shape shape-circle" style="top: 80%; right: 5%;"></div>
-  </div>
-
-
   <a href="#hero" class="skip-link" tabindex="1">Skip to content</a>
 
 <!-- THEME TOGGLE -->
@@ -4483,12 +4115,14 @@ footer {
   </div>
 </div>
 
+
 <!-- LOADER -->
 <div id="loader">
   <div class="loader-text">JACHIN</div>
   <div class="loader-bar"></div>
   <div class="loader-count" id="loader-count">0</div>
 </div>
+
 
 <nav id="nav">
   <a href="#hero" class="nav-logo">JACHIN<span>.</span></a>
@@ -4689,6 +4323,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
 <!-- MOBILE TERMINAL BUTTON — fixed, always visible on touch -->
 <button id="mob-term-btn" onclick="openTerminal()" aria-label="Open JACHIN_OS terminal">›_</button>
 
+
 <!-- MARQUEE STRIP -->
 <div id="strip" aria-hidden="true">
   <div class="strip-track">
@@ -4718,6 +4353,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
 </div>
 
 <!-- METRICS BAR -->
+
 
 <div id="metrics">
   <div class="metrics-row">
@@ -4973,7 +4609,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">01</div>
+            <div class="exp-num">00</div>
             <div class="exp-info">
               <div class="exp-title">THE FOUNDATIONS ERA</div>
               <div class="exp-meta">Freelance &amp; Self-Built Skills · <span>2017 – 2019</span></div>
@@ -5008,6 +4644,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
       </div>
 
+
       <!-- ERA 0.5 — SUN ENTERPRISE (Corporate Foundation) -->
       <div class="exp-item" onclick="toggleExp(this)">
         <div class="exp-era exp-era--svg">
@@ -5020,7 +4657,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">02</div>
+            <div class="exp-num">01</div>
             <div class="exp-info">
               <div class="exp-title">DIGITAL MARKETING EXECUTIVE</div>
               <div class="exp-meta">SUN Enterprise · <span>Feb 2018 – Mar 2020 </span></div>
@@ -5078,7 +4715,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">03</div>
+            <div class="exp-num">02</div>
             <div class="exp-info">
               <div class="exp-title">VISUAL DESIGNER</div>
               <div class="exp-meta">The New Studio · <span>Feb 2021 – Present</span>&nbsp;<span style="color:var(--grey);font-size:11px;letter-spacing:1px;">(Part-time / Project Basis)</span></div>
@@ -5120,7 +4757,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">04</div>
+            <div class="exp-num">03</div>
             <div class="exp-info">
               <div class="exp-title">GROWTH CONSULTANT</div>
               <div class="exp-meta">Independent Practice · <span>Feb 2021 – Present</span> · India / Remote</div>
@@ -5186,7 +4823,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">05</div>
+            <div class="exp-num">04</div>
             <div class="exp-info">
               <div class="exp-title">FOUNDER &amp; OPERATOR — AI NEWS INDIA</div>
               <div class="exp-meta">Newsletter &amp; Media · <span>Jan 2024 – Present</span></div>
@@ -5241,7 +4878,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">06</div>
+            <div class="exp-num">05</div>
             <div class="exp-info">
               <div class="exp-title">DIGITAL PRODUCT — MEGA PROMPT BUNDLE</div>
               <div class="exp-meta">Solo Product Creator · <span>Mid 2024 – Present</span></div>
@@ -5300,7 +4937,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">07</div>
+            <div class="exp-num">06</div>
             <div class="exp-info">
               <div class="exp-title">AI AGENT ENGINEER</div>
               <div class="exp-meta">Personal AI Lab · <span>Oct 2024 – Present</span></div>
@@ -5355,7 +4992,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
         </div>
         <div class="exp-trigger">
           <div class="exp-left">
-            <div class="exp-num">08</div>
+            <div class="exp-num">07</div>
             <div class="exp-info">
               <div class="exp-title">FOUNDER — PROMPTOPS</div>
               <div class="exp-meta">SaaS Developer Tool · <span>Jan 2026 – Present</span> · Beta</div>
@@ -5924,6 +5561,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
   </div>
 </section>
 
+
 <!-- SECTION DIVIDER → AI SYSTEMS -->
 <div class="sdp-wrap" aria-hidden="true">
   <div class="sdp-rule"></div>
@@ -5948,6 +5586,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
   </div>
   <div class="sdp-rule"></div>
 </div>
+
 
 <!-- ══════════════════════════════════════════════════════
      AI SYSTEMS — Case Study: Agent Operating System
@@ -6132,6 +5771,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
   </div>
 </section>
 
+
 <!-- SECTION DIVIDER → PROMPTOPS -->
 <div class="sdp-wrap" aria-hidden="true">
   <div class="sdp-rule"></div>
@@ -6153,6 +5793,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
   </div>
   <div class="sdp-rule"></div>
 </div>
+
 
 <!-- ══════════════════════════════════════════════════════
      PROMPTOPS — Prompt Management Platform for AI Teams
@@ -7237,6 +6878,7 @@ I don't run campaigns. I build systems that generate revenue while you're focuse
   </div>
 </footer>
 
+
 <!-- REVERSE MARQUEE -->
 <div id="strip2" aria-hidden="true">
   <div class="strip2-track">
@@ -8200,6 +7842,7 @@ function closeTerminal(){
   console.log('%c$ jachin --boot\n%c> JACHIN_OS v2026.1 initialized\n%c> awaiting input_',g+'font-size:11px;',g+'font-size:11px;',g+'font-size:12px;font-weight:700;');
 })();
 
+
 /* ══════════════════════════════════════════════════════════
    AI SYSTEMS — AGENT NETWORK CANVAS
 ══════════════════════════════════════════════════════════ */
@@ -8562,6 +8205,7 @@ function closeTerminal(){
 
 })();
 
+
 /* ══════════════════════════════════════════════════════════
    AI SYSTEMS — STATS CARD BAR ANIMATION
 ══════════════════════════════════════════════════════════ */
@@ -8603,6 +8247,7 @@ document.addEventListener('visibilitychange', function() {
 ════════════════════════════════════════════════════════ */
 
 (function() {
+
 
 /* ─── GLASSMORPHIC CARD TILT (3D perspective) ──────── */
 (function(){
@@ -8656,6 +8301,7 @@ document.addEventListener('visibilitychange', function() {
     });
   }, { passive: true });
 })();
+
 
 /* ─── MAGNETIC RADIAL LIGHT ON BUTTONS ─────────────── */
 (function(){
@@ -8960,272 +8606,6 @@ console.log('%c⚡ GOD MODE ACTIVE', 'font-size:14px;color:#C9A84C;font-weight:7
     });
   })();
 
-  
-
-  /* ════════════════════════════════════════════════════════════════════════
-     ULTIMATE JAVASCRIPT ENHANCEMENT SUITE
-     MAGNETIC EFFECTS, LAZY LOADING, SCROLL REVEALS, INTERACTIONS
-     ════════════════════════════════════════════════════════════════════════ */
-
-  /* MAGNETIC BUTTON EFFECT */
-  (function(){
-    var buttons = document.querySelectorAll('.btn-gold');
-    buttons.forEach(function(btn){
-      btn.addEventListener('mousemove', function(e){
-        var rect = btn.getBoundingClientRect();
-        var centerX = rect.left + rect.width / 2;
-        var centerY = rect.top + rect.height / 2;
-        var distX = (e.clientX - centerX) * 0.15;
-        var distY = (e.clientY - centerY) * 0.15;
-        btn.style.setProperty('--mx', distX + 'px');
-        btn.style.setProperty('--my', distY + 'px');
-      });
-      btn.addEventListener('mouseleave', function(){
-        btn.style.setProperty('--mx', '0');
-        btn.style.setProperty('--my', '0');
-      });
-    });
-  })();
-
-  /* SMOOTH SCROLL REVEAL ON INTERSECTION */
-  (function(){
-    if('IntersectionObserver' in window){
-      var reveals = document.querySelectorAll('[data-reveal], .scroll-reveal, .scroll-fade, .scroll-scale');
-      var revealObserver = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if(entry.isIntersecting){
-            entry.target.classList.add('revealed');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      reveals.forEach(function(el){ revealObserver.observe(el); });
-    }
-  })();
-
-  /* LAZY LOAD IMAGES */
-  (function(){
-    if('IntersectionObserver' in window && 'loading' in HTMLImageElement.prototype){
-      var images = document.querySelectorAll('img[data-src]');
-      var imgObserver = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if(entry.isIntersecting){
-            var img = entry.target;
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
-            imgObserver.unobserve(img);
-          }
-        });
-      }, { rootMargin: '50px' });
-      images.forEach(function(img){ imgObserver.observe(img); });
-    }
-  })();
-
-  /* ENHANCED KEYBOARD NAVIGATION */
-  (function(){
-    var isKeyboardUser = false;
-    document.addEventListener('keydown', function(){
-      if(!isKeyboardUser){
-        isKeyboardUser = true;
-        document.body.classList.add('keyboard-nav');
-      }
-    });
-    document.addEventListener('mousedown', function(){
-      isKeyboardUser = false;
-      document.body.classList.remove('keyboard-nav');
-    });
-  })();
-
-  /* STAGGERED ANIMATION HELPER */
-  (function(){
-    var staggerElements = document.querySelectorAll('.stagger-item, .scroll-stagger');
-    staggerElements.forEach(function(el, index){
-      el.style.setProperty('--stagger-index', index);
-    });
-  })();
-
-  /* PERFORMANCE-OPTIMIZED SCROLL LISTENER */
-  (function(){
-    var ticking = false;
-    window.addEventListener('scroll', function(){
-      if(!ticking){
-        window.requestAnimationFrame(function(){
-          // Heavy operations here if needed
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-  })();
-
-  /* DEBOUNCED RESIZE HANDLER */
-  (function(){
-    var resizeTimer;
-    window.addEventListener('resize', function(){
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function(){
-        window.dispatchEvent(new Event('resizeEnd'));
-      }, 250);
-    });
-  })();
-
-  /* STATISTICS COUNTER ANIMATION */
-  (function(){
-    if('IntersectionObserver' in window){
-      var counters = document.querySelectorAll('[data-target]');
-      var counterObserver = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if(entry.isIntersecting && !entry.target.classList.contains('counted')){
-            var target = parseInt(entry.target.dataset.target);
-            var duration = 2000;
-            var increment = target / (duration / 16);
-            var current = 0;
-            var timer = setInterval(function(){
-              current += increment;
-              if(current >= target){
-                current = target;
-                clearInterval(timer);
-                entry.target.classList.add('counted');
-              }
-              entry.target.textContent = Math.floor(current);
-            }, 16);
-          }
-        });
-      }, { threshold: 0.5 });
-      counters.forEach(function(c){ counterObserver.observe(c); });
-    }
-  })();
-
-  /* PARALLAX SCROLL EFFECT */
-  (function(){
-    var parallaxElements = document.querySelectorAll('[data-parallax]');
-    if(parallaxElements.length > 0){
-      var ticking = false;
-      window.addEventListener('scroll', function(){
-        if(!ticking){
-          window.requestAnimationFrame(function(){
-            parallaxElements.forEach(function(el){
-              var speed = parseFloat(el.dataset.parallax) || 0.5;
-              el.style.transform = 'translateY(' + (window.scrollY * speed) + 'px)';
-            });
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }, { passive: true });
-    }
-  })();
-
-  /* HAPTIC FEEDBACK ON INTERACTIONS */
-  (function(){
-    if('vibrate' in navigator){
-      var interactiveElements = document.querySelectorAll('button, a, [role="button"]');
-      interactiveElements.forEach(function(el){
-        el.addEventListener('click', function(){
-          navigator.vibrate(10);
-        });
-      });
-    }
-  })();
-
-  /* DYNAMIC COLOR SHIFT ON SCROLL */
-  (function(){
-    window.addEventListener('scroll', function(){
-      var scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      var hue = (scrollPercent * 3.6) % 360;
-      document.documentElement.style.setProperty('--hue-shift', hue);
-    }, { passive: true });
-  })();
-
-  /* SMART PREFETCHING FOR LINKS */
-  (function(){
-    var links = document.querySelectorAll('a[href]');
-    links.forEach(function(link){
-      link.addEventListener('mouseenter', function(){
-        var href = link.getAttribute('href');
-        if(href && href.startsWith('http')){
-          var prefetchLink = document.createElement('link');
-          prefetchLink.rel = 'prefetch';
-          prefetchLink.href = href;
-          document.head.appendChild(prefetchLink);
-        }
-      });
-    });
-  })();
-
-  /* FOCUS TRAP FOR MODALS */
-  (function(){
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape'){
-        var modals = document.querySelectorAll('[role="dialog"][open]');
-        if(modals.length > 0){
-          modals[modals.length - 1].close();
-        }
-      }
-    });
-  })();
-
-  /* PAGE VISIBILITY OPTIMIZATION */
-  (function(){
-    document.addEventListener('visibilitychange', function(){
-      if(document.hidden){
-        // Pause animations when page is hidden
-        document.querySelectorAll('[class*="animate"], [style*="animation"]').forEach(function(el){
-          el.style.animationPlayState = 'paused';
-        });
-      } else {
-        // Resume animations when page becomes visible
-        document.querySelectorAll('[class*="animate"], [style*="animation"]').forEach(function(el){
-          el.style.animationPlayState = 'running';
-        });
-      }
-    });
-  })();
-
-  console.log('%c✨ ULTIMATE ENHANCEMENT SUITE LOADED', 'font-size:14px;color:#C9A84C;font-weight:700;font-family:monospace;text-shadow:0 0 10px rgba(201,168,76,0.5);');
-
-  /* ════════════════════════════════════════════════════════════════════════
-     END ULTIMATE JAVASCRIPT SUITE
-     ════════════════════════════════════════════════════════════════════════ */
-
-
-  /* ════════════════════════════════════════════════════════════
-     PARALLAX SCROLL EFFECT - JavaScript Controller
-     ════════════════════════════════════════════════════════════ */
-
-  (function(){
-    var layer1 = document.querySelector('.layer-1');
-    var layer2 = document.querySelector('.layer-2');
-    var layer3 = document.querySelector('.layer-3');
-
-    if(!layer1 || !layer2 || !layer3) return;
-
-    var ticking = false;
-    var scrollY = 0;
-
-    window.addEventListener('scroll', function(){
-      scrollY = window.scrollY;
-      
-      if(!ticking){
-        window.requestAnimationFrame(function(){
-          // Layer 1: Slowest (0.3x scroll speed)
-          layer1.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
-          
-          // Layer 2: Medium (0.5x scroll speed)
-          layer2.style.transform = 'translateY(' + (scrollY * 0.5) + 'px)';
-          
-          // Layer 3: Fastest (0.8x scroll speed)
-          layer3.style.transform = 'translateY(' + (scrollY * 0.8) + 'px)';
-          
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-
-    console.log('%c✨ Parallax Layers Active', 'font-size:12px;color:#C9A84C;font-weight:700;');
-  })();
-
-</script>
+  </script>
 </body>
 </html>
