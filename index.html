@@ -51,7 +51,7 @@
   <link rel="alternate" hreflang="x-default" href="https://jachinsaikiasonowal.github.io/Portfolio/">
   <link rel="canonical" href="https://jachinsaikiasonowal.github.io/Portfolio/">
   <!-- Preload hero image — critical for LCP -->
-  <link rel="preload" as="image" href="https://res.cloudinary.com/deaa6sauc/image/upload/c_fill,w_600,h_800,g_face,f_auto,q_auto/jachinsaikiasonowal_wmo9px.png" fetchpriority="high">
+  <link rel="preload" as="image" href="https://res.cloudinary.com/deaa6sauc/image/upload/c_fill,w_600,h_800,g_face,f_auto,q_auto/jachinsaikiasonowal_wmo9px.png" fetchpriority="high" imagesrcset="https://res.cloudinary.com/deaa6sauc/image/upload/c_fill,w_600,h_800,g_face,f_auto,q_auto/jachinsaikiasonowal_wmo9px.png 600w, https://res.cloudinary.com/deaa6sauc/image/upload/c_fill,w_300,h_400,g_face,f_auto,q_auto/jachinsaikiasonowal_wmo9px.png 300w">
   <!-- Fonts — preconnect to both Google CDNs for faster load -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//res.cloudinary.com">
@@ -276,57 +276,120 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Jachin Saikia Sonowal",
-    "givenName": "Jachin",
-    "familyName": "Saikia Sonowal",
-    "jobTitle": "AI Growth Systems Architect",
-    "description": "AI Growth Architect and PROMPTMATRIX Founder. Builds automated revenue engines combining AI agents, marketing strategy, and product systems. 8+ years. ₹1.2 Crore D2C. 175+ clients. Open to Head of Growth and AI Automation Lead roles. Remote.",
-    "url": "https://jachinsaikiasonowal.github.io/Portfolio/",
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://res.cloudinary.com/deaa6sauc/image/upload/c_fill,w_1200,h_630,g_face,f_auto,q_auto/jachinsaikiasonowal_wmo9px.png",
-      "width": 600,
-      "height": 600
-    },
-    "email": "jachinsaikiasonowal@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Nagaon",
-      "addressRegion": "Assam",
-      "addressCountry": "IN"
-    },
-    "knowsAbout": [
-      "AI Growth Systems", "Growth Engineering", "Marketing Automation",
-      "SaaS Growth", "Revenue Engineering", "n8n", "GPT-4", "LLM Integration",
-      "Email Marketing", "SEO", "D2C Growth", "AI Agent Architecture",
-      "Prompt Engineering", "Fractional CMO", "PROMPTMATRIX"
-    ],
-    "hasOccupation": {
-      "@type": "Occupation",
-      "name": "AI Growth Systems Architect",
-      "description": "Builds automated revenue systems combining AI agents, marketing strategy, and product thinking",
-      "skills": "AI Growth, Marketing Automation, LLM Integration, Revenue Systems"
-    },
-    "seeks": {
-      "@type": "JobPosting",
-      "title": "Head of Growth",
-      "employmentType": "FULL_TIME",
-      "jobLocation": {"@type": "Place", "address": "Remote, Worldwide"}
-    },
-    "sameAs": [
-      "https://linkedin.com/in/jachinsonowal",
-      "https://github.com/jachinsonowal",
-      "https://twitter.com/jachinsonowal",
-      "https://instagram.com/jachinsonowal"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "PROMPTMATRIX",
-      "url": "https://promptmatrix.github.io"
-    },
-    "alumniOf": [],
-    "award": "₹1.2 Crore D2C Revenue · 175+ Clients · 25+ AI Agents in Production"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://jachinsaikiasonowal.github.io/Portfolio/#jachin",
+        "name": "Jachin Saikia Sonowal",
+        "givenName": "Jachin",
+        "familyName": "Saikia Sonowal",
+        "jobTitle": "AI Growth Systems Architect",
+        "description": "AI Growth Architect and PROMPTMATRIX Founder. Builds automated revenue engines combining AI agents, marketing strategy, and product systems. 8+ years. ₹1.2 Crore D2C. 175+ clients. Open to Head of Growth and AI Automation Lead roles. Remote.",
+        "url": "https://jachinsaikiasonowal.github.io/Portfolio/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://res.cloudinary.com/deaa6sauc/image/upload/c_fill,w_1200,h_630,g_face,f_auto,q_auto/jachinsaikiasonowal_wmo9px.png",
+          "width": 1200,
+          "height": 630
+        },
+        "email": "jachinsaikiasonowal@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nagaon",
+          "addressRegion": "Assam",
+          "addressCountry": "IN"
+        },
+        "knowsAbout": [
+          "AI Growth Systems", "Growth Engineering", "Marketing Automation",
+          "SaaS Growth", "Revenue Engineering", "n8n", "GPT-4", "LLM Integration",
+          "Email Marketing", "SEO", "D2C Growth", "AI Agent Architecture",
+          "Prompt Engineering", "Fractional CMO", "PROMPTMATRIX",
+          "Multi-Agent Orchestration", "Prompt Version Control", "LLM Ops",
+          "Revenue Attribution", "GTM Strategy", "Head of Growth"
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "AI Growth Systems Architect",
+          "occupationLocation": {"@type": "Country", "name": "Remote, Worldwide"},
+          "description": "Builds automated revenue systems combining AI agents, marketing strategy, and product thinking",
+          "skills": "AI Growth, Marketing Automation, LLM Integration, Revenue Systems, Prompt Engineering, n8n, GPT-4o, Claude API"
+        },
+        "seeks": {
+          "@type": "JobPosting",
+          "title": "Head of Growth",
+          "employmentType": "FULL_TIME",
+          "jobLocation": {"@type": "Place", "address": "Remote, Worldwide"},
+          "description": "Open to Head of Growth, AI Automation Lead, Growth Engineer, and Fractional CMO roles. Remote preferred."
+        },
+        "sameAs": [
+          "https://linkedin.com/in/jachinsonowal",
+          "https://github.com/jachinsonowal",
+          "https://twitter.com/jachinsonowal",
+          "https://instagram.com/jachinsonowal"
+        ],
+        "founder": {"@id": "https://jachinsaikiasonowal.github.io/Portfolio/#promptmatrix"},
+        "worksFor": {"@id": "https://jachinsaikiasonowal.github.io/Portfolio/#promptmatrix"},
+        "alumniOf": [
+          {
+            "@type": "EducationalOrganization",
+            "name": "Gauhati University",
+            "description": "Master of Computer Applications, 2019"
+          }
+        ],
+        "award": "₹1.2 Crore D2C Revenue · 175+ Clients · 25+ AI Agents in Production · $3.8K Product Revenue · 2.5M+ Campaign Impressions"
+      },
+      {
+        "@type": ["Organization", "SoftwareApplication"],
+        "@id": "https://jachinsaikiasonowal.github.io/Portfolio/#promptmatrix",
+        "name": "PROMPTMATRIX",
+        "url": "https://promptmatrix.github.io",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web, Self-Hosted",
+        "softwareVersion": "2026.1",
+        "description": "Open-source prompt version control platform. Git-style version history, automated evals, and rollback for LLM prompts. Self-host free. Built for AI teams running agents in production.",
+        "featureList": [
+          "Prompt Version Control",
+          "Automated Prompt Evals",
+          "One-click Rollback",
+          "Approval Workflows",
+          "Serve Endpoint API",
+          "Multi-model Support",
+          "Team Collaboration"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Self-Host",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Unlimited prompts, full version history, self-hosted forever free"
+          },
+          {
+            "@type": "Offer",
+            "name": "Cloud Founding Access",
+            "price": "149",
+            "priceCurrency": "USD",
+            "description": "Cloud access locked forever at founding price, priority support"
+          }
+        ],
+        "author": {"@id": "https://jachinsaikiasonowal.github.io/Portfolio/#jachin"},
+        "license": "https://github.com/jachinsonowal/promptmatrix"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "D2C Revenue Engine — ₹1.2 Crore in 18 Months",
+        "author": {"@id": "https://jachinsaikiasonowal.github.io/Portfolio/#jachin"},
+        "description": "Full GTM from zero — market research, brand positioning, Shopify store, email funnel 0→2K+ subscribers, 80+ keyword rankings. ₹1.2 Crore ($145K+) annual D2C revenue in 18 months.",
+        "keywords": "D2C, Revenue Growth, GTM, Email Marketing, SEO, Shopify"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "26-Agent AI Operating System",
+        "author": {"@id": "https://jachinsaikiasonowal.github.io/Portfolio/#jachin"},
+        "description": "Personal AI operating system with 26 live agents across 6 departments — Content, Revenue, Build, Intelligence, OPS, Security. Runs on free-tier APIs. Built with n8n, GPT-4o, Claude API.",
+        "keywords": "AI Agents, Multi-Agent Systems, n8n, GPT-4, Claude API, AI Automation"
+      }
+    ]
   }
   </script>
 
@@ -454,9 +517,189 @@ body {
   100% { left: 0%; }
 }
 
-/* ═══════════════════════════════════════════════
-   GRAIN OVERLAY
-═══════════════════════════════════════════════ */
+/* ── Loader sub-text ── */
+.loader-sub {
+  font-family: var(--font-c);
+  font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--grey);
+  opacity: 0;
+  animation: loaderSubFade 0.6s ease 0.4s forwards;
+  margin-top: 8px;
+}
+@keyframes loaderSubFade {
+  to { opacity: 1; }
+}
+
+/* ════════════════════════════════════════════════════
+   ZILLENNIAL PERSONALITY LAYER
+   — CSS-only micro-humour. No content was harmed.
+   Tooltip strategy: [data-tip] attr + ::after pseudo
+════════════════════════════════════════════════════ */
+
+/* Universal tooltip engine */
+[data-tip] { position: relative; }
+[data-tip]::before {
+  content: attr(data-tip);
+  position: absolute; bottom: calc(100% + 10px); left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--black4); color: var(--grey2);
+  font-family: var(--font-c); font-size: 10px;
+  letter-spacing: 1.5px; text-transform: none;
+  white-space: nowrap; padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 2px; pointer-events: none;
+  opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 99999;
+}
+[data-tip]:hover::before {
+  opacity: 1; transform: translateX(-50%) translateY(0);
+}
+
+/* Win rate bar — cheeky tooltip */
+.elf-ratio[data-tip]::before { bottom: calc(100% + 8px); font-size: 9px; }
+
+/* Scroll progress easter egg */
+#scroll-progress[data-tip]::before {
+  top: 8px; bottom: auto; left: auto; right: 12px;
+  transform: none;
+  font-size: 9px; white-space: nowrap;
+  opacity: 0; transition: opacity 0.3s;
+}
+#scroll-progress:hover::before { opacity: 1; }
+
+/* Experiment log signal badges get personality */
+.elg-signal--win::before  { content: none; }
+.elg-signal--fail::before { content: none; }
+
+/* Nav hire button — tooltip hint */
+.nav-hire[data-tip]::before {
+  bottom: calc(100% + 12px); left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  font-size: 9px; color: var(--gold);
+  border-color: rgba(201,168,76,0.3);
+}
+
+/* Hero stat decomp — mini wit on the numbers */
+.hstat-decomp[data-tip]::before {
+  bottom: calc(100% + 8px);
+  font-size: 9px; letter-spacing: 1px;
+  text-transform: none;
+}
+
+/* Placeholder cards: add a blinking cursor to sub-text */
+.elg-incoming-sub::after {
+  content: '_';
+  display: inline-block;
+  color: var(--gold3);
+  animation: elgCursor 1.2s step-end infinite;
+  margin-left: 1px;
+  opacity: 0.5;
+}
+@keyframes elgCursor {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 0; }
+}
+
+/* Summary bar — hover on ship rate reveals a fun micro-note */
+.elg-sum-item:last-of-type .elg-sum-num {
+  cursor: default; position: relative;
+}
+
+/* Scroll progress bar personality glow pulse at 100% */
+#scroll-progress.at-end {
+  box-shadow: 0 0 16px rgba(201,168,76,0.8), 0 0 40px rgba(201,168,76,0.4) !important;
+  transition: box-shadow 0.4s ease;
+}
+
+/* Available dot — bouncy on hover */
+.hero-avail-line span:first-child {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-avail-line:hover span:first-child {
+  transform: scale(1.4);
+  box-shadow: 0 0 14px rgba(74,222,128,0.9) !important;
+}
+
+/* Building ticker — tilt on hover */
+.hero-building-ticker:hover {
+  border-color: rgba(201,168,76,0.4);
+  background: rgba(201,168,76,0.07);
+  transform: translateX(2px);
+  transition: all 0.2s ease;
+}
+
+/* Experiment log section label — tiny wink */
+#experiment-log .s-label::after {
+  content: ' (yes, the failures too)';
+  font-family: var(--font-b);
+  font-size: 10px; letter-spacing: 0.5px;
+  text-transform: none; font-weight: 300;
+  color: var(--grey); opacity: 0.6;
+  font-style: italic;
+}
+
+/* elg-sum-note — reveal on hover of the whole summary bar */
+.elg-summary:hover .elg-sum-note {
+  color: var(--grey2);
+  transition: color 0.3s ease;
+}
+
+/* hbt-label blink twice on load then settle */
+.hbt-label {
+  animation: hbtLabelPop 2s ease 1.5s both;
+}
+@keyframes hbtLabelPop {
+  0%   { opacity: 1; }
+  20%  { opacity: 0.3; }
+  40%  { opacity: 1; }
+  60%  { opacity: 0.3; }
+  80%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* Filter button — tiny label under count for active state */
+.elf-btn.elf-active::after {
+  content: '';  /* keep shimmer off for active */
+  transform: none;
+}
+
+/* Win/fail outcome badges — tiny shake on fail hover */
+.elg-fail:hover {
+  animation: elgFailShake 0.35s ease;
+}
+@keyframes elgFailShake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-2px); }
+  40%       { transform: translateX(2px); }
+  60%       { transform: translateX(-1px); }
+  80%       { transform: translateX(1px); }
+}
+
+/* Win badge — tiny float up on hover */
+.elg-win:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+/* Footer copyright — tiny easter egg on hover */
+.f-note {
+  cursor: default; transition: color 0.2s;
+}
+.f-note:hover { color: var(--grey2); }
+
+/* 404/empty filter state — shown when filter returns 0 */
+.elg-empty-state {
+  display: none; grid-column: 1 / -1;
+  padding: 64px 24px; text-align: center;
+  font-family: var(--font-c); font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--grey);
+}
+.elg-empty-state.visible { display: block; }
+.elg-empty-state strong { color: var(--gold); font-weight: 600; }
+
+
 body::after {
   content: '';
   position: fixed; inset: 0; z-index: 99997;
@@ -732,6 +975,29 @@ h2.s-title {
   border-left: 1px solid var(--border);
   padding-left: 24px;
 }
+
+/* Currently Building ticker pill */
+.hero-building-ticker {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 10px; margin-bottom: 4px;
+  font-family: var(--font-c);
+  font-size: 10px; letter-spacing: 2px;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 2px;
+  padding: 5px 12px;
+  background: rgba(201,168,76,0.04);
+  width: fit-content;
+}
+.hbt-label {
+  color: var(--gold); font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase;
+}
+.hbt-sep { color: var(--gold3); }
+.hbt-text {
+  color: var(--grey2); text-transform: uppercase;
+  letter-spacing: 1.5px; transition: opacity 0.3s ease;
+}
+.hbt-text.fading { opacity: 0; }
 
 .hero-btns { 
   display: flex; 
@@ -2652,11 +2918,11 @@ section::after {
   min-height:300px; max-height:60vh;
   overflow-y:auto; font-size:13px; line-height:2;
 }
-.tl { color:#888070; white-space:pre; }
-.tl-gold  { color:var(--gold); white-space:pre; }
-.tl-green { color:#28C840; white-space:pre; }
-.tl-white { color:var(--white); white-space:pre; }
-.tl-dim   { color:#2a2820; white-space:pre; }
+.tl { color:#888070; white-space:pre-wrap; word-break:break-word; }
+.tl-gold  { color:var(--gold); white-space:pre-wrap; }
+.tl-green { color:#28C840; white-space:pre-wrap; }
+.tl-white { color:var(--white); white-space:pre-wrap; }
+.tl-dim   { color:rgba(201,168,76,0.28); white-space:pre-wrap; }
 .term-cursor {
   display:inline-block; width:8px; height:14px;
   background:var(--gold); vertical-align:middle;
@@ -2675,6 +2941,25 @@ section::after {
   padding:1px 6px; border-radius:2px;
   color:var(--gold); font-size:9px;
 }
+/* Interactive input row */
+.term-input-row {
+  display:flex; align-items:center;
+  padding:2px 0; margin-top:4px;
+}
+.term-prompt {
+  flex-shrink:0; white-space:nowrap;
+  font-family:'Courier New',monospace;
+  font-size:11px;
+}
+.term-input-field {
+  background:transparent; border:none; outline:none;
+  color:var(--white); caret-color:var(--gold);
+  font-family:'Courier New',monospace; font-size:11px;
+  flex:1; min-width:0; padding:0; margin:0;
+  letter-spacing:0.5px;
+}
+.term-body { overflow-y:auto; scroll-behavior:smooth; }
+
 
 /* ═══════════════════════════════════════════════
    CASE STUDY — CLASSIFIED SCAN
@@ -2856,6 +3141,8 @@ a, button { touch-action: manipulation; }
   .m-num { font-size: 24px; }
   .hero-name { font-size: clamp(42px, 15vw, 60px); }
   .wrap { padding: 0 14px; }
+  .nav-logo { font-size: 17px; letter-spacing: 2px; }
+  nav { padding: 0 14px; }
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -5149,7 +5436,7 @@ footer {
 </div>
 
 <!-- SCROLL PROGRESS -->
-<div id="scroll-progress" aria-hidden="true"></div>
+<div id="scroll-progress" aria-hidden="true" data-tip="you're almost there"></div>
 
 <!-- AMBIENT HUD -->
 <div id="ambient-hud" aria-live="polite">
@@ -5168,7 +5455,7 @@ footer {
       <button type="button" class="term-close" onclick="closeTerminal()">ESC</button>
     </div>
     <div class="term-body" id="term-body"></div>
-    <div class="term-hint">Press <kbd>ESC</kbd> to close &nbsp;·&nbsp; Type <kbd>JACHIN</kbd> anywhere to open</div>
+    <div class="term-hint">Press <kbd>ESC</kbd> to close &nbsp;·&nbsp; Type <kbd>help</kbd> for commands &nbsp;·&nbsp; <kbd>↑↓</kbd> history &nbsp;·&nbsp; <kbd>Tab</kbd> complete</div>
   </div>
 </div>
 
@@ -5178,6 +5465,7 @@ footer {
   <div class="loader-text">JACHIN</div>
   <div class="loader-bar"></div>
   <div class="loader-count" id="loader-count">0</div>
+  <div class="loader-sub" id="loader-sub">booting the good stuff</div>
 </div>
 
 
@@ -5192,7 +5480,7 @@ footer {
     <li><a href="#ai-systems">AI Systems</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="https://promptmatrix.github.io" target="_blank" rel="noopener noreferrer" style="color:var(--gold)"><svg viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="10" height="13" style="display:inline-block;vertical-align:middle;margin-right:3px;margin-bottom:1px"><polygon points="7,1 3,9 6,9 5,15 9,7 6,7" fill="currentColor"/></svg>PROMPTMATRIX ↗</a></li>
-    <li><a href="#cta" class="nav-hire">Hire Me</a></li>
+    <li><a href="#cta" class="nav-hire" data-tip="yes, I actually reply within 24h">Hire Me</a></li>
     <li><a href="https://linkedin.com/in/jachinsonowal" target="_blank" rel="noopener noreferrer me" class="nav-resume" aria-label="View Profile / Download CV">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" width="11" height="11">
         <path d="M8 1v9M4 7l4 4 4-4M2 13h12" stroke-linecap="round" stroke-linejoin="round"/>
@@ -5274,35 +5562,42 @@ footer {
         OPEN TO WORK · Full-Time Remote · Head of Growth · AI Automation Lead · IST (UTC+5:30) · Immediate Start
       </div>
 
+      <!-- CURRENTLY BUILDING TICKER -->
+      <div class="hero-building-ticker reveal" style="transition-delay:.38s;" id="hero-build-ticker">
+        <span class="hbt-label">NOW BUILDING</span>
+        <span class="hbt-sep">›</span>
+        <span class="hbt-text" id="hbt-text">PROMPTMATRIX cloud backend</span>
+      </div>
+
       <div class="hero-btns reveal" style="transition-delay:.4s">
-        <a href="/cdn-cgi/l/email-protection#076d66646f6e6974666e6c6e667468696870666b47606a666e6b2964686a" class="btn-gold"><span><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="13" height="13" style="display:inline-block;vertical-align:middle;margin-right:7px;margin-bottom:1px"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.3" fill="none"/><polyline points="1,3 8,9.5 15,3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Email Me →</span></a>
+        <a href="mailto:jachinsaikiasonowal@gmail.com" class="btn-gold"><span><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="13" height="13" style="display:inline-block;vertical-align:middle;margin-right:7px;margin-bottom:1px"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.3" fill="none"/><polyline points="1,3 8,9.5 15,3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Email Me →</span></a>
         <a href="https://linkedin.com/in/jachinsonowal" target="_blank" rel="noopener noreferrer" class="btn-ghost"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="12" height="12" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-bottom:1px"><path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="6" y1="8" x2="10" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="6" y1="11" x2="10" y2="11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>View CV / LinkedIn</a>
 
       </div>
 
       <div class="hero-stats reveal" style="transition-delay:.5s">
         <!-- ② STAT DECOMPOSITION on hover -->
-        <div class="hstat hstat-decomp">
+        <div class="hstat hstat-decomp" data-tip="verified, no rounding up">
           <div class="hstat-num" data-target="145" data-prefix="$" data-suffix="K+">$145K+</div>
           <div class="hstat-label">Revenue Generated</div>
           <div class="hstat-detail">D2C $145K · Product $3.8K · Consulting</div>
         </div>
-        <div class="hstat hstat-decomp">
+        <div class="hstat hstat-decomp" data-tip="all real, no agency">
           <div class="hstat-num" data-target="175" data-suffix="+">175+</div>
           <div class="hstat-label">Clients Served</div>
           <div class="hstat-detail">D2C · B2B · Govt · Professionals · Political</div>
         </div>
-        <div class="hstat hstat-decomp">
+        <div class="hstat hstat-decomp" data-tip="38% open rate. industry avg is 21%. just saying">
           <div class="hstat-num" data-target="1000" data-suffix="+">1000+</div>
           <div class="hstat-label">Newsletter Subscribers</div>
           <div class="hstat-detail">38% Open Rate · 7 Countries · 0 Ad Spend</div>
         </div>
-        <div class="hstat hstat-decomp">
+        <div class="hstat hstat-decomp" data-tip="all live, not portfolio projects">
           <div class="hstat-num" data-target="25" data-suffix="+">25+</div>
           <div class="hstat-label">AI Agents Built</div>
           <div class="hstat-detail">Content · Revenue · Build · Intelligence · Security</div>
         </div>
-        <div class="hstat hstat-decomp">
+        <div class="hstat hstat-decomp" data-tip="started in 2017, still going">
           <div class="hstat-num" data-target="8" data-suffix="+">8+</div>
           <div class="hstat-label">Years Exp.</div>
           <div class="hstat-detail">2017→2026 · Freelance → Founder</div>
@@ -5317,8 +5612,14 @@ footer {
         <div class="photo-border"></div>
         <div class="photo-img">
           <img src="https://res.cloudinary.com/deaa6sauc/image/upload/c_fill,w_600,h_800,g_face,f_auto,q_auto/jachinsaikiasonowal_wmo9px.png"
+                   srcset="https://res.cloudinary.com/deaa6sauc/image/upload/c_fill,w_300,h_400,g_face,f_auto,q_auto/jachinsaikiasonowal_wmo9px.png 300w,
+                           https://res.cloudinary.com/deaa6sauc/image/upload/c_fill,w_600,h_800,g_face,f_auto,q_auto/jachinsaikiasonowal_wmo9px.png 600w"
+                   sizes="(max-width:768px) 300px, 600px"
                    alt="Jachin Saikia Sonowal — Growth Engineer & AI Systems Architect"
-                   width="600" height="800" loading="eager" 
+                   width="600" height="800"
+                   loading="eager"
+                   decoding="async"
+                   fetchpriority="high"
                    style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <div class="photo-corner tl"></div>
@@ -5727,7 +6028,7 @@ footer {
       </span>
       LinkedIn
     </a>
-    <a href="/cdn-cgi/l/email-protection#d8b2b9bbb0b1b6abb9b1b3b1b9abb7b6b7afb9b498bfb5b9b1b4f6bbb7b5" class="achip achip-contact">
+    <a href="mailto:jachinsaikiasonowal@gmail.com" class="achip achip-contact">
       <span class="achip-icon-svg">
         <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" width="14" height="14">
           <path d="M2 4h14v10a1 1 0 01-1 1H3a1 1 0 01-1-1V4z" stroke="currentColor" stroke-width="1.4" fill="none"/>
@@ -5821,6 +6122,166 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- ══════════════════════════════════════════════════════
+     WHAT I'M NOT — Counter-positioning block
+══════════════════════════════════════════════════════ -->
+<section id="not-section" aria-label="What Jachin is not">
+  <div class="wrap">
+    <div class="win-inner reveal">
+      <div class="win-left">
+        <div class="s-label">Clarity Before You Hire</div>
+        <h2 class="win-title">WHAT I'M<br><em>NOT</em></h2>
+        <p class="win-sub">Most portfolios tell you what someone is. This one also tells you what I'm not — because the wrong hire wastes everyone's time more than no hire.</p>
+      </div>
+      <div class="win-grid">
+        <div class="win-card">
+          <div class="win-x">✕</div>
+          <div class="win-card-body">
+            <div class="win-card-title">A deck-first strategist</div>
+            <div class="win-card-desc">I don't hand over 60-slide decks with "recommended next steps." I hand over running infrastructure. If you want a consultant who presents and exits, I'm the wrong person.</div>
+          </div>
+        </div>
+        <div class="win-card">
+          <div class="win-x">✕</div>
+          <div class="win-card-body">
+            <div class="win-card-title">An "AI tool user"</div>
+            <div class="win-card-desc">I don't use ChatGPT to write copy and call it AI strategy. I architect and ship multi-agent production systems — n8n, GPT-4o, Claude API, memory layers, eval pipelines. The agents run while I sleep.</div>
+          </div>
+        </div>
+        <div class="win-card">
+          <div class="win-x">✕</div>
+          <div class="win-card-body">
+            <div class="win-card-title">Available for vanity metrics</div>
+            <div class="win-card-desc">I don't optimise for impressions, follower counts, or award submissions. Every brief starts at revenue and works backwards. If the KPI isn't tied to money or retention, I'll flag it.</div>
+          </div>
+        </div>
+        <div class="win-card">
+          <div class="win-x">✕</div>
+          <div class="win-card-body">
+            <div class="win-card-title">A hand-holder</div>
+            <div class="win-card-desc">I work best with founders and operators who have high context, low ego, and a bias to move. I'll bring the plan and the execution — but I need a counterpart who decides fast and trusts the process.</div>
+          </div>
+        </div>
+        <div class="win-card">
+          <div class="win-x">✕</div>
+          <div class="win-card-body">
+            <div class="win-card-title">A one-channel specialist</div>
+            <div class="win-card-desc">I'm not an SEO guy or an email guy. I'm a system builder who uses every channel as a lever in a coordinated engine. Hiring me for a single channel is like hiring a mechanic to polish one wheel.</div>
+          </div>
+        </div>
+        <div class="win-card">
+          <div class="win-x">✕</div>
+          <div class="win-card-body">
+            <div class="win-card-title">Cheap because I'm remote</div>
+            <div class="win-card-desc">Being based in India doesn't mean discounted. It means you get a senior growth operator with 8 years, ₹1.2Cr D2C, and 25+ AI agents in production — without the SF rent premium baked into every invoice.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ─── WHAT I'M NOT ─────────────────────────────────── */
+#not-section {
+  padding: 80px 0;
+  background: var(--black2);
+  border-top: 1px solid var(--border2);
+  border-bottom: 1px solid var(--border2);
+  position: relative;
+  overflow: hidden;
+}
+#not-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(248,113,113,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+.win-inner {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+.win-title {
+  font-family: var(--font-d);
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 0.95;
+  letter-spacing: 2px;
+  color: var(--white);
+  margin: 12px 0 16px;
+}
+.win-title em {
+  font-style: normal;
+  -webkit-text-stroke: 1px rgba(248,113,113,0.7);
+  color: transparent;
+}
+.win-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--grey);
+  line-height: 1.7;
+  max-width: 240px;
+}
+.win-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+}
+.win-card {
+  display: flex;
+  gap: 14px;
+  padding: 24px 20px;
+  background: var(--black2);
+  transition: background 0.25s ease;
+  position: relative;
+}
+.win-card:hover { background: var(--black3); }
+.win-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, rgba(248,113,113,0.4), transparent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.win-card:hover::after { transform: scaleX(1); }
+.win-x {
+  font-family: var(--font-c);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(248,113,113,0.6);
+  flex-shrink: 0;
+  margin-top: 2px;
+  letter-spacing: 1px;
+}
+.win-card-title {
+  font-family: var(--font-c);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.win-card-desc {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey);
+  line-height: 1.6;
+}
+@media (max-width: 960px) {
+  .win-inner { grid-template-columns: 1fr; gap: 36px; }
+  .win-sub { max-width: 100%; }
+  .win-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .win-grid { grid-template-columns: 1fr; }
+  #not-section { padding: 60px 0; }
+}
+</style>
 
 <!-- ══════════════════════════════════════════════════════
      EXPERIENCE — FULL CAREER TIMELINE
@@ -7338,6 +7799,11 @@ footer {
         <div class="po-headline">
           <div class="s-title">PROMPT</div>
           <div class="s-title line2">MATRIX</div>
+          <div style="display:inline-flex;align-items:center;gap:8px;margin-top:10px;">
+            <span style="font-family:var(--font-c);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--black);background:var(--gold);padding:3px 10px;border-radius:2px;font-weight:600;">v2026.1</span>
+            <span style="font-family:var(--font-c);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--grey);border:1px solid var(--border);padding:3px 10px;border-radius:2px;">MIT License</span>
+            <span style="font-family:var(--font-c);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4ade80;border:1px solid rgba(74,222,128,0.25);padding:3px 10px;border-radius:2px;background:rgba(74,222,128,0.05);">Live</span>
+          </div>
         </div>
 
         <!-- ORIGIN STORY BAND -->
@@ -8309,7 +8775,7 @@ footer {
       </div>
 
       <!-- ═══════════════════════════════════════════
-           SLIDE 07 — AI Prompt Bundle (System.io)
+           SLIDE 07 — AI Prompt Bundle (Gumroad)
       ═══════════════════════════════════════════ -->
       <div class="pg-slide pg-slide--product">
 
@@ -8332,10 +8798,10 @@ footer {
               <!-- Funnel arrows -->
               <path d="M90 55 C90 80 300 80 300 90" stroke="rgba(251,146,60,0.3)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
               <path d="M510 55 C510 80 300 80 300 90" stroke="rgba(192,132,252,0.3)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
-              <!-- System.io center landing page -->
+              <!-- Gumroad center landing page -->
               <rect x="200" y="90" width="200" height="60" rx="4" stroke="rgba(251,146,60,0.85)" stroke-width="1.8" fill="rgba(251,146,60,0.06)"/>
               <rect x="210" y="100" width="10" height="10" rx="1" fill="rgba(251,146,60,0.6)"/>
-              <text x="228" y="110" fill="rgba(251,146,60,0.95)" font-size="14" font-family="'Bebas Neue',sans-serif" letter-spacing="2">SYSTEM.IO</text>
+              <text x="228" y="110" fill="rgba(251,146,60,0.95)" font-size="14" font-family="'Bebas Neue',sans-serif" letter-spacing="2">GUMROAD</text>
               <text x="208" y="126" fill="rgba(251,146,60,0.6)" font-size="10" font-family="'Barlow Condensed',sans-serif" letter-spacing="1.5">AI PROMPT PRODUCTIVITY BUNDLE</text>
               <text x="215" y="142" fill="rgba(251,146,60,0.35)" font-size="9" font-family="'Barlow Condensed',sans-serif" letter-spacing="1">CHECKOUT · DELIVERY · UPSELL</text>
               <!-- Arrow to results -->
@@ -8355,13 +8821,13 @@ footer {
           <div class="pg-corner pg-corner--tr" style="border-color:rgba(251,146,60,0.5);"></div>
           <div class="pg-corner pg-corner--bl" style="border-color:rgba(251,146,60,0.5);"></div>
           <div class="pg-corner pg-corner--br" style="border-color:rgba(251,146,60,0.5);"></div>
-          <div class="pg-badge" style="background:rgba(251,146,60,0.9);color:#080808;">DIGITAL PRODUCT · SYSTEM.IO</div>
+          <div class="pg-badge" style="background:rgba(251,146,60,0.9);color:#080808;">DIGITAL PRODUCT · GUMROAD</div>
         </div>
 
         <div class="pg-info">
           <div class="pg-title-col">
-            <div class="pg-title">AI Prompt Bundle — System.io</div>
-            <div class="pg-desc">Designed and launched an AI productivity prompt bundle on System.io — distributed through AI News India newsletter (1,000+ subscribers, 38% open rate) and a ₹5,000 Instagram Meta ad campaign. Built the complete product + distribution stack from scratch.</div>
+            <div class="pg-title">AI Prompt Bundle — Gumroad</div>
+            <div class="pg-desc">Designed and launched an AI productivity prompt bundle on Gumroad — distributed through AI News India newsletter (1,000+ subscribers, 38% open rate) and a ₹5,000 Instagram Meta ad campaign. Built the complete product + distribution stack from scratch.</div>
           </div>
           <div class="pg-metrics-col">
             <div class="pg-metric-item"><span class="val" style="color:rgba(251,146,60,0.95);">3.8×</span><span class="lbl">ROAS</span></div>
@@ -8527,7 +8993,7 @@ footer {
 </section>
 
 <!-- ══════════════════════════════════════════════════════
-     CERTIFICATIONS
+     TESTIMONIALS
 ══════════════════════════════════════════════════════ -->
 <section id="testimonials">
   <div class="wrap">
@@ -8554,10 +9020,10 @@ footer {
         <span class="t-badge">D2C · $145K+ Revenue Built</span>
       </div>
       <div class="tcard">
-        <p class="t-text">"Built PROMPTMATRIX after a 2am production incident — a bad prompt edit, no rollback, 6 hours debugging a text string. The tool I needed didn't exist. So I built it. Now it's in early access."</p>
-        <div class="t-author">Jachin Saikia Sonowal</div>
-        <div class="t-role">Founder · PROMPTMATRIX · Nagaon, India</div>
-        <span class="t-badge">Founder · Building in Public</span>
+        <p class="t-text">"Jachin built our entire digital outreach from scratch — WhatsApp broadcast system, targeted social content, and a daily update pipeline that ran without the team needing to manage it manually. The consistency of communication was something we'd never achieved before. It changed how we ran the campaign."</p>
+        <div class="t-author">Campaign Coordinator</div>
+        <div class="t-role">State Legislative Campaign, Assam</div>
+        <span class="t-badge">Political · Organic Reach · Automation</span>
       </div>
       <div class="tcard">
         <p class="t-text">"The Mega Prompt Bundle has saved me at least 10 hours per week. Written by someone who actually does marketing — not just talks about it. The most practical AI resource I've found."</p>
@@ -8570,16 +9036,16 @@ footer {
 </section>
 
 <!-- ══════════════════════════════════════════════════════
-     TESTIMONIALS
+     CERTIFICATIONS
 ══════════════════════════════════════════════════════ -->
 <section id="certifications">
   <div class="wrap">
     <div class="s-label reveal">Credentials</div>
-    <h2 class="s-title reveal" style="transition-delay:.1s">CERTIFI<br>CATIONS</h2>
+    <h2 class="s-title reveal" style="transition-delay:.1s">CERTI<br>FICATIONS</h2>
     <div class="certs-grid reveal" style="transition-delay:.2s">
       <div class="ccard">
         <div class="cbadge">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleanalytics.svg" class="cbadge-logo" alt="Google Analytics" loading="lazy">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleanalytics.svg" class="cbadge-logo" alt="Google Analytics" loading="lazy" decoding="async">
         </div>
         <div>
           <div class="c-name">Google Analytics 4</div>
@@ -8589,7 +9055,7 @@ footer {
       </div>
       <div class="ccard">
         <div class="cbadge">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleads.svg" class="cbadge-logo" alt="Google Ads" loading="lazy">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleads.svg" class="cbadge-logo" alt="Google Ads" loading="lazy" decoding="async">
         </div>
         <div>
           <div class="c-name">Google Ads Search</div>
@@ -8599,7 +9065,7 @@ footer {
       </div>
       <div class="ccard">
         <div class="cbadge">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" class="cbadge-logo" alt="Meta" loading="lazy">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" class="cbadge-logo" alt="Meta" loading="lazy" decoding="async">
         </div>
         <div>
           <div class="c-name">Meta Marketing Science</div>
@@ -8609,7 +9075,7 @@ footer {
       </div>
       <div class="ccard">
         <div class="cbadge">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hubspot.svg" class="cbadge-logo" alt="HubSpot" loading="lazy">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hubspot.svg" class="cbadge-logo" alt="HubSpot" loading="lazy" decoding="async">
         </div>
         <div>
           <div class="c-name">HubSpot Marketing Software</div>
@@ -8619,7 +9085,7 @@ footer {
       </div>
       <div class="ccard">
         <div class="cbadge">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hubspot.svg" class="cbadge-logo" alt="HubSpot" loading="lazy">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hubspot.svg" class="cbadge-logo" alt="HubSpot" loading="lazy" decoding="async">
         </div>
         <div>
           <div class="c-name">HubSpot Content Marketing</div>
@@ -8629,7 +9095,7 @@ footer {
       </div>
       <div class="ccard">
         <div class="cbadge">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/semrush.svg" class="cbadge-logo" alt="Semrush" loading="lazy">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/semrush.svg" class="cbadge-logo" alt="Semrush" loading="lazy" decoding="async">
         </div>
         <div>
           <div class="c-name">Semrush SEO Toolkit</div>
@@ -8826,8 +9292,8 @@ footer {
 
       <div class="rcard">
         <div class="rcard-type"><span class="rcard-dot"></span>Building Now</div>
-        <div class="rcard-title">PROMPTMATRIX v0.2</div>
-        <div class="rcard-sub">Backend in active build on Instagram. Founding member access open — $149 one-time, locked forever. Self-host free on GitHub. Zero VC, zero ads.</div>
+        <div class="rcard-title">PROMPTMATRIX v2026.1</div>
+        <div class="rcard-sub">Backend in active build. Founding member access open — $149 one-time, locked forever. Self-host free on GitHub. Zero VC, zero ads.</div>
         <span class="rcard-tag">SaaS · AI</span>
       </div>
 
@@ -8874,7 +9340,7 @@ footer {
       <h2 class="cta-title">LET'S BUILD<br>GROWTH<br><em>SYSTEMS</em></h2>
       <p class="cta-sub">I work with founders, marketing teams, and product leaders building revenue systems. Whether you need a growth engineer for full-time, fractional support, or a custom AI system built from scratch — drop me a message. I read everything and reply within 24 hours.<br><span style="font-size:0.88em;color:var(--grey)">India (INR) · Global (USD/EUR) · Remote-first · Flexible timezone coverage</span></p>
       <div class="cta-btns">
-        <a href="/cdn-cgi/l/email-protection#620803010a0b0c11030b090b03110d0c0d15030e22050f030b0e4c010d0f" class="btn-gold"><span><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="13" height="13" style="display:inline-block;vertical-align:middle;margin-right:7px;margin-bottom:1px"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.3" fill="none"/><polyline points="1,3 8,9.5 15,3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Email Me →</span></a>
+        <a href="mailto:jachinsaikiasonowal@gmail.com" class="btn-gold"><span><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="13" height="13" style="display:inline-block;vertical-align:middle;margin-right:7px;margin-bottom:1px"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.3" fill="none"/><polyline points="1,3 8,9.5 15,3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Email Me →</span></a>
         <a href="https://linkedin.com/in/jachinsonowal" target="_blank" rel="noopener noreferrer" class="btn-ghost"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="12" height="12" style="display:inline-block;vertical-align:middle;margin-right:6px;margin-bottom:1px"><path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M10 2v3h3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="6" y1="8" x2="10" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="6" y1="11" x2="10" y2="11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>View CV / LinkedIn</a>
         <a href="https://promptmatrix.github.io" target="_blank" rel="noopener noreferrer" class="btn-ghost" style="border-color:rgba(74,222,128,0.3);color:rgba(74,222,128,0.8);">
           <svg viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="10" height="13" style="display:inline-block;vertical-align:middle;margin-right:5px"><polygon points="7,1 3,9 6,9 5,15 9,7 6,7" fill="currentColor"/></svg>
@@ -8887,7 +9353,7 @@ footer {
             <path d="M1 3h14v10a1 1 0 01-1 1H2a1 1 0 01-1-1V3z" stroke="currentColor" stroke-width="1.3" fill="none"/>
             <polyline points="1,3 8,9.5 15,3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           </svg>
-          <a href="/cdn-cgi/l/email-protection#91fbf0f2f9f8ffe2f0f8faf8f0e2fefffee6f0fdd1f6fcf0f8fdbff2fefc" style="color:var(--gold);text-decoration:none;"><span class="__cf_email__" data-cfemail="1872797b7071766b79717371796b7776776f7974587f75797174367b7775">[email&#160;protected]</span></a>
+          <a href="mailto:jachinsaikiasonowal@gmail.com" style="color:var(--gold);text-decoration:none;">jachinsaikiasonowal@gmail.com</a>
         </div>
         <div class="cta-ci">
           <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="13" height="13" style="display:inline-block;vertical-align:middle;margin-right:6px;opacity:0.6">
@@ -8971,7 +9437,7 @@ footer {
           </svg>
           Message received. I'll respond within 24 hours.
         </div>
-        <p class="cf-note">This form sends directly to my inbox. I read every message and reply within 24 hours. Or reach me directly: <a href="/cdn-cgi/l/email-protection#adc7cccec5c4c3deccc4c6c4ccdec2c3c2daccc1edcac0ccc4c183cec2c0" style="color:var(--gold);text-decoration:none;"><span class="__cf_email__" data-cfemail="a0cac1c3c8c9ced3c1c9cbc9c1d3cfcecfd7c1cce0c7cdc1c9cc8ec3cfcd">[email&#160;protected]</span></a></p>
+        <p class="cf-note">This form sends directly to my inbox. I read every message and reply within 24 hours. Or reach me directly: <a href="mailto:jachinsaikiasonowal@gmail.com" style="color:var(--gold);text-decoration:none;">jachinsaikiasonowal@gmail.com</a></p>
       </div>
     </div>
   </div>
@@ -9149,25 +9615,1691 @@ footer {
    PREFERS REDUCED MOTION — accessibility
 ═══════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
+  /* Kill all animations & transitions globally */
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
+  /* Marquee strips */
   .strip-track, .strip2-track, .sp-ticker-track {
     animation: none !important;
   }
+  /* Orbs — remove blur entirely for performance, keep subtle color */
   .orb, .orb1, .orb2, .orb3 {
     animation: none !important;
+    filter: none !important;
+    opacity: 0.04 !important;
   }
+  /* Hero decorative lines */
   .hero-line {
     animation: none !important;
-    opacity: 0.5;
+    opacity: 0.4;
   }
-  #particle-canvas { display: none; }
-  .avail-dot { animation: none !important; box-shadow: 0 0 0 3px rgba(201,168,76,0.4); }
+  /* Canvas backgrounds — hide to save CPU/GPU */
+  #particle-canvas,
+  #neural-canvas,
+  #network-canvas { display: none !important; }
+  /* Grain overlay — remove blur + animation */
+  #idle-grain {
+    animation: none !important;
+    display: none !important;
+  }
+  /* Scan lines on case study cards */
+  .pg-scan-line, .cs-scan-beam, .ahud-scan {
+    animation: none !important;
+    display: none !important;
+  }
+  /* Photo frame spin */
+  .photo-border::before { animation: none !important; }
+  /* Sonar / pulsing dots — freeze at visible state */
+  .avail-dot, .nl-dot, .ahud-live-dot {
+    animation: none !important;
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.4) !important;
+  }
+  /* Loader — instant */
+  #loader { transition: none !important; }
+  /* Hero name parallax — disable transform */
+  .hero-name, .hero-title, .hero-bio {
+    transform: none !important;
+    transition: none !important;
+  }
+  /* Magnetic buttons — no movement */
+  .btn-gold, .btn-ghost, .nav-hire, .chip-promptmatrix {
+    transform: none !important;
+    transition: color 0.15s, border-color 0.15s !important;
+  }
+  /* Typewriter — show full text immediately */
+  .type-cursor { display: none !important; }
+  /* Revenue ticker counter */
+  #rev-ticker { animation: none !important; }
+  /* Frame spin on photo */
+  @keyframes frameSpin { 0%, 100% { clip-path: inset(0); } }
+  /* Scroll progress — no transition */
+  #scroll-progress { transition: none !important; }
 }
 </style>
+
+<!-- ══════════════════════════════════════════════════════════════
+     GROWTH EXPERIMENT LOG — Interactive filterable timeline
+     v9: Fixed grid gaps, buttons, affordance, dead space
+══════════════════════════════════════════════════════════════ -->
+<section id="experiment-log" style="padding:100px 0 0;background:var(--black);border-top:1px solid var(--border2);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 20% 50%,rgba(201,168,76,0.03) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="wrap" style="position:relative;z-index:1;">
+    <div class="s-label reveal">Growth System Thinking</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s;">EXPERIMENT<br>LOG</h2>
+    <p class="s-sub reveal" style="transition-delay:.15s;">Real experiments. Real outcomes. The ones that worked and the ones that didn't — because the thinking is visible in both.</p>
+
+    <!-- Filter bar — rebuilt with counts and clear affordance -->
+    <div class="exp-log-filters reveal" style="transition-delay:.2s;" id="elf-bar">
+      <button class="elf-btn elf-active" data-filter="all">
+        <span class="elf-icon">◈</span>All<span class="elf-count" id="efc-all">10</span>
+      </button>
+      <button class="elf-btn" data-filter="email">
+        <span class="elf-icon" style="color:#60a5fa;">●</span>Email<span class="elf-count" id="efc-email">2</span>
+      </button>
+      <button class="elf-btn" data-filter="seo">
+        <span class="elf-icon" style="color:#4ade80;">●</span>SEO<span class="elf-count" id="efc-seo">2</span>
+      </button>
+      <button class="elf-btn" data-filter="ai">
+        <span class="elf-icon" style="color:#c084fc;">●</span>AI<span class="elf-count" id="efc-ai">2</span>
+      </button>
+      <button class="elf-btn" data-filter="product">
+        <span class="elf-icon" style="color:#fb923c;">●</span>Product<span class="elf-count" id="efc-product">1</span>
+      </button>
+      <button class="elf-btn" data-filter="growth">
+        <span class="elf-icon" style="color:#C9A84C;">●</span>Growth<span class="elf-count" id="efc-growth">3</span>
+      </button>
+      <!-- Win/fail ratio bar -->
+      <div class="elf-ratio" id="elf-ratio" title="Win/Fail ratio for current filter" data-tip="7 shipped · 3 killed · no regrets">
+        <span class="elf-ratio-label">WIN RATE</span>
+        <div class="elf-ratio-bar">
+          <div class="elf-ratio-fill" id="elf-ratio-fill" style="width:70%"></div>
+        </div>
+        <span class="elf-ratio-pct" id="elf-ratio-pct">70%</span>
+      </div>
+    </div>
+
+    <!-- Active filter label -->
+    <div class="elf-active-label" id="elf-active-label">
+      <span class="elf-al-text">Showing: <strong id="elf-al-name">All Experiments</strong></span>
+      <span class="elf-al-count" id="elf-al-count">10 experiments</span>
+    </div>
+
+    <div class="exp-log-grid" id="exp-log-grid">
+      <div class="elg-empty-state" id="elg-empty">
+        nothing matching that filter — <strong>yet</strong>
+      </div>
+
+      <div class="elg-card" data-cat="email">
+        <div class="elg-outcome-bar elg-outcome-bar--win"></div>
+        <div class="elg-meta">
+          <span class="elg-cat elg-cat--email">EMAIL</span>
+          <span class="elg-year">2024</span>
+          <span class="elg-outcome elg-win">↑ +81% OPEN RATE</span>
+        </div>
+        <div class="elg-title">Subject Line Personalisation at Scale</div>
+        <div class="elg-hypo"><span class="elg-label">Hypothesis</span> Subject lines with a first-name variable + a number will outperform generic curiosity lines for an AI audience.</div>
+        <div class="elg-result"><span class="elg-label">Result</span> 22% → 38% open rate over 50+ tests. Personalised + numeric subject lines won 62% of head-to-heads. Generic curiosity lines collapsed after list >500.</div>
+        <div class="elg-signal elg-signal--win">✓ Shipped to permanent system</div>
+      </div>
+
+      <div class="elg-card" data-cat="growth">
+        <div class="elg-outcome-bar elg-outcome-bar--fail"></div>
+        <div class="elg-meta">
+          <span class="elg-cat elg-cat--growth">GROWTH</span>
+          <span class="elg-year">2021</span>
+          <span class="elg-outcome elg-fail">✕ FAILED → PIVOTED</span>
+        </div>
+        <div class="elg-title">Cold Outreach at Scale vs Warm Referral Engine</div>
+        <div class="elg-hypo"><span class="elg-label">Hypothesis</span> A high-volume cold outreach system (200+ DMs/week via LinkedIn + WhatsApp) will consistently fill the client pipeline faster than relying on referrals from existing clients.</div>
+        <div class="elg-result"><span class="elg-label">Result</span> Cold volume produced leads, but close rate collapsed to 4% and client quality was poor — high churn, scope creep, price sensitivity. Meanwhile, a single referral chain from 3 existing clients brought in 11 projects at 3× the LTV. The infrastructure investment in cold outreach was real but the signal was wrong: volume ≠ pipeline quality. Rebuilt the system around referral triggers — milestone emails, outcome reports shared publicly, a formal "refer a contact" ask at project close. Referrals hit 68% of new business within 6 months.</div>
+        <div class="elg-signal elg-signal--fail">✗ Cold volume killed. Referral engine became the primary acquisition system ever since.</div>
+      </div>
+
+      <div class="elg-card" data-cat="seo">
+        <div class="elg-outcome-bar elg-outcome-bar--win"></div>
+        <div class="elg-meta">
+          <span class="elg-cat elg-cat--seo">SEO</span>
+          <span class="elg-year">2022</span>
+          <span class="elg-outcome elg-win">↑ #6 → #1 in 4 months</span>
+        </div>
+        <div class="elg-title">Topic Cluster Architecture vs Isolated Posts</div>
+        <div class="elg-hypo"><span class="elg-label">Hypothesis</span> A pillar + cluster architecture will outrank isolated well-optimised posts for long-tail D2C keywords.</div>
+        <div class="elg-result"><span class="elg-label">Result</span> Ranked 12 high-intent keywords in top 6 within 4 months. Organic traffic 3×. The cluster built internal link equity that individual posts never achieved alone.</div>
+        <div class="elg-signal elg-signal--win">✓ Core methodology ever since</div>
+      </div>
+
+      <div class="elg-card" data-cat="product">
+        <div class="elg-outcome-bar elg-outcome-bar--win"></div>
+        <div class="elg-meta">
+          <span class="elg-cat elg-cat--product">PRODUCT</span>
+          <span class="elg-year">2024</span>
+          <span class="elg-outcome elg-win">↑ $29 beat $19 and $49</span>
+        </div>
+        <div class="elg-title">Pricing Anchor Test — Mega Prompt Bundle</div>
+        <div class="elg-hypo"><span class="elg-label">Hypothesis</span> $29 will have better volume × margin than $19 (too cheap = low quality signal) and $49 (conversion drop).</div>
+        <div class="elg-result"><span class="elg-label">Result</span> $29 tier generated 2.3× the revenue of the $19 anchor and 1.8× the $49 tier. $29 hit the psychological "fair trade" window for information products in this audience.</div>
+        <div class="elg-signal elg-signal--win">✓ $29 set as permanent price</div>
+      </div>
+
+      <div class="elg-card" data-cat="ai">
+        <div class="elg-outcome-bar elg-outcome-bar--win"></div>
+        <div class="elg-meta">
+          <span class="elg-cat elg-cat--ai">AI</span>
+          <span class="elg-year">2025</span>
+          <span class="elg-outcome elg-win">↑ 90% query deflection</span>
+        </div>
+        <div class="elg-title">AI Support Agent on Gumroad Product</div>
+        <div class="elg-hypo"><span class="elg-label">Hypothesis</span> An AI agent with product FAQ context can handle most support queries without human input, scaling the product without scaling support time.</div>
+        <div class="elg-result"><span class="elg-label">Result</span> 90%+ of incoming queries resolved without escalation. Manual support time dropped from ~2h/week to ~12min/week. Satisfaction maintained at 4.8★.</div>
+        <div class="elg-signal elg-signal--win">✓ Running live</div>
+      </div>
+
+      <div class="elg-card" data-cat="growth">
+        <div class="elg-outcome-bar elg-outcome-bar--fail"></div>
+        <div class="elg-meta">
+          <span class="elg-cat elg-cat--growth">GROWTH</span>
+          <span class="elg-year">2024</span>
+          <span class="elg-outcome elg-fail">✕ FAILED</span>
+        </div>
+        <div class="elg-title">Landing Page Conversion — Long-Form vs Short</div>
+        <div class="elg-hypo"><span class="elg-label">Hypothesis</span> A longer, more detailed landing page (social proof, FAQ, risk reversal) will convert better than a minimal 3-section page for cold newsletter traffic.</div>
+        <div class="elg-result"><span class="elg-label">Result</span> Short page won: 8.5% CVR vs 6.1% for the long version. Cold traffic doesn't read — it scans for the single signal it needs. Long-form works post-trust, not pre-trust.</div>
+        <div class="elg-signal elg-signal--fail">✗ Rolled back. Short page permanent.</div>
+      </div>
+
+      <div class="elg-card" data-cat="email">
+        <div class="elg-outcome-bar elg-outcome-bar--win"></div>
+        <div class="elg-meta">
+          <span class="elg-cat elg-cat--email">EMAIL</span>
+          <span class="elg-year">2024</span>
+          <span class="elg-outcome elg-win">↑ 18% subscriber recovery</span>
+        </div>
+        <div class="elg-title">Re-Engagement Sequence for Cold Subscribers</div>
+        <div class="elg-hypo"><span class="elg-label">Hypothesis</span> A 3-email re-engagement sequence with a clear "stay or go" CTA will recover or cleanly remove cold subscribers, improving list health.</div>
+        <div class="elg-result"><span class="elg-label">Result</span> 18% of 30-day inactive subscribers re-engaged. Clean unsubscribes dropped the list by ~6% but open rate increased from 31% → 38% post-cleanup.</div>
+        <div class="elg-signal elg-signal--win">✓ Quarterly system now</div>
+      </div>
+
+      <div class="elg-card" data-cat="ai">
+        <div class="elg-outcome-bar elg-outcome-bar--win"></div>
+        <div class="elg-meta">
+          <span class="elg-cat elg-cat--ai">AI</span>
+          <span class="elg-year">2025</span>
+          <span class="elg-outcome elg-win">↑ 60% writing time saved</span>
+        </div>
+        <div class="elg-title">AI-Assisted Newsletter Pipeline (SCRIBE Agent)</div>
+        <div class="elg-hypo"><span class="elg-label">Hypothesis</span> An AI agent that consumes curated research and outputs a structured draft in my voice will cut production time without degrading quality or reader trust.</div>
+        <div class="elg-result"><span class="elg-label">Result</span> 60% reduction in writing time. Open rate maintained at 38%. 3 readers specifically mentioned "the writing feels more consistent" — the agent enforced my style guide more reliably than I did manually.</div>
+        <div class="elg-signal elg-signal--win">✓ SCRIBE agent permanent</div>
+      </div>
+
+      <div class="elg-card" data-cat="seo">
+        <div class="elg-outcome-bar elg-outcome-bar--fail"></div>
+        <div class="elg-meta">
+          <span class="elg-cat elg-cat--seo">SEO</span>
+          <span class="elg-year">2023</span>
+          <span class="elg-outcome elg-fail">✕ FAILED</span>
+        </div>
+        <div class="elg-title">Programmatic Landing Pages for Local SEO</div>
+        <div class="elg-hypo"><span class="elg-label">Hypothesis</span> Auto-generated location × service landing pages will capture long-tail local queries at scale without proportional content effort.</div>
+        <div class="elg-result"><span class="elg-label">Result</span> Google deindexed 40% of the pages within 6 weeks. Thin content penalty. Manual high-quality pages outperformed at 1/10th the scale. Programmatic only works with genuine content differentiation per page.</div>
+        <div class="elg-signal elg-signal--fail">✗ Scrapped. Lesson: quality signals beat volume at scale.</div>
+      </div>
+
+      <div class="elg-card elg-card--wide" data-cat="growth">
+        <div class="elg-outcome-bar elg-outcome-bar--win"></div>
+        <div class="elg-meta">
+          <span class="elg-cat elg-cat--growth">GROWTH</span>
+          <span class="elg-year">2023</span>
+          <span class="elg-outcome elg-win">↑ +60% BOOKINGS</span>
+        </div>
+        <div class="elg-title">Paid + Organic Combined vs Each Channel Solo — Healthcare Clinic</div>
+        <div class="elg-hypo"><span class="elg-label">Hypothesis</span> Running Google Ads and local SEO simultaneously for a healthcare clinic will compound results beyond either channel's individual ceiling — ads capture intent while SEO builds trust signal that lowers CPC over time.</div>
+        <div class="elg-result"><span class="elg-label">Result</span> Appointment bookings up 60% in 4 months. GBP star rating held at 4.8 throughout. The combined stack worked exactly as theorised — organic trust reduced bounce on paid landing pages, dropping CPA by 34%. Either channel alone had plateaued at +18%.</div>
+        <div class="elg-signal elg-signal--win">✓ Dual-channel model now standard for service clients</div>
+      </div>
+
+      <!-- Placeholder cards — complete the 4×3 grid, no orphan gaps -->
+      <div class="elg-card elg-card--incoming" data-cat="__placeholder" aria-hidden="true">
+        <div class="elg-incoming-inner">
+          <div class="elg-incoming-icon">⟳</div>
+          <div class="elg-incoming-label">Experiment in progress</div>
+          <div class="elg-incoming-sub">Running since Q1 2026 · Results pending</div>
+        </div>
+      </div>
+      <div class="elg-card elg-card--incoming" data-cat="__placeholder" aria-hidden="true">
+        <div class="elg-incoming-inner">
+          <div class="elg-incoming-icon">◈</div>
+          <div class="elg-incoming-label">Hypothesis being tested</div>
+          <div class="elg-incoming-sub">You'll read about it here when I have a number</div>
+        </div>
+      </div>
+
+    </div><!-- end grid -->
+
+    <!-- Summary bar — anchors bottom, no dead space -->
+    <div class="elg-summary" id="elg-summary">
+      <div class="elg-sum-item">
+        <span class="elg-sum-num" id="elg-sum-total">10</span>
+        <span class="elg-sum-lbl">Experiments</span>
+      </div>
+      <div class="elg-sum-sep"></div>
+      <div class="elg-sum-item">
+        <span class="elg-sum-num elg-sum-win" id="elg-sum-wins">7</span>
+        <span class="elg-sum-lbl">Shipped</span>
+      </div>
+      <div class="elg-sum-sep"></div>
+      <div class="elg-sum-item">
+        <span class="elg-sum-num elg-sum-fail" id="elg-sum-fails">3</span>
+        <span class="elg-sum-lbl">Killed</span>
+      </div>
+      <div class="elg-sum-sep"></div>
+      <div class="elg-sum-item">
+        <span class="elg-sum-num" id="elg-sum-rate">70%</span>
+        <span class="elg-sum-lbl">Ship Rate</span>
+      </div>
+      <div class="elg-sum-note">Every failed experiment is documented — the thinking is the asset, not just the win.</div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* ─── EXPERIMENT LOG v13 — grid fixed, zero gaps, personality layer ──── */
+
+/* ── Filter bar ── */
+.exp-log-filters {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border2);
+}
+.elf-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-c); font-size: 11px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--grey2); background: var(--black3);
+  border: 1px solid var(--border); border-radius: 2px;
+  padding: 8px 16px; cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16,1,0.3,1);
+  position: relative; overflow: hidden;
+  user-select: none;
+}
+.elf-btn::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.08) 50%, transparent 100%);
+  transform: translateX(-100%); transition: transform 0.4s ease;
+}
+.elf-btn:hover::after { transform: translateX(100%); }
+.elf-btn:hover {
+  color: var(--white);
+  border-color: rgba(201,168,76,0.45);
+  background: var(--black4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3), 0 0 0 1px rgba(201,168,76,0.1);
+}
+.elf-btn.elf-active {
+  color: var(--black);
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(201,168,76,0.3), 0 4px 12px rgba(0,0,0,0.4);
+  transform: translateY(-1px);
+}
+.elf-btn.elf-active .elf-icon { color: var(--black) !important; }
+.elf-btn.elf-active .elf-count {
+  background: rgba(0,0,0,0.2);
+  color: var(--black);
+}
+.elf-icon { font-size: 8px; flex-shrink: 0; transition: color 0.2s; }
+.elf-count {
+  font-family: var(--font-d); font-size: 13px; letter-spacing: 0;
+  background: rgba(201,168,76,0.12); color: var(--gold);
+  padding: 0 5px; border-radius: 1px;
+  line-height: 1.3; min-width: 18px; text-align: center;
+  transition: all 0.2s;
+}
+
+/* Win/Fail ratio mini-bar */
+.elf-ratio {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-left: auto; padding: 6px 14px;
+  border: 1px solid var(--border2); border-radius: 2px;
+  background: var(--black3);
+}
+.elf-ratio-label {
+  font-family: var(--font-c); font-size: 8px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--grey);
+}
+.elf-ratio-bar {
+  width: 60px; height: 3px;
+  background: rgba(248,113,113,0.3); border-radius: 2px; overflow: hidden;
+}
+.elf-ratio-fill {
+  height: 100%; background: #4ade80; border-radius: 2px;
+  transition: width 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.elf-ratio-pct {
+  font-family: var(--font-d); font-size: 14px; letter-spacing: 1px;
+  color: #4ade80; transition: color 0.3s;
+}
+
+/* Active filter label */
+.elf-active-label {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 0 28px;
+}
+.elf-al-text {
+  font-family: var(--font-c); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--grey);
+}
+.elf-al-text strong { color: var(--white); font-weight: 600; }
+.elf-al-count {
+  font-family: var(--font-c); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--grey);
+}
+
+/* ── HIDDEN — THE FIX: cards get display:none, not just invisible ── */
+.elg-hidden { display: none !important; }
+
+/* ── Grid — always 3 columns, placeholders fill any orphan gap ── */
+.exp-log-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+}
+.exp-log-grid.cols-1 { grid-template-columns: 1fr; }
+.exp-log-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.exp-log-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* ── Cards ── */
+.elg-card {
+  background: var(--black);
+  padding: 0 0 24px;
+  /* NOTE v15: CSS transition removed — JS applyFilter owns all
+     transitions during filter. CSS background:0.25s was racing
+     with inline transition:'none' on display:none→block, causing
+     cards to flash/freeze. JS re-adds background transition inline. */
+  position: relative; overflow: hidden;
+  cursor: default; display: flex; flex-direction: column;
+}
+.elg-outcome-bar {
+  width: 100%; height: 3px; flex-shrink: 0; margin-bottom: 24px;
+}
+.elg-outcome-bar--win  { background: linear-gradient(90deg, #4ade80, rgba(74,222,128,0.3)); }
+.elg-outcome-bar--fail { background: linear-gradient(90deg, #f87171, rgba(248,113,113,0.3)); }
+
+.elg-card::after {
+  content: ''; position: absolute;
+  left: 0; top: 3px; bottom: 0; width: 2px;
+  background: var(--gold);
+  transform: scaleY(0); transform-origin: bottom;
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.elg-card:hover { background: rgba(201,168,76,0.03); }
+.elg-card:hover::after { transform: scaleY(1); }
+
+/* Padding for inner content */
+.elg-card .elg-meta,
+.elg-card .elg-title,
+.elg-card .elg-hypo,
+.elg-card .elg-result,
+.elg-card .elg-signal { padding-left: 24px; padding-right: 24px; }
+
+.elg-meta {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 14px; flex-wrap: wrap;
+}
+.elg-cat {
+  font-family: var(--font-c); font-size: 9px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 1px;
+}
+.elg-cat--email   { background: rgba(96,165,250,0.12);  color: #60a5fa; border: 1px solid rgba(96,165,250,0.2); }
+.elg-cat--seo     { background: rgba(74,222,128,0.12);  color: #4ade80; border: 1px solid rgba(74,222,128,0.2); }
+.elg-cat--ai      { background: rgba(192,132,252,0.12); color: #c084fc; border: 1px solid rgba(192,132,252,0.2); }
+.elg-cat--product { background: rgba(251,146,60,0.12);  color: #fb923c; border: 1px solid rgba(251,146,60,0.2); }
+.elg-cat--growth  { background: rgba(201,168,76,0.12);  color: #C9A84C; border: 1px solid rgba(201,168,76,0.2); }
+.elg-year {
+  font-family: var(--font-c); font-size: 9px; letter-spacing: 2px;
+  color: var(--grey); text-transform: uppercase; margin-left: auto;
+}
+.elg-outcome {
+  font-family: var(--font-c); font-size: 9px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 1px; border: 1px solid transparent;
+}
+.elg-win  { background: rgba(74,222,128,0.1);  color: #4ade80; border-color: rgba(74,222,128,0.2); }
+.elg-fail { background: rgba(248,113,113,0.1); color: #f87171; border-color: rgba(248,113,113,0.2); }
+
+.elg-title {
+  font-family: var(--font-d); font-size: 19px; letter-spacing: 0.5px;
+  color: var(--white); margin-bottom: 14px; line-height: 1.15; flex-shrink: 0;
+}
+.elg-hypo, .elg-result {
+  font-size: 12px; font-weight: 300; color: var(--grey2);
+  line-height: 1.75; margin-bottom: 10px;
+}
+.elg-label {
+  font-family: var(--font-c); font-size: 8px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--grey);
+  margin-right: 8px; display: inline-block;
+  background: var(--black4); padding: 1px 6px; border-radius: 1px;
+  vertical-align: middle;
+}
+.elg-result { flex: 1; }
+.elg-signal {
+  font-family: var(--font-c); font-size: 9px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-top: 14px; padding-top: 12px;
+  border-top: 1px solid var(--border2); flex-shrink: 0;
+}
+.elg-signal--win  { color: #4ade80; }
+.elg-signal--fail { color: #f87171; }
+
+/* ── PLACEHOLDER CARDS — fill orphan gap, zero dead space ── */
+.elg-card--incoming {
+  background: var(--black2) !important;
+  border: none;
+  cursor: default;
+  justify-content: center; align-items: center;
+  min-height: 180px;
+}
+.elg-card--incoming::after { display: none; }
+.elg-card--incoming:hover { background: var(--black3) !important; }
+.elg-incoming-inner {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 10px;
+  padding: 32px 24px; text-align: center;
+}
+.elg-incoming-icon {
+  font-size: 22px; color: var(--gold3); opacity: 0.4;
+  animation: elgIconSpin 4s linear infinite;
+}
+.elg-card--incoming:nth-child(12) .elg-incoming-icon { animation-delay: -2s; }
+@keyframes elgIconSpin {
+  0%   { opacity: 0.25; transform: scale(1); }
+  50%  { opacity: 0.5;  transform: scale(1.1); }
+  100% { opacity: 0.25; transform: scale(1); }
+}
+.elg-incoming-label {
+  font-family: var(--font-c); font-size: 10px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--grey);
+}
+.elg-incoming-sub {
+  font-size: 11px; font-weight: 300; color: var(--grey3, #555);
+  line-height: 1.5; max-width: 180px;
+}
+
+/* ── Summary bar ── */
+.elg-summary {
+  display: flex; align-items: center; gap: 0;
+  border: 1px solid var(--border2); border-top: none;
+  background: var(--black2); margin-bottom: 0;
+}
+.elg-sum-item {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 24px 36px; gap: 4px;
+}
+.elg-sum-sep { width: 1px; height: 40px; background: var(--border2); flex-shrink: 0; }
+.elg-sum-num {
+  font-family: var(--font-d); font-size: 32px; letter-spacing: 1px;
+  color: var(--white); line-height: 1;
+}
+.elg-sum-win  { color: #4ade80; }
+.elg-sum-fail { color: #f87171; }
+.elg-sum-lbl {
+  font-family: var(--font-c); font-size: 8px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--grey);
+}
+.elg-sum-note {
+  flex: 1; text-align: right;
+  font-size: 11px; font-weight: 300; font-style: italic;
+  color: var(--grey); padding: 0 32px; line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .exp-log-grid,
+  .exp-log-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+  .exp-log-grid.cols-1 { grid-template-columns: 1fr; }
+  .elf-ratio { display: none; }
+  .elg-sum-note { display: none; }
+  .elg-card--wide { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .exp-log-grid,
+  .exp-log-grid.cols-2,
+  .exp-log-grid.cols-3 { grid-template-columns: 1fr; }
+  .elg-sum-item { padding: 16px 20px; }
+  .elf-active-label { flex-direction: column; gap: 4px; align-items: flex-start; }
+  .elg-card--wide,
+  .elg-card--incoming { grid-column: span 1; }
+}
+</style>
+
+<script>
+/* ─── EXPERIMENT LOG v14 ──────────────────────────────
+   Fix 1: .elg-hidden = display:none — zero ghost cells
+   Fix 2: Placeholder cards excluded from counts, hide on filter
+   Fix 3: setGridCols threshold fixed for 10 real cards
+   Fix 4: Ratio + summary accurate per filter
+   Fix 5 (v14): Layout thrashing — PASS 1 reads all DOM state BEFORE
+                any writes. Zero forced synchronous reflows.
+   Fix 6 (v14): Single RAF replaces N nested setTimeouts.
+                CSS transition-delay handles stagger — one paint cycle.
+──────────────────────────────────────────────────── */
+(function(){
+  var btns         = document.querySelectorAll('.elf-btn');
+  var cards        = document.querySelectorAll('.elg-card:not(.elg-card--incoming)');
+  var placeholders = document.querySelectorAll('.elg-card--incoming');
+  var grid         = document.getElementById('exp-log-grid');
+
+  var CAT_DATA = {
+    all:     { total: 10, wins: 7, name: 'All Experiments' },
+    email:   { total: 2,  wins: 2, name: 'Email'           },
+    seo:     { total: 2,  wins: 1, name: 'SEO'             },
+    ai:      { total: 2,  wins: 2, name: 'AI'              },
+    product: { total: 1,  wins: 1, name: 'Product'         },
+    growth:  { total: 3,  wins: 1, name: 'Growth'          }
+  };
+
+  /* --- Pre-read win/fail state once at init (zero runtime reflows) --- */
+  /* Reading the DOM once here, before any filter runs, so applyFilter
+     never needs to touch querySelector for win-state again.            */
+  var cardMeta = [];
+  cards.forEach(function(c) {
+    cardMeta.push({
+      el:    c,
+      cat:   c.dataset.cat || 'all',
+      isWin: c.querySelector('.elg-outcome-bar--win') !== null
+    });
+  });
+
+  function setGridCols(count) {
+    grid.classList.remove('cols-1','cols-2','cols-3');
+    if      (count <= 1) grid.classList.add('cols-1');
+    else if (count <= 4) grid.classList.add('cols-2');
+    else                 grid.classList.add('cols-3');
+  }
+
+  function updateRatio(wins, total) {
+    var pct   = total > 0 ? Math.round((wins / total) * 100) : 0;
+    var fill  = document.getElementById('elf-ratio-fill');
+    var pctEl = document.getElementById('elf-ratio-pct');
+    if (fill)  fill.style.width    = pct + '%';
+    if (pctEl) {
+      pctEl.textContent  = pct + '%';
+      pctEl.style.color  = pct >= 70 ? '#4ade80' : pct >= 50 ? '#fbbf24' : '#f87171';
+    }
+  }
+
+  function updateSummary(visible, wins, fails) {
+    var ts = document.getElementById('elg-sum-total');
+    var ws = document.getElementById('elg-sum-wins');
+    var fs = document.getElementById('elg-sum-fails');
+    var rs = document.getElementById('elg-sum-rate');
+    if (ts) ts.textContent = visible;
+    if (ws) ws.textContent = wins;
+    if (fs) fs.textContent = fails;
+    if (rs) rs.textContent = (visible > 0 ? Math.round((wins / visible) * 100) : 0) + '%';
+  }
+
+  function applyFilter(f) {
+    /* ══ PASS 1: READ ONLY ════════════════════════════════════════
+       Classify every card using the pre-cached cardMeta[].
+       Zero DOM reads in this pass — all state already known.
+       Reads never follow writes; no forced synchronous reflows.    */
+    var visible = 0, wins = 0, fails = 0;
+    var toShow  = [];
+    var toHide  = [];
+
+    cardMeta.forEach(function(m) {
+      var show = (f === 'all' || m.cat === f);
+      if (show) {
+        toShow.push(m);
+        visible++;
+        if (m.isWin) wins++; else fails++;
+      } else {
+        toHide.push(m);
+      }
+    });
+
+    /* ══ PASS 2: WRITE ONLY — batch all hides ════════════════════
+       All hides happen synchronously. No reads, no transitions.    */
+    toHide.forEach(function(m) {
+      m.el.style.transition = 'none';
+      m.el.style.opacity    = '0';
+      m.el.style.transform  = 'translateY(0)';
+      m.el.classList.add('elg-hidden');
+    });
+
+    /* ══ PASS 3: PREPARE incoming cards — still write-only ═══════
+       classList.remove('elg-hidden') flips display:none → block,
+       but the browser hasn't committed this layout change yet.
+       We MUST NOT start a CSS transition in the same task or even
+       in the first rAF — the display change isn't painted yet.
+       Strategy:
+         1. Remove hidden class + set opacity:0 (same task — ok, both writes)
+         2. First rAF: browser commits display:block to layout
+         3. Second rAF: NOW we're in a frame AFTER display:block is live —
+            safe to write transition + opacity:1. Animation fires correctly. */
+    toShow.forEach(function(m) {
+      m.el.classList.remove('elg-hidden');
+      m.el.style.transition = 'none';
+      m.el.style.opacity    = '0';
+      m.el.style.transform  = 'translateY(12px)';
+    });
+
+    /* Placeholders: only show on all-filter. Same batch. */
+    placeholders.forEach(function(p) {
+      if (f === 'all') p.classList.remove('elg-hidden');
+      else             p.classList.add('elg-hidden');
+    });
+
+    /* ══ STATS: pure data writes, no layout reads ════════════════ */
+    setGridCols(visible);
+    updateRatio(wins, visible);
+    updateSummary(visible, wins, fails);
+    window.dispatchEvent(new CustomEvent('elg-filter-applied', { detail: { visible: visible } }));
+    var d      = CAT_DATA[f] || { total: visible, wins: wins, name: f };
+    var alName  = document.getElementById('elf-al-name');
+    var alCount = document.getElementById('elf-al-count');
+    if (alName)  alName.textContent  = d.name;
+    if (alCount) alCount.textContent = visible + ' experiment' + (visible !== 1 ? 's' : '');
+
+    /* ══ DOUBLE-RAF: animate-in after display:block is committed ══
+       rAF 1 → browser flushes display:none→block, paints opacity:0.
+       rAF 2 → we are now in a NEW frame. display:block is fully live.
+               Writing transition + opacity:1 here is guaranteed to
+               trigger the animation from an already-painted state.
+               No snap, no freeze, no race condition.                */
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        toShow.forEach(function(m, i) {
+          /* Stagger: each card delays by 36ms × its index.
+             All transitions kick off in this single rAF — the browser
+             handles the stagger timing. Zero per-card setTimeouts.   */
+          var delay = i * 36;
+          m.el.style.transition = 'opacity 0.3s ease ' + delay + 'ms, '
+                                + 'transform 0.3s ease ' + delay + 'ms, '
+                                + 'background 0.25s ease';
+          m.el.style.opacity    = '1';
+          m.el.style.transform  = 'translateY(0)';
+        });
+      });
+    });
+  }
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('elf-active'); });
+      btn.classList.add('elf-active');
+      applyFilter(btn.dataset.filter);
+    });
+  });
+
+  /* Init state — no filter click needed */
+  setGridCols(10);
+  updateRatio(7, 10);
+})();
+</script>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   ZILLENNIAL PERSONALITY JS
+   — loader sub cycling, scroll glow, empty state, tips
+═══════════════════════════════════════════════════════ */
+(function() {
+
+  /* ── Loader sub-text cycling ── */
+  var subLines = [
+    'booting the good stuff',
+    'fetching the receipts',
+    'loading 8 years of chaos',
+    'warming up the agents',
+    'compiling actual results'
+  ];
+  var subEl = document.getElementById('loader-sub');
+  if (subEl) {
+    var si = 0;
+    var subTimer = setInterval(function() {
+      si = (si + 1) % subLines.length;
+      subEl.style.opacity = '0';
+      setTimeout(function() {
+        subEl.textContent = subLines[si];
+        subEl.style.opacity = '1';
+        subEl.style.transition = 'opacity 0.3s ease';
+      }, 180);
+    }, 400);
+    /* Clear when loader hides */
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() { clearInterval(subTimer); }, 1400);
+    });
+  }
+
+  /* ── Scroll progress glow at 98%+ ── */
+  var prog = document.getElementById('scroll-progress');
+  if (prog) {
+    window.addEventListener('scroll', function() {
+      var scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      if (scrolled >= 98) {
+        prog.classList.add('at-end');
+        prog.setAttribute('data-tip', 'you made it. legend.');
+      } else {
+        prog.classList.remove('at-end');
+        prog.setAttribute('data-tip', 'you\'re almost there');
+      }
+    }, { passive: true });
+  }
+
+  /* ── Empty state for filters ── v14 FIX
+     MutationObserver removed entirely — it lived inside the grid it was
+     watching (subtree:true), so every classList change in applyFilter
+     fired it, which modified emptyEl.classList, which fired it again.
+     Empty state is now set directly inside applyFilter via a
+     window-level event. Zero observer overhead, zero feedback loop.   */
+  var emptyEl = document.getElementById('elg-empty');
+  if (emptyEl) {
+    window.addEventListener('elg-filter-applied', function(e) {
+      if (e.detail.visible === 0) emptyEl.classList.add('visible');
+      else                        emptyEl.classList.remove('visible');
+    });
+  }
+
+  /* ── Win badge micro-bounce on filter animate-in ── v14 FIX
+     Scoped to '.elg-card:not(.elg-hidden) .elg-win' so badges inside
+     display:none cards are never touched — setting style.transform on
+     hidden elements still triggers style recalculation.
+     Also wrapped in double-RAF so it runs after the filter animation
+     has already started (visible cards confirmed painted before bounce). */
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.elf-btn');
+    if (!btn) return;
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        document.querySelectorAll('.elg-card:not(.elg-hidden) .elg-win').forEach(function(el, i) {
+          var delay = i * 30;
+          setTimeout(function() {
+            el.style.transition = 'transform 0.15s ease';
+            el.style.transform  = 'scale(1.08)';
+            setTimeout(function() { el.style.transform = ''; }, 150);
+          }, delay);
+        });
+      });
+    });
+  });
+
+})();
+</script>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     PROMPT DIFF VIEWER — Live micro-demo of PROMPTMATRIX thinking
+     Shows HOW prompt engineering works. Makes the product tangible.
+══════════════════════════════════════════════════════════════ -->
+<section id="prompt-lab" style="padding:100px 0;background:var(--black2);border-top:1px solid var(--border2);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 50%,rgba(0,255,65,0.03) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="wrap" style="position:relative;z-index:1;">
+    <div class="s-label reveal">PROMPTMATRIX — Live Demo</div>
+    <h2 class="s-title reveal" style="transition-delay:.1s;">PROMPT<br>LAB</h2>
+    <p class="s-sub reveal" style="transition-delay:.15s;">Edit either prompt and see exactly what changed — additions, removals, modifications. This is what PROMPTMATRIX does at scale, with version history and rollback.</p>
+
+    <div class="plab-wrap reveal" style="transition-delay:.2s;">
+      <div class="plab-editors">
+        <div class="plab-editor">
+          <div class="plab-editor-header">
+            <span class="plab-ver">v1 — ORIGINAL</span>
+            <span class="plab-badge plab-badge--old">DEPLOYED</span>
+          </div>
+          <textarea class="plab-input" id="plab-v1" spellcheck="false">You are a helpful assistant. Answer the user's question clearly and concisely. Be polite and professional.</textarea>
+        </div>
+        <div class="plab-editor">
+          <div class="plab-editor-header">
+            <span class="plab-ver">v2 — REVISED</span>
+            <span class="plab-badge plab-badge--new">CANDIDATE</span>
+          </div>
+          <textarea class="plab-input" id="plab-v2" spellcheck="false">You are a senior growth advisor. Answer the user's question with specific, actionable advice. Reference real metrics where possible. Be direct — cut filler words.</textarea>
+        </div>
+      </div>
+
+      <div class="plab-controls">
+        <button class="plab-btn" onclick="runPromptDiff()">
+          <svg viewBox="0 0 16 16" fill="none" width="13" height="13" style="display:inline-block;vertical-align:middle;margin-right:6px;"><path d="M2 8h12M8 2l6 6-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Run Diff
+        </button>
+        <button class="plab-btn plab-btn--ghost" onclick="resetPromptDiff()">Reset</button>
+        <span class="plab-stat" id="plab-stat"></span>
+      </div>
+
+      <div class="plab-output" id="plab-output">
+        <div class="plab-output-header">
+          <span class="plab-output-title">DIFF OUTPUT</span>
+          <span class="plab-output-hint">Green = added &nbsp;·&nbsp; Red = removed &nbsp;·&nbsp; Grey = unchanged</span>
+        </div>
+        <div class="plab-diff-body" id="plab-diff-body">
+          <div class="plab-placeholder">← Edit the prompts above and click Run Diff to see what changed</div>
+        </div>
+      </div>
+
+      <!-- Example presets -->
+      <div class="plab-presets">
+        <span class="plab-preset-label">Try an example:</span>
+        <button class="plab-preset-btn" onclick="loadPreset('customer-support')">Customer Support</button>
+        <button class="plab-preset-btn" onclick="loadPreset('seo-content')">SEO Content</button>
+        <button class="plab-preset-btn" onclick="loadPreset('email-writer')">Email Writer</button>
+        <button class="plab-preset-btn" onclick="loadPreset('agent-router')">Agent Router</button>
+      </div>
+    </div>
+
+    <div class="plab-cta" style="margin-top:48px;text-align:center;">
+      <p style="font-family:var(--font-c);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--grey);margin-bottom:16px;">PROMPTMATRIX does this with full version history, automated evals, and rollback</p>
+      <a href="https://promptmatrix.github.io" target="_blank" rel="noopener noreferrer" class="btn-gold"><span>⚡ Get PROMPTMATRIX Free →</span></a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ─── PROMPT LAB ─────────────────────────────────── */
+.plab-wrap { display: flex; flex-direction: column; gap: 0; }
+.plab-editors {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-bottom: none;
+}
+.plab-editor { background: var(--black); }
+.plab-editor-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; background: var(--black3);
+  border-bottom: 1px solid var(--border2);
+}
+.plab-ver {
+  font-family: var(--font-c); font-size: 9px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase; color: var(--grey);
+}
+.plab-badge {
+  font-family: var(--font-c); font-size: 8px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 2px 7px; border-radius: 1px; margin-left: auto;
+}
+.plab-badge--old { background: rgba(248,113,113,0.12); color: #f87171; }
+.plab-badge--new { background: rgba(74,222,128,0.12);  color: #4ade80; }
+.plab-input {
+  width: 100%; min-height: 140px; padding: 16px;
+  background: transparent; border: none; outline: none; resize: vertical;
+  color: var(--grey2); font-family: 'Courier New', monospace;
+  font-size: 12px; line-height: 1.7; letter-spacing: 0.3px;
+  caret-color: var(--gold);
+}
+.plab-input:focus { color: var(--white); }
+.plab-controls {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px;
+  background: var(--black3);
+  border: 1px solid var(--border2);
+  border-top: none; border-bottom: none;
+}
+.plab-btn {
+  font-family: var(--font-c); font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 10px 24px; border-radius: 2px; cursor: pointer;
+  transition: all 0.2s;
+  background: var(--gold); color: var(--black); border: none;
+}
+.plab-btn:hover { background: var(--gold2); }
+.plab-btn--ghost {
+  background: transparent; color: var(--grey);
+  border: 1px solid var(--border); 
+}
+.plab-btn--ghost:hover { color: var(--white); border-color: var(--gold); }
+.plab-stat {
+  font-family: var(--font-c); font-size: 9px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--grey); margin-left: auto;
+}
+.plab-output {
+  background: var(--black);
+  border: 1px solid var(--border2);
+  border-top: none;
+  min-height: 120px;
+}
+.plab-output-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--black3);
+  border-bottom: 1px solid var(--border2);
+}
+.plab-output-title {
+  font-family: var(--font-c); font-size: 9px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold);
+}
+.plab-output-hint {
+  font-family: var(--font-c); font-size: 9px; letter-spacing: 1px;
+  color: var(--grey); text-transform: uppercase;
+}
+.plab-diff-body {
+  padding: 16px; font-family: 'Courier New', monospace;
+  font-size: 12px; line-height: 1.9; min-height: 80px;
+}
+.plab-placeholder {
+  color: rgba(201,168,76,0.3);
+  font-style: italic;
+  padding: 8px 0;
+}
+.plab-del {
+  background: rgba(248,113,113,0.12);
+  color: #f87171;
+  text-decoration: line-through;
+  padding: 0 2px; border-radius: 1px;
+}
+.plab-ins {
+  background: rgba(74,222,128,0.12);
+  color: #4ade80;
+  padding: 0 2px; border-radius: 1px;
+}
+.plab-eq { color: rgba(136,112,112,0.6); }
+.plab-presets {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 14px 16px;
+  background: var(--black3);
+  border: 1px solid var(--border2);
+  border-top: 1px solid var(--border2);
+}
+.plab-preset-label {
+  font-family: var(--font-c); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--grey); margin-right: 4px;
+}
+.plab-preset-btn {
+  font-family: var(--font-c); font-size: 9px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--grey2); background: transparent;
+  border: 1px solid var(--border2); border-radius: 1px;
+  padding: 5px 12px; cursor: pointer; transition: all 0.2s;
+}
+.plab-preset-btn:hover { color: var(--gold); border-color: var(--gold); }
+
+@media (max-width: 640px) {
+  .plab-editors { grid-template-columns: 1fr; }
+  .plab-output-hint { display: none; }
+}
+</style>
+
+<script>
+/* ─── PROMPT DIFF ENGINE ─────────────────────────── */
+var PRESETS = {
+  'customer-support': {
+    v1: "You are a customer support agent. Help users with their problems. Be friendly.",
+    v2: "You are a senior customer success specialist at a SaaS company. Your goal is to resolve the issue in under 3 messages. Always confirm understanding before offering a solution. End every response with a single clear next step."
+  },
+  'seo-content': {
+    v1: "Write a blog post about the given topic. Make it SEO-friendly. Use headers and bullet points.",
+    v2: "Write a 1,200-word SEO article for the given topic. Target keyword density: 1.2–1.8%. Structure: intro (hook + keyword in first 100 words), 3–4 H2 sections with H3 sub-points, FAQ schema block, CTA. Tone: authoritative but conversational. No passive voice."
+  },
+  'email-writer': {
+    v1: "Write a marketing email about our product. Make it compelling and include a call to action.",
+    v2: "Write a plain-text email for our newsletter audience (founders + growth operators). Subject line formula: [NUMBER] + [OUTCOME] + [TIME FRAME]. Body: one pain point, one insight, one proof, one CTA. Max 150 words. No emojis. No 'I hope this finds you well.'"
+  },
+  'agent-router': {
+    v1: "You are a routing agent. Read the user's message and send it to the right team.",
+    v2: "You are an intent classification agent. Classify the input into exactly one of: [SUPPORT, BILLING, FEATURE_REQUEST, BUG_REPORT, CHURN_RISK, OTHER]. Output only a JSON object: {\"intent\": \"LABEL\", \"confidence\": 0.0–1.0, \"reason\": \"one sentence\"}. If confidence < 0.7, classify as OTHER."
+  }
+};
+
+function loadPreset(name) {
+  var p = PRESETS[name];
+  if (!p) return;
+  document.getElementById('plab-v1').value = p.v1;
+  document.getElementById('plab-v2').value = p.v2;
+  runPromptDiff();
+}
+
+function resetPromptDiff() {
+  document.getElementById('plab-v1').value = "You are a helpful assistant. Answer the user's question clearly and concisely. Be polite and professional.";
+  document.getElementById('plab-v2').value = "You are a senior growth advisor. Answer the user's question with specific, actionable advice. Reference real metrics where possible. Be direct — cut filler words.";
+  document.getElementById('plab-diff-body').innerHTML = '<div class="plab-placeholder">\u2190 Edit the prompts above and click Run Diff to see what changed</div>';
+  document.getElementById('plab-stat').textContent = '';
+}
+
+function runPromptDiff() {
+  var v1 = document.getElementById('plab-v1').value.trim();
+  var v2 = document.getElementById('plab-v2').value.trim();
+  var body = document.getElementById('plab-diff-body');
+  var stat = document.getElementById('plab-stat');
+
+  if (!v1 && !v2) { body.innerHTML = '<div class="plab-placeholder">Both prompts are empty.</div>'; return; }
+
+  // Word-level diff
+  var words1 = v1.split(/(\s+)/);
+  var words2 = v2.split(/(\s+)/);
+
+  var diff = lcs_diff(words1, words2);
+
+  var added = 0, removed = 0;
+  var html = '';
+  diff.forEach(function(op) {
+    var txt = escHtml(op.text);
+    if (op.type === 'equal')   { html += '<span class="plab-eq">' + txt + '</span>'; }
+    if (op.type === 'delete')  { html += '<span class="plab-del">' + txt + '</span>'; removed++; }
+    if (op.type === 'insert')  { html += '<span class="plab-ins">' + txt + '</span>'; added++; }
+  });
+
+  body.innerHTML = html || '<div class="plab-placeholder">No differences found.</div>';
+  
+  var total1 = words1.filter(function(w){ return w.trim(); }).length;
+  var total2 = words2.filter(function(w){ return w.trim(); }).length;
+  stat.textContent = '+' + added + ' added  ·  -' + removed + ' removed  ·  ' + total1 + '→' + total2 + ' words';
+}
+
+function escHtml(t) {
+  return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// LCS-based word diff (Myers algorithm simplified)
+function lcs_diff(a, b) {
+  var m = a.length, n = b.length;
+  // Build LCS table
+  var dp = [];
+  for (var i = 0; i <= m; i++) {
+    dp[i] = new Array(n + 1).fill(0);
+  }
+  for (var i = 1; i <= m; i++) {
+    for (var j = 1; j <= n; j++) {
+      if (a[i-1] === b[j-1]) dp[i][j] = dp[i-1][j-1] + 1;
+      else dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+    }
+  }
+  // Traceback
+  var ops = [];
+  var i = m, j = n;
+  while (i > 0 || j > 0) {
+    if (i > 0 && j > 0 && a[i-1] === b[j-1]) {
+      ops.unshift({ type: 'equal', text: a[i-1] }); i--; j--;
+    } else if (j > 0 && (i === 0 || dp[i][j-1] >= dp[i-1][j])) {
+      ops.unshift({ type: 'insert', text: b[j-1] }); j--;
+    } else {
+      ops.unshift({ type: 'delete', text: a[i-1] }); i--;
+    }
+  }
+  return ops;
+}
+
+// Auto-run on page load
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(runPromptDiff, 600);
+});
+</script>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     NEURAL INTERFACE — Ask my portfolio anything
+     Rebuilt: command-line aesthetic, not a chatbot widget
+══════════════════════════════════════════════════════════════ -->
+<section id="ai-assistant" style="padding:100px 0 0;background:var(--black);border-top:1px solid var(--border2);position:relative;overflow:hidden;">
+
+  <!-- Background: faint perspective grid converging to center -->
+  <div class="ni-bg-grid" aria-hidden="true"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 80%,rgba(201,168,76,0.035) 0%,transparent 65%);pointer-events:none;"></div>
+
+  <div class="wrap" style="position:relative;z-index:1;">
+    <div class="ni-header reveal">
+      <div class="ni-label-row">
+        <span class="s-label" style="margin-bottom:0;">NEURAL INTERFACE</span>
+        <span class="ni-status-pill"><span class="ni-status-dot"></span>LIVE · CLAUDE-POWERED</span>
+      </div>
+      <h2 class="s-title reveal" style="transition-delay:.1s;margin-bottom:12px;">QUERY<br>JACHIN</h2>
+      <p class="s-sub reveal" style="transition-delay:.15s;margin-bottom:0;">Eight years of systems, experiments, and decisions — indexed. Ask anything. Get the real answer.</p>
+    </div>
+
+    <!-- MISSION CONTROL LAYOUT -->
+    <div class="ni-layout reveal" style="transition-delay:.2s;" id="ni-layout">
+
+      <!-- LEFT: Query bank -->
+      <div class="ni-queries" id="ni-queries">
+        <div class="ni-queries-header">
+          <span class="ni-qh-label">QUERY BANK</span>
+          <span class="ni-qh-sub">SELECT OR TYPE BELOW</span>
+        </div>
+        <div class="ni-query-list">
+          <button class="ni-q" onclick="queryNI(this)">
+            <span class="ni-q-num">01</span>
+            <span class="ni-q-text">First 90 days as Head of Growth — your actual playbook?</span>
+            <span class="ni-q-arrow">→</span>
+          </button>
+          <button class="ni-q" onclick="queryNI(this)">
+            <span class="ni-q-num">02</span>
+            <span class="ni-q-text">How did you get ₹1.2 Crore from a D2C brand in 18 months?</span>
+            <span class="ni-q-arrow">→</span>
+          </button>
+          <button class="ni-q" onclick="queryNI(this)">
+            <span class="ni-q-num">03</span>
+            <span class="ni-q-text">What exactly is PROMPTMATRIX and why does it exist?</span>
+            <span class="ni-q-arrow">→</span>
+          </button>
+          <button class="ni-q" onclick="queryNI(this)">
+            <span class="ni-q-num">04</span>
+            <span class="ni-q-text">How do your 26 AI agents actually work day-to-day?</span>
+            <span class="ni-q-arrow">→</span>
+          </button>
+          <button class="ni-q" onclick="queryNI(this)">
+            <span class="ni-q-num">05</span>
+            <span class="ni-q-text">Which role are you genuinely best suited for right now?</span>
+            <span class="ni-q-arrow">→</span>
+          </button>
+          <button class="ni-q" onclick="queryNI(this)">
+            <span class="ni-q-num">06</span>
+            <span class="ni-q-text">How would you build a growth system for a SaaS from scratch?</span>
+            <span class="ni-q-arrow">→</span>
+          </button>
+          <button class="ni-q" onclick="queryNI(this)">
+            <span class="ni-q-num">07</span>
+            <span class="ni-q-text">What growth experiment failed that taught you the most?</span>
+            <span class="ni-q-arrow">→</span>
+          </button>
+          <button class="ni-q" onclick="queryNI(this)">
+            <span class="ni-q-num">08</span>
+            <span class="ni-q-text">What's your full tech stack right now?</span>
+            <span class="ni-q-arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT: Terminal output -->
+      <div class="ni-terminal" id="ni-terminal">
+        <!-- Terminal chrome bar -->
+        <div class="ni-term-chrome">
+          <div class="ni-chrome-dots">
+            <span class="ni-dot ni-dot--r"></span>
+            <span class="ni-dot ni-dot--y"></span>
+            <span class="ni-dot ni-dot--g"></span>
+          </div>
+          <span class="ni-chrome-title">JACHIN_AI · v2026.1 · Neural Interface</span>
+          <span class="ni-chrome-status" id="ni-chrome-status">READY</span>
+        </div>
+
+        <!-- Output area -->
+        <div class="ni-output" id="ni-output">
+          <!-- Boot sequence — shows on load -->
+          <div class="ni-line ni-line--dim">$ ./init --system jachin_neural_interface</div>
+          <div class="ni-line ni-line--green">▶ Indexing 8 years of growth data...</div>
+          <div class="ni-line ni-line--green">▶ Loading 175+ client engagement records...</div>
+          <div class="ni-line ni-line--green">▶ Mapping 26-agent AI operating system...</div>
+          <div class="ni-line ni-line--gold">▶ PROMPTMATRIX founder context: active</div>
+          <div class="ni-line ni-line--dim ni-line--sep">──────────────────────────────────────────────────</div>
+          <div class="ni-line">Select a query from the bank — or type your own below.</div>
+          <div class="ni-line ni-line--dim">System ready. Awaiting input.</div>
+        </div>
+
+        <!-- Active query display -->
+        <div class="ni-active-q" id="ni-active-q" style="display:none;">
+          <span class="ni-aq-prompt">jachin@neural:~$</span>
+          <span class="ni-aq-text" id="ni-aq-text"></span>
+        </div>
+
+        <!-- Input row -->
+        <div class="ni-input-row">
+          <span class="ni-input-prompt">›_</span>
+          <input type="text" id="ni-input" class="ni-input-field" placeholder="Type a custom question..." autocomplete="off" autocorrect="off" spellcheck="false" />
+          <button class="ni-submit" id="ni-submit" onclick="queryNI(null)">
+            <svg viewBox="0 0 20 20" fill="none" width="14" height="14"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            EXECUTE
+          </button>
+        </div>
+
+        <div class="ni-footnote">Powered by Anthropic Claude · Grounded in Jachin's real work · <span id="ni-query-count">0</span> queries this session</div>
+      </div>
+
+    </div><!-- end layout -->
+  </div>
+
+  <!-- Bottom bleed -->
+  <div style="height:100px;background:linear-gradient(to bottom,var(--black),var(--black2));margin-top:0;"></div>
+</section>
+
+<style>
+/* ─── NEURAL INTERFACE ──────────────────────────── */
+/* Background perspective grid */
+.ni-bg-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 60%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 60%, black 20%, transparent 100%);
+}
+
+.ni-header { margin-bottom: 56px; }
+.ni-label-row {
+  display: flex; align-items: center; gap: 20px;
+  margin-bottom: 16px;
+}
+.ni-status-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-c); font-size: 9px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: #4ade80;
+  border: 1px solid rgba(74,222,128,0.25);
+  padding: 4px 10px; border-radius: 1px;
+  background: rgba(74,222,128,0.05);
+}
+.ni-status-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 6px rgba(74,222,128,0.8);
+  animation: sonar 2s infinite;
+}
+
+/* Mission control layout */
+.ni-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2px;
+  min-height: 580px;
+  border: 1px solid var(--border2);
+  background: var(--border2);
+}
+
+/* Query bank — left column */
+.ni-queries {
+  background: var(--black2);
+  display: flex; flex-direction: column;
+}
+.ni-queries-header {
+  padding: 16px 20px 14px;
+  border-bottom: 1px solid var(--border2);
+  background: var(--black3);
+}
+.ni-qh-label {
+  font-family: var(--font-c); font-size: 9px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); display: block; margin-bottom: 3px;
+}
+.ni-qh-sub {
+  font-family: var(--font-c); font-size: 8px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--grey);
+}
+.ni-query-list {
+  flex: 1; overflow-y: auto;
+}
+.ni-q {
+  width: 100%; display: grid;
+  grid-template-columns: 28px 1fr 20px;
+  align-items: start; gap: 10px;
+  padding: 14px 20px; background: transparent; border: none;
+  border-bottom: 1px solid var(--border2);
+  cursor: pointer; text-align: left;
+  transition: background 0.18s;
+  position: relative;
+}
+.ni-q::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+  background: var(--gold); transform: scaleY(0); transform-origin: bottom;
+  transition: transform 0.25s ease;
+}
+.ni-q:hover { background: rgba(201,168,76,0.04); }
+.ni-q:hover::before { transform: scaleY(1); }
+.ni-q.ni-q--active { background: rgba(201,168,76,0.07); }
+.ni-q.ni-q--active::before { transform: scaleY(1); }
+.ni-q-num {
+  font-family: var(--font-d); font-size: 18px; letter-spacing: 1px;
+  color: rgba(201,168,76,0.25); line-height: 1.2;
+  transition: color 0.2s;
+}
+.ni-q:hover .ni-q-num,
+.ni-q.ni-q--active .ni-q-num { color: var(--gold); }
+.ni-q-text {
+  font-family: var(--font-b); font-size: 11px; font-weight: 300;
+  color: var(--grey2); line-height: 1.5;
+  transition: color 0.2s;
+}
+.ni-q:hover .ni-q-text,
+.ni-q.ni-q--active .ni-q-text { color: var(--white); }
+.ni-q-arrow {
+  font-family: var(--font-c); font-size: 11px;
+  color: rgba(201,168,76,0.2); padding-top: 2px;
+  transition: color 0.2s, transform 0.2s;
+}
+.ni-q:hover .ni-q-arrow,
+.ni-q.ni-q--active .ni-q-arrow { color: var(--gold); transform: translateX(3px); }
+
+/* Terminal — right column */
+.ni-terminal {
+  background: var(--black);
+  display: flex; flex-direction: column;
+  font-family: 'Courier New', monospace;
+}
+.ni-term-chrome {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 18px;
+  background: var(--black3);
+  border-bottom: 1px solid var(--border2);
+  flex-shrink: 0;
+}
+.ni-chrome-dots { display: flex; gap: 6px; }
+.ni-dot { width: 10px; height: 10px; border-radius: 50%; }
+.ni-dot--r { background: rgba(248,113,113,0.5); }
+.ni-dot--y { background: rgba(251,191,36,0.5); }
+.ni-dot--g { background: rgba(74,222,128,0.5); }
+.ni-chrome-title {
+  font-family: var(--font-c); font-size: 9px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--grey); flex: 1; text-align: center;
+}
+.ni-chrome-status {
+  font-family: var(--font-c); font-size: 8px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 1px;
+  background: rgba(74,222,128,0.1); color: #4ade80;
+  border: 1px solid rgba(74,222,128,0.2);
+  transition: all 0.3s;
+}
+.ni-chrome-status.thinking {
+  background: rgba(251,191,36,0.1); color: #fbbf24;
+  border-color: rgba(251,191,36,0.2);
+}
+
+.ni-output {
+  flex: 1; overflow-y: auto; padding: 20px 22px;
+  display: flex; flex-direction: column; gap: 5px;
+  min-height: 300px; max-height: 380px;
+  scroll-behavior: smooth;
+}
+/* Scrollbar */
+.ni-output::-webkit-scrollbar { width: 2px; }
+.ni-output::-webkit-scrollbar-track { background: transparent; }
+.ni-output::-webkit-scrollbar-thumb { background: var(--gold3); border-radius: 1px; }
+
+.ni-line {
+  font-size: 12px; line-height: 1.7;
+  color: var(--grey2); animation: niFadeIn 0.3s ease forwards;
+}
+.ni-line--dim   { color: rgba(136,112,112,0.45); }
+.ni-line--green { color: #4ade80; }
+.ni-line--gold  { color: var(--gold); }
+.ni-line--white { color: var(--white); font-size: 13px; }
+.ni-line--sep   { opacity: 0.3; letter-spacing: 0; }
+.ni-line--response {
+  color: var(--white); font-size: 13px; line-height: 1.8;
+  padding: 12px 0; border-top: 1px solid var(--border2);
+  font-family: var(--font-b); font-weight: 300;
+}
+.ni-line--response strong {
+  color: var(--gold); font-family: var(--font-c);
+  font-size: 9px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; display: block; margin-bottom: 8px;
+}
+@keyframes niFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Typing animation */
+.ni-typing-row {
+  display: flex; gap: 4px; align-items: center;
+  padding: 8px 0;
+}
+.ni-typing-row span {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--gold); opacity: 0.4;
+  animation: niDot 1.2s ease-in-out infinite;
+}
+.ni-typing-row span:nth-child(2) { animation-delay: 0.2s; }
+.ni-typing-row span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes niDot { 0%,80%,100%{opacity:0.2;transform:scale(0.8)} 40%{opacity:1;transform:scale(1.2)} }
+
+/* Active query display */
+.ni-active-q {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 10px 22px;
+  border-top: 1px solid var(--border2);
+  border-bottom: 1px solid var(--border2);
+  background: rgba(201,168,76,0.03);
+  flex-shrink: 0;
+}
+.ni-aq-prompt {
+  font-family: 'Courier New', monospace; font-size: 10px;
+  color: var(--gold); white-space: nowrap; flex-shrink: 0;
+}
+.ni-aq-text {
+  font-family: 'Courier New', monospace; font-size: 11px;
+  color: var(--white); font-style: italic;
+}
+
+/* Input row */
+.ni-input-row {
+  display: flex; align-items: center;
+  border-top: 1px solid var(--border2);
+  background: var(--black2);
+  flex-shrink: 0;
+}
+.ni-input-prompt {
+  font-family: 'Courier New', monospace; font-size: 14px;
+  color: var(--gold); padding: 0 14px 0 18px;
+  flex-shrink: 0; animation: blink 1s step-end infinite;
+}
+.ni-input-field {
+  flex: 1; background: transparent; border: none; outline: none;
+  font-family: 'Courier New', monospace; font-size: 12px;
+  color: var(--white); caret-color: var(--gold);
+  padding: 16px 0; min-width: 0;
+}
+.ni-input-field::placeholder { color: rgba(136,112,112,0.4); }
+.ni-submit {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-c); font-size: 9px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--black); background: var(--gold);
+  border: none; padding: 16px 20px; cursor: pointer;
+  transition: background 0.2s; flex-shrink: 0;
+}
+.ni-submit:hover { background: var(--gold2); }
+.ni-submit:disabled { background: var(--gold3); cursor: not-allowed; }
+
+.ni-footnote {
+  padding: 9px 22px 10px;
+  font-family: var(--font-c); font-size: 8px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: rgba(136,112,112,0.4);
+  border-top: 1px solid var(--border2);
+  background: var(--black3);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ni-layout { grid-template-columns: 1fr; min-height: auto; }
+  .ni-queries { max-height: 320px; overflow-y: auto; }
+  .ni-output { max-height: 280px; }
+}
+@media (max-width: 600px) {
+  .ni-submit span { display: none; }
+  .ni-submit { padding: 16px 14px; }
+}
+</style>
+
+<script>
+/* ─── NEURAL INTERFACE ─────────────────────────────────────────
+   Command-line aesthetic AI assistant.
+   Query bank + custom input → Claude API → terminal output.
+──────────────────────────────────────────────────────────────── */
+var NI_SYSTEM = `You are a neural interface — a command-line AI assistant built on the complete professional identity of Jachin Saikia Sonowal. You respond like a technical system that has indexed all of his work: direct, specific, no filler, no generic AI padding.
+
+WHO YOU ARE REPRESENTING:
+- Jachin Saikia Sonowal — AI Growth Systems Architect, Founder of PROMPTMATRIX
+- 8+ years building revenue systems. Remote. Based in Nagaon, Assam, India.
+- Available now for: Head of Growth, AI Automation Lead, Growth Engineer, Fractional CMO
+
+KEY FACTS:
+- D2C Revenue: ₹1.2 Crore ($145K+) in 18 months — full GTM from zero (Shopify, SEO, email, ads)
+- Client history: 175+ engagements across D2C, B2B manufacturing, healthcare, multi-location retail, political campaigns, government
+- AI OS: 26 agents in production across 6 departments (Content, Revenue, Build, Intelligence, OPS, Security). $0 API spend.
+- Newsletter: AI News India — 1,000+ subscribers, 38% open rate (industry avg 21%), $3.8K product revenue
+- PROMPTMATRIX: open-source prompt version control. Git for LLM prompts. Self-host free (MIT). Cloud founding $149 one-time.
+- Mega Prompt Bundle: 3,500 prompts, $29, 100+ customers in 7 countries
+- Education: MCA — Gauhati University (2019)
+- Stack: GPT-4o, Claude API, n8n, Make, Python, REST APIs, HubSpot, Beehiiv, Shopify, GA4, React, Git
+
+CASE STUDIES:
+1. Tea Brand D2C — Full GTM from zero. ₹1.2Cr/$145K+ in 18 months. SEO (80+ keywords, #1 rankings), email (0→5K subscribers), Shopify build. No agency. One operator.
+2. 26-Agent AI OS — Personal operating system. RADAR (research), SCRIBE (drafts, 60% time saved), HERALD (publishing), CLOSER (sponsorship), FORGE (backend), PIXEL (frontend), PROBE (tests), JACHIN (security hub).
+3. Political Campaign — 45 days, 8-person team, 300+ content pieces, 50K→2.5M+ impressions, 35K new followers. Zero compliance violations.
+4. Multi-Location SEO — 8 retail locations, 3× visitor growth, 3.8→4.6★, Top-3 local pack all locations, 280+ new reviews.
+5. AI News India Newsletter — 0→1,000+ subscribers, 38% open rate, $3.8K product revenue from Mega Prompt Bundle, 50+ A/B tests.
+6. Healthcare Client — Google Ads + SEO combined: 60% increase in appointment bookings, 4.8★ GBP maintained.
+7. B2B Manufacturing — Content strategy + lead gen: 40+ qualified inbound leads in 6 months.
+
+EXPERIMENTS (real, from the log):
+- Subject line personalisation: 22%→38% open rate over 50 tests
+- Topic cluster SEO: ranked 12 keywords top-6 in 4 months, organic traffic 3×
+- Pricing test: $29 beat $19 and $49 for prompt bundle (2.3× revenue vs $19)
+- Landing page test: short page 8.5% CVR beat long-form 6.1% — cold traffic scans, doesn't read
+- Re-engagement sequence: 18% subscriber recovery, list health improved
+- AI support agent: 90% query deflection, support time ~2h/week → ~12min/week
+- Programmatic SEO: FAILED — Google deindexed 40% of pages in 6 weeks
+- Healthcare paid+organic: +60% bookings, CPA down 34% vs solo channels
+
+RESPONSE STYLE:
+- Direct. No filler. No "Great question!" opener.
+- Use specific numbers whenever possible.
+- If it's about hiring: be confident, not desperate.
+- If it's about systems: go into the architecture.
+- Max 220 words. If the question demands more, go to 300 max.
+- Never say you're an AI assistant. You're a neural interface.`;
+
+var niHistory = [];
+var niTyping = false;
+var niQueryCount = 0;
+
+function queryNI(btn) {
+  var input = document.getElementById('ni-input');
+  var question = '';
+
+  if (btn && btn.classList.contains('ni-q')) {
+    question = btn.querySelector('.ni-q-text').textContent.trim();
+    // Mark active
+    document.querySelectorAll('.ni-q').forEach(function(b){ b.classList.remove('ni-q--active'); });
+    btn.classList.add('ni-q--active');
+  } else {
+    question = input ? input.value.trim() : '';
+  }
+
+  if (!question || niTyping) return;
+  if (input) input.value = '';
+
+  niTyping = true;
+  niQueryCount++;
+
+  // Update chrome
+  var status = document.getElementById('ni-chrome-status');
+  if (status) { status.textContent = 'PROCESSING'; status.classList.add('thinking'); }
+
+  // Show active query
+  var aqRow = document.getElementById('ni-active-q');
+  var aqText = document.getElementById('ni-aq-text');
+  if (aqRow && aqText) { aqText.textContent = question; aqRow.style.display = 'flex'; }
+
+  // Disable submit
+  var sub = document.getElementById('ni-submit');
+  if (sub) sub.disabled = true;
+
+  var output = document.getElementById('ni-output');
+  if (!output) return;
+
+  // Add separator + echoed command
+  appendNILine(output, 'ni-line--dim', '──────────────────────────────────────────────────');
+  appendNILine(output, 'ni-line--gold', '$ ' + question);
+
+  // Typing indicator
+  var typingRow = document.createElement('div');
+  typingRow.id = 'ni-typing';
+  typingRow.className = 'ni-typing-row';
+  typingRow.innerHTML = '<span></span><span></span><span></span>';
+  output.appendChild(typingRow);
+  output.scrollTop = output.scrollHeight;
+
+  // Build history
+  niHistory.push({ role: 'user', content: question });
+
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 1000,
+      system: NI_SYSTEM,
+      messages: niHistory
+    })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    var t = document.getElementById('ni-typing');
+    if(t) t.remove();
+
+    var answer = '';
+    if(data.content && data.content[0] && data.content[0].text) {
+      answer = data.content[0].text;
+    } else {
+      answer = 'Signal lost. Direct line: jachinsaikiasonowal@gmail.com';
+    }
+
+    niHistory.push({ role: 'assistant', content: answer });
+
+    // Render answer as terminal output
+    var respDiv = document.createElement('div');
+    respDiv.className = 'ni-line ni-line--response';
+    respDiv.innerHTML = '<strong>JACHIN_AI · OUTPUT</strong>' + escNI(answer);
+    output.appendChild(respDiv);
+    output.scrollTop = output.scrollHeight;
+
+    // Update status
+    if(status){ status.textContent = 'READY'; status.classList.remove('thinking'); }
+    var qcEl = document.getElementById('ni-query-count');
+    if(qcEl) qcEl.textContent = niQueryCount;
+
+    niTyping = false;
+    if(sub) sub.disabled = false;
+    if(input) input.focus();
+  })
+  .catch(function(){
+    var t = document.getElementById('ni-typing');
+    if(t) t.remove();
+    appendNILine(output, 'ni-line--dim', 'Connection failed. → jachinsaikiasonowal@gmail.com');
+    if(status){ status.textContent = 'ERROR'; status.classList.remove('thinking'); }
+    niTyping = false;
+    if(sub) sub.disabled = false;
+  });
+}
+
+function appendNILine(output, cls, text) {
+  var d = document.createElement('div');
+  d.className = 'ni-line ' + cls;
+  d.textContent = text;
+  output.appendChild(d);
+  output.scrollTop = output.scrollHeight;
+}
+
+function escNI(t) {
+  return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+}
+
+// Enter key
+document.addEventListener('DOMContentLoaded', function(){
+  var inp = document.getElementById('ni-input');
+  if(inp){
+    inp.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); queryNI(null); }
+    });
+    inp.addEventListener('keydown', function(e){ e.stopPropagation(); });
+  }
+});
+</script>
 
 <!-- FOOTER -->
 <footer>
@@ -9226,7 +11358,7 @@ footer {
 <!-- sdp-sigil init in main script -->
 
   <!-- ══ ORIGINAL SCRIPT ══ -->
-  <!-- CF email decode script removed — using plain mailto links --><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
 
 // --- Respect prefers-reduced-motion -------------------------
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -9314,6 +11446,29 @@ function initTypewriter() {
   /* Pause on first word then start cycling */
   setTimeout(function(){ deleting = true; type(); }, 2400);
 }
+
+/* ----- CURRENTLY BUILDING TICKER ----- */
+(function() {
+  var items = [
+    'PROMPTMATRIX cloud backend',
+    'Agent memory persistence layer',
+    'AI News India issue #47',
+    'Prompt eval framework v2',
+    'This portfolio (live system)'
+  ];
+  var el = document.getElementById('hbt-text');
+  if (!el) return;
+  var idx = 0;
+  function cycle() {
+    el.classList.add('fading');
+    setTimeout(function() {
+      idx = (idx + 1) % items.length;
+      el.textContent = items[idx];
+      el.classList.remove('fading');
+    }, 320);
+  }
+  setInterval(cycle, 3800);
+})();
 
 document.addEventListener('DOMContentLoaded', function() {
   var cntEl = document.getElementById('loader-count');
@@ -9467,31 +11622,36 @@ function startScramble() {
         el.style.overflow = 'hidden';
 
         if (isAbout) {
-          /* -- ABOUT H2: wraps into 4 visual lines due to font/container.
-             Only change textContent — the element's width+height stay frozen
-             so wrapping behaviour is identical throughout. -- */
-          var flatText = el.textContent.replace(/\s+/g, ' ').trim();
-          var len = flatText.length;
-          var t0 = null, dur = 900;
+          /* -- ABOUT H2: has a <br> splitting two lines.
+             We split on <br>, scramble each line separately,
+             rejoin with <br> — so the two-line layout is preserved
+             throughout the entire animation. No layout shift. -- */
+          var lines = origHTML.split(/<br\s*\/?>/i).map(function(l){
+            return l.replace(/<[^>]*>/g, '').trim();
+          });
+          var t0 = null, dur = 1100;
           (function step(ts){
             if (!t0) t0 = ts;
             var p = Math.min((ts - t0) / dur, 1);
-            var resolved = Math.floor(p * len);
-            var out = '';
-            for (var i = 0; i < len; i++){
-              if (i < resolved) {
-                out += flatText[i];
-              } else if (flatText[i] === ' ') {
-                out += ' ';             // spaces always preserved → same wrapping
-              } else {
-                out += CHARS[Math.floor(Math.random() * CHARS.length)];
+            var parts = lines.map(function(line){
+              var resolved = Math.floor(p * line.length);
+              var out = '';
+              for (var i = 0; i < line.length; i++){
+                if (i < resolved) {
+                  out += line[i];
+                } else if (line[i] === ' ') {
+                  out += ' ';
+                } else {
+                  out += CHARS[Math.floor(Math.random() * CHARS.length)];
+                }
               }
-            }
-            el.textContent = out;
+              return out;
+            });
+            el.innerHTML = parts.join('<br>');
             if (p < 1) {
               requestAnimationFrame(step);
             } else {
-              el.innerHTML  = origHTML; // restore full HTML (spans etc.) on finish
+              el.innerHTML  = origHTML;
               el.style.height   = '';
               el.style.overflow = '';
             }
@@ -9571,18 +11731,66 @@ function animCounter(el) {
     }
   })(performance.now());
 }
+
+/* Scramble-reveal for static metric numbers (no data-target) */
+function animStaticMetric(el) {
+  var origHTML = el.innerHTML;
+  var origText = el.textContent.trim();
+  var SC = '0123456789#@$%&×+';
+  var len = origText.length;
+  var t0 = null, dur = 900;
+  (function step(ts){
+    if(!t0) t0=ts;
+    var p = Math.min((ts-t0)/dur, 1);
+    var resolved = Math.floor(p * len);
+    var out = '';
+    for(var i=0; i<len; i++){
+      if(i < resolved){ out += origText[i]; }
+      else if(origText[i] === ' '){ out += ' '; }
+      else { out += SC[Math.floor(Math.random()*SC.length)]; }
+    }
+    el.textContent = out;
+    if(p < 1){ requestAnimationFrame(step); }
+    else {
+      el.innerHTML = origHTML;
+      el.classList.add('counter-glow');
+      setTimeout(function(){ el.classList.remove('counter-glow'); }, 1800);
+    }
+  })(performance.now());
+}
+
 function initCounters() {
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting && e.target.dataset.target){ animCounter(e.target); io.unobserve(e.target); }
     });
   },{ threshold:0.05, rootMargin:'0px 0px 300px 0px' });
+
+  /* Static metric observer — for m-num elements WITHOUT data-target */
+  var sio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !e.target.dataset.target && !e.target.dataset.animated){
+        e.target.dataset.animated = '1';
+        animStaticMetric(e.target);
+        sio.unobserve(e.target);
+      }
+    });
+  },{ threshold:0.05, rootMargin:'0px 0px 300px 0px' });
+
   var fired=new Set();
   document.querySelectorAll('[data-target]').forEach(function(el){
     var r=el.getBoundingClientRect();
     if(r.top < window.innerHeight+400) setTimeout(function(){ if(!fired.has(el)){fired.add(el);animCounter(el);} },300);
     else io.observe(el);
   });
+
+  /* Register static m-num elements */
+  document.querySelectorAll('.m-num:not([data-target])').forEach(function(el){
+    var r=el.getBoundingClientRect();
+    if(r.top < window.innerHeight+400) setTimeout(function(){ if(!el.dataset.animated){ el.dataset.animated='1'; animStaticMetric(el); } },500);
+    else sio.observe(el);
+  });
+
   setTimeout(function(){ document.querySelectorAll('[data-target]').forEach(function(el){ if(!fired.has(el)){fired.add(el);animCounter(el);} }); },3000);
 }
 
@@ -9816,7 +12024,7 @@ function initActiveNav(){
 }
 (function(){
   var s=document.createElement('style');
-  s.textContent='.nav-links a.nav-active{color:var(--white)!important;}.nav-links a.nav-active::after{transform:scaleX(1);transform-origin:left;}';
+  s.textContent='.nav-links a.nav-active{color:var(--gold)!important;text-shadow:0 0 20px rgba(201,168,76,0.4);}.nav-links a.nav-active::after{transform:scaleX(1);transform-origin:left;background:var(--gold)!important;box-shadow:0 0 8px rgba(201,168,76,0.5);}';
   document.head.appendChild(s);
 })();
 
@@ -10265,16 +12473,17 @@ function initSectionCut(){
    AMBIENT INTELLIGENCE HUD — section-reactive
 ═══════════════════════════════════════════════════════════════ */
 var HUD = {
-  'about':         'REVIEWING — FULL-STACK MARKETER · 8 YEARS',
-  'experience':    'LOADING — 8 YEARS OF REVENUE-GENERATING WORK',
-  'case-studies':  'DECRYPTING — 5 CASE STUDIES · $150K+ REVENUE',
-  'portfolio':     'RENDERING — SELECTED WORK · 6 PROJECTS',
-  'services':      'SCANNING — 7 SERVICE MODULES AVAILABLE',
-  'skills':        'INDEXING — 40+ COMPETENCIES · AI-NATIVE STACK',
-  'tools':         'ENUMERATING — FULL TECH STACK · 35+ TOOLS',
-  'certifications':'VERIFYING — 6 ACTIVE CERTIFICATIONS',
-  'testimonials':  'VALIDATING — CLIENT SOCIAL PROOF',
-  'cta':           'STATUS: AVAILABLE · RESPOND WITHIN 24H'
+  'about':         'PROFILING — AI GROWTH ARCHITECT · 8 YRS · AVAILABLE',
+  'experience':    'LOADING — CAREER TIMELINE · $150K+ REVENUE GENERATED',
+  'case-studies':  'DECRYPTING — 7 CASE STUDIES · REAL RESULTS · MEASURABLE',
+  'portfolio':     'RENDERING — SELECTED WORK · AI SYSTEMS · REVENUE PROOF',
+  'services':      'SCANNING — 4 SERVICE MODULES · FULL-STACK AVAILABLE',
+  'skills':        'INDEXING — 40+ COMPETENCIES · AI-NATIVE · SHIPS CODE',
+  'tools':         'ENUMERATING — FULL TECH STACK · 35+ TOOLS · ALL LIVE',
+  'certifications':'VERIFYING — 6 ACTIVE CERTIFICATIONS · GOOGLE · META · HUBSPOT',
+  'testimonials':  'VALIDATING — CLIENT SIGNALS · 5 INDUSTRIES · 7 COUNTRIES',
+  'ai-systems':    'INITIALISING — 26 AGENTS · 6 DEPTS · $0 API COST',
+  'cta':           'STATUS: 🟢 AVAILABLE · RESPONDS IN < 24H · REMOTE WORLDWIDE'
 };
 function initAmbientHUD(){
   var hud=document.getElementById('ambient-hud'), txt=document.getElementById('ahud-text');
@@ -10374,51 +12583,453 @@ function initToolsReveal(){
 /* ═══════════════════════════════════════════════════════════════
    TERMINAL EASTER EGG — type "JACHIN" anywhere
 ═══════════════════════════════════════════════════════════════ */
-var TERM_SCRIPT = [
+/* ── JACHIN_OS — FULLY INTERACTIVE TERMINAL ───────────────────────
+   Commands: help, about, hire, projects, pm, stack, status,
+             agents, contact, clear, whoami, easter
+──────────────────────────────────────────────────────────────── */
+var BOOT_SCRIPT = [
   { t:'gold',  d:0,    s:'$ ./boot --system jachin_os v2026.1'            },
-  { t:'dim',   d:180,  s:'------------------------------------------'     },
-  { t:'green', d:380,  s:'> LOADING JACHIN_OS v2026.1...'                 },
-  { t:'green', d:640,  s:'> MEMORY: 8 YEARS EXPERIENCE [LOADED]'          },
-  { t:'green', d:900,  s:'> SYSTEMS: PROMPTMATRIX [ACTIVE · 5+ EARLY ACCESS]'  },
-  { t:'green', d:1160, s:'> AGENTS: 10 [ALL RUNNING IN PRODUCTION]'       },
-  { t:'green', d:1420, s:'> REVENUE: $150K+ [TRACKED · COMPOUNDING]'      },
-  { t:'green', d:1680, s:'> CLIENTS: 175+ [5 INDUSTRIES · 8+ YEARS]'      },
-  { t:'green', d:1940, s:'> EMAIL_OPEN_RATE: 38% [2× INDUSTRY AVG]'       },
-  { t:'dim',   d:2200, s:'------------------------------------------'     },
-  { t:'gold',  d:2460, s:'> STATUS: AVAILABLE FOR REMOTE · FREELANCE'     },
-  { t:'white', d:2720, s:'> STACK: AI · GROWTH · SAAS · AUTOMATION'       },
-  { t:'white', d:2980, s:'> CONTACT: jachinsaikiasonowal@gmail.com'     },
-  { t:'gold',  d:3240, s:'> PROMPTMATRIX: promptmatrix.github.io'        },
-  { t:'dim',   d:3500, s:'------------------------------------------'     },
-  { t:'gold',  d:3760, s:"👋 You found the terminal. Bold move."           },
-  { t:'',      d:4020, s:"   I build things like this for fun."            },
-  { t:'',      d:4280, s:"   Imagine what I could build for you."          },
+  { t:'dim',   d:160,  s:'──────────────────────────────────────────────' },
+  { t:'green', d:320,  s:'> SYS    8 YRS EXPERIENCE        [LOADED]'      },
+  { t:'green', d:480,  s:'> PROD   26 AI AGENTS            [RUNNING]'     },
+  { t:'green', d:640,  s:'> REPO   PROMPTMATRIX            [ACTIVE]'      },
+  { t:'green', d:800,  s:'> REV    $150K+ TRACKED          [COMPOUNDING]' },
+  { t:'green', d:960,  s:'> NET    175+ CLIENTS            [5 INDUSTRIES]'},
+  { t:'green', d:1120, s:'> OPEN   38% EMAIL OPEN RATE     [2× INDUSTRY]' },
+  { t:'dim',   d:1280, s:'──────────────────────────────────────────────' },
+  { t:'gold',  d:1440, s:'> STATUS: AVAILABLE · REMOTE · WORLDWIDE'       },
+  { t:'dim',   d:1600, s:'──────────────────────────────────────────────' },
+  { t:'',      d:1760, s:"  Type 'help' to explore this system."          },
 ];
+
+var COMMANDS = {
+  help: {
+    run: function() {
+      return [
+        {t:'gold', s:'JACHIN_OS v2026.1 — Available Commands'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'',     s:'  about      Who I am and what I build'},
+        {t:'',     s:'  hire       Open roles & how to reach me'},
+        {t:'',     s:'  projects   Proven results & case studies'},
+        {t:'',     s:'  pm         PROMPTMATRIX — what it is, why it exists'},
+        {t:'',     s:'  agents     The 26-agent AI OS I run in production'},
+        {t:'',     s:'  stack      My full tech stack'},
+        {t:'',     s:'  status     Current availability & location'},
+        {t:'',     s:'  contact    Direct contact info'},
+        {t:'',     s:'  whoami     Fun facts'},
+        {t:'',     s:'  clear      Clear terminal'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'green',s:"  Tip: scroll up to re-read — history stays."},
+      ];
+    }
+  },
+  about: {
+    run: function() {
+      return [
+        {t:'gold', s:'> JACHIN SAIKIA SONOWAL'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'',     s:'  AI Growth Systems Architect · Founder, PROMPTMATRIX'},
+        {t:'',     s:'  Nagaon, Assam, India · Remote-first · Worldwide'},
+        {t:'',     s:''},
+        {t:'',     s:'  I build automated revenue engines using AI agents,'},
+        {t:'',     s:'  marketing systems, and product thinking. 8+ years of'},
+        {t:'',     s:'  building under real pressure with real revenue on the line.'},
+        {t:'',     s:''},
+        {t:'green',s:'  ₹1.2 Crore D2C · 175+ Clients · 26 AI Agents live'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'',     s:"  MCA — Gauhati University 2019"},
+        {t:'',     s:"  Run 'hire' to engage · 'projects' to see proof"},
+      ];
+    }
+  },
+  hire: {
+    run: function() {
+      return [
+        {t:'gold', s:'> OPEN ROLES & ENGAGEMENT'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'green',s:'  🟢 STATUS: ACTIVELY LOOKING · AVAILABLE NOW'},
+        {t:'',     s:''},
+        {t:'gold', s:'  Target Roles:'},
+        {t:'',     s:'    Head of Growth · Growth Engineer'},
+        {t:'',     s:'    AI Automation Lead · Marketing Ops Lead'},
+        {t:'',     s:'    Revenue Systems Builder · Fractional CMO'},
+        {t:'',     s:''},
+        {t:'gold', s:'  Engagement Types:'},
+        {t:'',     s:'    Full-Time Remote · Fractional · Consulting'},
+        {t:'',     s:'    AI Build Projects · PROMPTMATRIX Partnership'},
+        {t:'',     s:''},
+        {t:'gold', s:'  Contact:'},
+        {t:'',     s:'    📧 jachinsaikiasonowal@gmail.com'},
+        {t:'',     s:'    💼 linkedin.com/in/jachinsonowal'},
+        {t:'',     s:'    🌐 Responds within 24 hours'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'green',s:"  ↓ Navigating to contact form..."},
+      ];
+    },
+    after: function() {
+      setTimeout(function(){
+        var cta = document.getElementById('cta');
+        if(cta) cta.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 900);
+    }
+  },
+  projects: {
+    run: function() {
+      return [
+        {t:'gold', s:'> PROVEN RESULTS (7 CASE STUDIES)'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'',     s:'  01  D2C Revenue Engine'},
+        {t:'green',s:'      ₹1.2 Crore / $145K+ · 18 months · zero to scale'},
+        {t:'',     s:'  02  26-Agent AI OS'},
+        {t:'green',s:'      6 departments · $0 API spend · running 24/7'},
+        {t:'',     s:'  03  Political Campaign · 45 Days'},
+        {t:'green',s:'      50K → 2.5M+ impressions · 35K new followers'},
+        {t:'',     s:'  04  Multi-Location Local SEO'},
+        {t:'green',s:'      3× visitor growth · 4.6★ avg · Top-3 all 8 locations'},
+        {t:'',     s:'  05  AI News India Newsletter'},
+        {t:'green',s:'      1K+ subscribers · 38% open rate · $3.8K revenue · 0 ads'},
+        {t:'',     s:'  06  Mega Prompt Bundle'},
+        {t:'green',s:'      100+ customers · 7 countries · 8.5% landing CVR'},
+        {t:'',     s:'  07  AI Prompt Bundle — Gumroad'},
+        {t:'green',s:'      3.8× ROAS · 2 channels · ₹5K budget'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'green',s:"  ↓ Navigating to case studies..."},
+      ];
+    },
+    after: function() {
+      setTimeout(function(){
+        var cs = document.getElementById('case-studies');
+        if(cs) cs.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 900);
+    }
+  },
+  pm: {
+    run: function() {
+      return [
+        {t:'gold', s:'> PROMPTMATRIX — PROMPT VERSION CONTROL'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'',     s:'  Built because one bad prompt edit broke production'},
+        {t:'',     s:'  at 2am with no way back. Git for LLM prompts.'},
+        {t:'',     s:''},
+        {t:'gold', s:'  Features:'},
+        {t:'green',s:'    ✓ Full version history  ✓ One-click rollback'},
+        {t:'green',s:'    ✓ Automated evals       ✓ Approval workflows'},
+        {t:'green',s:'    ✓ Serve endpoint API    ✓ Multi-model support'},
+        {t:'',     s:''},
+        {t:'gold', s:'  Access:'},
+        {t:'',     s:'    Self-host:  $0 forever · GitHub · unlimited prompts'},
+        {t:'gold', s:'    Cloud:      $149 one-time · Founding access · 5 spots'},
+        {t:'',     s:''},
+        {t:'',     s:'  🔗 promptmatrix.github.io'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'green',s:"  ↓ Opening PROMPTMATRIX..."},
+      ];
+    },
+    after: function() {
+      setTimeout(function(){
+        window.open('https://promptmatrix.github.io','_blank','noopener');
+      }, 700);
+    }
+  },
+  agents: {
+    run: function() {
+      return [
+        {t:'gold', s:'> 26-AGENT AI OPERATING SYSTEM'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'',     s:'  6 DEPARTMENTS · ALL LIVE IN PRODUCTION'},
+        {t:'',     s:''},
+        {t:'gold', s:'  CONTENT  [7 agents]'},
+        {t:'',     s:'    RADAR·CAPTURE·SCRIBE·HERALD·REMIX·PULSE·GHOST'},
+        {t:'gold', s:'  REVENUE  [4 agents]'},
+        {t:'',     s:'    LENS·CLOSER·SCOUT·INTEL'},
+        {t:'gold', s:'  BUILD    [6 agents]'},
+        {t:'',     s:'    MASTER-BUILD·FORGE·PIXEL·PROBE·CLAW·SCRIBE-BUILD'},
+        {t:'gold', s:'  PERSONAL [3 agents]'},
+        {t:'',     s:'    HUNT·APPLY·REPLY'},
+        {t:'gold', s:'  INTEL    [3 agents]'},
+        {t:'',     s:'    EVOLVE·ORACLE·GENESIS'},
+        {t:'gold', s:'  SECURITY [3 agents]'},
+        {t:'',     s:'    JACHIN·GUARDIAN·WATCHDOG'},
+        {t:'',     s:''},
+        {t:'green',s:'  Stack: n8n · GPT-4o · Claude API · $0 API cost'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'green',s:"  ↓ Navigating to AI Systems section..."},
+      ];
+    },
+    after: function() {
+      setTimeout(function(){
+        var ai = document.getElementById('ai-systems');
+        if(ai) ai.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 900);
+    }
+  },
+  stack: {
+    run: function() {
+      return [
+        {t:'gold', s:'> FULL TECH STACK'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'gold', s:'  AI & Agents'},
+        {t:'',     s:'    GPT-4o · Claude API · Gemini · Llama · n8n'},
+        {t:'',     s:'    Make · LangChain · Multi-agent orchestration'},
+        {t:'gold', s:'  Growth & Marketing'},
+        {t:'',     s:'    HubSpot · Beehiiv · GA4 · GSC · Meta Ads'},
+        {t:'',     s:'    Shopify · Gumroad · Semrush · Ahrefs'},
+        {t:'gold', s:'  Dev & Build'},
+        {t:'',     s:'    HTML/CSS/JS · React · Node · Python · REST APIs'},
+        {t:'',     s:'    Git · GitHub Pages · Cloudinary · Formspree'},
+        {t:'gold', s:'  Automation & Ops'},
+        {t:'',     s:'    Zapier · Notion · Airtable · Telegram Bots'},
+        {t:'',     s:'    Google Workspace · Slack · ClickUp'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+      ];
+    }
+  },
+  status: {
+    run: function() {
+      var now = new Date();
+      var ist = new Date(now.toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
+      var h = ist.getHours().toString().padStart(2,'0');
+      var m = ist.getMinutes().toString().padStart(2,'0');
+      return [
+        {t:'gold', s:'> CURRENT STATUS'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'green',s:'  🟢 AVAILABILITY: OPEN FOR REMOTE ROLES'},
+        {t:'',     s:''},
+        {t:'',     s:'  Building:  PROMPTMATRIX (open source · live)'},
+        {t:'',     s:'  Running:   26-agent AI OS (production · 24/7)'},
+        {t:'',     s:'  Writing:   AI News India (weekly · 1K+ subs)'},
+        {t:'',     s:'  Looking:   Head of Growth · AI Automation Lead'},
+        {t:'',     s:''},
+        {t:'gold', s:'  Location:  Nagaon, Assam, India'},
+        {t:'',     s:'  Time:      '+h+':'+m+' IST (UTC+5:30)'},
+        {t:'',     s:'  Timezone:  US/EU overlap available'},
+        {t:'',     s:'  Mode:      Remote-first · Async-capable'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+      ];
+    }
+  },
+  contact: {
+    run: function() {
+      return [
+        {t:'gold', s:'> CONTACT & LINKS'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'',     s:'  📧  jachinsaikiasonowal@gmail.com'},
+        {t:'',     s:'  💼  linkedin.com/in/jachinsonowal'},
+        {t:'',     s:'  🐙  github.com/jachinsonowal'},
+        {t:'',     s:'  ⚡  promptmatrix.github.io'},
+        {t:'',     s:'  📰  ainewsindia.beehiiv.com/subscribe'},
+        {t:'',     s:''},
+        {t:'green',s:'  Response time: < 24 hours · Read every message'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'green',s:"  ↓ Opening contact form..."},
+      ];
+    },
+    after: function() {
+      setTimeout(function(){
+        var cta = document.getElementById('cta');
+        if(cta) cta.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 900);
+    }
+  },
+  whoami: {
+    run: function() {
+      return [
+        {t:'gold', s:'> WHOAMI'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'',     s:'  uid=1 (jachin) gid=0 (growth) groups=ai,founder'},
+        {t:'',     s:''},
+        {t:'',     s:'  • Started with a 200-subscriber email list, no budget'},
+        {t:'',     s:'  • Built an MCA thesis on software systems, 2019'},
+        {t:'',     s:'  • Ranked #6 on Google for a client with zero domain authority'},
+        {t:'',     s:'  • Led a political campaign team of 8, 45-day sprint'},
+        {t:'',     s:'  • Built 26 AI agents running $0 API spend'},
+        {t:'',     s:'  • Open-sourced PROMPTMATRIX because I needed it myself'},
+        {t:'',     s:'  • Based in Assam — the northeast of India'},
+        {t:'',     s:'  • Yes, this terminal is real. I built it for fun.'},
+        {t:'',     s:''},
+        {t:'green',s:'  Imagine what I could build for your team.'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+      ];
+    }
+  },
+  easter: {
+    run: function() {
+      return [
+        {t:'gold', s:' ⚡  EASTER EGG FOUND'},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+        {t:'',     s:'  You typed "easter". Respect.'},
+        {t:'',     s:''},
+        {t:'green',s:'  Fun facts about this portfolio:'},
+        {t:'',     s:'  • The favicon is a 64px pixel-art animation at 10fps'},
+        {t:'',     s:'  • The agent network canvas has real comet-trail physics'},
+        {t:'',     s:'  • This terminal responds to 11 commands'},
+        {t:'',     s:'  • The tab title cycles through 6 messages'},
+        {t:'',     s:'  • There are 3 ways to open this terminal'},
+        {t:'',     s:'    (type JACHIN · click CMD›_ · mobile button)'},
+        {t:'',     s:''},
+        {t:'gold', s:'  The person who built this is currently available.'},
+        {t:'green',s:"  Type 'hire' to reach them."},
+        {t:'dim',  s:'──────────────────────────────────────────────'},
+      ];
+    }
+  },
+  clear: {
+    run: function() { return null; }, // handled specially
+    after: function() {}
+  }
+};
+
 var keyBuf='', termIsOpen=false;
+var termHistory = [], termHistIdx = -1;
+
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'&&termIsOpen){ closeTerminal(); return; }
-  if(e.key.length===1){
+  // Backtick ` or tilde ~ = instant terminal toggle (developer shortcut)
+  if((e.key==='`'||e.key==='~') && !e.ctrlKey && !e.metaKey && !e.altKey){
+    var active = document.activeElement;
+    var isInput = active && (active.tagName==='INPUT'||active.tagName==='TEXTAREA'||active.tagName==='SELECT'||active.contentEditable==='true');
+    if(!isInput){ e.preventDefault(); termIsOpen ? closeTerminal() : openTerminal(); return; }
+  }
+  if(e.key.length===1 && !termIsOpen){
     keyBuf=(keyBuf+e.key.toUpperCase()).slice(-6);
     if(keyBuf.includes('JACHIN')){ keyBuf=''; openTerminal(); }
   }
 });
+
 function openTerminal(){
   var ov=document.getElementById('terminal-overlay'), body=document.getElementById('term-body');
   if(!ov||!body||termIsOpen) return;
-  termIsOpen=true; ov.classList.add('term-open'); body.innerHTML='';
-  TERM_SCRIPT.forEach(function(line){
-    setTimeout(function(){
-      var d=document.createElement('div');
-      d.className='tl'+(line.t?' tl-'+line.t:'');
-      d.textContent=line.s; body.appendChild(d);
-      body.scrollTop=body.scrollHeight;
-    },line.d);
-  });
-  setTimeout(function(){
-    var c=document.createElement('span'); c.className='term-cursor';
-    body.appendChild(c);
-  },4600);
+  termIsOpen=true; ov.classList.add('term-open');
+
+  // Only boot if first open
+  if(body.innerHTML.trim()==='') {
+    body.innerHTML='';
+    var bootDelay = 0;
+    BOOT_SCRIPT.forEach(function(line){
+      setTimeout(function(){
+        appendTermLine(body, line.t, line.s);
+      }, line.d);
+      bootDelay = Math.max(bootDelay, line.d);
+    });
+    setTimeout(function(){ appendTermInput(body); }, bootDelay + 180);
+  } else {
+    // Re-focus input if already open
+    var inp = body.querySelector('.term-input-field');
+    if(inp) setTimeout(function(){ inp.focus(); }, 80);
+  }
 }
+
+function appendTermLine(body, type, text) {
+  var d = document.createElement('div');
+  d.className = 'tl' + (type ? ' tl-'+type : '');
+  d.textContent = text;
+  body.appendChild(d);
+  body.scrollTop = body.scrollHeight;
+}
+
+function appendTermInput(body) {
+  // Remove any existing input row
+  var old = body.querySelector('.term-input-row');
+  if(old) old.remove();
+
+  var row = document.createElement('div');
+  row.className = 'term-input-row';
+  row.innerHTML = '<span class="tl-gold term-prompt">jachin@os:~$ </span>';
+
+  var inp = document.createElement('input');
+  inp.type = 'text';
+  inp.className = 'term-input-field';
+  inp.setAttribute('autocomplete','off');
+  inp.setAttribute('spellcheck','false');
+  inp.setAttribute('autocorrect','off');
+  inp.setAttribute('autocapitalize','off');
+  inp.setAttribute('aria-label','Terminal command input');
+  row.appendChild(inp);
+  body.appendChild(row);
+  body.scrollTop = body.scrollHeight;
+  setTimeout(function(){ inp.focus(); }, 80);
+
+  inp.addEventListener('keydown', function(e){
+    if(e.key==='Enter'){
+      var cmd = inp.value.trim().toLowerCase();
+      if(!cmd) return;
+      // Echo command
+      var echo = document.createElement('div');
+      echo.className = 'tl tl-dim';
+      echo.textContent = 'jachin@os:~$ ' + cmd;
+      body.insertBefore(echo, row);
+      // Store history
+      termHistory.unshift(cmd);
+      termHistIdx = -1;
+      inp.value = '';
+      // Execute
+      runTermCommand(cmd, body, row);
+      body.scrollTop = body.scrollHeight;
+    } else if(e.key==='ArrowUp'){
+      if(termHistIdx < termHistory.length-1){
+        termHistIdx++;
+        inp.value = termHistory[termHistIdx] || '';
+      }
+      e.preventDefault();
+    } else if(e.key==='ArrowDown'){
+      if(termHistIdx > 0){ termHistIdx--; inp.value = termHistory[termHistIdx] || ''; }
+      else { termHistIdx = -1; inp.value = ''; }
+      e.preventDefault();
+    } else if(e.key==='Tab'){
+      // Tab completion
+      var partial = inp.value.trim().toLowerCase();
+      var cmds = Object.keys(COMMANDS);
+      var match = cmds.filter(function(c){ return c.indexOf(partial)===0; });
+      if(match.length===1){ inp.value = match[0]; }
+      else if(match.length>1){
+        var hint = document.createElement('div');
+        hint.className = 'tl tl-dim';
+        hint.textContent = match.join('  ');
+        body.insertBefore(hint, row);
+        body.scrollTop = body.scrollHeight;
+      }
+      e.preventDefault();
+    } else if(e.key==='Escape'){
+      closeTerminal();
+    }
+  });
+
+  // Prevent global keydown from picking up terminal typing
+  inp.addEventListener('keydown', function(e){ e.stopPropagation(); });
+}
+
+function runTermCommand(cmd, body, inputRow) {
+  var handler = COMMANDS[cmd];
+  if(cmd === 'clear'){
+    body.innerHTML = '';
+    appendTermInput(body);
+    return;
+  }
+  if(!handler) {
+    var notFound = document.createElement('div');
+    notFound.className = 'tl tl-dim';
+    notFound.textContent = "  command not found: '"+cmd+"'  ·  try 'help'";
+    body.insertBefore(notFound, inputRow);
+    body.scrollTop = body.scrollHeight;
+    return;
+  }
+  var lines = handler.run();
+  if(lines) {
+    lines.forEach(function(line){
+      var d = document.createElement('div');
+      d.className = 'tl' + (line.t ? ' tl-'+line.t : '');
+      d.textContent = line.s;
+      body.insertBefore(d, inputRow);
+    });
+    var spacer = document.createElement('div');
+    spacer.className = 'tl';
+    spacer.textContent = '';
+    body.insertBefore(spacer, inputRow);
+  }
+  body.scrollTop = body.scrollHeight;
+  if(handler.after) handler.after();
+}
+
 function closeTerminal(){
   var ov=document.getElementById('terminal-overlay');
   if(ov) ov.classList.remove('term-open');
@@ -11216,7 +13827,25 @@ document.addEventListener('visibilitychange', function() {
 
 
 /* --- CONSOLE SIGNATURE -------------------------------- */
-console.log('%c⚡ GOD MODE ACTIVE', 'font-size:14px;color:#C9A84C;font-weight:700;font-family:monospace;');
+(function(){
+  var g='color:#C9A84C;font-family:monospace;font-weight:700;';
+  var w='color:#F2EFE8;font-family:monospace;';
+  var d='color:rgba(201,168,76,0.4);font-family:monospace;font-size:10px;';
+  var gr='color:#4ade80;font-family:monospace;font-size:11px;';
+  console.log('\n%c⚡ JACHIN SAIKIA SONOWAL', 'font-size:22px;letter-spacing:5px;'+g);
+  console.log('%cAI Growth Systems Architect · PROMPTMATRIX Founder', d);
+  console.log('%c' + '─'.repeat(48), d);
+  console.log('%c  ✓ 8+ yrs  ✓ $150K+ revenue  ✓ 26 AI agents live', w+'font-size:11px;');
+  console.log('%c  ✓ 175+ clients  ✓ Remote  ✓ Available now', gr);
+  console.log('%c' + '─'.repeat(48), d);
+  console.log('%c  Terminal: type JACHIN anywhere on the page', d);
+  console.log('%c  Commands: help · hire · projects · pm · agents · stack', d);
+  console.log('%c' + '─'.repeat(48), d);
+  console.log('%c$ jachin --status', g+'font-size:11px;');
+  console.log('%c> JACHIN_OS v2026.1  ·  STATUS: AVAILABLE', g+'font-size:11px;');
+  console.log('%c> jachinsaikiasonowal@gmail.com', w+'font-size:11px;');
+  console.log('%c> linkedin.com/in/jachinsonowal\n', w+'font-size:11px;');
+})();
 
 })();
 
@@ -11247,7 +13876,76 @@ console.log('%c⚡ GOD MODE ACTIVE', 'font-size:14px;color:#C9A84C;font-weight:7
     btn.addEventListener('click', function(){
       document.body.classList.toggle('light-mode');
       localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+      // Dynamic theme-color meta for mobile Chrome tab bar
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if(meta) meta.setAttribute('content', document.body.classList.contains('light-mode') ? '#f5f3ee' : '#080808');
     });
+  })();
+
+  /* --- VISITOR MEMORY — first vs return visit --------- */
+  (function(){
+    try {
+      var visitKey = 'jachin_visit';
+      var lastSection = localStorage.getItem('jachin_last_section') || '';
+      var visits = parseInt(localStorage.getItem(visitKey) || '0', 10);
+      visits++;
+      localStorage.setItem(visitKey, visits);
+
+      // Update loader text based on return status
+      if(visits > 1) {
+        var loaderText = document.querySelector('.loader-text');
+        if(loaderText) {
+          // Subtle return visitor signal in the loader — no layout change
+          setTimeout(function(){
+            if(loaderText && visits === 2) loaderText.setAttribute('data-visit', 'RETURN');
+          }, 200);
+        }
+      }
+
+      // Track section as visitor scrolls
+      // v15 fix: cache offsetTop at load + resize — reading el.offsetTop
+      // inside a scroll handler forces layout on every scroll event.
+      var sectionIds = ['hero','about','experience','case-studies','ai-systems','skills','cta'];
+      var sectionTops = {};
+      function cacheSectionTops() {
+        sectionIds.forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) sectionTops[id] = el.offsetTop;
+        });
+      }
+      // Cache once at load, refresh on resize
+      window.addEventListener('load', cacheSectionTops, { passive: true, once: true });
+      window.addEventListener('resize', cacheSectionTops, { passive: true });
+      cacheSectionTops(); // immediate attempt (may be 0 before paint, load event fixes it)
+
+      window.addEventListener('scroll', function(){
+        var scrollMid = window.scrollY + window.innerHeight * 0.4;
+        sectionIds.forEach(function(id){
+          if (sectionTops[id] !== undefined && sectionTops[id] <= scrollMid) {
+            localStorage.setItem('jachin_last_section', id);
+          }
+        });
+      }, { passive: true });
+
+    } catch(e) { /* localStorage blocked in some environments */ }
+  })();
+
+  /* --- DYNAMIC THEME-COLOR ON SCROLL --------- */
+  (function(){
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if(!meta) return;
+    // Subtle: shift theme-color when hero passes (signals page depth)
+    var shifted = false;
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > window.innerHeight * 0.8 && !shifted){
+        shifted = true;
+        if(!document.body.classList.contains('light-mode'))
+          meta.setAttribute('content','#0F0F0F');
+      } else if(window.scrollY < 100 && shifted){
+        shifted = false;
+        meta.setAttribute('content','#080808');
+      }
+    }, { passive: true });
   })();
 
 
@@ -11435,18 +14133,26 @@ function subscribeNewsletter() {
     var hud = document.getElementById('activity-hud');
     if (!hud) return;
 
-    var dismissed = false;
-    var activated  = false;
+    var dismissed     = false;
+    var activated     = false;
+    var tickerHiding  = false;      // guard: prevents double-fire on fast scroll
+    var tickerHideTimer = null;     // clearable so fast-scroll can't orphan the timeout
 
-    // Hide revenue ticker smoothly when HUD activates
+    // Hide revenue ticker smoothly when HUD activates — guarded against race
     function hideRevTicker() {
+      if (tickerHiding) return;     // already in-flight — do nothing
+      tickerHiding = true;
       var ticker = document.getElementById('rev-ticker');
       if (!ticker) return;
       ticker.style.transition = 'opacity 0.7s ease, right 0.7s cubic-bezier(0.16,1,0.3,1)';
       ticker.style.opacity = '0';
       ticker.style.right = '-120px';
       ticker.style.pointerEvents = 'none';
-      setTimeout(function() { ticker.style.display = 'none'; }, 750);
+      if (tickerHideTimer) clearTimeout(tickerHideTimer);
+      tickerHideTimer = setTimeout(function() {
+        ticker.style.display = 'none';
+        tickerHideTimer = null;
+      }, 760);
     }
 
     // Live clock in IST
@@ -11474,7 +14180,7 @@ function subscribeNewsletter() {
           activated = true;
           hud.classList.remove('hud-hidden');
           hud.classList.add('hud-visible');
-          hideRevTicker();          // ticker exits as HUD enters
+          hideRevTicker();          // ticker exits as HUD enters — guarded
           showObserver.disconnect(); // fire once only
         }
       });
@@ -11518,13 +14224,27 @@ function subscribeNewsletter() {
     function collectImgs() { imgs = Array.from(document.querySelectorAll('.pg-img-ph')); }
     var ticking = false;
     function onScroll() {
-      if (!ticking) {
-        requestAnimationFrame(function() {
-          var viewH = window.innerHeight;
-          imgs.forEach(function(el) {
-            var wrap = el.closest('.pg-img-wrap');
-            if (!wrap) return;
-            var rect = wrap.getBoundingClientRect();
-            if (rect.bottom < 0 || rect.top > viewH) return;
-            var relY = ((rect.top + rect.height / 2) - viewH / 2) / viewH;
-            var shift = relY * 14;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function() {
+        var viewH = window.innerHeight;
+        imgs.forEach(function(el) {
+                           var wrap = el.closest('.pg-img-wrap');
+          if (!wrap) return;
+          var rect = wrap.getBoundingClientRect();
+          if (rect.bottom < 0 || rect.top > viewH) return;
+          var relY = ((rect.top + rect.height / 2) - viewH / 2) / viewH;
+          el.style.transform = 'translateY(' + (relY * 14) + 'px)';
+        });
+        ticking = false;
+      });
+    }
+    window.addEventListener('load', function() {
+      collectImgs();
+      if (imgs.length) window.addEventListener('scroll', onScroll, { passive: true });
+    });
+  })();
+  </script>
+
+</body>
+</html>
